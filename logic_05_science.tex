@@ -17,6 +17,42 @@
     \titlepage
 \end{frame}
 
+
+\begin{frame}{Introduction: The Power of Causal Reasoning}
+    \begin{itemize}
+        \item Scientific progress depends on our ability to identify cause-and-effect relationships
+        \item Causal reasoning allows us to:
+            \begin{itemize}
+                \item Explain natural phenomena
+                \item Make predictions about future events
+                \item Design interventions to solve problems
+                \item Develop technologies that improve human life
+            \end{itemize}
+        \item Today we'll explore how scientists across different fields have used causal reasoning to make breakthrough discoveries
+    \end{itemize}
+    
+    \begin{alertblock}{Key Question}
+        How do scientists establish that X causes Y when direct observation is often impossible?
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Foundations of Causal Reasoning}
+    \begin{itemize}
+        \item John Stuart Mill's Methods provide a logical framework for causal inference:
+            \begin{itemize}
+                \item \textbf{Method of Agreement}: If multiple instances of a phenomenon have only one factor in common, that factor may be the cause
+                \item \textbf{Method of Difference}: If two similar situations differ only in one factor and the outcome, that factor may be the cause
+                \item \textbf{Method of Concomitant Variation}: If changes in a factor correlate with changes in the outcome, a causal relationship may exist
+            \end{itemize}
+        \item These methods form the foundation for modern scientific investigation
+        \item They help distinguish causation from mere correlation
+    \end{itemize}
+    
+    \begin{example}
+        If we notice that plants grow better after rain but not after watering with salt water, the difference (fresh vs. salt water) suggests freshwater is a causal factor in plant growth.
+    \end{example}
+\end{frame}
+
 \begin{frame}{Case Study: John Snow and Cholera (Medicine)}
     \begin{itemize}
         \item In 1854, London faced a deadly cholera outbreak that killed hundreds of people.
@@ -733,6 +769,7 @@
     \end{itemize}
     
     \begin{alertblock}{Causal Reasoning Lessons}
+        \scriptsize
         The Hubble case demonstrates:
         \begin{itemize}
             \item How mathematical relationships can reveal causal patterns
@@ -741,6 +778,101 @@
             \item That revolutionary causal insights often involve rethinking our fundamental assumptions about the world
         \end{itemize}
     \end{alertblock}
+\end{frame}
+
+\begin{frame}{Common Patterns Across Scientific Disciplines}
+    \begin{itemize}
+        \item Across our case studies, successful causal reasoning often involves:
+            \begin{itemize}
+                \item Careful observation of patterns that violate expectations
+                \item Identifying natural experiments or creating interventions
+                \item Ruling out alternative explanations systematically
+                \item Gathering multiple lines of converging evidence
+                \item Proposing mechanisms that explain how causes produce effects
+            \end{itemize}
+        \item Scientists may not always understand the full causal mechanism at first (Snow, Semmelweis, Wegener)
+        \item Initial causal models are often refined or revised as new evidence emerges (Marshmallow Test)
+    \end{itemize}
+    
+    \begin{block}{From Simple to Complex Causality}
+        Scientific progress often involves moving from simple causal models (A causes B) to more complex understandings with multiple interacting factors and feedback loops.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Modern Approaches to Causal Inference}
+    \begin{itemize}
+        \item Contemporary science has developed sophisticated tools for causal reasoning:
+            \begin{itemize}
+                \item Randomized controlled trials – the "gold standard" in medicine
+                \item Natural experiments and quasi-experimental designs
+                \item Statistical methods like difference-in-differences, instrumental variables
+                \item Causal graph theory and structural equation modeling
+                \item Computer simulations to test causal theories
+            \end{itemize}
+        \item These tools extend and formalize Mill's classic methods
+        \item They allow us to tackle increasingly complex causal questions
+    \end{itemize}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.6]
+        % Simple causal chain
+        \node (A) at (0,0) {A};
+        \node (B) at (2,0) {B};
+        \node (C) at (4,0) {C};
+        \draw[->, thick] (A) -- (B);
+        \draw[->, thick] (B) -- (C);
+
+        % More complex causal web
+        \node (D) at (6,1) {D};
+        \node (E) at (8,1) {E};
+        \node (F) at (6,-1) {F};
+        \node (G) at (8,-1) {G};
+        \draw[->, thick] (D) -- (E);
+        \draw[->, thick] (D) -- (F);
+        \draw[->, thick] (E) -- (G);
+        \draw[->, thick] (F) -- (G);
+        \draw[->, thick, bend left] (D) to (G);
+    \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Why Causal Reasoning Matters}
+    \begin{itemize}
+        \item Casual reasoning is essential for:
+            \begin{itemize}
+                \item Scientific understanding - Explaining why natural phenomena occur
+                \item Problem-solving - Identifying effective interventions
+                \item Critical thinking - Evaluating claims about cause and effect
+                \item Personal decision-making - Understanding consequences of our actions
+            \end{itemize}
+        \item Mistaking correlation for causation leads to:
+            \begin{itemize}
+                \item Ineffective policies and interventions
+                \item Wasted resources on non-causal factors
+                \item Missed opportunities to address real causes
+                \item Potentially harmful actions based on flawed understanding
+            \end{itemize}
+    \end{itemize}
+    
+    \begin{alertblock}{The Legacy of Scientific Causal Reasoning}
+        The scientific breakthroughs we've examined didn't just solve specific problems—they transformed how we understand our world and demonstrated the power of human reason to uncover causal relationships that are not immediately obvious.
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Discussion Questions}
+    \begin{enumerate}
+        \item How might Snow's approach to cholera investigation be applied to modern public health challenges?
+        \item Which do you think is more important in science: having a causal mechanism or having strong statistical evidence of a relationship?
+        \item Why do you think Semmelweis and Wegener faced such resistance to their causal theories, despite compelling evidence?
+        \item What are some everyday examples where people commonly mistake correlation for causation?
+        \item How might causal reasoning in science be strengthened or improved in the future?
+    \end{enumerate}
+    
+    \begin{block}{Final Thought}
+        "No amount of experimentation can ever prove me right; a single experiment can prove me wrong." - Albert Einstein
+        
+        This captures an important asymmetry in causal reasoning: disproving causal claims is often easier than conclusively proving them.
+    \end{block}
 \end{frame}
 
 \end{document}

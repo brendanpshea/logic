@@ -6,8 +6,9 @@
 \usepackage{amssymb}
 
 \title{Argument Evaluation}
-\subtitle{Introduction to Logic}
+\subtitle{Telling Good Reasoning from Bad}
 \author{Brendan Shea, PhD}
+\date{Introduction to Logic}
 
 \begin{document}
 
@@ -420,22 +421,29 @@
 \end{frame}
 
 \begin{frame}{Soundness: When Valid Arguments Have True Premises}
-    \begin{itemize}
-        \item A deductive argument is \textbf{sound} if and only if it is valid and all its premises are true.
-        \item Soundness is the gold standard for deductive arguments—it guarantees a true conclusion.
-        \item An argument can be valid but unsound if any of its premises are false.
-        \item Soundness requires both logical and factual evaluation.
-    \end{itemize}
-    
-    \begin{tikzpicture}
-        \fill[blue!10] (0,0) rectangle (4,3);
-        \fill[green!15] (0,0) rectangle (4,1.5);
-        \node at (2,2.25) {Valid Arguments};
-        \node at (2,0.75) {Sound Arguments};
-        \draw[thick] (0,0) rectangle (4,3);
-        \draw[thick] (0,1.5) -- (4,1.5);
-    \end{tikzpicture}
+	\begin{itemize}
+		\item A deductive argument is \textbf{sound} if and only if it is valid and all its premises are true.
+		\item Soundness is the gold standard for deductive arguments—it guarantees a true conclusion.
+		\item An argument can be valid but unsound if any of its premises are false.
+		\item Soundness requires both logical and factual evaluation.
+	\end{itemize}
+	
+	\begin{tikzpicture}
+		% Valid arguments (outer rectangle)
+		\fill[blue!10] (0,0) rectangle (4,3);
+		\draw[thick] (0,0) rectangle (4,3);
+		\node at (2,2.5) {Valid Arguments};
+		
+		% Sound arguments (inner rectangle: proper subset)
+		\fill[green!15] (0.7,0.7) rectangle (3.3,1.7);
+		\draw[thick] (0.7,0.7) rectangle (3.3,1.7);
+		\node at (2,1.2) {Sound Arguments};
+		
+		% Subset notation
+		\node at (4.5,1.5) {$\displaystyle \text{Sound}\;\subset\;\text{Valid}$};
+	\end{tikzpicture}
 \end{frame}
+
 
 \begin{frame}{Case Study: Jean-Luc Picard (Ethical Deductive Reasoning)}
     \begin{block}{From "Star Trek: The Next Generation" - "The Measure of a Man"}
@@ -450,7 +458,7 @@
         \item Conclusion: Therefore, Data has the right to self-determination and cannot be dismantled against his will.
     \end{itemize}
     
-    \textbf{Analysis:} This is a valid categorical syllogism. Its soundness hinges on whether the definition of sentience is adequate and whether Data truly meets all criteria. The argument challenges us to consider what makes someone a "person" with rights.
+    \textbf{Analysis:} This is a valid deductive argument. Its soundness hinges on whether the definition of sentience is adequate and whether Data truly meets all criteria. The argument challenges us to consider what makes someone a "person" with rights.
 \end{frame}
 
 \begin{frame}{The Nature of Inductive Strength: Degrees of Support}

@@ -6,8 +6,8 @@
 \usepackage{amssymb}
 
 \title{Causal Reasoning: From Mill to Modern Experiments}
-\subtitle{An Introduction to Logic and Experimental Design}
 \author{Brendan Shea, PhD}
+\date{Introduction to Logic}
 
 
 \begin{document}
@@ -124,6 +124,34 @@
     \end{table}
 \end{frame}
 
+\begin{frame}{Method of Agreement Example: Professor Frink's Lab Explosion}
+	\textbf{Scenario:} Professor Frink is investigating what causes his laboratory experiments to explode. He examines five recent explosions.
+	
+	\begin{table}
+		\scriptsize
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\textbf{Explosion} & \textbf{Heat Source} & \textbf{Chemical X} & \textbf{Lightning} & \textbf{Glavin!} & \textbf{Result} \\
+			\hline
+			1 & Yes & Yes & No & Yes & Explosion \\
+			2 & No & Yes & Yes & Yes & Explosion \\
+			3 & Yes & Yes & Yes & No & Explosion \\
+			4 & No & Yes & No & No & Explosion \\
+			5 & Yes & Yes & No & Yes & Explosion \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\textbf{Analysis:} Chemical X is the only factor present in ALL explosions.
+	
+	\textbf{Conclusion by Method of Agreement:} Chemical X is likely the cause of the explosions.
+	
+	\begin{alertblock}{Professor Frink says:}
+		"Glavin! The data clearly indicates that Chemical X is the necessary ingredient for my spectacular laboratory failures!"
+	\end{alertblock}
+\end{frame}
+
 \begin{frame}{Method of Difference: The Power of Comparison}
     \begin{itemize}
         \item The \textbf{Method of Difference} compares two scenarios: one where the effect occurs and one where it does not.
@@ -158,6 +186,99 @@
     \end{center}
 \end{frame}
 
+\begin{frame}{Method of Difference Example: Dexter's Growth Serum}
+	\textbf{Scenario:} Dexter wants to test whether his new growth serum causes plants to grow taller. He sets up two identical experiments.
+	
+	\begin{center}
+		\begin{tikzpicture}[scale=0.8]
+			\scriptsize
+			% Experiment A
+			\draw (0,0) rectangle (3,4);
+			\node at (1.5,3.5) {\textbf{Plant A}};
+			\node at (1.5,3) {Growth Serum: YES};
+			\node at (1.5,2.5) {Sunlight: 8 hours};
+			\node at (1.5,2) {Water: 100ml daily};
+			\node at (1.5,1.5) {Soil Type: Potting mix};
+			\node at (1.5,1) {Temperature: 22°C};
+			\node at (1.5,0.5) {\textcolor{green}{\textbf{Height: 15cm}}};
+			
+			% Experiment B
+			\draw (4,0) rectangle (7,4);
+			\node at (5.5,3.5) {\textbf{Plant B}};
+			\node at (5.5,3) {Growth Serum: NO};
+			\node at (5.5,2.5) {Sunlight: 8 hours};
+			\node at (5.5,2) {Water: 100ml daily};
+			\node at (5.5,1.5) {Soil Type: Potting mix};
+			\node at (5.5,1) {Temperature: 22°C};
+			\node at (5.5,0.5) {\textcolor{red}{\textbf{Height: 8cm}}};
+		\end{tikzpicture}
+	\end{center}
+	
+	\textbf{Analysis:} The only difference is the growth serum, yet Plant A grew much taller.
+	
+	\textbf{Conclusion by Method of Difference:} The growth serum causes increased plant growth.
+	
+	\begin{block}{Dexter concludes:}
+		"The experimental data supports my hypothesis with 93.7\% confidence!"
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{Joint Method of Agreement and Difference: Combining Approaches}
+	\begin{itemize}
+		\item The \textbf{Joint Method} combines the strengths of the Methods of Agreement and Difference.
+		\item It looks for a factor that is present whenever the effect occurs and absent whenever the effect is absent.
+		\item This method provides stronger evidence than either method alone.
+		\item It reduces the likelihood of coincidental associations being mistaken for causes.
+	\end{itemize}
+	
+	\begin{table}
+		\centering
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\textbf{Case} & \textbf{Factor A} & \textbf{Factor B} & \textbf{Factor C} & \textbf{Effect X} \\
+			\hline
+			1 & Present & Present & Absent & Occurs \\
+			2 & Present & Absent & Present & Occurs \\
+			3 & Absent & Present & Present & Does Not Occur \\
+			4 & Absent & Absent & Present & Does Not Occur \\
+			\hline
+			\multicolumn{5}{|c|}{Factor A is most likely the cause of Effect X} \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+
+\begin{frame}{Joint Method Example: Rick's Portal Gun Malfunctions}
+	\textbf{Scenario:} Rick is investigating when his portal gun malfunctions. He needs to find what's present when it fails AND absent when it works.
+	
+	\begin{table}
+		\scriptsize
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\textbf{Test} & \textbf{Drunk} & \textbf{Morty Nearby} & \textbf{Battery Low} & \textbf{Burping} & \textbf{Malfunction?} \\
+			\hline
+			1 & Yes & Yes & No & Yes & YES \\
+			2 & Yes & No & Yes & Yes & YES \\
+			3 & No & Yes & Yes & No & NO \\
+			4 & No & No & Yes & No & NO \\
+			5 & Yes & No & No & Yes & YES \\
+			6 & No & Yes & No & No & NO \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\textbf{Analysis:} Being drunk is present in ALL malfunctions (tests 1, 2, 5) and absent in ALL successful uses (tests 3, 4, 6).
+	
+	\textbf{Conclusion by Joint Method:} Rick's drunkenness causes portal gun malfunctions.
+	
+	\begin{alertblock}{Rick's response:}
+		"Listen Morty, *burp* the science clearly shows that alcohol actually IMPROVES my inventions... this data must be wrong, Morty!"
+	\end{alertblock}
+\end{frame}
+
 \begin{frame}{Method of Residues: What's Left When Everything Else Is Explained}
     \begin{itemize}
         \item The \textbf{Method of Residues} applies when part of an effect has already been attributed to certain causes.
@@ -171,29 +292,38 @@
     \end{alertblock}
 \end{frame}
 
-\begin{frame}{Joint Method of Agreement and Difference: Combining Approaches}
-    \begin{itemize}
-        \item The \textbf{Joint Method} combines the strengths of the Methods of Agreement and Difference.
-        \item It looks for a factor that is present whenever the effect occurs and absent whenever the effect is absent.
-        \item This method provides stronger evidence than either method alone.
-        \item It reduces the likelihood of coincidental associations being mistaken for causes.
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|c|c|c|c|c|}
-            \hline
-            \textbf{Case} & \textbf{Factor A} & \textbf{Factor B} & \textbf{Factor C} & \textbf{Effect X} \\
-            \hline
-            1 & Present & Present & Absent & Occurs \\
-            2 & Present & Absent & Present & Occurs \\
-            3 & Absent & Present & Present & Does Not Occur \\
-            4 & Absent & Absent & Present & Does Not Occur \\
-            \hline
-            \multicolumn{5}{|c|}{Factor A is most likely the cause of Effect X} \\
-            \hline
-        \end{tabular}
-    \end{table}
+\begin{frame}{Method of Residues Example: Jimmy Neutron's Rocket Fuel}
+	\scriptsize{
+	\textbf{Scenario:} Jimmy's rocket achieves 1000 units of thrust, but he wants to understand what contributes to this total power.
+	
+
+	\textbf{Previous Knowledge:}
+	\begin{itemize}
+		\item Liquid oxygen contributes 400 units of thrust
+		\item Fuel stabilizer contributes 250 units of thrust
+		\item Ignition system contributes 150 units of thrust
+	\end{itemize}
+	
+	\textbf{Current Rocket Components:}
+	\begin{itemize}
+		\item Liquid oxygen (400 units)
+		\item Fuel stabilizer (250 units)  
+		\item Ignition system (150 units)
+		\item NEW: Neutronium catalyst (? units)
+	\end{itemize}
+	
+	\textbf{Analysis by Method of Residues:}
+	\begin{align}
+		\text{Total thrust} &= 1000 \text{ units} \\
+		\text{Known components} &= 400 + 250 + 150 = 800 \text{ units} \\
+		\text{Neutronium catalyst} &= 1000 - 800 = 200 \text{ units}
+	\end{align}
+}
+	\textbf{Conclusion:} The neutronium catalyst contributes 200 units of thrust.
+	
+	\begin{block}{Jimmy says:}
+		"Brain blast! The neutronium catalyst accounts for exactly 20\% of our total propulsion!"
+	\end{block}
 \end{frame}
 
 \begin{frame}{Method of Concomitant Variation: When Things Change Together}

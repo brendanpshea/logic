@@ -1,751 +1,732 @@
 \documentclass{beamer}
-\usetheme{Madrid}
-\usecolortheme{dolphin}
 \usepackage{tikz}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
 
-\title{Argument Evaluation}
-\subtitle{Telling Good Reasoning from Bad}
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+\title{Evaluating Arguments}
+\subtitle{Deductive, Inductive, and Abductive Reasoning}
 \author{Brendan Shea, PhD}
-\date{Introduction to Logic}
+\date{Intro to Logic}
 
 \begin{document}
+	
+	\frame{\titlepage}
+	
+	% Slide 1
+	\begin{frame}{Three Types of Arguments and How to Evaluate Them}
+		\begin{itemize}
+			\item Every day we encounter arguments that try to convince us of various conclusions, from scientific theories to criminal investigations.
+			\item Not all arguments are created equal—some provide strong support for their conclusions while others are logically flawed.
+			\item There are three main types of arguments: \textbf{deductive}, \textbf{inductive}, and \textbf{abductive}, each with different standards for evaluation.
+			\item Understanding these differences is crucial for thinking critically about evidence and reasoning in any field.
+		\end{itemize}
+		
+		\begin{alertblock}{Key Point}
+			Different types of arguments require different evaluation criteria—what makes a deductive argument good is not the same as what makes an inductive argument good.
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 2
+	\begin{frame}{The Detective's Toolkit: Why Different Arguments Need Different Standards}
+		\begin{itemize}
+			\item Think of a detective investigating a crime—they use multiple types of reasoning to build their case.
+			\item Sometimes they use \textbf{deductive reasoning}: "If the suspect was at the coffee shop at 3 PM, then he couldn't have committed the murder at 3 PM across town."
+			\item Other times they use \textbf{inductive reasoning}: "This suspect has committed similar crimes before, so he's likely our perpetrator."
+			\item They also use \textbf{abductive reasoning}: "The best explanation for this evidence is that the butler did it."
+		\end{itemize}
+		
+		\begin{example}
+			A forensic scientist might use math (deduction) to calculate height in cm (based on height in inches), induce that the crime rate will increase next month based on trends (probable), or abduce that the victim knew their attacker based on the evidence (best explanation).
+		\end{example}
+	\end{frame}
+	
+	% Slide 3
+	\begin{frame}{Deductive Arguments: When Conclusions Follow Necessarily}
+		\begin{itemize}
+			\item A \textbf{deductive argument} is one where the conclusion is supposed to follow necessarily from the premises.
+			\item If the premises are true, then the conclusion \textit{must} be true—there's no possibility of the premises being true and the conclusion false.
+			\item We evaluate deductive arguments as either \textbf{valid} (the conclusion does follow necessarily) or \textbf{invalid} (it doesn't).
+			\item The truth of the premises is a separate question from whether the argument is valid.
+		\end{itemize}
+		
+		\begin{block}{Definition: Deductive Argument}
+			An argument where the conclusion is intended to follow with logical necessity from the premises. If valid and the premises are true, the conclusion must be true.
+		\end{block}
+	\end{frame}
+	
+	% Slide 4
+	\begin{frame}{Valid vs. Invalid: The Foundation of Deductive Reasoning}
+		\begin{itemize}
+			\item A \textbf{valid} deductive argument is one where if all the premises were true, the conclusion would have to be true.
+			\item An \textbf{invalid} deductive argument is one where the premises could be true but the conclusion could still be false.
+			\item Validity is about the logical structure of the argument, not whether the premises are actually true in reality.
+			\item A valid argument with true premises is called \textbf{sound}—this gives us the strongest possible support for a conclusion.
+		\end{itemize}
+		
+		\begin{example}
+			\textbf{Valid:} All detectives carry badges. Holmes is a detective. Therefore, Holmes carries a badge.
+			\\[0.5em]
+			\textbf{Invalid:} Most detectives are observant. Holmes is observant. Therefore, Holmes is a detective.
+		\end{example}
+	\end{frame}
+	
+	% Slide 5
+	\begin{frame}{Common Deductive Argument Forms Table}
+		\begin{itemize}
+			\item Deductive arguments often follow recognizable patterns or \textbf{forms} that guarantee validity when used correctly.
+			\item Learning these common forms helps you quickly identify valid deductive reasoning in everyday situations.
+			\item Each form has a specific structure that, when followed precisely, ensures the conclusion follows necessarily from the premises.
+			\item These forms appear frequently in legal reasoning, mathematical proofs, and logical problem-solving.
+		\end{itemize}
+		
+		\begin{table}[h]
+			\centering
+			\scriptsize
+			\begin{tabular}{|l|l|}
+				\hline
+				\textbf{Argument Form} & \textbf{Structure} \\
+				\hline
+				Categorical Syllogism & All A are B; All B are C; Therefore, All A are C \\
+				\hline
+				Modus Ponens (MP) & If P then Q; P; Therefore, Q \\
+				\hline
+				Modus Tollens (MT) & If P then Q; Not Q; Therefore, Not P \\
+				\hline
+				Hypothetical Syllogism (HS) & If P then Q; If Q then R; Therefore, If P then R \\
+				\hline
+				Mathematical Arguments & Based on definitions, axioms, and proven theorems \\
+				\hline
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	% Slide 6
+	\begin{frame}{Sherlock Holmes and the Categorical Syllogism}
+		\begin{itemize}
+			\item A \textbf{categorical syllogism} involves three categories and shows how they relate to each other through two premises.
+			\item The classic form is: All A are B, All B are C, Therefore All A are C—this structure guarantees validity.
+			\item The key is ensuring that the middle term (B) properly connects the other two categories.
+		\end{itemize}
+		
+		\begin{example}
+			\textbf{Holmes's reasoning:}
+			\begin{itemize}
+				\item All murderers in this case left muddy footprints in the library.
+				\item All people who left muddy footprints in the library entered through the garden door.
+				\item Therefore, all murderers in this case entered through the garden door.
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 7
+	\begin{frame}{Modus Ponens: Detective Rodriguez's Logical Breakthrough}
+		\begin{itemize}
+			\item \textbf{Modus Ponens} (MP) is the most fundamental deductive argument form: If P then Q, P, Therefore Q.
+			\item This form captures the basic logic of conditional reasoning—when we know a condition leads to a result, and the condition occurs, we can deduce the result.
+			\item The argument is valid regardless of what specific propositions we substitute for P and Q.
+		\end{itemize}
+		
+		\begin{example}
+			\scriptsize
+			\textbf{Rodriguez's breakthrough:}
+			\begin{itemize}
+				\item If the suspect used his credit card after 6 PM, then he wasn't at the crime scene at 6 PM.
+				\item The suspect used his credit card at 6:15 PM (bank records confirm this).
+				\item Therefore, the suspect wasn't at the crime scene at 6 PM.
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 8
+	\begin{frame}{Modus Tollens: How Inspector Chen Eliminated Suspects}
+		\begin{itemize}
+			\item \textbf{Modus Tollens} (MT) works by denying the consequent: If P then Q, Not Q, Therefore Not P.
+			\item This form is particularly useful for elimination—when we know what should happen if something were true, but it doesn't happen.
+			\item MT is the logical foundation of many ``proofs by contraction.''
+		\end{itemize}
+		
+		\begin{example}
+			\textbf{Chen's elimination process:}
+			\begin{itemize}
+				\item If Johnson committed the crime, then his DNA would be on the weapon.
+				\item Johnson's DNA is not on the weapon (lab results show this).
+				\item Therefore, Johnson did not commit the crime.
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 9
+	\begin{frame}{Hypothetical Syllogisms: Following the Chain of Evidence}
+		\begin{itemize}
+			\item A \textbf{hypothetical syllogism} (HS) chains together conditional statements: If P then Q, If Q then R, Therefore If P then R.
+			\item This form allows us to trace logical connections through multiple steps, linking distant causes to their effects.
+			\item The strength of the chain depends on each individual conditional being true—one weak link breaks the whole argument.
+		\end{itemize}
+		
+		\begin{example}
+			\textbf{Chain of evidence:}
+			\scriptsize
+			\begin{itemize}
+				\item If the victim knew the attacker, then there would be no signs of forced entry.
+				\item If there were no signs of forced entry, then the crime was committed by someone with a key.
+				\item Therefore, if the victim knew the attacker, then the crime was committed by someone with a key.
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
 
-\begin{frame}
-    \titlepage
-\end{frame}
-
-\begin{frame}{What is an Argument? Distinguishing Arguments from Other Forms of Discourse}
-    \begin{itemize}
-        \item An \textbf{argument} is a set of statements where some (the premises) are offered as support for another (the conclusion).
-        \item Arguments differ from explanations, which tell why something happened rather than trying to prove it's true.
-        \item Arguments differ from mere opinions, which don't offer reasoned support for claims.
-        \item Arguments can be explicit (clearly stated) or implicit (with unstated assumptions).
-    \end{itemize}
-    
-    \begin{alertblock}{Key Insight}
-        Not all text containing claims is an argument—arguments specifically attempt to establish the truth of a conclusion through reasoning.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{The Building Blocks: Premises and Conclusions}
-    \begin{itemize}
-        \item \textbf{Premises} are the statements offered as reasons or evidence to support the conclusion.
-        \item The \textbf{conclusion} is the statement that the premises are intended to establish or support.
-        \item Every argument must have at least one premise and exactly one conclusion.
-        \item The relationship between premises and conclusion constitutes the logical structure of the argument.
-    \end{itemize}
-    
-    \begin{example}
-        \textbf{Premise 1:} All humans are mortal.\\
-        \textbf{Premise 2:} Socrates is human.\\
-        \textbf{Conclusion:} Therefore, Socrates is mortal.
-    \end{example}
-\end{frame}
-
-\begin{frame}{Indicator Words: How to Identify Premises and Conclusions}
-    \begin{itemize}
-        \item \textbf{Conclusion indicators} signal that a conclusion follows: "therefore," "thus," "hence," "so," "consequently."
-        \item \textbf{Premise indicators} signal that a premise is being offered: "because," "since," "given that," "as."
-        \item Indicator words provide clues but aren't always present in natural language arguments.
-        \item Context often matters more than specific words when identifying premises and conclusions.
-    \end{itemize}
-    
-    \begin{tikzpicture}
-        \node[draw, rectangle, rounded corners, fill=blue!10, minimum width=4cm, minimum height=1cm] (premise) at (0,0) {Premise};
-        \node[draw, rectangle, rounded corners, fill=red!10, minimum width=4cm, minimum height=1cm] (conclusion) at (0,-2) {Conclusion};
-        \draw[->, thick] (premise) -- (conclusion) node[midway, right] {Support};
-    \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Converting Arguments to Standard Form: A Step-by-Step Process}
-    \begin{itemize}
-        \item \textbf{Standard form} arranges an argument with premises listed first and the conclusion last.
-        \item Step 1: Identify all statements that function as premises and the conclusion.
-        \item Step 2: Eliminate irrelevant information and clarify ambiguous language.
-        \item Step 3: Number the premises and label the conclusion for clear reference.
-    \end{itemize}
-    
-    \begin{block}{Standard Form Template}
-        Premise 1: [Statement]\\
-        Premise 2: [Statement]\\
-        $\vdots$\\
-        Premise n: [Statement]\\
-        Conclusion: [Statement]
-    \end{block}
-\end{frame}
-
-\begin{frame}{Common Challenges in Identifying Arguments}
-    \begin{itemize}
-        \item Arguments in everyday language often contain \textbf{implicit premises} that must be reconstructed.
-        \item Multiple conclusions may appear, requiring identification of the main conclusion.
-        \item \textbf{Subarguments} occur when some premises are supported by other premises before supporting the main conclusion.
-        \item Argumentative text is often mixed with rhetorical questions, examples, and repetition.
-    \end{itemize}
-    
-    \begin{alertblock}{Warning}
-        When reconstructing arguments, be careful not to create straw men by misrepresenting the original reasoning.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{The Dual Nature of Argument Evaluation}
-    \begin{itemize}
-        \item Argument evaluation requires answering two distinct questions about any argument.
-        \item We must separate questions of \textbf{logical structure} from questions of \textbf{factual accuracy}.
-        \item An argument can have a strong logical structure but false premises, or true premises but a weak structure.
-        \item Complete evaluation requires examining both aspects independently before making a final judgment.
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|c|c|c|}
-            \hline
-            & \textbf{True Premises} & \textbf{False Premises} \\
-            \hline
-            \textbf{Good Structure} & Strong argument & Weak argument \\
-            \hline
-            \textbf{Poor Structure} & Weak argument & Weak argument \\
-            \hline
-        \end{tabular}
-        \caption{Argument strength depends on both structure and truth}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Question 1: Do the Premises Support the Conclusion? (Logical Structure)}
-    \begin{itemize}
-        \item This question examines the \textbf{inferential relationship} between premises and conclusion.
-        \item We evaluate whether the premises provide good reasons to accept the conclusion, regardless of their truth.
-        \item Different argument types have different standards for what counts as "good support."
-        \item This evaluation focuses on form and pattern rather than content.
-    \end{itemize}
-    
-    \begin{tikzpicture}
-        \node[draw, rectangle, rounded corners, fill=blue!10, minimum width=3.5cm, minimum height=1cm] (p1) at (0,1) {Premise 1};
-        \node[draw, rectangle, rounded corners, fill=blue!10, minimum width=3.5cm, minimum height=1cm] (p2) at (0,0) {Premise 2};
-        \node[draw, rectangle, rounded corners, fill=red!10, minimum width=3.5cm, minimum height=1cm] (c) at (0,-1.5) {Conclusion};
-        \draw[->, thick] (p1) -- (c);
-        \draw[->, thick] (p2) -- (c);
-        \node[draw, dashed, rectangle, rounded corners, minimum width=4.5cm, minimum height=3.5cm] at (0,-0.25) {};
-        \node at (2.5,-0.25) {Support Relationship};
-    \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Question 2: Are the Premises Actually True? (Factual Accuracy)}
-    \begin{itemize}
-        \item This question examines the \textbf{truth value} of each individual premise.
-        \item Truth assessment requires domain knowledge beyond pure logic.
-        \item Premises may be certainly true, certainly false, or somewhere in between.
-        \item For complex arguments, we should assess the likelihood of each premise independently.
-    \end{itemize}
-    
-    \begin{exampleblock}{Methods for Assessing Truth}
-        \begin{itemize}
-            \item Direct observation
-            \item Expert testimony
-            \item Statistical evidence
-            \item Established scientific knowledge
-        \end{itemize}
-    \end{exampleblock}
-\end{frame}
-
-\begin{frame}{The Relationship Between Structure and Truth}
-    \begin{itemize}
-        \item An argument with true premises but poor structure gives no good reason to accept the conclusion.
-        \item An argument with excellent structure but false premises cannot establish a true conclusion.
-        \item The strongest arguments combine true premises with strong logical structure.
-        \item \textbf{Formal fallacies} occur in the structure, while \textbf{informal fallacies} often involve questionable premises.
-    \end{itemize}
-    
-    \begin{block}{The Logic Formula}
-        Good argument = Valid/Strong structure + True premises
-    \end{block}
-\end{frame}
-
-\begin{frame}{Three Major Categories of Arguments: An Overview}
-    \begin{itemize}
-        \item Arguments can be classified into three major types based on the relationship claimed between premises and conclusion.
-        \item Each type of argument makes a different kind of claim about how strongly its premises support its conclusion.
-        \item The type of argument determines the appropriate standards for evaluating its logical structure.
-        \item Recognizing argument type is the first step in proper evaluation.
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|l|l|l|}
-            \hline
-            \textbf{Argument Type} & \textbf{Claimed Support} & \textbf{Evaluation Terms} \\
-            \hline
-            Deductive & Necessity & Valid/Invalid \\
-            \hline
-            Inductive & Probability & Strong/Weak \\
-            \hline
-            Abductive & Best Explanation & Better/Worse \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Deductive Arguments: Claiming Necessity}
-    \begin{itemize}
-        \item \textbf{Deductive arguments} claim that if their premises are true, their conclusion must necessarily be true.
-        \item They aim for certainty based on the logical form of the argument.
-        \item Deductive reasoning moves from general principles to specific conclusions.
-        \item Common forms include syllogisms, modus ponens, modus tollens, and mathematical proofs.
-    \end{itemize}
-    
-    \begin{tikzpicture}
-        \draw[thick, ->] (0,0) -- (4,0);
-        \draw[thick, ->] (0,0) -- (0,3);
-        \node at (4.3,0) {Claims};
-        \node at (0,3.3) {Support};
-        \node[circle, fill=red, draw, minimum size=0.2cm] at (3,2.8) {};
-        \node at (3.5,2.8) {Deductive};
-        \node[circle, fill=blue, draw, minimum size=0.2cm] at (2,1.8) {};
-        \node at (2.5,1.8) {Inductive};
-        \node[circle, fill=green, draw, minimum size=0.2cm] at (1,1) {};
-        \node at (1.5,1) {Abductive};
-    \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Case Study: Atticus Finch (Deductive Legal Reasoning)}
-    \begin{block}{From "To Kill a Mockingbird"}
-        Atticus's defense of Tom Robinson centers on the physical impossibility of him committing the crime.
-    \end{block}
-    
-    \textbf{Standard Form:}
-    \begin{itemize}
-        \item Premise 1: The person who assaulted Mayella Ewell primarily used their left hand.
-        \item Premise 2: Tom Robinson's left hand is completely disabled (paralyzed).
-        \item Premise 3: A person cannot primarily use a hand that is disabled.
-        \item Conclusion: Therefore, Tom Robinson could not have assaulted Mayella Ewell.
-    \end{itemize}
-    
-    \textbf{Analysis:} This is a valid deductive argument based on physical impossibility. The evidence supports all premises, making it sound. However, the jury rejects it due to racial prejudice, demonstrating how social biases can override logical reasoning in practice.
-\end{frame}
-
-
-\begin{frame}{Inductive Arguments: Claiming Probability}
-    \begin{itemize}
-        \item \textbf{Inductive arguments} claim that if their premises are true, their conclusion is probably true.
-        \item They aim for likelihood rather than certainty, allowing for exceptions.
-        \item Inductive reasoning typically moves from specific observations to general conclusions.
-        \item Common forms include generalizations, statistical arguments, and analogical reasoning.
-    \end{itemize}
-    
-    \begin{exampleblock}{Inductive Example}
-        Premise 1: Swan 1 is white.\\
-        Premise 2: Swan 2 is white.\\
-        Premise 3: Swan 3 is white.\\
-        $\vdots$\\
-        Premise 100: Swan 100 is white.\\
-        Conclusion: Probably, all swans are white.
-    \end{exampleblock}
-\end{frame}
-
-\begin{frame}{Case Study: Pride and Prejudice (Inductive Reasoning)}
-    \small
-    \begin{block}{From "Pride and Prejudice"}
-        Elizabeth forms an opinion of Mr. Darcy based on their initial encounters and his treatment of others.
-    \end{block}
-    
-    \textbf{Standard Form:}
-    \begin{itemize}
-        \item Premise 1: Mr. Darcy refused to dance with anyone at the ball and called Elizabeth "not handsome enough."
-        \item Premise 2: Mr. Darcy appears to have wronged Mr. Wickham, denying him his rightful inheritance.
-        \item Premise 3: Mr. Darcy separated Mr. Bingley from Jane, ruining her happiness.
-        \item Conclusion: Therefore, Mr. Darcy is proud, disagreeable, and morally deficient.
-    \end{itemize}
-    
-    \textbf{Analysis:} This is an inductive argument that generalizes about Darcy's character from specific instances. While initially strong (the evidence supports the conclusion), it proves weak as Elizabeth later discovers her premises contain falsehoods and misinterpretations, particularly regarding Wickham.
-\end{frame}
-
-\begin{frame}{Abductive Arguments: Seeking the Best Explanation}
-    \begin{itemize}
-        \item \textbf{Abductive arguments} claim that their conclusion is the best explanation for the evidence presented in the premises.
-        \item They aim to identify the most plausible cause or reason among competing hypotheses.
-        \item Abductive reasoning moves from observations to likely explanations.
-        \item Common in scientific discovery, medical diagnosis, and detective work.
-    \end{itemize}
-    
-    \begin{block}{Characteristics of Good Explanations}
-        \begin{itemize}
-            \item Simplicity (Occam's Razor)
-            \item Explanatory scope
-            \item Consistency with background knowledge
-            \item Lack of ad hoc elements
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-
-\begin{frame}{Case Study: Hermione Granger (Abductive Reasoning)}
-    \begin{block}{From "Harry Potter and the Chamber of Secrets"}
-        Hermione solves the mystery of the Chamber of Secrets monster.
-    \end{block}
-    
-    \textbf{Standard Form:}
-    \small
-    \begin{itemize}
-        \item Premise 1: Students are being petrified but not killed.
-        \item Premise 2: Harry hears a voice in the walls that others cannot hear.
-        \item Premise 3: Spiders are fleeing from the castle.
-        \item Premise 4: A basilisk is a snake that can kill with its gaze, causes spiders to flee, and its voice would only be heard by a Parselmouth.
-        \item Conclusion: The monster in the Chamber of Secrets is most likely a basilisk, and victims are seeing it indirectly (reflections, etc.).
-    \end{itemize}
-    
-    \textbf{Analysis:} This is an abductive argument seeking the best explanation for the evidence. Hermione identifies a hypothesis that comprehensively explains all observations more coherently than alternatives, demonstrating strong inference to the best explanation.
-\end{frame}
-
-\begin{frame}{Clues for Identifying Argument Types in Natural Language}
-    \begin{itemize}
-        \item Deductive arguments often use terms like "necessarily," "certainly," "must be," or "it follows that."
-        \item Inductive arguments often use terms like "probably," "likely," "tends to," or "in most cases."
-        \item Abductive arguments often use terms like "best explains," "most reasonable account," or "most plausible reason."
-        \item Context and content also provide clues about the intended argument type.
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|l|l|}
-            \hline
-            \textbf{Language Used} & \textbf{Likely Argument Type} \\
-            \hline
-            "All X are Y" & Deductive \\
-            "Most X are Y" & Inductive \\
-            "The evidence suggests..." & Inductive or Abductive \\
-            "This would explain why..." & Abductive \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Practice: Classifying Arguments by Type}
-    \begin{itemize}
-        \item Identifying argument type is a skill that improves with practice.
-        \item Consider both the language used and the intended strength of the conclusion.
-        \item Arguments may combine elements of different types or be ambiguous.
-        \item When in doubt, consider what standards the arguer would accept as appropriate for evaluation.
-    \end{itemize}
-    
-    \begin{alertblock}{Common Mistake}
-        Don't confuse the actual strength of an argument with its intended type. A weak deductive argument is still deductive in type, even if it fails to establish necessity.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{The Ideal of Deductive Reasoning: Guaranteeing Truth Preservation}
-    \begin{itemize}
-        \item Deductive reasoning aims to \textbf{preserve truth} from premises to conclusion.
-        \item If the premises are true and the reasoning is valid, the conclusion must be true.
-        \item Truth preservation is binary: either an argument preserves truth or it doesn't.
-        \item This provides certainty but requires meeting a high standard of evidence and reasoning.
-    \end{itemize}
-    
-    \begin{tikzpicture}
-        \scriptsize
-        \node[draw, rectangle, minimum width=4cm, minimum height=1cm] (premises) at (-2,0) {True Premises};
-        \node[draw, rectangle, minimum width=4cm, minimum height=1cm] (valid) at (2,0) {Valid Form};
-        \node[draw, rectangle, minimum width=4cm, minimum height=1cm] (conclusion) at (0,-2) {True Conclusion};
-        \draw[thick, ->] (premises.south) -- (conclusion.north west);
-        \draw[thick, ->] (valid.south) -- (conclusion.north east);
-        \node at (0,-3) {Sound Deductive Argument (Valid with True Premises)};
-    \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Validity: What It Means and What It Doesn't}
-    \begin{itemize}
-        \item An argument is \textbf{valid} if and only if it's impossible for its premises to be true while its conclusion is false.
-        \item Validity is about the logical structure of the argument, not about the truth of its premises.
-        \item A valid argument with false premises can lead to a false conclusion.
-        \item Validity doesn't guarantee truth—it guarantees that truth flows from premises to conclusion if the premises are true.
-    \end{itemize}
-    
-    \begin{exampleblock}{Valid Argument with False Premises}
-        Premise 1: All lizards have six legs.\\
-        Premise 2: Komodo dragons are lizards.\\
-        Conclusion: Therefore, Komodo dragons have six legs.\\
-        
-        \textit{This argument is valid but unsound because Premise 1 is false.}
-    \end{exampleblock}
-\end{frame}
-
-\begin{frame}{Counterexamples: The Power of a Single Case}
-    \begin{itemize}
-        \item A \textbf{counterexample} is a scenario where the premises are true but the conclusion is false.
-        \item Finding even one counterexample proves an argument is invalid.
-        \item Counterexamples show that the logical form of the argument allows for exceptions.
-        \item Constructing counterexamples is one of the most powerful tools for evaluating deductive arguments.
-    \end{itemize}
-    
-    \begin{alertblock}{How to Construct a Counterexample}
-        1. Accept all premises as true (for the sake of argument)\\
-        2. Imagine a situation where the conclusion is false\\
-        3. Verify that this situation doesn't contradict any premises\\
-        4. If successful, you've found a counterexample
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Finding Counterexamples: Systematic Strategies}
-    \begin{itemize}
-        \item Replace terms in the argument with variables, then find substitutions that invalidate it.
-        \item Consider extreme or boundary cases that satisfy the premises but not the conclusion.
-        \item Use analogical reasoning to construct parallel arguments with obviously false conclusions.
-        \item For categorical arguments, use Venn diagrams to find possible counterexamples.
-    \end{itemize}
-    
-    \begin{example}
-        Original: "All doctors are educated. Sarah is educated. Therefore, Sarah is a doctor."\\
-        
-        Counterexample structure: "All A are B. C is B. Therefore, C is A."\\
-        
-        Substitute: "All dogs are mammals. Cats are mammals. Therefore, cats are dogs."\\
-        
-        This shows the original argument form is invalid.
-    \end{example}
-\end{frame}
-
-\begin{frame}{Formal Methods of Argument Evaluation: Logic Systems and Rules}
-    \begin{itemize}
-        \item \textbf{Formal logic} provides systematic methods for evaluating deductive arguments.
-        \item Propositional logic uses truth tables to test validity by examining all possible truth value combinations.
-        \item Predicate logic uses quantifiers and relations to analyze more complex arguments.
-        \item Rule-based systems employ rules of inference like modus ponens and modus tollens.
-    \end{itemize}
-    
-    \begin{block}{Basic Rules of Inference}
-        \textbf{Modus Ponens:} If P → Q and P, then Q\\
-        \textbf{Modus Tollens:} If P → Q and not Q, then not P\\
-        \textbf{Hypothetical Syllogism:} If P → Q and Q → R, then P → R\\
-        \textbf{Disjunctive Syllogism:} If P or Q and not P, then Q
-    \end{block}
-\end{frame}
-
-\begin{frame}{Soundness: When Valid Arguments Have True Premises}
+% Slide 10
+\begin{frame}{Mathematical Arguments: CSI Thompson's Deductive Proof}
 	\begin{itemize}
-		\item A deductive argument is \textbf{sound} if and only if it is valid and all its premises are true.
-		\item Soundness is the gold standard for deductive arguments—it guarantees a true conclusion.
-		\item An argument can be valid but unsound if any of its premises are false.
-		\item Soundness requires both logical and factual evaluation.
+		\item \textbf{Mathematical arguments} use definitions, axioms, and previously proven theorems to reach conclusions with absolute certainty.
+		\item These arguments are deductive because their conclusions follow necessarily from mathematical principles.
+		\item The precision of mathematics makes these arguments particularly powerful because they provide certainty, not just probability. IF we start from true premises, THEN we get true conclusions.
 	\end{itemize}
 	
-	\begin{tikzpicture}
-		% Valid arguments (outer rectangle)
-		\fill[blue!10] (0,0) rectangle (4,3);
-		\draw[thick] (0,0) rectangle (4,3);
-		\node at (2,2.5) {Valid Arguments};
+	\begin{example}
+		\textbf{Thompson's deductive proof:}
+		The evidence locker contains 247 pieces of evidence. Thompson removes 89 pieces for testing. By the mathematical definition of subtraction, there must be exactly 247 - 89 = 158 pieces remaining in the locker. This conclusion follows with absolute certainty from arithmetic.
+	\end{example}
+\end{frame}
+
+	% Slide 11
+	\begin{frame}{Testing Validity: The Counterexample Method}
+		\begin{itemize}
+			\item To test if a deductive argument is valid, we use the \textbf{counterexample method}: try to imagine a situation where all premises are true but the conclusion is false.
+			\item If you can construct such a scenario, the argument is invalid; if you cannot, the argument is valid.
+			\item This method works because validity means it's impossible for the premises to be true and the conclusion false.
+			\item The counterexample doesn't need to reflect reality—it just needs to be logically possible.
+		\end{itemize}
 		
-		% Sound arguments (inner rectangle: proper subset)
-		\fill[green!15] (0.7,0.7) rectangle (3.3,1.7);
-		\draw[thick] (0.7,0.7) rectangle (3.3,1.7);
-		\node at (2,1.2) {Sound Arguments};
+		\begin{block}{Testing Validity Step-by-Step}
+			\begin{enumerate}
+				\item Assume all premises are true
+				\item Try to imagine the conclusion being false
+				\item If this is possible, the argument is invalid
+				\item If this is impossible, the argument is valid
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+% Additional Slide: Worked-Out Counterexample
+\begin{frame}{Worked-Out Counterexample: Testing Argument Validity}
+	\begin{itemize}
+		\item The counterexample method first requires \textbf{abstracting the argument form} by identifying the logical structure with variables.
+		\item Once we have the abstract form, we \textbf{substitute new values} for the variables to create a new argument with the same structure.
+		\item To show invalidity, we find substitutions that make the premises true but the conclusion false.
+		\item If we can construct such a counterexample, we've proven the argument form is invalid.
+	\end{itemize}
+	
+	\begin{block}{Complete Counterexample Process}
+		\scriptsize
+		\textbf{1. Detective Pikachu's Argument:} All criminals wear dark clothing at night. The suspect wore dark clothing last night. Therefore, the suspect is a criminal.
+		\\[0.5em]
+		\textbf{2. Abstract Form:} All A are B. X is B. Therefore, X is A.
+		\\[0.5em]
+		\textbf{3. Counterexample:} All cats are mammals. My son is a mammal. Therefore, my son is a cat.
+	\end{block}
+\end{frame}
+
+	% Slide 14
+	\begin{frame}{Common Deductive Fallacies: When Logic Goes Wrong}
+		\begin{itemize}
+			\item Even when attempting deductive reasoning, people often make logical errors called \textbf{fallacies}.
+			\item \textbf{Affirming the consequent}: If P then Q, Q, Therefore P—this reverses the logic incorrectly.
+			\item \textbf{Denying the antecedent}: If P then Q, Not P, Therefore Not Q—this also breaks the logical connection.
+			\item Recognizing these patterns helps you spot invalid arguments that might seem convincing at first glance.
+		\end{itemize}
 		
-		% Subset notation
-		\node at (4.5,1.5) {$\displaystyle \text{Sound}\;\subset\;\text{Valid}$};
-	\end{tikzpicture}
+		\begin{block}{Common Invalid Forms}
+			\textbf{Affirming the Consequent:} If it's raining, the ground is wet. The ground is wet. Therefore, it's raining.
+			\\[0.5em]
+			\textbf{Denying the Antecedent:} If it's raining, the ground is wet. It's not raining. Therefore, the ground is not wet.
+		\end{block}
+	\end{frame}
+
+% Slide 12
+\begin{frame}{Sound Arguments: When Valid Logic Meets True Premises}
+	\begin{itemize}
+		\item A \textbf{sound} argument is a valid deductive argument where all the premises are actually true in reality.
+		\item Sound arguments give us the strongest possible support for their conclusions—the conclusion must be true.
+		\item Many deductive arguments we encounter are valid but not sound because one or more premises are false or questionable.
+		\item Distinguishing between validity (logical structure) and soundness (logical structure + true premises) is crucial for critical thinking.
+	\end{itemize}
+	
+	\begin{alertblock}{Sound vs. Valid}
+		\textbf{Valid:} The logic works correctly (if premises were true, conclusion would follow)
+		\\[0.5em]
+		\textbf{Sound:} The logic works correctly AND the premises are actually true
+	\end{alertblock}
+\end{frame}
+
+% Additional Slide: Valid but Unsound Argument
+\begin{frame}{Valid but Unsound: Veronica Mars's Logical but False Reasoning}
+	\begin{itemize}
+		\item Here's a valid argument with false premises: "All high school students cheat on tests. Logan is a high school student. Therefore, Logan cheats on tests."
+		\item The argument is \textbf{valid} because if the premises were true, the conclusion would necessarily follow.
+		\item However, the argument is \textbf{unsound} because the first premise ("All high school students cheat on tests") is clearly false.
+		\item This shows why both logical structure (validity) and factual accuracy (true premises) matter for strong deductive arguments.
+	\end{itemize}
+	
+	\begin{example}
+		\scriptsize
+		\textbf{Analysis of Veronica's argument:}
+		\begin{itemize}
+			\item \textit{Premise 1:} All high school students cheat on tests. (False)
+			\item \textit{Premise 2:} Logan is a high school student. (True)
+			\item \textit{Conclusion:} Logan cheats on tests. (False conclusion from false premise)
+			\item \textit{Verdict:} Valid form but unsound due to false premise
+		\end{itemize}
+		\end{example}
+\end{frame}
+
+% Slide 15
+\begin{frame}{Inductive Arguments: Reasoning from Evidence to Likelihood}
+	\begin{itemize}
+		\item An \textbf{inductive argument} moves from specific observations to general conclusions that are probably, but not necessarily, true.
+		\item Unlike deductive arguments, inductive arguments acknowledge that new evidence could change our conclusions.
+		\item We evaluate inductive arguments as \textbf{strong} (premises provide good support) or \textbf{weak} (premises provide poor support).
+		\item The conclusion of even a strong inductive argument could turn out to be false—that's the nature of reasoning about probabilities.
+	\end{itemize}
+	
+	\begin{block}{Definition: Inductive Argument}
+		An argument where the premises are intended to provide probable support for the conclusion. If the premises are true and we've considered all relevant evidence, the conclusion is likely to be true.
+	\end{block}
+\end{frame}
+
+% Slide 16
+\begin{frame}{Strong vs. Weak: Measuring Inductive Support}
+	\begin{itemize}
+		\item A \textbf{strong} inductive argument is one where true premises make the conclusion very likely to be true.
+		\item A \textbf{weak} inductive argument is one where true premises provide little support for the conclusion.
+		\item Strength comes in degrees—arguments can be stronger or weaker rather than simply strong or weak.
+		\item Unlike validity, inductive strength depends partly on what we know about the world, not just logical structure.
+	\end{itemize}
+	
+	\begin{example}
+		\textbf{Strong:} In 95\% of cases with this DNA evidence pattern, the suspect is guilty. We have this DNA pattern. Therefore, the suspect is probably guilty.
+		\\[0.5em]
+		\textbf{Weak:} The suspect wore a red shirt. Some criminals wear red shirts. Therefore, the suspect is probably guilty.
+	\end{example}
+	\end{frame}
+
+% Slide 17
+\begin{frame}{Common Inductive Argument Forms Table}
+	\begin{itemize}
+		\item Inductive arguments take several common forms, each with specific patterns and evaluation criteria.
+		\item These forms help us reason from limited observations to broader conclusions about patterns and probabilities.
+		\item Unlike deductive forms, inductive forms don't guarantee their conclusions but aim to make them highly probable.
+		\item Understanding these forms helps identify when inductive reasoning is being used and how strong it is.
+	\end{itemize}
+	
+	\begin{table}[h]
+		\scriptsize
+		\centering
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Argument Form} & \textbf{Structure} \\
+			\hline
+			Generalization & Sample has property X; Therefore, population has X \\
+			\hline
+			Prediction & Pattern held in past; Therefore, pattern will continue \\
+			\hline
+			Argument from Analogy & A and B are similar; A has property X; Therefore, B has X \\
+			\hline
+			Argument from Authority & Expert E claims P; Therefore, P is probably true \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+% Slide 18
+\begin{frame}{The Total Evidence Requirement}
+	\begin{itemize}
+		\item The \textbf{total evidence requirement} states that inductive arguments must consider all relevant available evidence, not just supporting evidence.
+		\item For example, a detective might seem to have a strong case against the suspect based on fingerprints and motive.
+		\item However, this argument would be much weaker if crucial security camera footage provided the suspect with an alibi.
+		\item Ignoring contrary evidence or cherry-picking data makes even seemingly strong inductive arguments unreliable.
+	\end{itemize}
+	
+	\begin{alertblock}{The Total Evidence Requirement}
+		An inductive argument is only as strong as its weakest ignored piece of relevant evidence. All available relevant evidence must be considered for a fair assessment.
+	\end{alertblock}
+\end{frame}
+
+% Slide 19
+
+\begin{frame}{Generalizations: Officer Williams and the Crime Pattern}
+	\begin{itemize}
+		\item \textbf{Inductive generalizations} move from observations about a sample to conclusions about a larger population.
+		\item Example: Officer Williams notices that 80\% of burglaries in her district occur between 2-4 PM on weekdays when residents are at work.
+		\item Based on this pattern, she schedules extra patrols during these hours and sees a 30\% reduction in break-ins.
+		\item The strength of the generalization depends on sample size, representativeness, and the margin of the observed pattern.
+	\end{itemize}
+	
+	\begin{example}
+		\textbf{Williams's reasoning:}
+		\begin{itemize}
+			\item \textit{Sample:} 200 burglaries over 6 months, 160 occurred 2-4 PM on weekdays
+			\item \textit{Generalization:} Most future burglaries will occur 2-4 PM on weekdays
+			\item \textit{Action:} Increase patrols during high-risk hours
+		\end{itemize}
+	\end{example}
+	\end{frame}
+
+% Slide 20
+\begin{frame}{Predictions: Forensic Analyst Dr. Kim's Weather Case}
+	\begin{itemize}
+		\item \textbf{Inductive predictions} use past patterns to forecast future events, acknowledging that patterns might change.
+		\item Example: Dr. Kim analyzes how weather affects evidence preservation at outdoor crime scenes over several years.
+		\item She discovers that DNA evidence degrades 50\% faster in temperatures above 85°F with high humidity.
+		\item Based on weather forecasts, she now prioritizes evidence collection and adjusts testing procedures accordingly.
+	\end{itemize}
+	
+	\begin{example}
+		\scriptsize
+		\textbf{Dr. Kim's prediction model:}
+		\begin{itemize}
+			\item \textit{Past pattern:} Hot, humid weather significantly degrades DNA evidence
+			\item \textit{Current situation:} Weather forecast shows 90°F and 80\% humidity
+			\item \textit{Prediction:} DNA evidence will degrade rapidly at this crime scene
+			\item \textit{Response:} Expedite evidence collection and use enhanced preservation methods
+		\end{itemize}
+	\end{example}
+\end{frame}	
+
+% Slide 21
+\begin{frame}{Arguments from Analogy: How Detective Foster Solved the Cold Case}
+	\begin{itemize}
+		\item \textbf{Arguments from analogy} reason that if two things are similar in known ways, they're likely similar in unknown ways.
+		\item Example: Detective Foster reopened a 10-year-old murder case and noticed striking similarities to a recent solved case.
+		\item Both victims were similar age, profession, and found in similar locations with identical evidence patterns.
+		\item Foster reasoned that the same perpetrator likely committed both crimes and focused her investigation accordingly.
+	\end{itemize}
+	
+	\begin{example}
+		\scriptsize
+		\textbf{Foster's analogical reasoning:}
+		\begin{itemize}
+			\item \textit{Case A (solved):} Female lawyer, 35, found in park, specific knife wounds, no robbery
+			\item \textit{Case B (unsolved):} Female lawyer, 34, found in park, identical wounds, no robbery
+			\item \textit{Conclusion:} Same perpetrator likely committed both crimes
+			\item \textit{Result:} DNA from Case A led to arrest in Case B
+		\end{itemize}
+	\end{example}
+\end{frame}
+
+% Slide 22
+\begin{frame}{Arguments from Authority: When Expert Testimony Matters}
+	\begin{itemize}
+		\item \textbf{Arguments from authority} accept a conclusion because a credible expert or authority figure endorses it.
+		\item These arguments can be strong when the authority is truly expert in the relevant field and there's expert consensus.
+		\item However, they're weak when the authority lacks relevant expertise, has conflicts of interest, or experts disagree.
+		\item In legal and scinetific settings, expert testimony often provides crucial inductive support for conclusions about complex technical matters.
+	\end{itemize}
+	
+	\begin{block}{Evaluating Arguments from Authority}
+		\textbf{Strong when:} True expert, relevant field, expert consensus, no conflicts of interest
+		\\[0.5em]
+		\textbf{Weak when:} False expert, irrelevant field, expert disagreement, conflicts of interest
+	\end{block}
+\end{frame}
+
+% Slide 23
+\begin{frame}{Sample Size and Representativeness: Detective Johnson's Survey}
+	\begin{itemize}
+		\item The strength of inductive generalizations depends heavily on \textbf{sample size} and \textbf{representativeness}.
+		\item Example: Detective Johnson surveyed community members about drug activity but initially only interviewed people during business hours.
+		\item This gave her a biased sample of mostly retirees and unemployed residents, missing working people's perspectives.
+		\item After expanding her survey times and methods, she got a more representative sample and very different results.
+	\end{itemize}
+	
+	\begin{example}
+		\scriptsize
+		\textbf{Johnson's sampling lesson:}
+		\begin{itemize}
+			\item \textit{Initial sample:} 50 people, 9 AM-5 PM, mostly elderly/unemployed
+			\item \textit{Result:} 80\% said no drug problem in neighborhood
+			\item \textit{Expanded sample:} 200 people, various times, all demographics  
+			\item \textit{New result:} 60\% said significant drug problem exists
+		\end{itemize}
+	\end{example}
+\end{frame}
+
+% Slide 24
+\begin{frame}{Evaluating Inductive Strength: A Step-by-Step Guide}
+	\begin{itemize}
+		\item Evaluating inductive arguments requires checking multiple factors that affect how well the premises support the conclusion.
+		\item Start by identifying the type of inductive argument (generalization, prediction, analogy, or authority).
+		\item Check whether all relevant evidence has been considered and whether the sample or comparison is appropriate.
+		\item Consider alternative explanations and assess whether the conclusion is the most likely given the evidence.
+	\end{itemize}
+	
+	\begin{block}{Inductive Evaluation Checklist}
+		\begin{enumerate}
+			\item What type of inductive argument is this?
+			\item Has all relevant evidence been considered?
+			\item Is the sample size adequate and representative?
+			\item Are there alternative explanations for the evidence?
+			\item How probable is the conclusion given the premises?
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+% Slide 25
+\begin{frame}{Inspector Garcia and the Probability Assessment}
+	\begin{itemize}
+		\item Example: Inspector Garcia must weigh conflicting evidence in a robbery case to assess the probability of the suspect's guilt.
+		\item The fingerprint evidence strongly suggests guilt (found at 90\% of crime scenes where perpetrator identified).
+		\item However, the suspect has a solid alibi confirmed by three independent witnesses with no motive to lie.
+		\item Garcia concludes the evidence is roughly balanced, requiring additional investigation before making an arrest.
+	\end{itemize}
+	
+	\begin{example}
+		\scriptsize
+		\textbf{Garcia's probability assessment:}
+		\begin{itemize}
+			\item \textit{Supporting evidence:} Fingerprints (90\% reliability), suspicious behavior
+			\item \textit{Contradicting evidence:} Solid alibi, no clear motive, good character references
+			\item \textit{Conclusion:} Evidence insufficient for high confidence in guilt
+			\item \textit{Action:} Continue investigation before proceeding
+		\end{itemize}
+	\end{example}
+\end{frame}
+
+% Slide 26
+\begin{frame}{Common Inductive Fallacies: When Evidence Misleads}
+	\begin{itemize}
+		\item \textbf{Hasty generalization} draws broad conclusions from insufficient or unrepresentative samples.
+		\item \textbf{False analogy} compares things that are too different in relevant respects to support the conclusion.
+		\item \textbf{Appeal to inappropriate authority} relies on expertise from the wrong field or biased sources.
+		\item \textbf{Cherry-picking} selects only supporting evidence while ignoring contradictory data.
+	\end{itemize}
+	
+	\begin{alertblock}{Warning Signs of Weak Inductive Arguments}
+		Small sample sizes, biased samples, irrelevant comparisons, inappropriate experts, ignored contrary evidence, or conclusions much stronger than the evidence warrants.
+	\end{alertblock}
+\end{frame}
+
+% Slide 27
+\begin{frame}{Cogent Arguments: When Strong Logic Meets True Premises}
+	\begin{itemize}
+		\item A \textbf{cogent} argument is a strong inductive argument where all the premises are actually true in reality.
+		\item Just as soundness is the gold standard for deductive arguments, cogency is the gold standard for inductive arguments.
+		\item Cogent arguments give us the best possible inductive support for their conclusions—the conclusion is very likely to be true.
+		\item Many inductive arguments we encounter are strong but not cogent because one or more premises are false or questionable.
+	\end{itemize}
+	
+	\begin{alertblock}{Cogent vs. Strong}
+		\textbf{Strong:} The logic works well (if premises were true, conclusion would be very likely)
+		\\[0.5em]
+		\textbf{Cogent:} The logic works well AND the premises are actually true
+	\end{alertblock}
+\end{frame}
+
+% Slide 28
+\begin{frame}{Abductive Arguments: Inference to the Best Explanation}
+	\begin{itemize}
+		\item \textbf{Abductive arguments} (also called inference to the best explanation) start with puzzling observations and conclude that a particular explanation is most likely correct.
+		\item Unlike deductive arguments (which guarantee conclusions) or inductive arguments (which assess probability), abductive arguments compare competing explanations.
+		\item We evaluate abductive arguments as \textbf{better} or \textbf{worse} based on how well they explain the available evidence.
+		\item Scientists, doctors, and detectives constantly use abductive reasoning to form hypotheses and diagnoses.
+	\end{itemize}
+	
+	\begin{block}{Definition: Abductive Argument}
+		An argument that concludes a particular explanation is the best available account of some puzzling phenomenon or set of observations.
+	\end{block}
+\end{frame}
+
+% Slide 28
+\begin{frame}{Better vs. Worse Explanations: The Criteria}
+	\begin{itemize}
+		\item A \textbf{better explanation} accounts for more of the evidence, makes fewer unsupported assumptions, and fits with our background knowledge.
+		\item \textbf{Explanatory scope}: How much of the evidence does the explanation account for?
+		\item \textbf{Simplicity}: Does the explanation avoid unnecessary complexity and assumptions?
+		\item \textbf{Consistency}: Does the explanation fit with other things we know to be true?
+	\end{itemize}
+	
+	\begin{block}{Criteria for Better Explanations}
+		\begin{itemize}
+			\item \textbf{Scope:} Explains more phenomena
+			\item \textbf{Simplicity:} Fewer assumptions, less complexity  
+			\item \textbf{Consistency:} Fits with background knowledge
+			\item \textbf{Testability:} Makes predictions we can check
+			\item \textbf{Precision:} Specific rather than vague
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% Slide 29
+\begin{frame}{Common Abductive Reasoning Patterns Table}
+	\begin{itemize}
+		\item Abductive reasoning appears in various forms across different fields, from medical diagnosis to criminal investigation.
+		\item Each pattern involves comparing multiple possible explanations for observed phenomena.
+		\item The goal is identifying which explanation best accounts for all available evidence with the fewest problematic assumptions.
+		\item These patterns help structure our thinking when facing complex, puzzling situations that require explanatory hypotheses.
+	\end{itemize}
+	
+	\begin{table}[h]
+		\scriptsize
+		\centering
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Reasoning Pattern} & \textbf{Structure} \\
+			\hline
+			Medical Diagnosis & Symptoms X, Y, Z; Disease A best explains X, Y, Z \\
+			\hline
+			Criminal Investigation & Evidence A, B, C; Suspect theory best explains A, B, C \\
+			\hline
+			Scientific Hypothesis & Observations P, Q, R; Theory T best explains P, Q, R \\
+			\hline
+			Technical Troubleshooting & Problems X, Y; Cause C best explains X, Y \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+% Slide 30
+\begin{frame}{Dr. House's Diagnostic Method: Medical Abduction}
+	\begin{itemize}
+		\item Dr. House faces a patient with fever, joint pain, skin rash, and neurological symptoms—a puzzling combination.
+		\item He considers multiple diagnoses: lupus, Lyme disease, multiple sclerosis, and a rare autoimmune condition.
+		\item The rare autoimmune condition explains all four symptoms, while other diagnoses only explain some symptoms well.
+		\item House concludes this is the best explanation despite its rarity, and targeted tests confirm the diagnosis.
+	\end{itemize}
+	
+	\begin{example}
+		\scriptsize
+		\textbf{House's diagnostic reasoning:}
+		\begin{itemize}
+			\item \textit{Lupus:} Explains fever, joint pain, rash but not neurological symptoms
+			\item \textit{Lyme disease:} Explains fever, joint pain, some neurological symptoms but rash is wrong type
+			\item \textit{Rare autoimmune:} Explains all four symptoms perfectly, fits patient's history
+			\item \textit{Conclusion:} Rare autoimmune condition is the best explanation
+		\end{itemize}
+	\end{example}
+\end{frame}
+
+% Slide 31
+\begin{frame}{Detective Poirot's Explanation Evaluation}
+	\begin{itemize}
+		\item Poirot investigates a locked-room murder where the victim was found alone in a study with the door locked from inside.
+		\item \textbf{Suicide theory}: Simple but doesn't explain the missing gun or the victim's left-handed wound (victim was right-handed).
+		\item \textbf{Secret passage theory}: Explains the locked room but no evidence of hidden entrances after thorough searches.
+		\item \textbf{Accomplice theory}: The butler unlocked the door after the murder, explains all evidence with minimal assumptions.
+	\end{itemize}
+	
+	\begin{block}{Poirot's Comparison}
+		\scriptsize
+		\begin{itemize}
+			\item \textbf{Suicide:} Simple but fails to explain key evidence
+			\item \textbf{Secret passage:} Explains locked room but unsupported by physical evidence
+			\item \textbf{Accomplice:} Explains all evidence, requires only one reasonable assumption
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% Slide 32
+\begin{frame}{Scientific Explanations: Forensic Scientist Dr. Lee's Discovery}
+	\begin{itemize}
+		\item Dr. Lee analyzes unusual blood spatter patterns that don't match typical gunshot or stabbing scenarios.
+		\item \textbf{Blunt force theory}: Doesn't explain the fine droplet pattern or the circular distribution.
+		\item \textbf{Explosion theory}: Explains the droplet size and distribution but no chemical residue found.
+		\item \textbf{High-velocity impact theory}: Best explains the pattern—victim was struck by a vehicle, then moved indoors.
+	\end{itemize}
+	
+	\begin{example}
+		\scriptsize
+		\textbf{Dr. Lee's scientific reasoning:}
+		\begin{itemize}
+			\item \textit{Observation:} Fine blood droplets in circular pattern, no typical weapon signatures
+			\item \textit{Vehicle impact theory:} Explains droplet size, pattern, and secondary transfer
+			\item \textit{Prediction:} Should find vehicle paint or glass fragments
+			\item \textit{Confirmation:} Microscopic analysis reveals automotive paint particles
+		\end{itemize}
+	\end{example}
 \end{frame}
 
 
-\begin{frame}{Case Study: Jean-Luc Picard (Ethical Deductive Reasoning)}
-    \begin{block}{From "Star Trek: The Next Generation" - "The Measure of a Man"}
-        Captain Picard argues that the android Data deserves rights as a sentient being.
-    \end{block}
-    \small
-    \textbf{Standard Form:}
-    \begin{itemize}
-        \item Premise 1: All sentient beings have the right to self-determination.
-        \item Premise 2: Sentience is defined by intelligence, self-awareness, and consciousness.
-        \item Premise 3: Data demonstrates intelligence, self-awareness, and consciousness.
-        \item Conclusion: Therefore, Data has the right to self-determination and cannot be dismantled against his will.
-    \end{itemize}
-    
-    \textbf{Analysis:} This is a valid deductive argument. Its soundness hinges on whether the definition of sentience is adequate and whether Data truly meets all criteria. The argument challenges us to consider what makes someone a "person" with rights.
+% Slide 33
+\begin{frame}{Competing Hypotheses: How Agent Cooper Weighs Evidence}
+	\begin{itemize}
+		\item Agent Cooper investigates corporate fraud with evidence pointing toward two equally viable suspect theories.
+		\item \textbf{Inside job theory}: CFO had access, motive (gambling debts), and opportunity during the audit period.
+		\item \textbf{Cyber attack theory}: External hackers exploited security vulnerabilities, similar to recent attacks on other companies.
+		\item Cooper must carefully weigh which explanation better accounts for the digital forensics, timing, and financial patterns.
+	\end{itemize}
+	
+	\begin{block}{Cooper's Evidence Analysis}
+		\scriptsize
+		\begin{itemize}
+			\item \textbf{Supporting inside job:} Access logs, financial pressure, specific knowledge required
+			\item \textbf{Supporting cyber attack:} Sophisticated methods, international IP addresses, similar recent cases
+			\item \textbf{Problem:} Both theories explain the evidence reasonably well
+			\item \textbf{Solution:} Gather additional discriminating evidence
+		\end{itemize}
+	\end{block}
 \end{frame}
 
-\begin{frame}{The Nature of Inductive Strength: Degrees of Support}
-    \begin{itemize}
-        \item Unlike validity, \textbf{inductive strength} is a matter of degree rather than all-or-nothing.
-        \item An inductively strong argument makes its conclusion probable but not certain.
-        \item The strength of an inductive argument increases with more relevant evidence.
-        \item Inductive arguments can be undermined by new evidence without being completely defeated.
-    \end{itemize}
-    
-    \begin{tikzpicture}
-        \node at (5,1) {Spectrum of Inductive Strength};
-        \shade[left color=red, right color=blue] (0,0) rectangle (10,0.5);
-        \draw (2,0.1) -- (2,-0.1) node[below] {Weak};
-        \draw (8,0.1) -- (8,-0.1) node[below] {Strong};
-    \end{tikzpicture}
+% Slide 34
+\begin{frame}{The Limits of Abductive Reasoning}
+	\begin{itemize}
+		\item Abductive reasoning gives us the \textbf{best available explanation}, not necessarily the \textbf{true explanation}.
+		\item Even the best explanation might be wrong if we lack crucial evidence or haven't considered the right alternative.
+		\item Example: Scientists, detectives, etc. may know that evidence strongly suggests certain conclusions but doesn't provide absolute certainty.
+		\item Abductive conclusions should be held tentatively and revised when new evidence emerges.
+	\end{itemize}
+	
+	\begin{alertblock}{Abductive Limitations}
+		The best explanation available now may not be the best explanation tomorrow. New evidence can dramatically change which explanation seems most plausible.
+	\end{alertblock}
 \end{frame}
 
-\begin{frame}{Evaluating Sample Size: When Is Evidence Sufficient?}
-    \begin{itemize}
-        \item The \textbf{sample size} of an inductive argument directly affects its strength.
-        \item Larger samples generally provide stronger support for generalizations.
-        \item The required sample size depends on the population variability and claim specificity.
-        \item Sample size requirements increase when making precise or counter-intuitive claims.
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|l|c|c|}
-            \hline
-            \textbf{Claim Type} & \textbf{Small Sample} & \textbf{Large Sample} \\
-            \hline
-            General trend & Weak support & Strong support \\
-            \hline
-            Precise percentage & Very weak & Moderate support \\
-            \hline
-            Universal claim & Extremely weak & Moderate support \\
-            \hline
-        \end{tabular}
-    \end{table}
+% Slide 35
+\begin{frame}{Comparing the Three Argument Types: A Summary Table}
+	\begin{itemize}
+		\item Each argument type serves different purposes and requires different evaluation standards.
+		\item Understanding when to use each type helps you reason more effectively in different situations.
+		\item Many complex arguments combine all three types, using each where it's most appropriate.
+		\item Critical thinking requires recognizing which type of argument is being used and applying the correct evaluation criteria.
+	\end{itemize}
+	
+	\begin{table}[h]
+		\centering
+		\small
+		\begin{tabular}{|l|l|l|l|}
+			\hline
+			\textbf{Type} & \textbf{Goal} & \textbf{Evaluation} & \textbf{Strength} \\
+			\hline
+			Deductive & Certainty & Valid/Invalid & Logical necessity \\
+			\hline
+			Inductive & Probability & Strong/Weak & Likely conclusions \\
+			\hline
+			Abductive & Best explanation & Better/Worse & Explanatory power \\
+			\hline
+		\end{tabular}
+	\end{table}
 \end{frame}
 
-\begin{frame}{Representative Samples: Quality Matters as Much as Quantity}
-    \begin{itemize}
-        \item A \textbf{representative sample} accurately reflects the relevant characteristics of the whole population.
-        \item Biased sampling can lead to false generalizations even with large sample sizes.
-        \item Common biases include selection bias, volunteer bias, and confirmation bias.
-        \item Random sampling helps ensure representativeness but doesn't guarantee it.
-    \end{itemize}
-    
-    \begin{alertblock}{Warning Signs of Poor Samples}
-        \begin{itemize}
-            \item Sample drawn from a convenience population
-            \item Self-selected participants
-            \item Narrow demographic representation
-            \item High dropout or non-response rates
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Cogency: The Inductive Counterpart to Soundness}
-    \begin{itemize}
-        \item An inductive argument is \textbf{cogent} if it is strong and all its premises are true.
-        \item Cogency is to inductive arguments what soundness is to deductive arguments.
-        \item A cogent argument provides good but not conclusive reasons to accept its conclusion.
-        \item Even cogent arguments may be overturned by new evidence.
-    \end{itemize}
-    
-    \begin{tikzpicture}
-        \draw (0,0) rectangle (4,2);
-        \draw[thick, ->] (2,0) -- (2,-1);
-        \node at (2,1) {True Premises + Strong Induction};
-        \node at (2,-1.5) {Probably True Conclusion};
-        \node[draw, circle, fill=orange!20] at (6.5,0) {Might be wrong!};
-    \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Inductive Generalizations vs. Statistical Syllogisms}
-    \begin{itemize}
-        \item \textbf{Inductive generalizations} move from observed instances to a general claim about a class (Some → All).
-        \item \textbf{Statistical syllogisms} move from a general statistical claim to a prediction about a specific case (All → Some).
-        \item Both forms depend on sample representativeness but in different ways.
-        \item Potential fallacies differ depending on the direction of inference.
-    \end{itemize}
-    
-    \begin{exampleblock}{Two Directions of Inductive Reasoning}
-        \textbf{Generalization:} "80\% of observed swans were white, so approximately 80\% of all swans are white."
-        
-        \textbf{Statistical Syllogism:} "Approximately 80\% of swans are white, so this particular swan is probably white."
-    \end{exampleblock}
-\end{frame}
-
-\begin{frame}{Common Inductive Fallacies and How to Avoid Them}
-    \begin{itemize}
-        \item The \textbf{hasty generalization} fallacy occurs when conclusions are drawn from too few examples.
-        \item The \textbf{biased sample} fallacy occurs when evidence is not representative of the population.
-        \item The \textbf{gambler's fallacy} incorrectly assumes that past random events influence future ones.
-        \item The \textbf{appeal to anecdote} fallacy treats personal stories as statistically significant evidence.
-    \end{itemize}
-    
-    \begin{block}{Preventing Inductive Fallacies}
-        \begin{itemize}
-            \item Ensure adequate sample size
-            \item Check for sample representativeness
-            \item Look for potential confounding variables
-            \item Consider alternative explanations
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Case Study: Ellen Ripley (Inductive Risk Assessment)}
-    \begin{block}{From "Aliens"}
-        Ripley argues for the complete destruction of the alien-infested colony.
-    \end{block}
-    
-    \textbf{Standard Form:}
-    \begin{itemize}
-        \item Premise 1: On the Nostromo, a single alien killed the entire crew except me.
-        \item Premise 2: The colony has gone silent after reporting finding the alien ship.
-        \item Premise 3: There are likely many aliens in the colony now.
-        \item Premise 4: Previous containment attempts have failed catastrophically.
-        \item Conclusion: Therefore, the only way to ensure safety is to destroy the entire colony from orbit.
-    \end{itemize}
-    
-    \textbf{Analysis:} This is an inductive argument based on past experience and risk assessment. The strength lies in extrapolating from known alien behavior and previous failures. While strong, company representative Burke rejects it due to different values (valuing specimens over safety).
-\end{frame}
-
-\begin{frame}{The Logic of Explanation: What Makes an Explanation Good?}
-    \begin{itemize}
-        \item \textbf{Abductive reasoning} seeks the best explanation for a set of observations or facts.
-        \item Good explanations must account for the evidence more effectively than alternatives.
-        \item Abductive arguments compare competing hypotheses rather than testing a single hypothesis.
-        \item The "best explanation" is judged according to multiple criteria, not just one.
-    \end{itemize}
-    
-    \begin{tikzpicture}[scale=0.7, every node/.style={scale=0.9}]
-        \node[draw, rectangle, rounded corners, fill=yellow!10, minimum width=3cm, minimum height=0.8cm] (evidence) at (0,0) {Evidence};
-        \node[draw, rectangle, rounded corners, fill=blue!10, minimum width=3cm, minimum height=0.8cm] (simplicity) at (-4,-2) {Simplicity};
-        \node[draw, rectangle, rounded corners, fill=blue!10, minimum width=3cm, minimum height=0.8cm] (comprehensiveness) at (0,-2) {Comprehensiveness};
-        \node[draw, rectangle, rounded corners, fill=blue!10, minimum width=3cm, minimum height=0.8cm] (coherence) at (4,-2) {Coherence};
-        \node[draw, rectangle, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (best) at (0,-4) {Best Explanation};
-        \draw[->, thick] (evidence) -- (simplicity);
-        \draw[->, thick] (evidence) -- (comprehensiveness);
-        \draw[->, thick] (evidence) -- (coherence);
-        \draw[->, thick] (simplicity) -- (best);
-        \draw[->, thick] (comprehensiveness) -- (best);
-        \draw[->, thick] (coherence) -- (best);
-    \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Criteria for Evaluating Explanations: Simplicity}
-    \begin{itemize}
-        \item \textbf{Simplicity} (also called parsimony) favors explanations that make fewer assumptions.
-        \item Occam's Razor states that we should not multiply entities beyond necessity.
-        \item Simpler explanations are less likely to include false assumptions.
-        \item Simplicity must be balanced against explanatory power—overly simple explanations may miss important factors.
-    \end{itemize}
-    
-    \begin{exampleblock}{Balancing Simplicity and Explanatory Power}
-        Consider two explanations for a patient's symptoms:
-        
-        Explanation 1: The patient has one common disease that explains most symptoms.
-        
-        Explanation 2: The patient has three rare diseases that collectively explain all symptoms.
-        
-        Unless Explanation 1 fails to account for critical symptoms, it is preferable due to its simplicity.
-    \end{exampleblock}
-\end{frame}
-
-\begin{frame}{Criteria for Evaluating Explanations: Comprehensiveness}
-    \begin{itemize}
-        \item \textbf{Comprehensiveness} refers to how much of the evidence an explanation accounts for.
-        \item A good explanation should explain all or most of the relevant facts.
-        \item Unexplained anomalies weaken an explanation's plausibility.
-        \item Explanations that need frequent modifications to accommodate new evidence are suspect.
-    \end{itemize}
-    
-    \begin{block}{Comprehensive vs. Selective Explanations}
-        \begin{itemize}
-            \item Comprehensive: Explains all the evidence
-            \item Moderately comprehensive: Explains most key evidence
-            \item Selective: Cherry-picks favorable evidence
-            \item Ad hoc: Requires different mechanisms for each piece of evidence
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Criteria for Evaluating Explanations: Coherence with Background Knowledge}
-    \begin{itemize}
-        \item Good explanations should be \textbf{consistent} with well-established theories and facts.
-        \item Extraordinary claims require extraordinary evidence.
-        \item Background knowledge provides a prior probability for competing explanations.
-        \item Coherence measures how well an explanation fits with our broader understanding.
-    \end{itemize}
-    
-    \begin{alertblock}{Weighing Coherence Against Evidence}
-        When evidence strongly suggests an explanation that conflicts with background knowledge, we face three options:
-        \begin{itemize}
-            \item Question the reliability of the new evidence
-            \item Revise our background knowledge
-            \item Seek a third explanation that reconciles both
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{The Problem of Alternative Explanations}
-    \begin{itemize}
-        \item Abductive reasoning is limited by our ability to generate alternative explanations.
-        \item The "best explanation" is only the best among those we've considered.
-        \item \textbf{Underconsideration} occurs when we fail to consider a wide enough range of hypotheses.
-        \item Strong abductive arguments explicitly address and eliminate viable alternatives.
-    \end{itemize}
-    
-    \begin{tikzpicture}
-        \draw (0,0) ellipse (3cm and 2cm);
-        \node at (0,1.5) {Space of Possible Explanations};
-        \fill[blue!20] (-2,0) circle (0.5cm);
-        \fill[blue!20] (-0.5,0) circle (0.5cm);
-        \fill[blue!20] (1,0) circle (0.5cm);
-        \node at (-2,0) {$H_1$};
-        \node at (-0.5,0) {$H_2$};
-        \node at (1,0) {$H_3$};
-        \draw[dashed] (2.2,0) circle (0.5cm);
-        \node at (2.2,0) {$H_?$};
-        \node at (0,-1) {Considered vs. Unconsidered Hypotheses};
-    \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Uniting the Methods: Choosing the Right Evaluation Strategy}
-    \begin{itemize}
-        \item Different argument types require different evaluation methods.
-        \item Deductive arguments should be evaluated for validity and soundness.
-        \item Inductive arguments should be evaluated for strength and cogency.
-        \item Abductive arguments should be evaluated by comparing the quality of competing explanations.
-    \end{itemize}
-    
-    \begin{table}
-        \scriptsize
-        \centering
-        \begin{tabular}{|l|l|l|}
-            \hline
-            \textbf{If the argument is...} & \textbf{Ask these questions...} & \textbf{Using these methods...} \\
-            \hline
-            Deductive & Is it valid? Are premises true? & Counterexamples, formal logic \\
-            \hline
-            Inductive & Is it strong? Are premises true? & Sample analysis, verification \\
-            \hline
-            Abductive & Is it the best explanation? & Comparative hypothesis testing \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Common Mistakes in Argument Evaluation}
-    \begin{itemize}
-        \item Evaluating an argument using criteria meant for a different argument type.
-        \item Focusing only on structure without verifying premises (or vice versa).
-        \item Dismissing an argument due to minor flaws rather than evaluating its core reasoning.
-        \item Accepting an argument based on agreeing with its conclusion rather than its logic.
-    \end{itemize}
-    
-    \begin{exampleblock}{Evaluation Mistake Example}
-        Criticizing an inductive argument for not being deductively valid:
-        
-        "This argument about climate patterns based on decades of data isn't valid because there could theoretically be exceptions."
-        
-        This misapplies deductive standards to an inductive argument.
-    \end{exampleblock}
-\end{frame}
-
-\begin{frame}{Summary: The Complete Toolkit for Argument Evaluation}
-    \begin{itemize}
-        \item Begin by identifying the argument type: deductive, inductive, or abductive.
-        \item Evaluate the logical structure according to the appropriate standards for that type.
-        \item Independently verify the truth or acceptability of the premises.
-        \item Consider the argument as a whole—is it valid/strong AND sound/cogent?
-    \end{itemize}
-    
-    \begin{block}{The Critical Thinker's Checklist}
-        \begin{enumerate}
-            \item Reconstruct the argument in standard form
-            \item Identify the argument type
-            \item Evaluate logical structure (validity/strength/best explanation)
-            \item Assess premise truth
-            \item Deliver verdict on overall argument quality
-        \end{enumerate}
-    \end{block}
+% Slide 36
+\begin{frame}{The Complete Investigator: When to Use Each Type of Reasoning}
+	\begin{itemize}
+		\item Expert investigators combine all three reasoning types strategically throughout their cases.
+		\item Use \textbf{deductive reasoning} when you have clear rules or principles that apply directly to your situation.
+		\item Use \textbf{inductive reasoning} when you need to predict future events or generalize from observed patterns.
+		\item Use \textbf{abductive reasoning} when you face puzzling evidence that needs explanation or when comparing competing theories.
+	\end{itemize}
+	
+	\begin{example}
+		\scriptsize
+		\textbf{Complete investigation approach:}
+		\begin{itemize}
+			\item \textit{Deductive:} "If the suspect was at location X, then he couldn't have committed the crime at location Y."
+			\item \textit{Inductive:} "Based on similar cases, this type of crime usually involves someone the victim knew."
+			\item \textit{Abductive:} "The best explanation for all this evidence is that the business partner committed the murder."
+		\end{itemize}
+	\end{example}
 \end{frame}
 
 \end{document}

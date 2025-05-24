@@ -1,878 +1,768 @@
 \documentclass{beamer}
 \usetheme{Madrid}
-\usecolortheme{beaver}
+\usecolortheme{default}
 \usepackage{tikz}
-\usetikzlibrary{decorations.pathmorphing}
 \usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{booktabs}
 
-\title{Causal Reasoning: Case Studies from the History of Science}
-\subtitle{An Introduction to Logic and Experimental Design}
+% Title page information
+\title{Causal Reasoning in the History of Science}
+\subtitle{From Newton to Climate Change}
 \author{Brendan Shea, PhD}
-
+\date{Intro to Logic}
 
 \begin{document}
-
-\begin{frame}
-    \titlepage
-\end{frame}
-
-
-\begin{frame}{Introduction: The Power of Causal Reasoning}
-    \begin{itemize}
-        \item Scientific progress depends on our ability to identify cause-and-effect relationships
-        \item Causal reasoning allows us to:
-            \begin{itemize}
-                \item Explain natural phenomena
-                \item Make predictions about future events
-                \item Design interventions to solve problems
-                \item Develop technologies that improve human life
-            \end{itemize}
-        \item Today we'll explore how scientists across different fields have used causal reasoning to make breakthrough discoveries
-    \end{itemize}
-    
-    \begin{alertblock}{Key Question}
-        How do scientists establish that X causes Y when direct observation is often impossible?
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Foundations of Causal Reasoning}
-    \begin{itemize}
-        \item John Stuart Mill's Methods provide a logical framework for causal inference:
-            \begin{itemize}
-                \item \textbf{Method of Agreement}: If multiple instances of a phenomenon have only one factor in common, that factor may be the cause
-                \item \textbf{Method of Difference}: If two similar situations differ only in one factor and the outcome, that factor may be the cause
-                \item \textbf{Method of Concomitant Variation}: If changes in a factor correlate with changes in the outcome, a causal relationship may exist
-            \end{itemize}
-        \item These methods form the foundation for modern scientific investigation
-        \item They help distinguish causation from mere correlation
-    \end{itemize}
-    
-    \begin{example}
-        If we notice that plants grow better after rain but not after watering with salt water, the difference (fresh vs. salt water) suggests freshwater is a causal factor in plant growth.
-    \end{example}
-\end{frame}
-
-\begin{frame}{Case Study: John Snow and Cholera (Medicine)}
-    \begin{itemize}
-        \item In 1854, London faced a deadly cholera outbreak that killed hundreds of people.
-        \item At the time, most doctors believed that "miasma" (bad air) caused the disease.
-        \item Dr. John Snow suspected contaminated water might be the real cause.
-        \item He created a map showing cholera deaths clustered around the Broad Street water pump.
-    \end{itemize}
-    
-    \begin{block}{Snow's Causal Reasoning}
-        Snow used Mill's Method of Difference by comparing:
-        \begin{itemize}
-            \item People who drank from the Broad Street pump (many got sick)
-            \item Nearby brewery workers who drank beer instead of water (stayed healthy)
-            \item A workhouse with its own water supply (few cases despite being in the area)
-        \end{itemize}
-        When authorities removed the pump handle, new cases dramatically declined.
-    \end{block}
-\end{frame}
-
-\begin{frame}{John Snow's Investigation: Causal Reasoning in Action}
-    \begin{itemize}
-        \item Snow noticed that a water company supplying South London was taking water from a sewage-contaminated part of the Thames River.
-        \item Another company supplied water from a cleaner source upstream.
-        \item Snow compared cholera rates between households supplied by the different companies.
-        \item This created a natural experiment where the only major difference was the water source.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        \scriptsize
-        % Map concept
-        \draw[thick] (0,0) rectangle (8,4);
-        \node at (4,3.7) {London Map};
-        
-        % River
-        \draw[thick, blue, decorate, decoration={snake, amplitude=.4mm, segment length=3mm}] (0,2) -- (8,2);
-        \node[blue] at (4,2.3) {River Thames};
-        
-        % Water companies
-        \node[red] at (2,3) {Southwark \& Vauxhall Water Co.};
-        \node[green] at (6,3) {Lambeth Water Co.};
-        
-        % Water intake points
-        \filldraw[red] (1,2) circle (3pt);
-        \node[red, below] at (1,1.7) {Sewage-contaminated intake};
-        
-        \filldraw[green] (7,2) circle (3pt);
-        \node[green, below] at (7,1.7) {Clean water intake};
-        
-        % Cases
-        \foreach \x in {0.5,1,1.3,1.7,2,2.2,2.5,2.8,3}
-            \filldraw[black] (\x,1) circle (1pt);
-        \foreach \x in {0.7,1.2,1.5,1.8,2.3}
-            \filldraw[black] (\x,0.5) circle (1pt);
-        
-        \foreach \x in {5.5,6,6.3}
-            \filldraw[black] (\x,1) circle (1pt);
-        \foreach \x in {5.7}
-            \filldraw[black] (\x,0.5) circle (1pt);
-        
-        \node at (2,0.2) {Many cholera cases};
-        \node at (6,0.2) {Few cholera cases};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{The Significance of Snow's Discovery}
-    \begin{itemize}
-        \item Snow's work represents one of the first systematic applications of causal reasoning in epidemiology.
-        \item He didn't know about bacteria (they weren't yet discovered), but correctly identified the causal pathway.
-        \item His method combined mapping techniques, statistical analysis, and logical reasoning.
-        \item This led to improved water systems and helped establish public health as a field.
-    \end{itemize}
-    
-    \begin{alertblock}{Causal Principles Demonstrated}
-        Snow's work shows:
-        \begin{itemize}
-            \item The power of natural experiments
-            \item How to reason about invisible causes
-            \item The importance of ruling out alternative explanations
-            \item How good causal reasoning can save lives even before understanding the exact mechanism
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Case Study: Newton's Theory of Gravity (Physics)}
-    \begin{itemize}
-        \item In the 17th century, people knew objects fell to the ground but didn't understand why.
-        \item According to legend, Newton observed an apple falling from a tree.
-        \item He wondered if the same force that pulled the apple down also kept the moon in orbit around Earth.
-        \item This insight led him to develop his theory of universal gravitation.
-    \end{itemize}
-    
-    \begin{example}
-        Newton asked: "Why does the apple fall straight down rather than sideways or up?" 
-        
-        His revolutionary idea was that there must be a force pulling it toward the Earth's center.
-    \end{example}
-\end{frame}
-
-\begin{frame}{Newton's Causal Reasoning Process}
-    \begin{itemize}
-        \item Newton used \textbf{Method of Concomitant Variation} to study how gravitational effects change with distance.
-        \item He showed mathematically that the force of gravity weakens with the square of the distance between objects.
-        \item This explained why the moon stays in orbit rather than falling to Earth or drifting away.
-        \item Newton's laws provided a unified causal explanation for both earthly and celestial motion.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale = 0.6]
-        % Earth
-        \filldraw[ball color=blue!50!white] (0,0) circle (1cm);
-        \node at (0,0) {Earth};
-        
-        % Apple falling
-        \filldraw[ball color=red!80!white] (3,2) circle (0.2cm);
-        \node at (3,2.4) {Apple};
-        \draw[->, very thick] (3,1.8) -- (3,0.2);
-        
-        % Moon orbit
-        \draw[dashed] (0,0) circle (4cm);
-        \filldraw[ball color=gray!80!white] (4,0) circle (0.3cm);
-        \node at (4,0.5) {Moon};
-        
-        % Forces
-        \draw[->, thick, red] (3,1.5) -- (1.2,0.4);
-        \draw[->, thick, red] (4,0) -- (2,0);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Testing and Refining Newton's Theory}
-    \begin{itemize}
-        \item Newton's theory made testable predictions about the motion of planets, moons, and comets.
-        \item Astronomers could calculate where planets should be and then check if observations matched.
-        \item When the planet Uranus didn't exactly follow predicted paths, scientists hypothesized another planet must be affecting it.
-        \item This led to the discovery of Neptune in 1846, confirming the causal explanation.
-    \end{itemize}
-    
-    \begin{table}
-        \small
-        \centering
-        \begin{tabular}{|l|p{8cm}|}
-            \hline
-            \textbf{Causal Element} & \textbf{How Newton's Work Demonstrated It} \\
-            \hline
-            Universality & The same force explains falling apples and planetary motion \\
-            \hline
-            Mechanism & Mathematical equations describe precisely how the force works \\
-            \hline
-            Predictive power & Theory correctly predicts astronomical observations \\
-            \hline
-            Falsifiability & Theory could be proven wrong if predictions failed \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Case Study: Darwin and Natural Selection (Biology)}
-    \begin{itemize}
-        \item In the 19th century, people recognized that species seemed well-adapted to their environments.
-        \item The prevailing explanation was that a divine creator had designed each species perfectly.
-        \item Charles Darwin sought a natural causal explanation for these adaptations.
-        \item His voyage on the HMS Beagle provided crucial observations that shaped his thinking.
-    \end{itemize}
-    
-    \begin{block}{Key Observations}
-        Darwin was particularly struck by:
-        \begin{itemize}
-            \item The variety of finch species on the Galápagos Islands, each with different beaks suited to different foods
-            \item Similarities between living species and fossils in the same regions
-            \item Patterns of species distribution across continents and islands
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Darwin's Process of Causal Discovery}
-    \begin{itemize}
-        \item Darwin couldn't conduct controlled experiments over evolutionary time scales.
-        \item Instead, he used natural variation among species as a kind of "natural experiment."
-        \item He combined the \textbf{Method of Agreement} across many species with the \textbf{Method of Difference} for closely related species.
-        \item Darwin was influenced by Thomas Malthus's work on population growth, which helped him identify competition as a driving force.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale = 0.7]
-        % Environment
-        \draw[thick] (0,0) rectangle (8,4);
-        
-        % Tree with fruits at different heights
-        \draw[thick, brown] (2,0) -- (2,3);
-        \foreach \x/\y in {1.5/2.7, 2.5/2.9, 1.7/2.5, 2.3/2.1, 1.8/1.8, 2.2/1.4}
-            \filldraw[red] (\x,\y) circle (0.1);
-        
-        % Cactus with seeds
-        \draw[thick, green] (6,0) -- (6,2.5);
-        \draw[thick, green] (5.7,1.5) -- (6.3,1.5);
-        \foreach \x/\y in {5.7/2.2, 6.3/2.2, 5.9/1.8, 6.1/1.3}
-            \filldraw[black] (\x,\y) circle (0.05);
-        
-        % Birds with different beaks
-        \draw (1.5,0.5) .. controls (1.2,0.7) and (1,0.8) .. (0.7,0.7); % Short beak
-        \draw (1.5,0.5) .. controls (1.5,0.2) and (1.7,0.3) .. (1.7,0.5);
-        \filldraw (1.5,0.5) circle (0.3);
-        
-        \draw (4,0.5) .. controls (3.7,0.7) and (3.3,0.9) .. (3,1.1); % Long beak
-        \draw (4,0.5) .. controls (4,0.2) and (4.2,0.3) .. (4.2,0.5);
-        \filldraw (4,0.5) circle (0.3);
-        
-        \draw (6.5,0.5) .. controls (6.2,0.7) and (6,0.8) .. (5.7,0.9); % Medium thick beak
-        \draw (6.5,0.5) .. controls (6.5,0.2) and (6.7,0.3) .. (6.7,0.5);
-        \filldraw (6.5,0.5) circle (0.3);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Natural Selection: A Causal Mechanism}
-    \begin{itemize}
-        \item Darwin identified a clear causal chain to explain adaptations in species:
-        \item 1) Organisms vary in their traits (some finches have larger beaks than others).
-        \item 2) These variations can be inherited by offspring.
-        \item 3) More individuals are born than can survive with limited resources.
-        \item 4) Individuals with advantageous traits survive and reproduce more successfully.
-    \end{itemize}
-    
-    \begin{alertblock}{The Revolutionary Insight}
-        Darwin recognized that no intelligent designer was needed to create complex adaptations. Given enough time, the simple causal process of natural selection could transform species and create new ones.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Darwin's Legacy in Causal Thinking}
-    \begin{itemize}
-        \item Darwin showed how a simple causal mechanism could explain complex patterns observed in nature.
-        \item His work demonstrated how to infer causal processes that operate over time scales too long to observe directly.
-        \item He used multiple lines of evidence (comparative anatomy, fossils, geographic distribution) to support his causal theory.
-        \item Evolution by natural selection united disparate biological facts under a single causal framework.
-    \end{itemize}
-    
-    \begin{example}
-        Modern verification: We now see natural selection happening in real time with:
-        \begin{itemize}
-            \item Bacteria evolving antibiotic resistance
-            \item Insects developing resistance to pesticides
-            \item Changes in beak size in Galápagos finches during drought years when only large, tough seeds are available
-        \end{itemize}
-    \end{example}
-\end{frame}
-
-\begin{frame}{Case Study: Semmelweis and Handwashing (Medicine/Chemistry)}
-    \begin{itemize}
-        \item In the 1840s, many women died from "childbed fever" after giving birth in hospitals.
-        \item At Vienna General Hospital, Dr. Ignaz Semmelweis noticed a puzzling pattern.
-        \item Women in the doctor-run maternity ward died at rates 3 times higher than in the midwife-run ward.
-        \item Semmelweis needed to find out what caused this deadly difference.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Two wards
-        \draw (0,0) rectangle (3,3);
-        \node at (1.5,2.5) {First Division};
-        \node at (1.5,2) {(Doctors)};
-        \node at (1.5,1) {10-18\%};
-        \node at (1.5,0.5) {Mortality Rate};
-        
-        \draw (5,0) rectangle (8,3);
-        \node at (6.5,2.5) {Second Division};
-        \node at (6.5,2) {(Midwives)};
-        \node at (6.5,1) {2-3\%};
-        \node at (6.5,0.5) {Mortality Rate};
-        
-        % Question mark connecting them
-        \node[font=\Huge] at (4,1.5) {?};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Semmelweis's Detective Work}
-    \begin{itemize}
-        \item Semmelweis systematically ruled out possible causes using Mill's Methods.
-        \item He eliminated factors like overcrowding, climate, and medical care—these were similar in both wards.
-        \item A crucial clue came when his colleague died with symptoms similar to childbed fever after cutting himself during an autopsy.
-        \item Semmelweis realized doctors (not midwives) performed autopsies and then examined women without washing their hands.
-    \end{itemize}
-    
-    \begin{table}
-        \scriptsize
-        \centering
-        \begin{tabular}{|l|c|c|c|}
-            \hline
-            \textbf{Hypothesis} & \textbf{First Division} & \textbf{Second Division} & \textbf{Could Explain Difference?} \\
-            \hline
-            Overcrowding & Yes & Yes & No \\
-            \hline
-            Rough examinations & Maybe & Maybe & No \\
-            \hline
-            Hospital diet & Same & Same & No \\
-            \hline
-            Perform autopsies & Yes & No & Yes \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Testing the Cadaveric Material Hypothesis}
-    \begin{itemize}
-        \item Semmelweis hypothesized that "cadaveric material" (particles from dead bodies) was causing the infections.
-        \item In May 1847, he instituted mandatory handwashing with chlorinated lime solution before examining patients.
-        \item This created an experimental intervention: changing only one variable in the doctors' ward.
-        \item The results were dramatic: mortality rates fell from 18\% to below 2\%, similar to the midwives' ward.
-    \end{itemize}
-    
-    \begin{center}
-        \small
-    \begin{tikzpicture}[scale = 0.7]
-        % Time axis
-        \draw[->,thick] (0,0) -- (9,0);
-        \draw (0,-0.1) -- (0,0.1); 
-        \node[below] at (0,-0.2) {Jan 1847};
-        \draw (4.5,-0.1) -- (4.5,0.1); 
-        \node[below] at (4.5,-0.2) {May 1847};
-        \node[below] at (4.5,-0.6) {Handwashing Begins};
-        \draw (9,-0.1) -- (9,0.1); 
-        \node[below] at (9,-0.2) {Dec 1847};
-        
-        % Mortality rates
-        \draw[thick, red] (0,3) -- (4.5,3);
-        \draw[thick, red] (4.5,3) -- (9,0.7);
-        \draw[thick, blue, dashed] (0,0.7) -- (9,0.7);
-        
-        % Labels
-        \node[red] at (2,3.3) {First Division (Doctors)};
-        \node[blue] at (3,1) {Second Division (Midwives)};
-        
-        % Y-axis
-        \draw[->,thick] (0,0) -- (0,4);
-        \node[rotate=90] at (-1.5,1.3) {Mortality Rate (\%)};
-        \foreach \y/\label in {0/0, 1/5, 2/10, 3/15, 4/20}
-            \draw (-0.1,\y) -- (0.1,\y) node[left] {\label};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Semmelweis's Legacy and Lessons}
-    \begin{itemize}
-        \item Semmelweis identified a causal link between cadaveric material and childbed fever decades before germ theory was established.
-        \item His work illustrates how causal connections can be established without understanding the exact mechanism.
-        \item He effectively used the Joint Method of Agreement and Difference: the only relevant difference between wards was contact with cadavers.
-        \item Despite strong evidence, many doctors rejected his findings because they seemed implausible and implied doctors were causing harm.
-    \end{itemize}
-    
-    \begin{alertblock}{Causal Reasoning Lessons}
-        Semmelweis's work teaches us:
-        \begin{itemize}
-            \item The power of natural experiments (comparing two similar wards)
-            \item How to isolate a single causal variable through intervention
-            \item That dramatic results provide strong causal evidence
-            \item That causal findings may face resistance when they challenge existing beliefs
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Case Study: Alfred Wegener and Continental Drift (Geology)}
-    \begin{itemize}
-        \item In the early 20th century, scientists noticed that the coastlines of South America and Africa seemed to fit together like puzzle pieces.
-        \item Most geologists considered this a coincidence, believing continents were fixed in place.
-        \item German meteorologist Alfred Wegener proposed in 1912 that continents had once been joined and had drifted apart.
-        \item His challenge: proving a process too slow to observe directly.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Simple world map outline focusing on Atlantic
-        % Africa
-        \draw[thick] (2,0) .. controls (1.5,1) and (1.5,2) .. (2,3);
-        \draw[thick] (2,3) .. controls (3,3.5) and (4,3) .. (4.5,2);
-        \draw[thick] (4.5,2) .. controls (5,1) and (4,0) .. (2,0);
-        \node at (3,1.5) {Africa};
-        
-        % South America
-        \draw[thick] (-2,0) .. controls (-1.5,1) and (-1.5,3) .. (-2.5,3.5);
-        \draw[thick] (-2.5,3.5) .. controls (-3,2) and (-3,1) .. (-2,0);
-        \node at (-2.3,1.5) {South America};
-        
-        % Fitting arrows
-        \draw[<->, thick, red] (-1.7,1.5) -- (1.7,1.5);
-        \node[red] at (0,1.8) {Matching coastlines};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Wegener's Evidence for Continental Drift}
-    \begin{itemize}
-        \item Wegener used Mill's \textbf{Method of Agreement} by gathering multiple lines of evidence supporting his theory:
-        \item \textbf{Fossil evidence}: Identical plant and animal fossils appeared on continents now separated by oceans.
-        \item \textbf{Geological matching}: Similar rock formations and mountain ranges lined up across continents.
-        \item \textbf{Climate evidence}: Coal deposits in Antarctica suggested it once had a tropical climate.
-    \end{itemize}
-    
-    \begin{example}
-        The fossil Mesosaurus, a freshwater reptile, was found only in South America and Africa. Since it couldn't have swum across the Atlantic Ocean, Wegener argued these continents must once have been connected.
-    \end{example}
-\end{frame}
-
-\begin{frame}{Rejection and Later Vindication}
-    \begin{itemize}
-        \item Despite his evidence, Wegener's theory was widely rejected by the scientific community.
-        \item The main criticism was that he couldn't explain a plausible mechanism that could move entire continents.
-        \item Geologists believed the Earth's crust was too rigid to allow for continental movement.
-        \item It wasn't until the 1950s and 1960s that new evidence from seafloor mapping and paleomagnetism provided the missing mechanism.
-    \end{itemize}
-    
-    \begin{block}{The Missing Mechanism: Plate Tectonics}
-        Scientists eventually discovered that:
-        \begin{itemize}
-            \item The Earth's crust is divided into plates that float on the semi-liquid mantle
-            \item Convection currents in the mantle drive plate movement
-            \item New crust forms at mid-ocean ridges and old crust sinks at subduction zones
-            \item This mechanism explained how continents could move over geological time
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Causal Reasoning Lessons from Continental Drift}
-    \begin{itemize}
-        \item Wegener's case demonstrates the importance of multiple converging lines of evidence for establishing causation.
-        \item It shows how scientists can infer causal processes that operate too slowly to observe directly.
-        \item The initial rejection illustrates that causal explanations are stronger when they include a plausible mechanism.
-        \item The story reveals how science is self-correcting: new evidence eventually confirmed Wegener's core insight.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Timeline
-        \draw[->, thick] (0,0) -- (9,0);
-        
-        % Key points
-        \draw (1,0) -- (1,0.2);
-        \node[align=center, text width=2cm, below] at (1,-0.2) {1912\\Wegener's Theory};
-        
-        \draw (3,0) -- (3,0.2);
-        \node[align=center, text width=2.5cm, below] at (3,-0.2) {1920s-40s\\Theory Rejected};
-        
-        \draw (5.5,0) -- (5.5,0.2);
-        \node[align=center, text width=2.5cm, below] at (5.5,-0.2) {1950s\\Seafloor Spreading Discovered};
-        
-        \draw (8,0) -- (8,0.2);
-        \node[align=center, text width=2.5cm, below] at (8,-0.2) {1960s\\Plate Tectonics Accepted};
-        
-        % Label above
-        \node[align=center] at (4.5,1.5) {50+ Years from Hypothesis to Acceptance};
-        \draw[<->, thick] (1,1.2) -- (8,1.2);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Case Study: Natural Experiments in Minimum Wage Research (Economics)}
-    \begin{itemize}
-        \item Economic theories often predict that raising minimum wages will reduce employment.
-        \item Testing this causal relationship is challenging because we can't randomly assign minimum wages to different areas.
-        \item In 1994, economists Card and Krueger used a natural experiment to study this question.
-        \item They compared employment at fast-food restaurants in New Jersey and Pennsylvania before and after a minimum wage increase.
-    \end{itemize}
-    
-    \begin{block}{The Natural Experiment Setup}
-        \begin{itemize}
-            \item New Jersey raised its minimum wage from \$4.25 to \$5.05 in April 1992
-            \item Neighboring Pennsylvania kept its minimum wage at \$4.25
-            \item Restaurants just across the state border shared similar economic conditions
-            \item This created a natural control group (PA) and treatment group (NJ)
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Difference-in-Differences: A Modern Causal Method}
-    \begin{itemize}
-        \item Card and Krueger used a causal inference technique called "difference-in-differences."
-        \item This method compares the change in one group (New Jersey) to the change in another group (Pennsylvania).
-        \item It controls for both fixed differences between states and time trends affecting both states.
-        \item This approach helps isolate the causal effect of the minimum wage change.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale = 0.7]
-        % Coordinate system
-        \draw[->] (0,0) -- (6,0) node[right] {Time};
-        \draw[->] (0,0) -- (0,4) node[above] {Employment};
-        
-        % Time points
-        \draw (2,0) -- (2,-0.1) node[below] {Minimum Wage Increase};
-        
-        % Data lines
-        \draw[blue, thick] (0,2) -- (2,2.2) -- (5,2.4);
-        \draw[red, thick] (0,1) -- (2,1.3) -- (5,1.9);
-        
-        % Labels
-        \node[blue] at (5.5,2.4) {PA};
-        \node[red] at (5.5,1.9) {NJ};
-        
-        % Difference arrows
-        \draw[<->, dashed] (1,1) -- (1,2) node[midway, left] {A};
-        \draw[<->, dashed] (4,1.9) -- (4,2.4) node[midway, left] {B};
-        
-        % Difference-in-differences
-        \node at (3,3.3) {Causal Effect = (B - A)};
-        \node at (3,2.8) {= Change in Gap Between Groups};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Surprising Results and Causal Implications}
-    \begin{itemize}
-        \item Contrary to basic economic theory, Card and Krueger found no evidence that the minimum wage increase reduced employment.
-        \item In fact, they found slight employment increases in New Jersey compared to Pennsylvania.
-        \item This challenged conventional economic wisdom about the causal relationship between minimum wages and employment.
-        \item Their findings sparked debate about alternative causal explanations in labor markets.
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|l|c|c|c|}
-            \hline
-            \textbf{State} & \textbf{Before} & \textbf{After} & \textbf{Change} \\
-            \hline
-            New Jersey & 20.4 employees & 21.0 employees & +0.6 \\
-            \hline
-            Pennsylvania & 23.3 employees & 21.2 employees & -2.1 \\
-            \hline
-            \multicolumn{4}{|c|}{Difference-in-differences: +2.7 employees} \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Economic Causal Reasoning: Challenges and Advances}
-    \begin{itemize}
-        \item Economics faces unique causal reasoning challenges because controlled experiments often aren't possible at scale.
-        \item Modern economics has developed sophisticated methods to approximate experimental designs using observational data.
-        \item Besides difference-in-differences, economists use methods like instrumental variables, regression discontinuity, and propensity score matching.
-        \item These techniques help isolate causal effects from complex economic systems with many interconnected variables.
-    \end{itemize}
-    
-    \begin{alertblock}{Key Lesson for Causal Reasoning}
-        \scriptsize
-        The minimum wage studies demonstrate how apparent correlations may conflict with our causal theories. When this happens, we need to:
-        \begin{itemize}
-            \item Examine our assumptions about causal mechanisms
-            \item Consider alternative causal explanations
-            \item Gather more evidence from different settings
-            \item Refine our causal models to account for new evidence
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Case Study: The Marshmallow Test (Psychology)}
-    \begin{itemize}
-        \item In the 1960s-70s, psychologist Walter Mischel conducted the famous "marshmallow test" experiments.
-        \item Children were offered a choice: eat one marshmallow immediately or wait 15 minutes to receive two marshmallows.
-        \item Researchers observed how long children could delay gratification.
-        \item Years later, they followed up with the participants to study long-term outcomes.
-    \end{itemize}
-    
-\end{frame}
-
-\begin{frame}{The Original Causal Claim}
-    \begin{itemize}
-        \item The original follow-up studies suggested a strong causal relationship between:
-        \item Self-control at age 4 (measured by waiting time) → Better life outcomes in adolescence and adulthood
-        \item Children who waited longer reportedly had higher SAT scores, better educational outcomes, lower BMI, and other positive life outcomes.
-        \item This led to popular interpretations that early self-control abilities determine future success.
-    \end{itemize}
-    
-    \begin{example}
-        A child who waited the full 15 minutes at age 4 was reported to score on average 210 points higher on the SAT than a child who couldn't wait at all, suggesting a powerful causal relationship between early self-control and later cognitive abilities.
-    \end{example}
-\end{frame}
-
-\begin{frame}{Reexamining Causality: Confounding Variables}
-    \begin{itemize}
-        \item Later studies revealed important confounding variables that complicated the causal story.
-        \item Family socioeconomic status strongly predicted both waiting ability and future outcomes.
-        \item Children's trust in the researcher (based on previous experiences) influenced their waiting behavior.
-        \item A 2018 replication study with a larger, more diverse sample found much smaller effects.
-    \end{itemize}
-    
-    \begin{alertblock}{Complex Causality}
-        The updated causal model shows how:
-        \begin{itemize}
-            \item Family background influences both self-control and later outcomes
-            \item Environmental reliability affects strategic decision-making
-            \item What looked like a simple A → B relationship was actually much more complex
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Lessons in Psychological Causal Reasoning}
-    \begin{itemize}
-        \item The marshmallow test case illustrates how initial causal conclusions may be oversimplified.
-        \item Psychological phenomena often involve complex interactions between individual traits and environmental factors.
-        \item Longitudinal studies (following subjects over time) are valuable but prone to confounding variables.
-        \item Replication with larger, more diverse samples helps establish the reliability of causal claims.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale = .8]
-        % Original simple causal model
-        \node (A) at (0,3) {Self-control};
-        \node (B) at (4,3) {Life outcomes};
-        \draw[->, thick] (A) -- (B) node[midway, above] {Original model};
-        
-        % Updated complex causal model
-        \node (C) at (0,1) {Self-control};
-        \node (D) at (4,1) {Life outcomes};
-        \node (E) at (2,2) {Family SES};
-        \node (F) at (0,0) {Environmental trust};
-        
-        \draw[->, thick] (C) -- (D);
-        \draw[->, thick] (E) -- (C);
-        \draw[->, thick] (E) -- (D);
-        \draw[->, thick] (F) -- (C);
-        
-        \node at (2,-.5) {Updated causal model};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-\begin{frame}{Case Study: Hubble and the Expanding Universe (Astronomy)}
-    \begin{itemize}
-        \item In the early 20th century, most astronomers believed the universe was static and unchanging.
-        \item Edwin Hubble studied distant galaxies using the 100-inch telescope at Mount Wilson Observatory.
-        \item He measured both the distances to galaxies and their spectra (the light patterns they emitted).
-        \item His observations led to one of the most important causal discoveries in astronomy.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale = .8]
-        % Telescope
-        \draw[thick] (0,0) -- (0,2);
-        \draw[thick] (0,2) -- (1,2.5);
-        \draw[thick] (0,0) -- (1,0.5);
-        \draw[thick] (1,0.5) -- (1,2.5);
-        
-        % Light from galaxy
-        \draw[dashed, ->] (5,1.5) -- (1,1.5);
-        
-        % Galaxy
-        \filldraw[ball color=yellow!50!white] (6,1.5) circle (0.8);
-        \draw (6,1.5) circle (0.8);
-        \foreach \angle in {0,30,...,330}
-            \draw (6,1.5) -- ++(\angle:1);
-            
-        % Spectrum
-        \draw[thick] (3,0) rectangle (5,-0.5);
-        \foreach \x in {3.2,3.5,3.9,4.3,4.7}
-            \draw[thick] (\x,0) -- (\x,-0.5);
-        \node at (4,-0.8) {Spectral lines};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{The Red Shift Pattern and Hubble's Law}
-    \begin{itemize}
-        \item Hubble observed that light from distant galaxies was shifted toward the red end of the spectrum.
-        \item This "redshift" phenomenon was known to occur when a light source moves away from an observer (the Doppler effect).
-        \item Hubble discovered that the farther away a galaxy was, the greater its redshift.
-        \item This relationship, now known as Hubble's Law, revealed that galaxies are moving away from us—and from each other.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale = 0.7]
-        % Coordinate system
-        \draw[->] (0,0) -- (7,0) node[right] {Distance};
-        \draw[->] (0,0) -- (0,4) node[above] {Recession Velocity};
-        
-        % Hubble's Law line
-        \draw[thick, blue] (0,0) -- (6,3);
-        \node[blue] at (6.5,3) {$v = H_0 \times d$};
-        
-        % Data points
-        \filldraw (1,0.5) circle (3pt);
-        \filldraw (2,1) circle (3pt);
-        \filldraw (3,1.4) circle (3pt);
-        \filldraw (3.5,1.8) circle (3pt);
-        \filldraw (4.5,2.3) circle (3pt);
-        \filldraw (5.5,2.7) circle (3pt);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{From Observation to Causal Understanding}
-    \begin{itemize}
-        \item Hubble's observations provided evidence that the universe is expanding in all directions.
-        \item This led to the inference that if we "run the film backward," the universe must have had a beginning—the Big Bang.
-        \item Hubble didn't directly observe the expansion itself but inferred it as the causal explanation for the redshift pattern.
-        \item This demonstrates how careful pattern recognition and mathematical analysis can reveal causal mechanisms at cosmic scales.
-    \end{itemize}
-    
-    \begin{block}{From Effect to Cause}
-        Hubble's reasoning process:
-        \begin{enumerate}
-            \item Observe effect: Galaxies show redshifts proportional to their distance
-            \item Apply known principle: Redshift indicates motion away from observer (Doppler effect)
-            \item Infer cause: The universe must be expanding in all directions
-            \item Further inference: The expansion implies a beginning point in the past
-        \end{enumerate}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Multiple Lines of Evidence: Strengthening Causal Claims}
-    \begin{itemize}
-        \item Hubble's expansion theory was later supported by additional evidence, strengthening the causal case.
-        \item The cosmic microwave background radiation (discovered in 1965) provided evidence of the Big Bang.
-        \item The abundance of light elements in the universe matched predictions from Big Bang nucleosynthesis.
-        \item The large-scale structure of the universe aligned with models of how matter would distribute during expansion.
-    \end{itemize}
-    
-    \begin{alertblock}{Causal Reasoning Lessons}
-        \scriptsize
-        The Hubble case demonstrates:
-        \begin{itemize}
-            \item How mathematical relationships can reveal causal patterns
-            \item The importance of converging evidence from multiple sources
-            \item How causal inference can work at scales far beyond direct human experience
-            \item That revolutionary causal insights often involve rethinking our fundamental assumptions about the world
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Common Patterns Across Scientific Disciplines}
-    \begin{itemize}
-        \item Across our case studies, successful causal reasoning often involves:
-            \begin{itemize}
-                \item Careful observation of patterns that violate expectations
-                \item Identifying natural experiments or creating interventions
-                \item Ruling out alternative explanations systematically
-                \item Gathering multiple lines of converging evidence
-                \item Proposing mechanisms that explain how causes produce effects
-            \end{itemize}
-        \item Scientists may not always understand the full causal mechanism at first (Snow, Semmelweis, Wegener)
-        \item Initial causal models are often refined or revised as new evidence emerges (Marshmallow Test)
-    \end{itemize}
-    
-    \begin{block}{From Simple to Complex Causality}
-        Scientific progress often involves moving from simple causal models (A causes B) to more complex understandings with multiple interacting factors and feedback loops.
-    \end{block}
-\end{frame}
-
-\begin{frame}{Modern Approaches to Causal Inference}
-    \begin{itemize}
-        \item Contemporary science has developed sophisticated tools for causal reasoning:
-            \begin{itemize}
-                \item Randomized controlled trials – the "gold standard" in medicine
-                \item Natural experiments and quasi-experimental designs
-                \item Statistical methods like difference-in-differences, instrumental variables
-                \item Causal graph theory and structural equation modeling
-                \item Computer simulations to test causal theories
-            \end{itemize}
-        \item These tools extend and formalize Mill's classic methods
-        \item They allow us to tackle increasingly complex causal questions
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale=0.6]
-        % Simple causal chain
-        \node (A) at (0,0) {A};
-        \node (B) at (2,0) {B};
-        \node (C) at (4,0) {C};
-        \draw[->, thick] (A) -- (B);
-        \draw[->, thick] (B) -- (C);
-
-        % More complex causal web
-        \node (D) at (6,1) {D};
-        \node (E) at (8,1) {E};
-        \node (F) at (6,-1) {F};
-        \node (G) at (8,-1) {G};
-        \draw[->, thick] (D) -- (E);
-        \draw[->, thick] (D) -- (F);
-        \draw[->, thick] (E) -- (G);
-        \draw[->, thick] (F) -- (G);
-        \draw[->, thick, bend left] (D) to (G);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Why Causal Reasoning Matters}
-    \begin{itemize}
-        \item Casual reasoning is essential for:
-            \begin{itemize}
-                \item Scientific understanding - Explaining why natural phenomena occur
-                \item Problem-solving - Identifying effective interventions
-                \item Critical thinking - Evaluating claims about cause and effect
-                \item Personal decision-making - Understanding consequences of our actions
-            \end{itemize}
-        \item Mistaking correlation for causation leads to:
-            \begin{itemize}
-                \item Ineffective policies and interventions
-                \item Wasted resources on non-causal factors
-                \item Missed opportunities to address real causes
-                \item Potentially harmful actions based on flawed understanding
-            \end{itemize}
-    \end{itemize}
-    
-    \begin{alertblock}{The Legacy of Scientific Causal Reasoning}
-        The scientific breakthroughs we've examined didn't just solve specific problems—they transformed how we understand our world and demonstrated the power of human reason to uncover causal relationships that are not immediately obvious.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Discussion Questions}
-    \begin{enumerate}
-        \item How might Snow's approach to cholera investigation be applied to modern public health challenges?
-        \item Which do you think is more important in science: having a causal mechanism or having strong statistical evidence of a relationship?
-        \item Why do you think Semmelweis and Wegener faced such resistance to their causal theories, despite compelling evidence?
-        \item What are some everyday examples where people commonly mistake correlation for causation?
-        \item How might causal reasoning in science be strengthened or improved in the future?
-    \end{enumerate}
-    
-    \begin{block}{Final Thought}
-        "No amount of experimentation can ever prove me right; a single experiment can prove me wrong." - Albert Einstein
-        
-        This captures an important asymmetry in causal reasoning: disproving causal claims is often easier than conclusively proving them.
-    \end{block}
-\end{frame}
-
+	
+	% Title slide
+	\frame{\titlepage}
+	
+	% Slide 1: Causal Reasoning in Science: From Newton to Climate Change
+	\begin{frame}{Causal Reasoning in Science: From Newton to Climate Change}
+		\begin{itemize}
+			\item Scientists face unique challenges when establishing \textbf{causal relationships} in natural phenomena that span vast scales of time and space.
+			\item Unlike laboratory experiments, many scientific questions involve causes we cannot directly manipulate or control.
+			\item Throughout history, major scientific breakthroughs required innovative methods to demonstrate causation without traditional experiments.
+			\item Today we'll examine how scientists established causal claims that transformed our understanding of the universe.
+		\end{itemize}
+		
+		\begin{block}{Our Journey Through Time}
+			1687: Newton's Gravity → 1859: Darwin's Evolution → 1876: Germ Theory → 1950s: Smoking-Cancer Link → Today: Climate Change
+		\end{block}
+	\end{frame}
+	
+	% Slide 2: How Scientists Establish Causation: Beyond the Laboratory
+	\begin{frame}{How Scientists Establish Causation: Beyond the Laboratory}
+		\begin{itemize}
+			\item Scientists use \textbf{converging evidence} from multiple sources when controlled experiments are impossible or impractical.
+			\item Natural experiments, mathematical models, and careful observations can substitute for direct manipulation.
+			\item \textbf{Predictive power} becomes crucial: if a causal theory correctly predicts new phenomena, it gains credibility.
+			\item The scientific community requires extraordinary evidence for extraordinary causal claims that challenge existing beliefs.
+		\end{itemize}
+		
+		\begin{example}[Types of Scientific Evidence]
+			\begin{itemize}
+				\item Observational data across time and space
+				\item Natural experiments and comparative studies
+				\item Mathematical models and simulations
+				\item Mechanistic understanding of processes
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 3: The Challenge: Proving Causes in Complex Natural Systems
+	\begin{frame}{The Challenge: Proving Causes in Complex Natural Systems}
+		\begin{itemize}
+			\item Natural systems involve \textbf{multiple interacting causes} that operate over different timescales and cannot be isolated.
+			\item We cannot rerun Earth's history with different conditions or create control planets for comparison.
+			\item \textbf{Temporal gaps} between causes and effects (like smoking and cancer) make causal inference difficult.
+			\item Political, economic, and religious interests often resist scientific causal claims that threaten established systems.
+		\end{itemize}
+		
+		\begin{alertblock}{The Fundamental Problem}
+			How do we prove that invisible forces cause planetary motion, that random mutations cause new species, or that greenhouse gases cause global warming when we cannot perform controlled experiments?
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 4: Newton's Revolutionary Claim: Invisible Forces Cause Motion
+	\begin{frame}{Newton's Revolutionary Claim: Invisible Forces Cause Motion}
+		\begin{itemize}
+			\item Newton proposed that an \textbf{invisible force} called gravity causes all objects with mass to attract each other.
+			\item This claim was revolutionary because it suggested action without contact - objects affecting each other across empty space.
+			\item Previous theories required physical contact or "vortices" of matter to explain motion and planetary orbits.
+			\item Newton's mathematical approach allowed precise predictions without explaining \textit{how} gravity worked mechanistically.
+		\end{itemize}
+		
+		\begin{block}{The Radical Idea}
+			"Every particle in the universe attracts every other particle with a force proportional to the product of their masses and inversely proportional to the square of the distance between them."
+			\[F = G\frac{m_1 m_2}{r^2}\]
+		\end{block}
+	\end{frame}
+	
+	% Slide 5: The Apple and the Moon: Unifying Terrestrial and Celestial Causation
+	\begin{frame}{The Apple and the Moon: Unifying Terrestrial and Celestial Causation}
+		\begin{itemize}
+			\item Newton's insight was that the \textbf{same cause} explains both falling apples and orbiting moons.
+			\item Before Newton, earthly and heavenly motion were thought to have completely different causes and follow different laws.
+			\item By showing that moon's orbit and projectile motion follow the same mathematical principles, Newton unified physics.
+			\item This \textbf{causal unification} was proven through calculation: the moon "falls" toward Earth at exactly the predicted rate.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.8]
+			% Earth
+			\draw[fill=blue!30] (0,0) circle (0.8cm);
+			\node at (0,0) {Earth};
+			
+			% Apple falling
+			\draw[thick, red, ->] (2, 1.5) -- (1.2, 0.6);
+			\node[red] at (2.5, 1.7) {Apple};
+			
+			% Moon orbiting
+			\draw[dashed] (0,0) circle (3cm);
+			\draw[fill=gray!30] (3,0) circle (0.3cm);
+			\node at (3.5, 0.3) {Moon};
+			\draw[thick, red, ->] (3, 0) -- (2.7, -0.5);
+			
+			% Label
+			\node at (0, -4) {Same gravitational force causes both motions};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 6: Mathematical Laws as Causal Explanations
+	\begin{frame}{Mathematical Laws as Causal Explanations}
+		\begin{itemize}
+			\item Newton introduced the idea that \textbf{mathematical relationships} can serve as causal explanations in science.
+			\item Rather than describing mechanisms, Newton's law precisely predicted how gravity's causal effects vary with mass and distance.
+			\item Critics complained "hypotheses non fingo" (I frame no hypotheses) wasn't enough - they wanted to know \textit{why} gravity worked.
+			\item Newton's success showed that mathematical descriptions of causal relationships could be scientifically valid without mechanical models.
+		\end{itemize}
+		
+		\begin{example}[Causal Predictions from Math]
+			\begin{itemize}
+				\item Double the mass → Double the gravitational force
+				\item Double the distance → Quarter the gravitational force  
+				\item These precise relationships allowed testing causation through measurement
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 7: Prediction as Evidence: Halley's Comet Returns
+	\begin{frame}{Prediction as Evidence: Halley's Comet Returns}
+		\begin{itemize}
+			\item Edmund Halley used Newton's gravitational theory to predict a comet would return in 1758 - decades after his own death.
+			\item When the comet appeared exactly as predicted, it provided powerful evidence that gravity causes celestial motion.
+			\item This \textbf{novel prediction} was more convincing than explaining already-known phenomena retroactively.
+			\item The successful prediction demonstrated that Newton's causal theory could extend beyond observed data to future events.
+		\end{itemize}
+		
+		\begin{alertblock}{The Power of Prediction}
+			Successful predictions, especially of previously unknown phenomena, provide the strongest evidence for causal theories when experiments are impossible.
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 8: Action at a Distance: The Causal Controversy
+	\begin{frame}{Action at a Distance: The Causal Controversy}
+		\begin{itemize}
+			\item Newton's gravity implied \textbf{action at a distance} - objects causing effects without touching, which many found absurd.
+			\item Descartes and others insisted real causes required physical contact through "vortices" of swirling matter.
+			\item Newton himself was uncomfortable with instantaneous action across empty space but couldn't explain the mechanism.
+			\item The debate shows how causal claims that violate intuitions about "how causes work" face extra skepticism.
+		\end{itemize}
+		
+		\begin{block}{Newton's Response}
+			"I have not been able to discover the cause of those properties of gravity from phenomena, and I frame no hypotheses... It is enough that gravity does really exist, and acts according to the laws which we have explained."
+		\end{block}
+	\end{frame}
+	
+	% Slide 9: From Correlation to Causation: Planetary Orbits Explained
+	\begin{frame}{From Correlation to Causation: Planetary Orbits Explained}
+		\begin{itemize}
+			\item Before Newton, astronomers had \textbf{correlations} - Kepler's laws described planetary motion patterns mathematically.
+			\item Newton showed these patterns were \textbf{caused by} gravitational force, transforming description into explanation.
+			\item Small deviations in orbits, previously dismissed as errors, were explained by gravitational pulls from other planets.
+			\item This demonstrated how a true causal theory should explain both the regularities and the apparent exceptions.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.6]
+			% Before (correlation)
+			\node at (-3, 2) {\textbf{Before Newton:}};
+			\node[draw, rectangle] (kepler) at (-3, 0) {Kepler's Laws};
+			\node at (-3, -1) {(Description)};
+			
+			% Arrow
+			\draw[->, thick, blue] (-0.5, 0) -- (0.5, 0);
+			
+			% After (causation)
+			\node at (3, 2) {\textbf{After Newton:}};
+			\node[draw, rectangle] (gravity) at (3, 0) {Gravity};
+			\draw[->, thick] (3, -0.5) -- (3, -1.5);
+			\node[draw, rectangle] (orbits) at (3, -2) {Causes Elliptical Orbits};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 10: Darwin's Causal Claim: Natural Selection Drives Species Change
+	\begin{frame}{Darwin's Causal Claim: Natural Selection Drives Species Change}
+		\begin{itemize}
+			\item Darwin proposed that \textbf{natural selection} - differential survival and reproduction - causes species to evolve over time.
+			\item This mechanism operates through variation, inheritance, and competition for limited resources in nature.
+			\item Unlike Newton's instant forces, Darwin's cause operated over vast timescales invisible to human observation.
+			\item The theory explained both the adaptation of organisms to their environments and the branching pattern of species relationships.
+		\end{itemize}
+		
+		\begin{example}[The Causal Mechanism]
+			\begin{enumerate}
+				\item Individuals vary in traits
+				\item Some traits aid survival/reproduction
+				\item Beneficial traits are inherited
+				\item Over generations, populations change
+			\end{enumerate}
+			Result: Natural selection causes evolution
+		\end{example}
+	\end{frame}
+	
+	% Slide 11: The Galápagos Finches: Natural Experiments in Evolution
+	\begin{frame}{The Galápagos Finches: Natural Experiments in Evolution}
+		\begin{itemize}
+			\item The Galápagos Islands provided a \textbf{natural experiment} where similar finches evolved differently on different islands.
+			\item Each island's unique environment (seeds, climate, competition) created different selection pressures.
+			\item Darwin observed that beak shapes matched food sources - thick beaks where hard seeds dominated, thin where insects prevailed.
+			\item This geographic variation suggested environmental conditions cause evolutionary changes through natural selection.
+		\end{itemize}
+		
+		\begin{alertblock}{Natural Experiment Logic}
+			If natural selection causes evolution, then:
+			\begin{itemize}
+				\item Similar species in different environments → Different adaptations
+				\item Different species in similar environments → Convergent adaptations
+			\end{itemize}
+			Both patterns were observed!
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 12: Fossil Evidence: Causation Across Deep Time
+	\begin{frame}{Fossil Evidence: Causation Across Deep Time}
+		\begin{itemize}
+			\item The \textbf{fossil record} provided historical evidence of evolution, showing species changing through geological time.
+			\item Deeper (older) rock layers contained simpler organisms, while recent layers showed more complex forms.
+			\item Transitional fossils like Archaeopteryx (reptile-bird) demonstrated intermediate forms predicted by evolutionary theory.
+			\item This temporal sequence supported Darwin's claim that natural selection causes gradual transformation over millions of years.
+		\end{itemize}
+		
+		\begin{block}{The Time Problem}
+			\begin{center}
+				Human lifetime: ~80 years\\
+				Recorded history: ~5,000 years\\
+				Species change: ~1,000,000+ years\\
+				\vspace{0.2cm}
+				How do we prove causation across unobservable timescales?
+			\end{center}
+		\end{block}
+	\end{frame}
+	
+	% Slide 13: Artificial Selection: Controlled Experiments with Breeding
+	\begin{frame}{Artificial Selection: Controlled Experiments with Breeding}
+		\begin{itemize}
+			\item Darwin used \textbf{artificial selection} in domesticated species as an experimental analog for natural selection.
+			\item Pigeon breeders created dramatically different varieties by selecting which birds reproduced - proving selection causes change.
+			\item In just dozens of generations, humans produced varieties as different as pugs and greyhounds from wolf ancestors.
+			\item If human selection could cause such dramatic changes quickly, natural selection over millions of years could transform species.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			% Original
+			\node[draw, rectangle] (wolf) at (0, 0) {Wolf Ancestor};
+			
+			% Artificial selection
+			\node at (0, -1.5) {Artificial Selection};
+			\draw[->, thick] (0, -0.5) -- (-2, -2);
+			\draw[->, thick] (0, -0.5) -- (0, -2);
+			\draw[->, thick] (0, -0.5) -- (2, -2);
+			
+			% Results
+			\node[draw, rectangle] (pug) at (-2, -2.5) {Pug};
+			\node[draw, rectangle] (collie) at (0, -2.5) {Collie};
+			\node[draw, rectangle] (grey) at (2, -2.5) {Greyhound};
+			
+			% Time scale
+			\node at (4, -1) {Thousands};
+			\node at (4, -1.5) {of years};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 14: Biogeography: Why Isolation Causes Divergence
+	\begin{frame}{Biogeography: Why Isolation Causes Divergence}
+		\begin{itemize}
+			\item \textbf{Biogeography} - the distribution of species across Earth - provided powerful evidence for evolution by natural selection.
+			\item Islands contained unique species similar to, but distinct from, nearest mainland relatives, suggesting common ancestry.
+			\item Geographic barriers (oceans, mountains) correlated with species boundaries, indicating isolation causes evolutionary divergence.
+			\item The pattern made sense only if separation prevented interbreeding, allowing different selection pressures to cause different evolutionary paths.
+		\end{itemize}
+		
+		\begin{example}[Biogeographic Evidence]
+			\begin{tabular}{l|l}
+				\textbf{Observation} & \textbf{Causal Inference} \\
+				\hline
+				Island species resemble mainland & Common ancestor \\
+				But show unique adaptations & Local selection pressures \\
+				More isolation = more difference & Time + selection = change \\
+			\end{tabular}
+		\end{example}
+	\end{frame}
+	
+	% Slide 15: Modern DNA Evidence: Confirming Historical Causation
+	\begin{frame}{Modern DNA Evidence: Confirming Historical Causation}
+		\begin{itemize}
+			\item \textbf{DNA evidence}, unavailable to Darwin, now provides molecular proof that natural selection causes evolutionary change.
+			\item We can trace specific mutations and observe selection acting on them in real time in bacteria and viruses.
+			\item Genetic similarities match the family tree predicted by fossils and biogeography, confirming common descent.
+			\item DNA "molecular clocks" allow us to estimate when species diverged, validating the timescales Darwin proposed.
+		\end{itemize}
+		
+		\begin{alertblock}{Converging Evidence}
+			When multiple independent lines of evidence (fossils, biogeography, artificial selection, DNA) all support the same causal theory, scientists consider it confirmed beyond reasonable doubt.
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 16: Before Germs: Miasma Theory and Bad Air
+	\begin{frame}{Before Germs: Miasma Theory and Bad Air}
+		\begin{itemize}
+			\item Before germ theory, the dominant \textbf{miasma theory} claimed diseases were caused by "bad air" from rotting matter.
+			\item This theory seemed logical: diseases often occurred near swamps, sewage, and decay that produced foul odors.
+			\item Correlation with smell led to causal inference - if places that smelled bad had more disease, smell must cause disease.
+			\item The miasma theory led to some helpful practices (cleaning cities) but for the wrong causal reasons.
+		\end{itemize}
+		
+		\begin{block}{The Miasma Mistake}
+			\begin{center}
+				Observed: Bad smells correlate with disease\\
+				Inference: Bad air causes disease\\
+				Reality: Microbes cause both bad smells AND disease\\
+				\vspace{0.2cm}
+				Classic case of confusing correlation with causation!
+			\end{center}
+		\end{block}
+	\end{frame}
+	
+	% Slide 17: Pasteur's Experiments: Microbes Cause Fermentation and Disease
+	\begin{frame}{Pasteur's Experiments: Microbes Cause Fermentation and Disease}
+		\begin{itemize}
+			\item Louis Pasteur demonstrated that \textbf{microorganisms} - not spontaneous generation or bad air - cause fermentation and decay.
+			\item His swan-neck flask experiment proved that boiled broth stayed sterile unless exposed to airborne microbes.
+			\item Pasteur then linked specific microbes to specific diseases, showing each disease had its own microbial cause.
+			\item These controlled experiments revolutionized medicine by identifying the true \textbf{causal agents} of disease.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			% Swan neck flask experiment
+			\node at (0, 2.5) {\textbf{Pasteur's Swan-Neck Flask}};
+			
+			% Flask 1 - straight neck
+			\draw[thick] (-3, 0) -- (-3, 1) -- (-2.5, 1.5) -- (-2, 1.5);
+			\draw[thick] (-3.5, 0) arc (180:360:0.5cm);
+			\node at (-3, -0.5) {Straight neck};
+			\node[red] at (-3, -1) {Contaminated};
+			
+			% Flask 2 - swan neck
+			\draw[thick] (2, 0) -- (2, 1) -- (2.5, 1) -- (2.5, 0.5) -- (3, 0.5) -- (3, 1.5);
+			\draw[thick] (1.5, 0) arc (180:360:0.5cm);
+			\node at (2, -0.5) {Swan neck};
+			\node[green!50!black] at (2, -1) {Stays sterile};
+			
+			% Microbes trapped
+			\node at (2.5, 0.2) {\tiny microbes};
+			\node at (2.5, 0) {\tiny trapped};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 18: Koch's Postulates: Criteria for Microbial Causation
+	\begin{frame}{Koch's Postulates: Criteria for Microbial Causation}
+		\begin{itemize}
+			\item Robert Koch developed four \textbf{postulates} - criteria to prove a specific microbe causes a specific disease.
+			\item These postulates formalized how to establish causation when dealing with invisible agents and living hosts.
+			\item Koch's systematic approach moved beyond correlation (microbe present in sick patients) to demonstration of causation.
+			\item This framework became the gold standard for establishing microbial causation in infectious disease.
+		\end{itemize}
+		
+		\begin{example}[Koch's Four Postulates]
+			\begin{enumerate}
+				\item Microbe must be found in all cases of the disease
+				\item Microbe must be isolated and grown in pure culture
+				\item Cultured microbe must cause disease when introduced to healthy host
+				\item Microbe must be re-isolated from the new host
+			\end{enumerate}
+		\end{example}
+	\end{frame}
+	
+	% Slide 19: Semmelweis and Handwashing: A Natural Experiment in Hospitals
+	\begin{frame}{Semmelweis and Handwashing: A Natural Experiment in Hospitals}
+		\begin{itemize}
+			\item Ignaz Semmelweis noticed that wards staffed by doctors had higher maternal mortality than those staffed by midwives.
+			\item He hypothesized that doctors performing autopsies carried \textbf{"cadaverous particles"} (germs) to patients.
+			\item When handwashing with chlorine was implemented, mortality dropped from 18\% to 1\% - a natural experiment.
+			\item Despite clear causal evidence, the medical establishment rejected his findings for decades, showing how paradigms resist change.
+		\end{itemize}
+		
+		\begin{alertblock}{Resistance to Evidence}
+			Semmelweis had data showing handwashing prevented deaths, but doctors rejected it because:
+			\begin{itemize}
+				\item It implied doctors were causing deaths
+				\item Invisible germs seemed implausible
+				\item It contradicted established miasma theory
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 20: The Anthrax Breakthrough: Isolating a Specific Cause
+	\begin{frame}{The Anthrax Breakthrough: Isolating a Specific Cause}
+		\begin{itemize}
+			\item Koch's work on \textbf{anthrax} in 1876 provided the first complete proof that a specific bacterium causes a specific disease.
+			\item He isolated Bacillus anthracis from diseased animals, grew it in pure culture, and reproduced the disease in healthy animals.
+			\item The anthrax lifecycle discovery explained puzzling observations like why certain fields remained "cursed" for decades.
+			\item This success established the template for proving causation in infectious disease that we still use today.
+		\end{itemize}
+		
+		\begin{block}{From Mystery to Mechanism}
+			\begin{center}
+				Before: "Cursed fields" where animals mysteriously died\\
+				Koch's discovery: Anthrax spores survive in soil for years\\
+				Result: Environmental persistence explained by bacterial biology\\
+				\vspace{0.2cm}
+				Understanding the causal agent explained the pattern!
+			\end{center}
+		\end{block}
+	\end{frame}
+	
+	% Slide 21: Resistance and Acceptance: Why Causal Claims Face Skepticism
+	\begin{frame}{Resistance and Acceptance: Why Causal Claims Face Skepticism}
+		\begin{itemize}
+			\item Germ theory faced fierce \textbf{resistance} from the medical establishment for decades despite mounting evidence.
+			\item Accepting germs meant admitting that doctors had unknowingly caused deaths and that established treatments were useless.
+			\item The theory required believing in invisible entities that seemed almost supernatural to many physicians.
+			\item Acceptance came only after overwhelming evidence from multiple researchers and dramatic practical successes like antiseptic surgery.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			\scriptsize
+			% Timeline of acceptance
+			\draw[thick, ->] (0,0) -- (8,0);
+			
+			% Events
+			\draw[thick] (1, -0.2) -- (1, 0.2);
+			\node[above, align=center] at (1, 0.2) {1840s\\Semmelweis\\Rejected};
+			
+			\draw[thick] (3, -0.2) -- (3, 0.2);
+			\node[above, align=center] at (3, 0.2) {1860s\\Pasteur\\Debate};
+			
+			\draw[thick] (5, -0.2) -- (5, 0.2);
+			\node[above, align=center] at (5, 0.2) {1870s\\Koch\\Evidence};
+			
+			\draw[thick] (7, -0.2) -- (7, 0.2);
+			\node[above, align=center] at (7, 0.2) {1890s\\Accepted\\Standard};
+			
+			\node at (4, -1.5) {50 years from evidence to acceptance!};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 22: The Epidemiological Challenge: When Experiments Are Unethical
+	\begin{frame}{The Epidemiological Challenge: When Experiments Are Unethical}
+		\begin{itemize}
+			\item Proving that smoking causes cancer faced a unique challenge: we cannot ethically randomize people to smoke.
+			\item Unlike infectious diseases, cancer develops over decades, making the causal link harder to establish.
+			\item \textbf{Epidemiology} - studying disease patterns in populations - became the primary tool for establishing causation.
+			\item Scientists had to develop new methods to prove causation without controlled experiments on humans.
+		\end{itemize}
+		
+		\begin{example}[The Ethical Constraint]
+			\textbf{Ideal experiment}: Randomly assign 10,000 people to smoke or not smoke for 30 years, measure cancer rates\\
+			\textbf{Reality}: Completely unethical!\\
+			\textbf{Solution}: Study people who choose to smoke vs. those who don't, controlling for confounders statistically
+		\end{example}
+	\end{frame}
+	
+	% Slide 23: Correlation Emerges: Early Statistical Links
+	\begin{frame}{Correlation Emerges: Early Statistical Links}
+		\begin{itemize}
+			\item In the 1950s, researchers noticed strong \textbf{statistical correlations} between smoking rates and lung cancer deaths.
+			\item Case-control studies found lung cancer patients were far more likely to be smokers than healthy controls.
+			\item Cohort studies following thousands of people showed smokers developed lung cancer at 10-30 times the rate of non-smokers.
+			\item The correlation was "dose-dependent" - heavy smokers had higher cancer rates than light smokers.
+		\end{itemize}
+		
+		\begin{alertblock}{The Correlation Data (1950s)}
+			\begin{center}
+				Non-smokers: 10 lung cancer deaths per 100,000\\
+				Light smokers: 50 lung cancer deaths per 100,000\\
+				Heavy smokers: 300 lung cancer deaths per 100,000\\
+				\vspace{0.2cm}
+				But correlation isn't causation - what if smokers differ in other ways?
+			\end{center}
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 24: The Tobacco Industry's Counter-Arguments: Confounders and Doubt
+	\begin{frame}{The Tobacco Industry's Counter-Arguments: Confounders and Doubt}
+		\begin{itemize}
+			\item The tobacco industry exploited the correlation-causation distinction to manufacture \textbf{doubt} about the smoking-cancer link.
+			\item They proposed alternative explanations: genetic predisposition, personality types, air pollution, or other lifestyle factors.
+			\item Industry-funded scientists emphasized that without randomized experiments, causation couldn't be "proven" definitively.
+			\item This strategy of "doubt is our product" delayed public health action for decades despite mounting evidence.
+		\end{itemize}
+		
+		\begin{block}{Manufacturing Doubt}
+			\scriptsize
+			\textbf{Tobacco Industry Playbook:}
+			\begin{itemize}
+				\item "Correlation doesn't prove causation"
+				\item Fund studies looking for other explanations
+				\item Demand impossible standard of proof
+				\item Emphasize any uncertainty in the science
+			\end{itemize}
+			Result: Public confusion despite scientific consensus
+		\end{block}
+	\end{frame}
+	
+	% Slide 25: Hill's Criteria: Nine Tests for Causation Without Experiments
+	\begin{frame}{Hill's Criteria: Nine Tests for Causation Without Experiments}
+		\begin{itemize}
+			\item In 1965, Austin Bradford Hill proposed nine \textbf{criteria} for establishing causation from observational data (when no experiment is possible).
+			\item Hill emphasized that no single criterion was necessary or sufficient - rather, the totality of evidence mattered.
+		\end{itemize}
+		
+		\begin{example}[Hill's Nine Criteria]
+			\scriptsize
+			\begin{enumerate}
+				\item \textbf{Strength}: How strong is the association?
+				\item \textbf{Consistency}: Observed by different researchers?
+				\item \textbf{Specificity}: Specific exposure, specific disease?
+				\item \textbf{Temporality}: Exposure precedes disease?
+				\item \textbf{Biological gradient}: Dose-response curve?
+				\item \textbf{Plausibility}: Biologically plausible?
+				\item \textbf{Coherence}: Fits with other knowledge?
+				\item \textbf{Experiment}: Natural experiments exist?
+				\item \textbf{Analogy}: Similar causes known?
+			\end{enumerate}
+		\end{example}
+	\end{frame}
+	
+	% Slide 26: Converging Evidence: Animal Studies, Mechanisms, and Dose-Response
+	\begin{frame}{Converging Evidence: Animal Studies, Mechanisms, and Dose-Response}
+		\begin{itemize}
+			\item \textbf{Animal experiments} showed that tobacco tar painted on mice skin caused tumors, providing experimental evidence.
+			\item Scientists identified carcinogens in tobacco smoke and traced the biological mechanisms of DNA damage.
+			\item The \textbf{dose-response relationship} - more smoking meant more cancer risk - strongly suggested causation.
+			\item Multiple independent lines of evidence all pointed to the same conclusion: smoking causes cancer.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.6]
+			% Center node
+			\node[draw, circle, fill=red!20] (center) at (0,0) {Smoking Causes Cancer};
+			
+			% Evidence nodes
+			\node[draw, rectangle] (epi) at (0, 3) {Epidemiology};
+			\node[draw, rectangle] (animal) at (3, 1.5) {Animal Studies};
+			\node[draw, rectangle] (mech) at (3, -1.5) {Mechanisms};
+			\node[draw, rectangle] (dose) at (0, -3) {Dose-Response};
+			\node[draw, rectangle] (time) at (-3, -1.5) {Temporality};
+			\node[draw, rectangle] (cess) at (-3, 1.5) {Cessation Effects};
+			
+			% Arrows
+			\draw[->, thick] (epi) -- (center);
+			\draw[->, thick] (animal) -- (center);
+			\draw[->, thick] (mech) -- (center);
+			\draw[->, thick] (dose) -- (center);
+			\draw[->, thick] (time) -- (center);
+			\draw[->, thick] (cess) -- (center);
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 27: Policy Implications: From Causal Knowledge to Public Health
+	\begin{frame}{Policy Implications: From Causal Knowledge to Public Health}
+		\begin{itemize}
+			\item The U.S. Surgeon General's 1964 report officially declared smoking a \textbf{cause} of lung cancer, not just a correlation.
+			\item This causal determination justified public health interventions: warning labels, advertising bans, and smoke-free spaces.
+			\item Smoking rates dropped from 42\% (1965) to 14\% (2019) in the U.S., preventing millions of deaths.
+			\item The smoking case established precedents for how epidemiological evidence can support causal claims and policy action.
+		\end{itemize}
+		
+		\begin{alertblock}{The Power of Causal Knowledge}
+			\begin{center}
+				1950s: "Smoking is correlated with cancer" → Limited action\\
+				1964: "Smoking CAUSES cancer" → Public health revolution\\
+				\vspace{0.2cm}
+				Establishing causation, not just correlation, enables effective intervention
+			\end{center}
+		\end{alertblock}
+	\end{frame}
+	% Slide 28: The Greenhouse Effect: From 19th Century Theory to Modern Crisis
+	\begin{frame}{The Greenhouse Effect: From 19th Century Theory to Modern Crisis}
+		\begin{itemize}
+			\item In 1859, John Tyndall discovered that \textbf{CO$_2$ and water vapor} trap heat, proposing the greenhouse effect mechanism.
+			\item Svante Arrhenius (1896) calculated that doubling atmospheric CO$_2$ would cause 5-6°C warming - remarkably close to modern estimates.
+			\item These early scientists identified the causal mechanism decades before any warming was observable.
+			\item The theoretical foundation preceded the evidence, showing how understanding mechanisms can predict future causation.
+		\end{itemize}
+		
+		\begin{block}{The Causal Chain}
+			\begin{center}
+				Burning fossil fuels → Increases atmospheric CO$_2$ →\\
+				CO$_2$ traps infrared radiation → Earth's temperature rises →\\
+				Climate patterns change globally\\
+				\vspace{0.2cm}
+				Mechanism understood 160+ years ago!
+			\end{center}
+		\end{block}
+	\end{frame}
+	
+	% Slide 29: Multiple Lines of Evidence: Temperature Records and Ice Cores
+	\begin{frame}{Multiple Lines of Evidence: Temperature Records and Ice Cores}
+		\begin{itemize}
+			\item Global temperature records show approximately 1.1°C warming since pre-industrial times, matching theoretical predictions.
+			\item \textbf{Ice cores} provide 800,000 years of climate history, showing CO$_2$ and temperature move together throughout Earth's history.
+			\item Current CO$_2$ levels (420+ ppm) are the highest in over 3 million years, far exceeding natural variations.
+			\item Multiple independent datasets (land, ocean, satellite, balloon) all show consistent warming patterns.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			% Graph axes
+			\draw[thick, ->] (0,0) -- (7,0) node[right] {Time};
+			\draw[thick, ->] (0,0) -- (0,4) node[above] {CO$_2$/Temp};
+			
+			% Natural variation
+			\draw[blue, thick] (0.5,1) sin (1,1.5) cos (1.5,1) sin (2,1.5) cos (2.5,1) sin (3,1.5) cos (3.5,1) sin (4,1.5) cos (4.5,1);
+			\node[blue] at (2.5, 0.5) {Natural cycles};
+			
+			% Industrial spike
+			\draw[red, thick] (4.5,1) -- (5,2) -- (6,3.5);
+			\node[red] at (5.5, 3) {Industrial};
+			\node[red] at (5.5, 2.5) {era};
+			
+			% Label
+			\draw[dashed] (4.5, 0) -- (4.5, 3.5);
+			\node at (4.5, -0.5) {1850};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 30: Natural Experiments: Volcanic Eruptions as Climate Tests
+	\begin{frame}{Natural Experiments: Volcanic Eruptions as Climate Tests}
+		\begin{itemize}
+			\item Major \textbf{volcanic eruptions} provide natural experiments by injecting aerosols that temporarily cool the planet.
+			\item The 1991 Mount Pinatubo eruption caused ~0.5°C global cooling for 2-3 years, exactly as climate models predicted.
+			\item These events test our understanding of climate causation - if models correctly predict volcanic cooling, they likely capture warming mechanisms too.
+			\item The temporary cooling followed by resumed warming strengthens evidence that CO$_{2}$, not natural factors, drives long-term trends.
+		\end{itemize}
+		
+		\begin{example}[Pinatubo as Natural Experiment]
+			\begin{itemize}
+				\item Prediction (1991): Models forecast 0.5°C cooling
+				\item Observation (1992-93): 0.5°C cooling occurred
+				\item Result: Successful prediction validates climate models
+				\item Implication: Same models show CO$_{2}$ causes warming
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 31: Computer Models: Simulating Causal Mechanisms
+	\begin{frame}{Computer Models: Simulating Causal Mechanisms}
+		\begin{itemize}
+			\item \textbf{Climate models} integrate known physical laws to simulate Earth's climate system and test causal hypotheses.
+			\item Models can run "experiments" impossible in reality: Earth with/without human emissions, doubled CO$_{2}$, removed ice caps.
+			\item Only models including human CO$_{2}$ emissions reproduce observed 20th-century warming - natural factors alone cannot.
+			\item Multiple independent modeling groups worldwide reach the same conclusions, providing consistency across approaches.
+		\end{itemize}
+		
+		\begin{alertblock}{The Fingerprint Test}
+			Models run with only natural causes (solar, volcanic) = No warming trend\\
+			Models run with only human causes (CO$_{2}$, aerosols) = Matches observations\\
+			Models with both natural + human causes = Best match to reality\\
+			\vspace{0.2cm}
+			This "fingerprinting" identifies human causation
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 32: The Attribution Problem: Separating Human from Natural Causes
+	\begin{frame}{The Attribution Problem: Separating Human from Natural Causes}
+		\begin{itemize}
+			\item \textbf{Attribution science} works to separate human-caused climate change from natural variability like El Niño and solar cycles.
+			\item Scientists use "detection and attribution" studies comparing observed patterns to those expected from different causes.
+			\item Human causation creates distinct "fingerprints": warming troposphere but cooling stratosphere, Arctic amplification, changing seasons.
+			\item Natural causes alone cannot explain observed changes - only human factors produce the right pattern and magnitude.
+		\end{itemize}
+		
+		\begin{block}{Causal Fingerprints}
+			\begin{tabular}{l|l}
+				\textbf{Observation} & \textbf{Indicates} \\
+				\hline
+				Stratosphere cooling & Greenhouse gases (not solar) \\
+				Arctic warms fastest & Ice-albedo feedback \\
+				Nights warm more than days & Heat trapping \\
+				Ocean warming at depth & Long-term forcing \\
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	% Slide 33: Scientific Consensus: When Multiple Methods Confirm Causation
+	\begin{frame}{Scientific Consensus: When Multiple Methods Confirm Causation}
+		\begin{itemize}
+			\item Over 99\% of climate scientists agree that humans are causing current global warming - extraordinary consensus.
+			\item This agreement arose from \textbf{convergent evidence}: physics, observations, experiments, and models all point to human causation.
+			\item Like evolution and germ theory before it, climate science faced initial skepticism but evidence accumulated overwhelmingly.
+			\item Scientific consensus doesn't determine truth, but when multiple independent methods agree, confidence in causation increases.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.6]
+			% Timeline of evidence accumulation
+			\node at (0, 3) {\textbf{Evidence Accumulation}};
+			
+			% Boxes for different types
+			\node[draw, rectangle, fill=blue!20] (theory) at (0, 2) {1859: Theory};
+			\node[draw, rectangle, fill=green!20] (obs) at (0, 1) {1960s: Observations};
+			\node[draw, rectangle, fill=yellow!20] (models) at (0, 0) {1970s: Models};
+			\node[draw, rectangle, fill=orange!20] (attr) at (0, -1) {1990s: Attribution};
+			\node[draw, rectangle, fill=red!20] (cons) at (0, -2) {2000s: Consensus};
+			
+			% Arrow showing progression
+			\draw[->, ultra thick] (2, 2) -- (2, -2);
+			\node at (4, 0) {Confidence in};
+			\node at (4, -0.5) {human causation};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 34: Common Patterns: How Science Establishes Causation
+	\begin{frame}{Common Patterns: How Science Establishes Causation}
+		\begin{itemize}
+			\item Across all our cases, scientists used \textbf{multiple independent lines of evidence} to establish causation without perfect experiments.
+			\item \textbf{Predictive success} proved crucial: Halley's comet, vaccine effectiveness, cancer rates, volcanic cooling all validated theories.
+			\item Understanding \textbf{mechanisms} strengthened causal claims: gravity equations, natural selection, germs, carcinogens, greenhouse physics.
+			\item Natural experiments and comparative studies substituted for controlled experiments when manipulation was impossible or unethical.
+		\end{itemize}
+		
+		\begin{example}[Universal Strategies]
+			\begin{itemize}
+				\item Theory predicts → Observation confirms
+				\item Multiple methods → Same conclusion
+				\item Dose-response → Strengthens causation
+				\item Mechanisms explain → Patterns observed
+				\item Natural variation → Tests hypotheses
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 35: The Role of Time: Why Accepting Causal Claims Takes Decades
+	\begin{frame}{The Role of Time: Why Accepting Causal Claims Takes Decades}
+		\begin{itemize}
+			\item Major causal claims in science typically take \textbf{30-50 years} from initial proposal to general acceptance.
+			\item This delay reflects both healthy skepticism and resistance from those whose interests are threatened by new knowledge.
+			\item Time allows evidence to accumulate, predictions to be tested, and alternative explanations to be ruled out.
+			\item Each case study shows a similar pattern: early pioneers face rejection, evidence accumulates, and eventually paradigms shift.
+		\end{itemize}
+		
+		\begin{alertblock}{The Pattern of Acceptance}
+			\begin{center}
+				Initial claim → Fierce resistance → Evidence accumulates →\\
+				Predictions confirmed → Alternative explanations fail →\\
+				New generation of scientists → Paradigm shift →\\
+				"How could anyone have doubted this?"
+			\end{center}
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 36: Lessons for Today: Evaluating Scientific Causal Claims
+	\begin{frame}{Lessons for Today: Evaluating Scientific Causal Claims}
+		\begin{itemize}
+			\item When evaluating scientific causal claims, look for \textbf{convergent evidence} from multiple independent sources and methods.
+			\item Be suspicious of demands for impossible proof or those who emphasize uncertainty without acknowledging the weight of evidence.
+			\item Recognize that those with financial or ideological stakes often manufacture doubt about inconvenient causal relationships.
+			\item Remember that science's strength lies not in any single study but in the accumulation and integration of evidence over time.
+		\end{itemize}
+		
+		\begin{block}{Your Scientific Reasoning Toolkit}
+			\begin{center}
+				$\checkmark$ Does the proposed mechanism make sense?\\
+				$\checkmark$ Do multiple lines of evidence converge?\\
+				$\checkmark$ Are predictions being confirmed?\\
+				$\checkmark$ Who benefits from denial?\\
+				$\checkmark$ What do experts in the field conclude?\\
+				$\checkmark$ How long has evidence been accumulating?
+			\end{center}
+		\end{block}
+	\end{frame}
 \end{document}

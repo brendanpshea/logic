@@ -1,901 +1,722 @@
 \documentclass{beamer}
 \usetheme{Madrid}
-\usecolortheme{beaver}
+\usecolortheme{default}
 \usepackage{tikz}
+\usetikzlibrary{shapes}
 \usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{booktabs}
 
-\title{Causal Reasoning: From Mill to Modern Experiments}
+% Title page information
+\title{Causal Reasoning: Understanding Why Things Happen}
+\subtitle{Introduction to Logic}
 \author{Brendan Shea, PhD}
-\date{Introduction to Logic}
-
+\date{}
 
 \begin{document}
-
-\begin{frame}
-    \titlepage
-\end{frame}
-
-\begin{frame}{What Does It Mean When We Say 'A Causes B'?}
-    \begin{itemize}
-        \item When we say "A causes B," we mean that A makes B happen in some way.
-        \item A causal relationship implies that if we change A, B will also change as a result.
-        \item \textbf{Causality} refers to the relationship between events where one event (the cause) brings about another event (the effect).
-        \item Understanding causality helps us explain why things happen and predict what might happen in the future.
-    \end{itemize}
-    
-    \begin{block}{Key Question}
-        How can we be sure that A really causes B, and it's not just coincidence or something else causing both A and B?
-    \end{block}
-\end{frame}
-
-\begin{frame}{Correlation vs. Causation: Why They're Not the Same}
-    \begin{itemize}
-        \item \textbf{Correlation} means two things tend to happen together or change together.
-        \item \textbf{Causation} means one thing actually makes the other thing happen.
-        \item Just because two things happen together doesn't mean one causes the other.
-        \item Both events might be caused by a third factor we haven't considered.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Correlation circle
-        \draw (0,0) circle (1.5cm);
-        \node at (0,0) {Correlation};
-        
-        % Causation circle
-        \draw (3,0) circle (0.8cm);
-        \node at (3,0) {Causation};
-        
-        % Labels
-        \node at (-1.5,1.5) {Ice cream sales};
-        \node at (-1.5,-1.5) {Drowning rates};
-        \node at (5.5,0) {Sunburn causes pain};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{The History of Causal Reasoning: From Aristotle to Today}
-    \begin{itemize}
-        \item Aristotle (384-322 BCE) identified four types of causes: material, formal, efficient, and final causes.
-        \item David Hume (1711-1776) questioned whether we can truly observe causation or just regular succession of events.
-        \item John Stuart Mill (1806-1873) developed systematic methods for establishing causal relationships.
-        \item Modern scientists use statistical methods and controlled experiments to determine causality.
-    \end{itemize}
-    
-    \begin{alertblock}{Important Development}
-        The shift from philosophical reasoning to empirical scientific methods has been crucial for establishing reliable causal relationships.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{John Stuart Mill and the Quest for Causality}
-    \begin{itemize}
-        \item John Stuart Mill was a British philosopher who systematized approaches to find causal relationships.
-        \item Mill's work "A System of Logic" (1843) formalized methods for scientific inquiry.
-        \item Mill believed that careful observation and comparison could reveal causal connections.
-        \item His methods remain influential in scientific reasoning and experimental design today.
-    \end{itemize}
-    
-    \begin{example}
-        Mill was concerned with questions like: "Does this medicine cure this disease?" or "Does this educational technique improve learning?"
-    \end{example}
-\end{frame}
-
-\begin{frame}{Introduction to Mill's Methods: Five Ways to Find Causes}
-    \begin{itemize}
-        \item Mill developed five systematic methods to identify causal relationships through observation.
-        \item These methods provide a framework for thinking about what causes what.
-        \item Mill's methods help us differentiate between coincidence and true causation.
-        \item These techniques form the foundation of modern experimental design.
-    \end{itemize}
-    
-    \begin{block}{Mill's Five Methods}
-        \begin{enumerate}
-            \item Method of Agreement
-            \item Method of Difference
-            \item Joint Method of Agreement and Difference
-            \item Method of Residues
-            \item Method of Concomitant Variation
-        \end{enumerate}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Method of Agreement: Finding What's Common When Effects Are Similar}
-    \begin{itemize}
-        \item The \textbf{Method of Agreement} looks for the one factor that is present in all cases where the effect occurs.
-        \item If multiple instances of a phenomenon have only one circumstance in common, that circumstance is likely the cause.
-        \item This method works by examining different scenarios that produce the same effect.
-        \item It helps identify necessary conditions for an effect to occur.
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|c|c|c|c|c|}
-            \hline
-            \textbf{Case} & \textbf{Factor A} & \textbf{Factor B} & \textbf{Factor C} & \textbf{Effect X} \\
-            \hline
-            1 & Present & Present & Absent & Occurs \\
-            2 & Present & Absent & Present & Occurs \\
-            3 & Present & Absent & Absent & Occurs \\
-            \hline
-            \multicolumn{5}{|c|}{Factor A is likely the cause of Effect X} \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Method of Agreement Example: Professor Frink's Lab Explosion}
-	\textbf{Scenario:} Professor Frink is investigating what causes his laboratory experiments to explode. He examines five recent explosions.
 	
-	\begin{table}
-		\scriptsize
-		\centering
-		\begin{tabular}{|c|c|c|c|c|c|}
-			\hline
-			\textbf{Explosion} & \textbf{Heat Source} & \textbf{Chemical X} & \textbf{Lightning} & \textbf{Glavin!} & \textbf{Result} \\
-			\hline
-			1 & Yes & Yes & No & Yes & Explosion \\
-			2 & No & Yes & Yes & Yes & Explosion \\
-			3 & Yes & Yes & Yes & No & Explosion \\
-			4 & No & Yes & No & No & Explosion \\
-			5 & Yes & Yes & No & Yes & Explosion \\
-			\hline
-		\end{tabular}
-	\end{table}
+	% Title slide
+	\frame{\titlepage}
 	
-	\textbf{Analysis:} Chemical X is the only factor present in ALL explosions.
+	% Slide 1: Causal Reasoning: Understanding Why Things Happen
+	\begin{frame}{Causal Reasoning: Understanding Why Things Happen}
+		\begin{itemize}
+			\item \textbf{Causal reasoning} is the process of identifying relationships where one event or condition brings about another.
+			\item We use causal thinking every day when we ask "why" questions: Why did my car break down? Why did I get sick?
+			\item Understanding causation helps us predict future events and make better decisions in our personal and professional lives.
+			\item Today we'll learn systematic methods to distinguish genuine causes from mere coincidences.
+		\end{itemize}
+		
+		\begin{block}{Key Question}
+			How can we reliably determine what causes what in a complex world?
+		\end{block}
+	\end{frame}
 	
-	\textbf{Conclusion by Method of Agreement:} Chemical X is likely the cause of the explosions.
+	% Slide 2: From Correlation to Causation: Today's Journey
+	\begin{frame}{From Correlation to Causation: Today's Journey}
+		\begin{itemize}
+			\item \textbf{Correlation} means two things tend to occur together, but this doesn't necessarily mean one causes the other.
+			\item The famous phrase "correlation does not imply causation" warns us against jumping to conclusions about cause and effect.
+			\item We'll explore scientific methods that help us move beyond correlation to establish genuine causal relationships.
+			\item By the end of this lecture, you'll have tools to critically evaluate causal claims in media, research, and everyday life.
+		\end{itemize}
+		
+		\begin{alertblock}{Warning}
+			Many false beliefs arise from mistaking correlation for causation!
+		\end{alertblock}
+	\end{frame}
 	
-	\begin{alertblock}{Professor Frink says:}
-		"Glavin! The data clearly indicates that Chemical X is the necessary ingredient for my spectacular laboratory failures!"
-	\end{alertblock}
-\end{frame}
-
-\begin{frame}{Method of Difference: The Power of Comparison}
-    \begin{itemize}
-        \item The \textbf{Method of Difference} compares two scenarios: one where the effect occurs and one where it does not.
-        \item If the scenarios differ in only one factor, that factor is likely the cause.
-        \item This method is powerful because it isolates a single variable that makes a difference.
-        \item It closely resembles modern controlled experiments.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Two scenarios
-        \draw (0,0) rectangle (2,3);
-        \draw (5,0) rectangle (7,3);
-        
-        % Factors
-        \node at (1,2.5) {Factor A};
-        \node at (1,2.0) {Factor B};
-        \node at (1,1.5) {Factor C};
-        \node at (1,1.0) {Factor D};
-        \node at (1,0.5) {Effect X: YES};
-        
-        \node at (6,2.5) {Factor A};
-        \node at (6,2.0) {Factor B};
-        \node at (6,1.5) {No Factor C};
-        \node at (6,1.0) {Factor D};
-        \node at (6,0.5) {Effect X: NO};
-        
-        % Arrow pointing to difference
-        \draw[->, thick] (3.5,1.5) -- (4.5,1.5);
-        \node at (4,1.8) {Difference};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Method of Difference Example: Dexter's Growth Serum}
-	\textbf{Scenario:} Dexter wants to test whether his new growth serum causes plants to grow taller. He sets up two identical experiments.
+	% Slide 3: Why Causal Thinking Matters in Logic and Life
+	\begin{frame}{Why Causal Thinking Matters in Logic and Life}
+		\begin{itemize}
+			\item Causal reasoning connects to our previous studies of deductive, inductive, and abductive reasoning.
+			\item In science, establishing causation is essential for developing effective treatments, policies, and technologies.
+			\item Understanding causation helps us avoid superstitious thinking and make rational decisions based on evidence.
+			\item Causal literacy is crucial for being an informed citizen who can evaluate claims about health, economics, and social issues.
+		\end{itemize}
+		
+		\begin{example}[Real-World Applications]
+			\begin{itemize}
+				\item Does this medication actually cure the disease?
+				\item Will this economic policy reduce unemployment?
+				\item Does violent media cause aggressive behavior?
+			\end{itemize}
+		\end{example}
+	\end{frame}
 	
-	\begin{center}
+	% Slide 4: Defining Causation: The Interventionist Approach
+	\begin{frame}{Defining Causation: The Interventionist Approach}
+		\begin{itemize}
+			\item The \textbf{interventionist approach} defines causation in terms of what would happen if we actively changed something.
+			\item X causes Y if intervening to change X would lead to a change in Y, all else being equal.
+			\item This approach emphasizes that causes are things we can manipulate or that could be manipulated in principle.
+			\item The key insight is that causation is about what happens when we "wiggle" one variable and observe effects on another.
+		\end{itemize}
+		
+		\begin{block}{Formal Definition}
+			X causes Y if and only if there exists an intervention on X that would change Y (holding all else constant).
+		\end{block}
+	\end{frame}
+	
+	% Slide 5: "If I Do X, Then Y Happens": Intervention in Action
+	\begin{frame}{"If I Do X, Then Y Happens": Intervention in Action}
+		\begin{itemize}
+			\item \textbf{Intervention} means actively changing a variable rather than just observing it naturally occur.
+			\item When we flip a light switch (intervention on X), the light turns on (change in Y) - this suggests a causal relationship.
+			\item The intervention must be "surgical" - it changes only the target variable without affecting other factors directly.
+			\item This approach helps us distinguish causation from mere association or correlation in data.
+		\end{itemize}
+		
 		\begin{tikzpicture}[scale=0.8]
-			\scriptsize
-			% Experiment A
-			\draw (0,0) rectangle (3,4);
-			\node at (1.5,3.5) {\textbf{Plant A}};
-			\node at (1.5,3) {Growth Serum: YES};
-			\node at (1.5,2.5) {Sunlight: 8 hours};
-			\node at (1.5,2) {Water: 100ml daily};
-			\node at (1.5,1.5) {Soil Type: Potting mix};
-			\node at (1.5,1) {Temperature: 22°C};
-			\node at (1.5,0.5) {\textcolor{green}{\textbf{Height: 15cm}}};
+			% Draw boxes
+			\node[draw, rectangle, minimum width=2cm, minimum height=1cm] (X) at (0,0) {Flip Switch};
+			\node[draw, rectangle, minimum width=2cm, minimum height=1cm] (Y) at (5,0) {Light On/Off};
 			
-			% Experiment B
-			\draw (4,0) rectangle (7,4);
-			\node at (5.5,3.5) {\textbf{Plant B}};
-			\node at (5.5,3) {Growth Serum: NO};
-			\node at (5.5,2.5) {Sunlight: 8 hours};
-			\node at (5.5,2) {Water: 100ml daily};
-			\node at (5.5,1.5) {Soil Type: Potting mix};
-			\node at (5.5,1) {Temperature: 22°C};
-			\node at (5.5,0.5) {\textcolor{red}{\textbf{Height: 8cm}}};
+			% Draw arrow
+			\draw[->, thick, blue] (X) -- (Y);
+			
+			% Label
+			\node at (2.5, 0.5) {causes};
 		\end{tikzpicture}
-	\end{center}
+	\end{frame}
 	
-	\textbf{Analysis:} The only difference is the growth serum, yet Plant A grew much taller.
+	% Slide 6: Counterfactual Thinking: "What If Things Were Different?"
+	\begin{frame}{Counterfactual Thinking: "What If Things Were Different?"}
+		\begin{itemize}
+			\item \textbf{Counterfactual reasoning} asks what would have happened if circumstances had been different.
+			\item "The rock caused the window to break" means: if the rock hadn't been thrown, the window wouldn't have broken.
+			\item This approach defines causation by comparing the actual world with hypothetical alternative worlds.
+			\item Counterfactuals help us think about causation even when we can't perform real interventions.
+		\end{itemize}
+		
+		\begin{example}[Counterfactual Analysis]
+			\begin{itemize}
+				\item Actual world: I studied hard and passed the exam
+				\item Counterfactual world: If I hadn't studied hard, I would have failed
+				\item Conclusion: Studying hard caused me to pass
+			\end{itemize}
+		\end{example}
+	\end{frame}
 	
-	\textbf{Conclusion by Method of Difference:} The growth serum causes increased plant growth.
+	% Slide 7: Example: Why Did Wile E. Coyote Fall? (Interventionist View)
+	\begin{frame}{Example: Why Did Wile E. Coyote Fall? (Interventionist View)}
+		\begin{itemize}
+			\item In the cartoon, Wile E. Coyote runs off a cliff but doesn't fall until he looks down and realizes there's no ground.
+			\item \textbf{Interventionist analysis}: If we intervened to prevent him from looking down, would he still fall?
+			\item In reality, gravity causes the fall regardless of awareness - looking down is not the true cause.
+			\item This example illustrates how the interventionist approach helps us identify genuine causes versus coincidental timing.
+		\end{itemize}
+		
+		\begin{alertblock}{Cartoon vs. Reality}
+			In cartoons: Looking down → Falling (not real causation!)\\
+			In reality: Running off cliff → Falling (true causation)
+		\end{alertblock}
+	\end{frame}
 	
-	\begin{block}{Dexter concludes:}
-		"The experimental data supports my hypothesis with 93.7\% confidence!"
-	\end{block}
-\end{frame}
-
-
-\begin{frame}{Joint Method of Agreement and Difference: Combining Approaches}
-	\begin{itemize}
-		\item The \textbf{Joint Method} combines the strengths of the Methods of Agreement and Difference.
-		\item It looks for a factor that is present whenever the effect occurs and absent whenever the effect is absent.
-		\item This method provides stronger evidence than either method alone.
-		\item It reduces the likelihood of coincidental associations being mistaken for causes.
-	\end{itemize}
+	% Slide 8: Example: Would Batman Still Fight Crime Without His Parents' Death? (Counterfactual)
+	\begin{frame}{Example: Would Batman Still Fight Crime Without His Parents' Death? (Counterfactual)}
+		\begin{itemize}
+			\item Batman's origin story claims his parents' murder caused him to become a crime fighter.
+			\item \textbf{Counterfactual analysis}: In a world where his parents lived, would Bruce Wayne still become Batman?
+			\item Most interpretations suggest no - he would likely have become a philanthropist or businessman instead.
+			\item This example shows how counterfactuals help us evaluate causal claims in complex narratives where we can't intervene.
+		\end{itemize}
+		
+		\begin{block}{Counterfactual Worlds}
+			\begin{tabular}{l|l}
+				\textbf{Actual World} & \textbf{Counterfactual World} \\
+				\hline
+				Parents murdered & Parents survive \\
+				Becomes Batman & Remains civilian \\
+				Fights crime & Runs Wayne Enterprises \\
+			\end{tabular}
+		\end{block}
+	\end{frame}
 	
-	\begin{table}
-		\centering
-		\begin{tabular}{|c|c|c|c|c|}
-			\hline
-			\textbf{Case} & \textbf{Factor A} & \textbf{Factor B} & \textbf{Factor C} & \textbf{Effect X} \\
-			\hline
-			1 & Present & Present & Absent & Occurs \\
-			2 & Present & Absent & Present & Occurs \\
-			3 & Absent & Present & Present & Does Not Occur \\
-			4 & Absent & Absent & Present & Does Not Occur \\
-			\hline
-			\multicolumn{5}{|c|}{Factor A is most likely the cause of Effect X} \\
-			\hline
-		\end{tabular}
-	\end{table}
-\end{frame}
-
-
-\begin{frame}{Joint Method Example: Rick's Portal Gun Malfunctions}
-	\textbf{Scenario:} Rick is investigating when his portal gun malfunctions. He needs to find what's present when it fails AND absent when it works.
+	% Slide 9: Everyday Causation: Coffee and Alertness
+	\begin{frame}{Everyday Causation: Coffee and Alertness}
+		\begin{itemize}
+			\item We often claim "coffee makes me alert," but how can we verify this causal relationship?
+			\item \textbf{Intervention test}: When I drink coffee (intervention), I become more alert within 20-30 minutes.
+			\item \textbf{Counterfactual test}: On days I skip coffee, I remain drowsy longer than on days I drink it.
+			\item However, other factors like placebo effects, sleep quality, and time of day might also influence alertness.
+		\end{itemize}
+		
+		\begin{example}[Personal Experiment]
+			Try alternating coffee and decaf for a week while tracking alertness levels - this creates your own mini-intervention study!
+		\end{example}
+	\end{frame}
 	
-	\begin{table}
-		\scriptsize
-		\centering
-		\begin{tabular}{|c|c|c|c|c|c|}
-			\hline
-			\textbf{Test} & \textbf{Drunk} & \textbf{Morty Nearby} & \textbf{Battery Low} & \textbf{Burping} & \textbf{Malfunction?} \\
-			\hline
-			1 & Yes & Yes & No & Yes & YES \\
-			2 & Yes & No & Yes & Yes & YES \\
-			3 & No & Yes & Yes & No & NO \\
-			4 & No & No & Yes & No & NO \\
-			5 & Yes & No & No & Yes & YES \\
-			6 & No & Yes & No & No & NO \\
-			\hline
-		\end{tabular}
-	\end{table}
+	% Slide 10: Multiple Causes: Why Your Phone Battery Dies
+	\begin{frame}{Multiple Causes: Why Your Phone Battery Dies}
+		\begin{itemize}
+			\item Real-world events often have \textbf{multiple causes} working together rather than a single cause.
+			\item Your phone battery dies because of: screen brightness, running apps, cellular signal strength, and battery age.
+			\item Each factor contributes causally - intervening on any one of them would affect battery life.
+			\item Understanding multiple causation helps us see why simple "X causes Y" statements often oversimplify reality.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			% Multiple causes pointing to one effect
+			\node[draw, rectangle] (brightness) at (-2, 1.5) {Screen Brightness};
+			\node[draw, rectangle] (apps) at (-2, 0.5) {Running Apps};
+			\node[draw, rectangle] (signal) at (-2, -0.5) {Weak Signal};
+			\node[draw, rectangle] (age) at (-2, -1.5) {Battery Age};
+			\node[draw, rectangle, fill=red!20] (dead) at (2, 0) {Dead Battery};
+			
+			% Arrows
+			\draw[->, thick] (brightness) -- (dead);
+			\draw[->, thick] (apps) -- (dead);
+			\draw[->, thick] (signal) -- (dead);
+			\draw[->, thick] (age) -- (dead);
+		\end{tikzpicture}
+	\end{frame}
 	
-	\textbf{Analysis:} Being drunk is present in ALL malfunctions (tests 1, 2, 5) and absent in ALL successful uses (tests 3, 4, 6).
+	% Slide 11: The Correlation Trap: When Association Isn't Causation
+	\begin{frame}{The Correlation Trap: When Association Isn't Causation}
+		\begin{itemize}
+			\item \textbf{The correlation trap} occurs when we mistake statistical association for causal relationship.
+			\item Just because two things occur together frequently doesn't mean one causes the other.
+			\item Classic example: Ice cream sales and drowning deaths both increase in summer, but ice cream doesn't cause drowning!
+			\item The trap is especially dangerous when correlation confirms our existing beliefs or desires.
+		\end{itemize}
+		
+		\begin{alertblock}{Remember}
+			Correlation is evidence that might suggest causation, but it's not proof! Always look for alternative explanations.
+		\end{alertblock}
+	\end{frame}
 	
-	\textbf{Conclusion by Joint Method:} Rick's drunkenness causes portal gun malfunctions.
+	% Slide 12: Confounding Variables: Hidden Factors at Play
+	\begin{frame}{Confounding Variables: Hidden Factors at Play}
+		\begin{itemize}
+			\item A \textbf{confounding variable} is a hidden factor that influences both the supposed cause and effect.
+			\item Confounders create the illusion of causation where none exists by making two things appear related.
+			\item Example: Cities with more firefighters have more fires, but firefighters don't cause fires - large city size causes both!
+			\item Identifying and controlling for confounders is crucial for accurate causal inference.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.8]
+			% Nodes
+			\node[draw, rectangle] (conf) at (2, 2) {City Size (Confounder)};
+			\node[draw, rectangle] (x) at (0, 0) {Firefighters};
+			\node[draw, rectangle] (y) at (4, 0) {Fires};
+			
+			% Arrows from confounder
+			\draw[->, thick, red] (conf) -- (x);
+			\draw[->, thick, red] (conf) -- (y);
+			
+			% Dotted line showing spurious correlation
+			\draw[<->, dashed, gray] (x) -- (y);
+			\node[gray] at (2, -0.5) {spurious correlation};
+		\end{tikzpicture}
+	\end{frame}
 	
-	\begin{alertblock}{Rick's response:}
-		"Listen Morty, *burp* the science clearly shows that alcohol actually IMPROVES my inventions... this data must be wrong, Morty!"
-	\end{alertblock}
-\end{frame}
-
-\begin{frame}{Method of Residues: What's Left When Everything Else Is Explained}
-    \begin{itemize}
-        \item The \textbf{Method of Residues} applies when part of an effect has already been attributed to certain causes.
-        \item If we subtract the known causes and their effects, what remains must be caused by the remaining factors.
-        \item This method builds on existing knowledge of causal relationships.
-        \item It helps identify complex causal relationships where multiple factors are involved.
-    \end{itemize}
-    
-    \begin{alertblock}{Key Formula}
-        If ABC causes XYZ, and we know A causes X and B causes Y, then C must cause Z.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Method of Residues Example: Jimmy Neutron's Rocket Fuel}
-	\scriptsize{
-	\textbf{Scenario:} Jimmy's rocket achieves 1000 units of thrust, but he wants to understand what contributes to this total power.
+	% Slide 13: Example: Ice Cream Sales and Drowning Deaths
+	\begin{frame}{Example: Ice Cream Sales and Drowning Deaths}
+		\begin{itemize}
+			\item Data shows that when ice cream sales increase, drowning deaths also increase - but ice cream doesn't cause drowning!
+			\item The hidden \textbf{confounding variable} is temperature/season: hot weather causes both more ice cream consumption and more swimming.
+			\item This example perfectly illustrates why "correlation does not imply causation" is such an important principle.
+			\item Without considering confounders like weather, we might implement useless policies like banning ice cream to prevent drowning.
+		\end{itemize}
+		
+		\begin{block}{The Real Causal Structure}
+			\begin{center}
+				Hot Weather → More Ice Cream Sales\\
+				Hot Weather → More Swimming → More Drowning Risk\\
+				(No direct causal link between ice cream and drowning!)
+			\end{center}
+		\end{block}
+	\end{frame}
 	
-
-	\textbf{Previous Knowledge:}
-	\begin{itemize}
-		\item Liquid oxygen contributes 400 units of thrust
-		\item Fuel stabilizer contributes 250 units of thrust
-		\item Ignition system contributes 150 units of thrust
-	\end{itemize}
+	% Slide 14: Simpson's Paradox: When Data Misleads
+	\begin{frame}{Simpson's Paradox: When Data Misleads}
+		\begin{itemize}
+			\item \textbf{Simpson's Paradox} occurs when a trend appears in different groups of data but disappears or reverses when groups are combined.
+			\item Example: A treatment might appear harmful overall but actually be beneficial within each patient subgroup.
+			\item This paradox shows how aggregating data can hide true causal relationships and lead to wrong conclusions.
+			\item The paradox typically arises when we ignore an important variable that affects both treatment assignment and outcomes.
+		\end{itemize}
+		
+		\begin{example}[University Admissions]
+			\small{Women have higher admission rates in each department but lower overall!}
+			\\
+			\begin{tabular}{l|c|c}
+				Department & Male Admit Rate & Female Admit Rate \\
+				\hline
+				Engineering & 30\% & 35\% \\
+				Liberal Arts & 60\% & 65\% \\
+				\hline
+				Overall & 45\% & 40\% \\
+			\end{tabular}
+			
+		\end{example}
+	\end{frame}
 	
-	\textbf{Current Rocket Components:}
-	\begin{itemize}
-		\item Liquid oxygen (400 units)
-		\item Fuel stabilizer (250 units)  
-		\item Ignition system (150 units)
-		\item NEW: Neutronium catalyst (? units)
-	\end{itemize}
+	% Slide 15: Fictional Example: Did Spider-Man's Powers Cause His Problems?
+	\begin{frame}{Fictional Example: Did Spider-Man's Powers Cause His Problems?}
+		\begin{itemize}
+			\item Peter Parker gains powers and then experiences many personal tragedies - did the powers cause his problems?
+			\item Alternative explanation: His decision to become a hero (not the powers themselves) puts him in dangerous situations.
+			\item Another factor: "Parker Luck" suggests he was already prone to misfortune before gaining powers.
+			\item This example shows how even in fiction, identifying true causes requires careful analysis of competing explanations.
+		\end{itemize}
+		
+		\begin{alertblock}{Causal Analysis}
+			Powers → Hero Choice → Dangerous Situations → Problems\\
+			(The powers are only an indirect cause through Peter's choices!)
+		\end{alertblock}
+	\end{frame}
 	
-	\textbf{Analysis by Method of Residues:}
-	\begin{align}
-		\text{Total thrust} &= 1000 \text{ units} \\
-		\text{Known components} &= 400 + 250 + 150 = 800 \text{ units} \\
-		\text{Neutronium catalyst} &= 1000 - 800 = 200 \text{ units}
-	\end{align}
-}
-	\textbf{Conclusion:} The neutronium catalyst contributes 200 units of thrust.
+	% Slide 16: Selection Bias: Why Your Sample Matters
+	\begin{frame}{Selection Bias: Why Your Sample Matters}
+		\begin{itemize}
+			\item \textbf{Selection bias} occurs when the sample we study isn't representative of the population we want to understand.
+			\item Example: Studying only gym members to determine if exercise improves health ignores that healthier people might choose to join gyms.
+			\item This bias can make us think we've found a causal relationship when we've actually just selected a special group.
+			\item Selection bias is especially tricky because it can be invisible - we don't see the data we didn't collect.
+		\end{itemize}
+		
+		\begin{example}[Survivor Bias in WWII]
+			Engineers wanted to add armor where returning planes had bullet holes, but statistician Abraham Wald realized they should armor where the holes \textit{weren't} - those planes didn't return!
+		\end{example}
+	\end{frame}
 	
-	\begin{block}{Jimmy says:}
-		"Brain blast! The neutronium catalyst accounts for exactly 20\% of our total propulsion!"
-	\end{block}
-\end{frame}
-
-\begin{frame}{Method of Concomitant Variation: When Things Change Together}
-    \begin{itemize}
-        \item The \textbf{Method of Concomitant Variation} examines how changes in one variable relate to changes in another.
-        \item If a change in Factor A consistently corresponds with a change in Effect X, they are likely causally related.
-        \item This method is especially useful for factors that cannot be completely removed.
-        \item It helps identify causal relationships that involve quantities rather than just presence or absence.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale = 0.7]
-        % Axes
-        \draw[->] (0,0) -- (5,0) node[right] {Factor A};
-        \draw[->] (0,0) -- (0,4) node[above] {Effect X};
-        
-        % Points
-        \filldraw (0.5,0.7) circle (2pt);
-        \filldraw (1.5,1.5) circle (2pt);
-        \filldraw (2.5,2.3) circle (2pt);
-        \filldraw (3.5,3.1) circle (2pt);
-        \filldraw (4.5,3.9) circle (2pt);
-        
-        % Line of best fit
-        \draw[red] (0.3,0.5) -- (4.7,4);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Applying Mill's Methods: Real-World Examples}
-    \begin{itemize}
-        \item Medical research often uses the Method of Difference to test whether a treatment causes improvement.
-        \item Epidemiologists use the Method of Agreement to identify common factors in disease outbreaks.
-        \item Social scientists apply the Method of Concomitant Variation to study how education affects income.
-        \item Environmental scientists use the Joint Method to establish links between pollutants and ecosystem effects.
-    \end{itemize}
-    
-    \begin{example}
-        \textbf{Snow's Cholera Investigation (1854):} John Snow used Mill's methods to determine that contaminated water caused cholera by mapping cases and identifying a common source (the Broad Street pump).
-    \end{example}
-\end{frame}
-
-\begin{frame}{The Limitations of Mill's Methods}
-    \begin{itemize}
-        \item Mill's methods assume we can identify all relevant factors, which is often impossible in complex situations.
-        \item They don't account for probabilistic causation, where causes increase the likelihood of effects rather than guaranteeing them.
-        \item The methods can be misled by coincidental correlations or hidden variables.
-        \item They struggle with situations where multiple causes interact or where feedback loops exist.
-    \end{itemize}
-    
-    \begin{alertblock}{Important Consideration}
-        Mill's methods provide a useful starting point but modern science has developed more sophisticated approaches to address these limitations.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{From Philosophy to Science: The Evolution of Causal Thinking}
-    \begin{itemize}
-        \item Modern causal reasoning builds on Mill's methods but adds statistical analysis and experimental controls.
-        \item The scientific method formalizes the process of hypothesis testing through controlled experiments.
-        \item Randomized controlled trials emerged in the 20th century as the gold standard for establishing causation.
-        \item Computer science and statistics have developed new mathematical tools for causal inference from data.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Timeline
-        \draw[thick, ->] (0,0) -- (10,0);
-        
-        % Key points
-        \draw (1,0) -- (1,0.2);
-        \node[align=center, text width=2cm] at (1,-0.7) {Mill's Methods\\1843};
-        
-        \draw (3.5,0) -- (3.5,0.2);
-        \node[align=center, text width=2.5cm] at (3.5,-0.7) {Statistical\\Inference\\1900s};
-        
-        \draw (6,0) -- (6,0.2);
-        \node[align=center, text width=2.5cm] at (6,-0.7) {Randomized\\Controlled Trials\\1950s};
-        
-        \draw (8.5,0) -- (8.5,0.2);
-        \node[align=center, text width=2.5cm] at (8.5,-0.7) {Causal\\Inference Models\\2000s};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Variables 101: Dependent, Independent, and Control}
-    \begin{itemize}
-        \item An \textbf{independent variable} is what researchers manipulate or change to see if it causes an effect.
-        \item A \textbf{dependent variable} is what researchers measure to see if it was affected by the independent variable.
-        \item \textbf{Control variables} are factors kept constant to ensure they don't influence the results.
-        \item Understanding these variables is essential for designing experiments that can establish causation.
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|l|p{7cm}|}
-            \hline
-            \textbf{Variable Type} & \textbf{Example in Plant Growth Experiment} \\
-            \hline
-            Independent & Amount of fertilizer applied to plants \\
-            \hline
-            Dependent & Height of plants after 2 weeks \\
-            \hline
-            Control & Type of soil, amount of water, amount of sunlight, temperature \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Confounding Variables: The Hidden Troublemakers}
-    \begin{itemize}
-        \item \textbf{Confounding variables} are factors that affect both the independent and dependent variables, creating a false impression of causation.
-        \item They can make it appear that A causes B when in reality C causes both A and B.
-        \item Identifying and controlling for confounding variables is one of the biggest challenges in causal research.
-        \item Failure to account for confounders is a common source of incorrect causal conclusions.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Nodes
-        \node (A) at (0,0) {Ice Cream Sales};
-        \node (B) at (5,0) {Drowning Rates};
-        \node (C) at (2.5,2) {Hot Weather};
-        
-        % Arrows
-        \draw[->, dashed] (A) -- (B) node[midway, below] {Apparent causation};
-        \draw[->] (C) -- (A) node[midway, above left] {Causes};
-        \draw[->] (C) -- (B) node[midway, above right] {Causes};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Controlled Experiments: The Gold Standard of Causal Discovery}
-    \begin{itemize}
-        \item A \textbf{controlled experiment} systematically manipulates one variable while keeping all others constant.
-        \item The experimental group receives the treatment while the control group does not.
-        \item This design isolates the effect of the independent variable on the dependent variable.
-        \item Controlled experiments provide the strongest evidence for causal relationships.
-    \end{itemize}
-    
-    \begin{block}{Key Components of a Controlled Experiment}
-        \begin{itemize}
-            \item Control group and experimental group(s)
-            \item Random assignment of subjects
-            \item Manipulation of the independent variable
-            \item Measurement of the dependent variable
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Randomization: Why Leaving Things to Chance Makes Scientific Sense}
-    \begin{itemize}
-        \item \textbf{Randomization} means assigning subjects to groups by chance, not by choice or pattern.
-        \item Random assignment helps distribute unknown confounding variables equally across groups.
-        \item This ensures that differences between groups are likely due to the treatment, not pre-existing differences.
-        \item Randomization is a crucial innovation that strengthens Mill's Method of Difference.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale = 0.8]
-        % Initial group
-        \node[draw, rectangle, minimum width=4cm, minimum height=1cm] (pool) at (0,3) {Pool of Participants};
-        
-        % Arrow pointing down
-        \node at (0,2.2) {Random Assignment};
-        \draw[->, thick] (0,2.5) -- (0,1.8);
-        
-        % Split arrow
-        \draw[->, thick] (0,1.8) -- (-2,1);
-        \draw[->, thick] (0,1.8) -- (2,1);
-        
-        % Experimental and control groups
-        \node[draw, rectangle, minimum width=3cm, minimum height=0.8cm] (exp) at (-2,0) {Experimental Group};
-        \node[draw, rectangle, minimum width=3cm, minimum height=0.8cm] (con) at (2,0) {Control Group};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Sample Size and Statistical Power: Why Numbers Matter}
-    \begin{itemize}
-        \item \textbf{Sample size} refers to the number of subjects or observations in a study.
-        \item Larger samples make it more likely to detect true effects and less likely to be misled by random variation.
-        \item \textbf{Statistical power} is the ability of a study to detect an effect if one actually exists.
-        \item Small studies may miss real causal relationships due to insufficient power.
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|l|p{7cm}|}
-            \hline
-            \textbf{Sample Size} & \textbf{Implications} \\
-            \hline
-            Small ($n < 30$) & High variability, low reliability, susceptible to outliers, low power \\
-            \hline
-            Medium ($30 < n < 100$) & Moderate reliability, may detect large effects \\
-            \hline
-            Large ($n > 100$) & More reliable, can detect smaller effects, more generalizable \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Blind and Double-Blind Studies: Removing Bias}
-    \begin{itemize}
-        \item In a \textbf{blind study}, participants don't know whether they're in the experimental or control group.
-        \item In a \textbf{double-blind study}, neither participants nor researchers know who is in which group.
-        \item Blinding prevents expectations from influencing behavior and measurements.
-        \item This approach eliminates psychological biases that can create false impressions of causality.
-    \end{itemize}
-    
-    \begin{example}
-        A medication trial where patients receive either the real drug or a placebo that looks identical. Neither patients nor doctors evaluating responses know who received which treatment until after data collection is complete.
-    \end{example}
-\end{frame}
-
-\begin{frame}{Placebo Effect: When Belief Causes Change}
-    \begin{itemize}
-        \item The \textbf{placebo effect} occurs when improvement happens because a person believes they're receiving effective treatment.
-        \item This demonstrates how psychological factors can create real physiological changes.
-        \item The placebo effect is a legitimate causal relationship (belief → improvement).
-        \item Controlling for the placebo effect is essential in determining whether treatments have effects beyond psychological expectations.
-    \end{itemize}
-    
-    \begin{alertblock}{Important Note}
-        The placebo effect is not "fake" or "all in the mind" but a real phenomenon with measurable biological effects, including changes in brain chemistry and immune response.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Natural Experiments: When Nature Does the Work for Us}
-    \begin{itemize}
-        \item \textbf{Natural experiments} occur when circumstances create comparison groups without researcher intervention.
-        \item These situations allow us to study causes when deliberate experiments would be impossible or unethical.
-        \item Natural experiments approximate Mill's methods in real-world settings.
-        \item They provide valuable causal insights when controlled experiments aren't feasible.
-    \end{itemize}
-    
-    \begin{example}
-        After a flood in 1993, some schools in Chicago were damaged and closed, forcing students to transfer to better-performing schools. Researchers tracked these students to study the effect of school quality on academic achievement, finding significant improvements compared to similar students who stayed in their original schools.
-    \end{example}
-\end{frame}
-
-\begin{frame}{Case Studies vs. Controlled Experiments: Strengths and Weaknesses}
-    \begin{itemize}
-        \item \textbf{Case studies} examine a single instance or small group in great depth.
-        \item They provide rich detail but may not generalize to other situations.
-        \item Controlled experiments offer stronger causal evidence but often sacrifice context and detail.
-        \item Both approaches have complementary roles in establishing causal knowledge.
-    \end{itemize}
-    
-    \begin{table}
-        \scriptsize
-        \centering
-        \begin{tabular}{|l|p{3.5cm}|p{3.5cm}|}
-            \hline
-            \textbf{Aspect} & \textbf{Case Studies} & \textbf{Controlled Experiments} \\
-            \hline
-            Depth & Rich, detailed information & Limited information on many cases \\
-            \hline
-            Breadth & Limited to few cases & Many subjects/observations \\
-            \hline
-            Causal evidence & Suggestive, exploratory & Strong, confirmatory \\
-            \hline
-            Context & Preserved & Often removed \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Observational Studies: Finding Patterns in the Wild}
-    \begin{itemize}
-        \item \textbf{Observational studies} examine existing data without manipulating variables.
-        \item Researchers look for patterns and associations that suggest causal relationships.
-        \item Statistical techniques help control for confounding variables after data collection.
-        \item These studies are valuable when experiments are impractical but provide weaker causal evidence.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}[scale = 1]
-        \scriptsize
-        % Strength of causal evidence scale
-        \draw[thick] (0,0) -- (8,0);
-        \draw (0,-0.1) -- (0,0.1);
-        \draw (8,-0.1) -- (8,0.1);
-        \node[below] at (0,-0.2) {Weak};
-        \node[below] at (8,-0.2) {Strong};
-        
-        % Position different study types
-        \node[above] at (1.5,.6) {Anecdotes};
-        \draw[fill] (1.5,0) circle (2pt);
-        
-        \node[above] at (3,0.1) {Observational Studies};
-        \draw[fill] (3,0) circle (2pt);
-        
-        \node[above] at (5,.6) {Natural Experimets};
-        \draw[fill] (5,0) circle (2pt);
-        
-        \node[above] at (7,0.1) {RCTs};
-        \draw[fill] (7,0) circle (2pt);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Counterfactuals: Thinking About What Didn't Happen}
-    \begin{itemize}
-        \item A \textbf{counterfactual} is a "what if" scenario that didn't actually occur but could have.
-        \item Causal claims implicitly involve counterfactuals: "If A hadn't happened, B wouldn't have happened."
-        \item Controlled experiments create real-world counterfactuals through control groups.
-        \item Counterfactual thinking helps us understand the logic behind causal reasoning.
-    \end{itemize}
-    
-    \begin{block}{The Counterfactual Definition of Causation}
-        Event A causes event B if and only if, had A not occurred, B would not have occurred either (assuming all else remained the same).
-    \end{block}
-\end{frame}
-
-\begin{frame}{The Problem of Multiple Causes}
-    \begin{itemize}
-        \item Most effects in the real world have multiple causes working together.
-        \item A single cause may be necessary but not sufficient to produce an effect.
-        \item Multiple causal pathways may lead to the same outcome.
-        \item Understanding how causes interact is essential for accurate causal reasoning.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Causes
-        \node (A) at (0,3) {Diet};
-        \node (B) at (0,2) {Exercise};
-        \node (C) at (0,1) {Genetics};
-        \node (D) at (0,0) {Sleep};
-        
-        % Effect
-        \node (E) at (4,1.5) {Health};
-        
-        % Arrows
-        \draw[->] (A) -- (E);
-        \draw[->] (B) -- (E);
-        \draw[->] (C) -- (E);
-        \draw[->] (D) -- (E);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{When Causes Are Probabilistic, Not Deterministic}
-    \begin{itemize}
-        \item \textbf{Deterministic causation} means that if A occurs, B must occur.
-        \item \textbf{Probabilistic causation} means that if A occurs, B becomes more likely but isn't guaranteed.
-        \item Most real-world causes are probabilistic rather than deterministic.
-        \item Statistical methods help us identify causes that increase the probability of effects.
-    \end{itemize}
-    
-    \begin{example}
-        Smoking causes lung cancer, but not every smoker develops lung cancer, and some non-smokers do. Smoking increases the probability of lung cancer by about 15-30 times compared to non-smokers.
-    \end{example}
-\end{frame}
-
-\begin{frame}{Causal Chains: From Dominos to Complex Systems}
-    \begin{itemize}
-        \item \textbf{Causal chains} are sequences where one event causes another, which causes another, and so on.
-        \item Understanding these chains helps identify root causes and intervention points.
-        \item Longer chains have more potential breaking points, making predictions less reliable.
-        \item In complex systems, causal chains may include feedback loops and interactions.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        \scriptsize
-        % Basic chain
-        \node (A) at (0,2) {Drought};
-        \node (B) at (2,2) {Crop Failure};
-        \node (C) at (4,2) {Food Shortage};
-        \node (D) at (6,2) {Price Increase};
-        \node (E) at (8,2) {Social Unrest};
-        
-        % Arrows
-        \draw[->] (A) -- (B);
-        \draw[->] (B) -- (C);
-        \draw[->] (C) -- (D);
-        \draw[->] (D) -- (E);
-        
-        % Feedback loop
-        \draw[->] (E) .. controls (8,0) and (0,0) .. (A);
-        \node at (4,-.5) {Political instability affects drought response};
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Necessary vs. Sufficient Causes: Different Types of "Because"}
-    \begin{itemize}
-        \item A \textbf{necessary cause} must be present for the effect to occur (without A, no B).
-        \item A \textbf{sufficient cause} guarantees the effect will occur (if A, then B).
-        \item Some causes are both necessary and sufficient; others are neither.
-        \item Understanding these distinctions helps clarify what we mean when we say "A causes B."
-    \end{itemize}
-    
-    \begin{table}
-        \centering
-        \begin{tabular}{|l|l|l|}
-            \hline
-            & \textbf{Necessary} & \textbf{Not Necessary} \\
-            \hline
-            \textbf{Sufficient} & Oxygen for fire & Match strike for fire \\
-                                & (both necessary & (sufficient but not \\
-                                & and sufficient) & necessary - can use lighter) \\
-            \hline
-            \textbf{Not Sufficient} & Exposure to virus & Red hair for sunburn \\
-                                    & for infection & (neither necessary \\
-                                    & (necessary but & nor sufficient) \\
-                                    & not sufficient) & \\
-            \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-\begin{frame}{Simpson's Paradox: When Groups Tell Different Stories Than Individuals}
-    \begin{itemize}
-        \item \textbf{Simpson's Paradox} occurs when a trend appears in separate groups but disappears or reverses when the groups are combined.
-        \item This paradox demonstrates how aggregating data can obscure or misrepresent causal relationships.
-        \item It highlights the importance of considering subgroup differences when analyzing data.
-        \item Simpson's Paradox is a warning against drawing hasty causal conclusions from statistical summaries.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Axes for first graph
-        \draw[->] (0,0) -- (2.5,0) node[right] {Group A};
-        \draw[->] (0,0) -- (0,2) node[above] {Success Rate};
-        
-        % Data points and trend line
-        \filldraw (0.5,0.3) circle (2pt) node[above] {Old};
-        \filldraw (1.5,1.2) circle (2pt) node[above] {New};
-        \draw[red, ->] (0.5,0.3) -- (1.5,1.2);
-        
-        % Axes for second graph
-        \draw[->] (3.5,0) -- (6,0) node[right] {Group B};
-        \draw[->] (3.5,0) -- (3.5,2) node[above] {Success Rate};
-        
-        % Data points and trend line
-        \filldraw (4,1.5) circle (2pt) node[above] {Old};
-        \filldraw (5,1.8) circle (2pt) node[above] {New};
-        \draw[red, ->] (4,1.5) -- (5,1.8);
-        
-        % Axes for combined graph
-        \draw[->] (7,0) -- (9.5,0) node[right] {Combined};
-        \draw[->] (7,0) -- (7,2) node[above] {Success Rate};
-        
-        % Data points and trend line (reversed!)
-        \filldraw (7.5,1.4) circle (2pt) node[above] {Old};
-        \filldraw (8.5,1.1) circle (2pt) node[above] {New};
-        \draw[blue, ->] (7.5,1.4) -- (8.5,1.1);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Common Causal Fallacies in Everyday Reasoning}
-    \begin{itemize}
-        \item The \textbf{post hoc fallacy} assumes that if B follows A, then A caused B (confusing sequence with causation).
-        \item The \textbf{correlation fallacy} mistakes correlation for causation without considering alternative explanations.
-        \item The \textbf{single-cause fallacy} assumes complex phenomena have simple, single causes.
-        \item The \textbf{reversing causation fallacy} gets the direction of causality backward.
-    \end{itemize}
-    
-    \begin{alertblock}{Warning Signs of Causal Fallacies}
-        Be cautious of causal claims that:
-        \begin{itemize}
-            \item Involve only two variables in a complex system
-            \item Are based on a few anecdotes or small samples
-            \item Don't consider alternative explanations
-            \item Align suspiciously well with someone's agenda
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Critical Thinking About Causality in News and Social Media}
-    \begin{itemize}
-        \item News headlines often imply causation when only correlation has been established.
-        \item Social media can spread causal claims without the context needed to evaluate them.
-        \item Understanding research methods helps evaluate the strength of causal claims.
-        \item Critical questions about sample size, confounders, and alternative explanations are essential.
-    \end{itemize}
-    
-    \begin{example}
-        \textbf{Headline}: "Study Finds Coffee Drinkers Live Longer"
-        
-        \textbf{Critical questions to ask}:
-        Was this a controlled experiment or an observational study?
-        Did researchers control for other lifestyle factors?
-        Could the relationship be reversed (do healthier people drink more coffee)?
-        How large was the sample size and how significant was the effect?
-    \end{example}
-\end{frame}
-
-\begin{frame}{Ethics in Causal Research: When We Can't Do Certain Experiments}
-    \begin{itemize}
-        \item Many important causal questions cannot be studied through controlled experiments due to ethical constraints.
-        \item It would be unethical to deliberately expose people to potential harms, even for knowledge.
-        \item Researchers must use alternative methods like natural experiments and observational studies.
-        \item Ethical considerations shape how we acquire causal knowledge about human behavior and health.
-    \end{itemize}
-    
-    \begin{block}{Examples of Ethical Boundaries}
-        We cannot ethically conduct experiments to determine:
-        \begin{itemize}
-            \item Whether smoking causes cancer by assigning people to smoke
-            \item The effects of abuse or neglect on children's development
-            \item Long-term effects of illegal drugs by giving them to participants
-            \item How pollution affects health by deliberately exposing communities
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-\begin{frame}{Modern Causal Inference: Beyond Mill's Methods}
-    \begin{itemize}
-        \item \textbf{Causal inference} is the modern field that develops mathematical and statistical tools for establishing causation.
-        \item \textbf{Directed Acyclic Graphs (DAGs)} provide visual representations of causal relationships in complex systems.
-        \item \textbf{Propensity score matching} helps simulate experimental conditions with observational data.
-        \item \textbf{Instrumental variables} exploit natural randomization to establish causal effects.
-    \end{itemize}
-    
-    \begin{center}
-    \begin{tikzpicture}
-        % Simple DAG example
-        \node (A) at (0,1) {Education};
-        \node (B) at (2,1) {Income};
-        \node (C) at (1,2) {Family Background};
-        \node (D) at (1,0) {Region};
-        
-        % Arrows
-        \draw[->] (A) -- (B) node[midway, above] {?};
-        \draw[->] (C) -- (A);
-        \draw[->] (C) -- (B);
-        \draw[->] (D) -- (A);
-        \draw[->] (D) -- (B);
-    \end{tikzpicture}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Data Science and Causality: New Frontiers}
-    \begin{itemize}
-        \item Big data and machine learning are creating new opportunities and challenges for causal reasoning.
-        \item Correlation-focused algorithms can find patterns but struggle to establish causation.
-        \item \textbf{Causal machine learning} combines traditional experimental design with modern computational methods.
-        \item These approaches help us move from "what happened" to understanding "why it happened."
-    \end{itemize}
-    
-    \begin{alertblock}{Important Distinction}
-        "Machine learning provides the power to predict but not necessarily to understand. Causal reasoning provides the understanding necessary for meaningful intervention."
-        
-        – Judea Pearl, Computer Scientist and Causality Researcher
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Causality in Your Life: Making Better Decisions}
-    \begin{itemize}
-        \item Understanding causal reasoning helps you evaluate claims in media, advertising, and politics.
-        \item Causal thinking improves personal decision-making by distinguishing between correlation and causation.
-        \item Seeking evidence for causal claims protects against manipulation and misinformation.
-        \item The principles of causal inference apply to everything from personal health choices to policy decisions.
-    \end{itemize}
-    
-    \begin{block}{Summary: From Mill to Modern Experiments}
-        \scriptsize
-        \begin{itemize}
-            \item Mill's methods provide a foundation for systematic causal reasoning
-            \item Controlled experiments strengthen causal evidence through randomization and controls
-            \item Understanding causal complexity helps us navigate an increasingly complicated world
-            \item Critical thinking about causality is an essential skill for informed citizenship
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-% Additional frames for references or questions could be added here
-
-\end{document}
-
+	% Slide 17: The Gold Standard: Randomized Controlled Trials
+	\begin{frame}{The Gold Standard: Randomized Controlled Trials}
+		\begin{itemize}
+			\item \textbf{Randomized Controlled Trials (RCTs)} are considered the gold standard for establishing causation.
+			\item In an RCT, participants are randomly assigned to either receive a treatment or be in a control group.
+			\item Random assignment ensures that confounding variables are distributed equally between groups on average.
+			\item By comparing outcomes between treatment and control groups, we can isolate the causal effect of the treatment.
+		\end{itemize}
+		
+		\begin{block}{Why RCTs Work}
+			Randomization breaks the link between confounders and treatment assignment, allowing us to measure true causal effects.
+		\end{block}
+	\end{frame}
+	
+	% Slide 18: Key Components: Treatment, Control, and Randomization
+	\begin{frame}{Key Components: Treatment, Control, and Randomization}
+		\begin{itemize}
+			\item \textbf{Treatment group} receives the intervention we're testing (new drug, teaching method, therapy, etc.).
+			\item \textbf{Control group} receives either no treatment, a placebo, or the standard existing treatment.
+			\item \textbf{Randomization} uses chance (like flipping a coin) to assign participants to groups, eliminating selection bias.
+			\item These three components work together to create a fair comparison that reveals causal effects.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			% Population
+			\node[draw, rectangle, minimum width=3cm] (pop) at (0, 2) {Study Population};
+			
+			% Randomization - SMALLER DIAMOND
+			\node[draw, diamond, minimum size=1cm, inner sep=2pt] (rand) at (0, 0) {\tiny Rand. Assign};
+			
+			% Groups
+			\node[draw, rectangle, fill=blue!20] (treat) at (-3, -2) {Treatment Group};
+			\node[draw, rectangle, fill=green!20] (control) at (3, -2) {Control Group};
+			
+			% Outcomes
+			\node[draw, rectangle] (out1) at (-3, -3.5) {Outcome A};
+			\node[draw, rectangle] (out2) at (3, -3.5) {Outcome B};
+			
+			% Arrows
+			\draw[->, thick] (pop) -- (rand);
+			\draw[->, thick] (rand) -- (treat);
+			\draw[->, thick] (rand) -- (control);
+			\draw[->, thick] (treat) -- (out1);
+			\draw[->, thick] (control) -- (out2);
+			
+			% Comparison
+			\draw[<->, thick, red] (out1) -- (out2);
+			\node[red] at (0, -3.5) {Compare};
+		\end{tikzpicture}
+		
+		
+	\end{frame}
+	
+	% Slide 19: Example: Testing Popeye's Spinach Hypothesis
+	\begin{frame}{Example: Testing Popeye's Spinach Hypothesis}
+		\begin{itemize}
+			\item Popeye claims spinach causes super strength - how would we test this claim with an RCT?
+			\item \textbf{Design}: Randomly assign 100 sailors to eat either spinach (treatment) or lettuce (control) daily for one month.
+			\item \textbf{Measurement}: Test grip strength, lifting capacity, and endurance before and after the trial.
+			\item \textbf{Result}: If the spinach group shows significantly greater strength gains, we have evidence for causation.
+		\end{itemize}
+		
+		\begin{example}[RCT Design for Popeye]
+			\small
+			\begin{enumerate}
+				\item Recruit 100 sailors of similar baseline strength
+				\item Randomly assign: 50 to spinach, 50 to lettuce
+				\item Both groups eat identical diets except for the vegetable
+				\item Measure strength changes after 30 days
+				\item Compare average improvements between groups
+			\end{enumerate}
+		\end{example}
+	\end{frame}
+	
+	% Slide 20: The Placebo Effect: Mind Over Matter
+	\begin{frame}{The Placebo Effect: Mind Over Matter}
+		\begin{itemize}
+			\item The \textbf{placebo effect} occurs when people improve simply because they believe they're receiving treatment.
+			\item This psychological phenomenon can create false impressions of causation if not properly controlled.
+			\item That's why control groups often receive a placebo (fake treatment) that looks identical to the real treatment.
+			\item By comparing real treatment to placebo, we can separate the actual causal effect from psychological expectations.
+		\end{itemize}
+		
+		\begin{block}{Example: Sugar Pills}
+			In drug trials, the control group receives sugar pills that look identical to the real medication. Any improvement in the control group is due to placebo effect, not the drug's chemistry.
+		\end{block}
+	\end{frame}
+	
+	% Slide 21: Real Example: The Salk Polio Vaccine Trial
+	\begin{frame}{Real Example: The Salk Polio Vaccine Trial}
+		\begin{itemize}
+			\item In 1954, Jonas Salk's polio vaccine was tested in one of the largest RCTs in history.
+			\item Over 400,000 children were randomly assigned to receive either the vaccine or a placebo injection.
+			\item The trial was "double-blind" - neither children nor doctors knew who received which treatment.
+			\item Results showed the vaccine was 80-90\% effective at preventing paralytic polio, leading to widespread vaccination.
+		\end{itemize}
+		
+		\begin{example}[Trial Statistics]
+			\begin{tabular}{l|r|r}
+				Group & Size & Polio Cases \\
+				\hline
+				Vaccine & 200,745 & 33 \\
+				Placebo & 201,229 & 115 \\
+				\hline
+			\end{tabular}
+			\vspace{0.2cm}
+			
+		\end{example}
+	\end{frame}
+	
+	% Slide 22: Blinding: Keeping Bias at Bay
+	\begin{frame}{Blinding: Keeping Bias at Bay}
+		\begin{itemize}
+			\item \textbf{Blinding} prevents knowledge of treatment assignment from influencing outcomes or measurements.
+			\item \textbf{Single-blind}: Participants don't know their group assignment, preventing placebo effects from contaminating results.
+			\item \textbf{Double-blind}: Neither participants nor researchers know assignments, preventing unconscious bias in measurement.
+			\item Blinding is crucial because humans unconsciously behave differently when they know they're being treated or observed.
+		\end{itemize}
+		
+		\begin{alertblock}{Why Double-Blind?}
+			A doctor who knows a patient received the real drug might unconsciously look harder for improvements, biasing the results. Double-blinding prevents this!
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 23: Example: Would Superman's Powers Work Without Yellow Sun? (Experimental Design)
+	\begin{frame}{Example: Would Superman's Powers Work Without Yellow Sun? (Experimental Design)}
+		\begin{itemize}
+			\item Superman claims Earth's yellow sun causes his powers - how would we design an experiment to test this?
+			\item \textbf{Treatment}: Exposure to yellow sun radiation in a controlled environment.
+			\item \textbf{Control}: Exposure to red sun radiation (matching Superman's home planet Krypton).
+			\item \textbf{Challenge}: We can't randomize Superman himself, and we have no other Kryptonians for a proper sample!
+		\end{itemize}
+		
+		\begin{example}[Proposed Design]
+			\scriptsize
+			\begin{enumerate}
+				\item Build chambers with different sun radiation types
+				\item Randomly assign Superman to chambers on different days
+				\item Measure strength, speed, and flight ability in each
+				\item Compare average abilities under yellow vs. red sun
+				\item Problem: Only n=1 subject, so results may not generalize!
+			\end{enumerate}
+		\end{example}
+	\end{frame}
+	
+	% Slide 24: Sample Size: How Many Test Subjects Do We Need?
+	\begin{frame}{Sample Size: How Many Test Subjects Do We Need?}
+		\begin{itemize}
+			\item \textbf{Sample size} refers to the number of participants needed to detect a real causal effect reliably.
+			\item Larger samples provide more statistical power to distinguish true effects from random chance.
+			\item Too small a sample might miss real effects (false negative) or find effects that aren't real (false positive).
+			\item The required sample size depends on how large the causal effect is and how much natural variation exists.
+		\end{itemize}
+		
+		\begin{block}{Rule of Thumb}
+			\begin{center}
+				Larger effect = Smaller sample needed\\
+				Smaller effect = Larger sample needed\\
+				\vspace{0.2cm}
+				Example: Detecting if a coin is two-headed requires few flips.\\
+				Detecting if a coin is slightly biased (51\% heads) requires thousands!
+			\end{center}
+		\end{block}
+	\end{frame}
+	
+	% Slide 25: Real Example: Clinical Trials for COVID-19 Vaccines
+	\begin{frame}{Real Example: Clinical Trials for COVID-19 Vaccines}
+		\begin{itemize}
+			\item COVID-19 vaccine trials in 2020 used RCTs with tens of thousands of participants.
+			\item Pfizer's trial randomly assigned about 44,000 people to receive either the vaccine or a saline placebo.
+			\item The large sample size was necessary because COVID infection rates were relatively low in the population.
+			\item Results showed 95\% efficacy: 8 COVID cases in vaccine group versus 162 in placebo group.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.6]
+			% Bar chart
+			\draw[thick] (0,0) -- (8,0) -- (8,4) -- (0,4) -- (0,0);
+			\draw[thick] (0,0) -- (0,4.5);
+			\draw[thick] (0,0) -- (8.5,0);
+			
+			% Bars
+			\draw[fill=blue!60] (1,0) rectangle (3,0.2);
+			\draw[fill=red!60] (5,0) rectangle (7,3.2);
+			
+			% Labels
+			\node at (2, -0.5) {Vaccine};
+			\node at (6, -0.5) {Placebo};
+			\node at (2, 0.5) {8 cases};
+			\node at (6, 3.5) {162 cases};
+			
+			% Y-axis
+			\node at (-0.7, 0) {0};
+			\node at (-0.7, 2) {100};
+			\node at (-0.7, 4) {200};
+			\node[rotate=90] at (-1.5, 2) {COVID Cases};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 26: Ethical Considerations in Human Experiments
+	\begin{frame}{Ethical Considerations in Human Experiments}
+		\begin{itemize}
+			\item \textbf{Ethical constraints} limit what experiments we can perform on humans, even if they would provide clear causal evidence.
+			\item We cannot randomly assign people to harmful conditions like smoking, poverty, or dangerous occupations.
+			\item All participants must give \textbf{informed consent}, understanding the risks and benefits of participation.
+			\item Institutional Review Boards (IRBs) review all human experiments to ensure they meet ethical standards.
+		\end{itemize}
+		
+		\begin{alertblock}{The Ethical Dilemma}
+			We might want to know if smoking causes cancer through an RCT, but we cannot ethically randomize people to smoke! This is why we often rely on observational studies for harmful exposures.
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 27: Limitations: When Controlled Experiments Aren't Possible
+	\begin{frame}{Limitations: When Controlled Experiments Aren't Possible}
+		\begin{itemize}
+			\item Some causal questions cannot be answered with RCTs due to practical, ethical, or logical constraints.
+			\item \textbf{Practical}: We can't randomly assign countries to different economic systems or planets to different orbits.
+			\item \textbf{Ethical}: We can't randomly assign children to different parents or people to natural disasters.
+			\item \textbf{Logical}: We can't randomize unchangeable characteristics like biological sex at birth or historical events.
+		\end{itemize}
+		
+		\begin{example}[Questions RCTs Cannot Answer]
+			\begin{itemize}
+				\item Does democracy cause economic growth?
+				\item Do traumatic childhoods cause mental illness?
+				\item Did the asteroid impact cause dinosaur extinction?
+				\item Does gender affect career advancement?
+			\end{itemize}
+			For these questions, we need other methods like natural experiments!
+		\end{example}
+	\end{frame}
+	
+	% Slide 28: Natural Experiments: When Nature Does the Randomization
+	\begin{frame}{Natural Experiments: When Nature Does the Randomization}
+		\begin{itemize}
+			\item A \textbf{natural experiment} occurs when circumstances naturally create treatment and control groups without researcher intervention.
+			\item These "experiments" arise from policy changes, natural disasters, arbitrary boundaries, or other external events.
+			\item While not truly random, natural experiments can approximate randomization when assignment is unrelated to outcomes.
+			\item Natural experiments help us study causal questions that would be impossible or unethical to test with RCTs.
+		\end{itemize}
+		
+		\begin{block}{Key Advantage}
+			Natural experiments allow us to study real-world causation at scales and in contexts where controlled experiments are impossible.
+		\end{block}
+	\end{frame}
+	
+	% Slide 29: Example: The Oregon Health Insurance Experiment
+	\begin{frame}{Example: The Oregon Health Insurance Experiment}
+		\begin{itemize}
+			\item In 2008, Oregon used a lottery to allocate limited Medicaid slots among 90,000 low-income adults.
+			\item This created a natural experiment: lottery winners (treatment) versus lottery losers (control).
+			\item The random lottery approximated the randomization of an RCT without researchers controlling assignment.
+			\item Studies found Medicaid coverage increased healthcare use, reduced financial strain, and improved mental health.
+		\end{itemize}
+		
+		\begin{example}[Natural Randomization]
+			\begin{tabular}{l|l|l}
+				\textbf{Group} & \textbf{Assignment} & \textbf{Outcome Studied} \\
+				\hline
+				Treatment & Won lottery & Health with Medicaid \\
+				Control & Lost lottery & Health without Medicaid \\
+				\hline
+			\end{tabular}
+		\end{example}
+	\end{frame}
+	
+	% Slide 30: Fictional Example: Comparing Gotham and Metropolis Crime Rates
+	\begin{frame}{Fictional Example: Comparing Gotham and Metropolis Crime Rates}
+		\begin{itemize}
+			\item Gotham has Batman while Metropolis has Superman - do different types of heroes cause different crime rates?
+			\item This is a natural experiment: cities weren't randomly assigned heroes, but we can still compare outcomes.
+			\item \textbf{Challenge}: Cities might differ in other ways (population, economy, corruption) that affect crime.
+			\item To make causal claims, we'd need to show the cities were similar before the heroes arrived.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			% Timeline
+			\draw[thick, ->] (0,0) -- (8,0);
+			\node at (8.5, 0) {Time};
+			
+			% Events
+			\draw[thick] (2, -0.2) -- (2, 0.2);
+			\node[above] at (2, 0.2) {Heroes Arrive};
+			
+			% Crime rates
+			\draw[thick, blue] (0, 1) -- (2, 1) -- (2, 0.5) -- (7, 0.3);
+			\draw[thick, red] (0, 1) -- (2, 1) -- (2, 1.5) -- (7, 1.8);
+			
+			% Labels
+			\node[blue] at (7.5, 0.3) {Gotham};
+			\node[red] at (7.5, 1.8) {Metropolis};
+			
+			% Before/After
+			\node at (1, -0.5) {Before};
+			\node at (4.5, -0.5) {After};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 31: Real Example: London Cholera Outbreak of 1854
+	\begin{frame}{Real Example: London Cholera Outbreak of 1854}
+		\begin{itemize}
+			\item John Snow used a natural experiment to prove cholera was waterborne, not airborne as believed.
+			\item Different London neighborhoods received water from different companies, creating natural treatment groups.
+			\item One company's water came from sewage-contaminated Thames; the other's came from cleaner upstream sources.
+			\item Deaths clustered in areas served by the contaminated water company, proving water caused cholera transmission.
+		\end{itemize}
+		
+		\begin{alertblock}{Snow's Innovation}
+			By mapping deaths and water sources, Snow showed that water supply (not "bad air") caused cholera - revolutionizing public health and establishing epidemiology as a field.
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 32: Strengths and Weaknesses of Natural Experiments
+	\begin{frame}{Strengths and Weaknesses of Natural Experiments}
+		\begin{itemize}
+			\item \textbf{Strengths}: Natural experiments study real-world settings, include entire populations, and examine effects over long time periods.
+			\item \textbf{Weaknesses}: Assignment isn't truly random, confounding variables may still exist, and we can't control timing or implementation.
+			\item Natural experiments require careful analysis to ensure the "natural" assignment process is truly unrelated to outcomes.
+			\item They provide valuable evidence when RCTs are impossible, but generally offer weaker causal evidence than true experiments.
+		\end{itemize}
+		
+		\begin{block}{Comparison with RCTs}
+			\begin{tabular}{l|c|c}
+				\textbf{Feature} & \textbf{RCT} & \textbf{Natural Experiment} \\
+				\hline
+				Control & High & Low \\
+				External validity & Lower & Higher \\
+				Ethical constraints & More & Fewer \\
+				Causal certainty & Highest & Moderate \\
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	% Slide 33: Deductive Reasoning Meets Causal Inference
+	\begin{frame}{Deductive Reasoning Meets Causal Inference}
+		\begin{itemize}
+			\item \textbf{Deductive reasoning} moves from general principles to specific conclusions with logical certainty.
+			\item In causal inference, we can deduce: "If A causes B, and B causes C, then A indirectly causes C."
+			\item However, most causal claims require empirical evidence, not just logical deduction from premises.
+			\item Deduction helps us understand the logical structure of causal chains but can't establish whether causes exist.
+		\end{itemize}
+		
+		\begin{example}[Deductive Causal Chain]
+			\begin{enumerate}
+				\item Premise 1: Smoking causes lung damage (empirical claim)
+				\item Premise 2: Lung damage causes breathing problems (empirical claim)
+				\item Conclusion: Therefore, smoking causes breathing problems (deductive inference)
+			\end{enumerate}
+			The logic is valid, but the premises require empirical support!
+		\end{example}
+	\end{frame}
+	
+	% Slide 34: Inductive Reasoning: From Specific Cases to Causal Laws
+	\begin{frame}{Inductive Reasoning: From Specific Cases to Causal Laws}
+		\begin{itemize}
+			\item \textbf{Inductive reasoning} generalizes from specific observations to broader causal principles.
+			\item We observe that aspirin relieves headaches in many cases, then inductively infer aspirin causes pain relief generally.
+			\item Controlled experiments are essentially systematic inductive reasoning: from sample results to population effects.
+			\item The problem of induction applies: we can never be certain our causal laws will hold in all future cases.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			% Specific observations
+			\node[draw, rectangle] (obs1) at (0, 0) {Trial 1: Drug works};
+			\node[draw, rectangle] (obs2) at (0, -1) {Trial 2: Drug works};
+			\node[draw, rectangle] (obs3) at (0, -2) {Trial 3: Drug works};
+			
+			% Arrow
+			\draw[->, thick, blue] (2, -1) -- (4, -1);
+			\node[blue] at (3, -0.5) {Induction};
+			
+			% General law
+			\node[draw, rectangle, fill=green!20] (law) at (6, -1) {Drug causes recovery};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 35: Abductive Reasoning: Best Causal Explanations
+	\begin{frame}{Abductive Reasoning: Best Causal Explanations}
+		\begin{itemize}
+			\item \textbf{Abductive reasoning} infers the best causal explanation for observed phenomena.
+			\item When we see wet streets, we abductively infer rain as the most likely cause (though sprinklers are possible).
+			\item Natural experiments often rely on abduction: we observe patterns and infer the most plausible causal story.
+			\item Good abductive causal reasoning considers multiple explanations and chooses the simplest one fitting all evidence.
+		\end{itemize}
+		
+		\begin{alertblock}{Inference to Best Explanation}
+			Observation: Students who sit in front get better grades\\
+			Possible causes:
+			\begin{itemize}
+				\item Sitting in front causes better learning (causal)
+				\item Motivated students choose front seats (selection)
+				\item Teachers favor front-row students (bias)
+			\end{itemize}
+			Experiments help determine which explanation is best!
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 36: Causal Reasoning: Your New Logical Superpower
+	\begin{frame}{Causal Reasoning: Your New Logical Superpower}
+		\begin{itemize}
+			\item You now have tools to critically evaluate causal claims in science, media, and everyday life.
+			\item Remember: correlation isn't causation, confounders lurk everywhere, and good experiments isolate causal effects.
+			\item When RCTs aren't possible, natural experiments and careful reasoning can still provide causal insights.
+			\item Combine causal thinking with deductive, inductive, and abductive reasoning for comprehensive logical analysis.
+		\end{itemize}
+		
+		\begin{block}{Your Causal Reasoning Toolkit}
+			\begin{center}
+				$\checkmark$ Identify potential confounders\\
+				$\checkmark$ Recognize selection bias\\
+				$\checkmark$ Design controlled experiments\\
+				$\checkmark$ Spot natural experiments\\
+				$\checkmark$ Think counterfactually\\
+				$\checkmark$ Integrate with other logical methods
+			\end{center}
+		\end{block}
+	\end{frame}
+	
 \end{document}

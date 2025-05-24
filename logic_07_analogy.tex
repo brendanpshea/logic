@@ -1,860 +1,735 @@
 \documentclass{beamer}
-\usepackage{tikz}
-\usepackage{xcolor}
-\usepackage{amsmath}
-\usepackage{amssymb}
-
-\usetikzlibrary{arrows,shapes,positioning,fit,calc,mindmap}
-
 \usetheme{Madrid}
-\usecolortheme{beaver}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
 
-\title{Analogical Reasoning in Ethics and Law}
-\subtitle{Understanding Structure, Strength, and Applications}
+\title{Analogical Reasoning}
+\subtitle{How Humans Make Sense of the World}
 \author{Brendan Shea, PhD}
 \date{Introduction to Logic}
 
 \begin{document}
 	
-	\begin{frame}
-		\titlepage
-	\end{frame}
+	% Slide 1: Title Slide
+	\frame{\titlepage}
 	
-	\begin{frame}{Introduction: What is Analogical Reasoning?}
+	% Slide 2: Course Overview
+	\begin{frame}{Lesson Overview: From Pattern Recognition to AI}
 		\begin{itemize}
-			\item \textbf{Analogical reasoning} is the process of drawing connections between two different situations based on relevant similarities.
-			\item Analogies allow us to use knowledge about familiar cases to understand or make judgments about unfamiliar cases.
-			\item Analogical reasoning is pervasive in human cognition and appears across disciplines including ethics, law, science, and everyday problem-solving.
-			\item Unlike deductive reasoning, analogical reasoning does not guarantee certainty but provides plausible conclusions.
+			\item This lesson explores how humans use \textbf{analogical reasoning} - the process of understanding new situations by comparing them to familiar ones.
+			\item We will examine why the human mind naturally thinks in analogies and how this shapes our understanding across different domains.
+			\item You will learn to evaluate what makes analogies effective or misleading in science, ethics, and law.
+			\item We conclude by comparing human analogical thinking with AI pattern recognition systems.
 		\end{itemize}
 		
-		\begin{alertblock}{Key Insight}
-			Analogical reasoning bridges the gap between what we know and what we seek to understand by identifying meaningful patterns across different domains.
+		\begin{alertblock}{Core Question}
+			What makes some analogies powerful tools for understanding while others lead us astray?
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{Analogical Arguments as Inductive Reasoning}
+	% Slide 3: The Cognitive Architecture of Analogy-Making
+	\begin{frame}{The Cognitive Architecture of Analogy-Making}
 		\begin{itemize}
-			\item \textbf{Inductive reasoning} involves drawing probable conclusions based on patterns and evidence rather than logical necessity.
-			\item Analogical arguments are a specific type of inductive reasoning where conclusions are based on relevant similarities between cases.
-			\item While deductive arguments aim for certainty, analogical arguments aim for plausibility and probability.
-			\item The strength of an analogical argument depends on the quality and relevance of similarities, not just their quantity.
+			\item The human brain contains specialized regions that automatically search for \textbf{structural similarities} between different situations.
+			\item \textbf{Working memory} allows us to hold multiple concepts simultaneously and map relationships between them.
+			\item Our cognitive system prioritizes \textbf{relational matches} over surface features when making analogies.
+			\item This architecture evolved because recognizing patterns across contexts provides survival advantages.
 		\end{itemize}
 		
-		\begin{center}
-			\begin{tikzpicture}[node distance=.75cm]
-				\scriptsize
-				\node (deductive) [draw, rectangle, rounded corners, minimum width=3cm, minimum height=.8cm] {Deductive Arguments (Certainty)};
-				\node (inductive) [draw, rectangle, rounded corners, minimum width=3cm, minimum height=.8cm, below=of deductive] {Inductive Arguments (Probability)};
-				\node (analogical) [draw, rectangle, rounded corners, fill=orange!30, minimum width=3cm, minimum height=.8cm, below=of inductive] {Analogical Arguments (Similarity-Based)};
-				
-				\draw[->, thick] (inductive) -- (deductive) node[midway, right] {Increasing certainty};
-				\draw[->, thick] (analogical) -- (inductive) node[midway, right] {};
-			\end{tikzpicture}
-		\end{center}
+		\begin{block}{Key Components}
+			\begin{enumerate}
+				\item Pattern detection systems
+				\item Relational mapping processes
+				\item Similarity evaluation mechanisms
+			\end{enumerate}
+		\end{block}
 	\end{frame}
 	
-	\begin{frame}{The Basic Structure: Source, Target, and Relevant Similarities}
+	% Slide 4: Why Our Brains Default to Analogical Thinking
+	\begin{frame}{Why Our Brains Default to Analogical Thinking}
 		\begin{itemize}
-			\item Every analogical argument has a \textbf{source domain} (the familiar case about which we have knowledge) and a \textbf{target domain} (the unfamiliar case we're reasoning about).
-			\item The argument identifies specific similarities between the source and target domains that are deemed relevant.
-			\item Based on these similarities, we infer that what is true in the source domain is likely true in the target domain as well.
-			\item The basic form is: "A is to B as C is to D" or "A is like B in relevant ways, B has property P, therefore A likely has property P."
+			\item Analogical thinking allows us to apply \textbf{previous knowledge} to novel situations without starting from scratch.
+			\item It serves as a \textbf{cognitive shortcut} that saves mental energy and processing time.
+			\item This default mode helps us navigate uncertainty by finding familiar patterns in unfamiliar contexts.
+			\item \textbf{Evolutionary pressure} favored minds that could quickly recognize "this is like that" for rapid decision-making.
+		\end{itemize}
+		
+		\begin{example}
+			When early humans encountered a new predator, recognizing it as "like a lion" triggered appropriate defensive responses without direct experience.
+		\end{example}
+	\end{frame}
+	
+	% Slides 5-8 continue here...
+	
+	% Additional Slide: Everyday Examples of Analogical Reasoning
+	\begin{frame}{Everyday Examples of Analogical Reasoning}
+		\begin{itemize}
+			\item \textbf{Learning}: "Multiplication is just repeated addition" helps students understand a new operation through a familiar one.
+			\item \textbf{Communication}: "The internet is like a highway" explains data flow using traffic and routes.
+			\item \textbf{Problem-solving}: "This math problem is like the one we did yesterday" recognizes similar structure despite different numbers.
+			\item \textbf{Social understanding}: "She's going through what I went through last year" applies personal experience to understand others.
+		\end{itemize}
+		
+		\begin{example}
+			When teaching fractions, we say "cutting a pizza into slices" because:
+			\begin{itemize}
+				\item Source: Pizza (familiar, concrete)
+				\item Target: Fractions (abstract, new)
+				\item Mapping: Whole pizza = 1, slices = parts, sharing = division
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 5: Pattern Recognition and the Evolution of Reasoning
+	\begin{frame}{Pattern Recognition and the Evolution of Reasoning}
+		\begin{itemize}
+			\item \textbf{Pattern recognition} emerged as a fundamental survival skill in early organisms detecting regularities in their environment.
+			\item Human reasoning evolved from simple stimulus-response patterns to complex \textbf{abstract pattern matching}.
+			\item Our ancestors who could recognize that "dark clouds mean rain" gained advantages in planning and resource management.
+			\item This capacity expanded from physical patterns to social, causal, and conceptual patterns over evolutionary time.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.8]
+			\draw[thick,->] (0,0) -- (10,0) node[anchor=north] {Evolutionary Time};
+			\draw[thick] (1,0.1) -- (1,-0.1) node[anchor=north] {Simple};
+			\draw[thick] (5,0.1) -- (5,-0.1) node[anchor=north] {Causal};
+			\draw[thick] (9,0.1) -- (9,-0.1) node[anchor=north] {Abstract};
+			\node at (1,0.5) {Light/Dark};
+			\node at (5,0.5) {Cause/Effect};
+			\node at (9,0.5) {Metaphorical};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 6: From Metaphor to Model: The Spectrum of Analogical Thought
+	\begin{frame}{From Metaphor to Model: The Spectrum of Analogical Thought}
+		\begin{itemize}
+			\item Analogical thinking exists on a spectrum from loose \textbf{metaphors} to precise \textbf{scientific models}.
+			\item \textbf{Metaphors} highlight selected similarities while ignoring differences (e.g., "time is money").
+			\item \textbf{Analogies} make explicit comparisons between domains to explain or argue (e.g., "the heart is like a pump").
+			\item \textbf{Models} systematically map multiple relationships from one domain to another (e.g., the planetary model of the atom).
+		\end{itemize}
+		
+		\begin{block}{Increasing Precision}
+			\begin{tabular}{l|l|l}
+				\textbf{Type} & \textbf{Purpose} & \textbf{Rigor} \\
+				\hline
+				Metaphor & Illuminate & Low \\
+				Analogy & Explain/Argue & Medium \\
+				Model & Predict/Test & High
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	% Slide 7: Anatomy of an Analogy: Source, Target, and Mapping
+	\begin{frame}{Anatomy of an Analogy: Source, Target, and Mapping}
+		\begin{itemize}
+			\item Every analogy contains a \textbf{source domain} (the familiar concept) and a \textbf{target domain} (the unfamiliar concept being explained).
+			\item The \textbf{mapping} identifies which elements in the source correspond to elements in the target.
+			\item Strong analogies preserve \textbf{structural relationships} between elements, not just surface features.
+			\item The process involves selecting relevant features while ignoring irrelevant differences between domains.
+		\end{itemize}
+		
+		\begin{example}
+			\textbf{Analogy}: "The atom is like a solar system"
+			\begin{itemize}
+				\item Source: Solar system (familiar)
+				\item Target: Atom (unfamiliar)
+				\item Mapping: Sun → nucleus, planets → electrons, orbits → electron paths
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 8: Structural Alignment: When Relationships Matter More Than Objects
+	\begin{frame}{Structural Alignment: When Relationships Matter More Than Objects}
+		\begin{itemize}
+			\item \textbf{Structural alignment} means matching the relationships between elements rather than the elements themselves.
+			\item Good analogies preserve \textbf{higher-order relations} - relationships between relationships.
+			\item Surface similarities (color, size, shape) are less important than \textbf{relational structure} (causation, proportion, function).
+			\item This principle explains why "the mind is a computer" works better than "the mind is a filing cabinet."
+		\end{itemize}
+		
+		\begin{alertblock}{Key Insight}
+			The power of an analogy lies not in how similar things look, but in how similarly they behave or relate to other elements in their respective systems.
+		\end{alertblock}
+	\end{frame}
+	
+	% Slides 9-12 continue here...
+	
+	% Slide 9: Surface vs. Deep Features in Analogical Reasoning
+	\begin{frame}{Surface vs. Deep Features in Analogical Reasoning}
+		\begin{itemize}
+			\item \textbf{Surface features} are immediately observable characteristics like appearance, color, or size.
+			\item \textbf{Deep features} involve underlying relationships, functions, or causal structures.
+			\item Novices tend to focus on surface similarities, while experts recognize deep structural patterns.
+			\item Effective analogical reasoning requires looking past superficial resemblance to find meaningful connections.
+		\end{itemize}
+		
+		\begin{alertblock}{Common Mistake}
+			Students often group physics problems by surface features (inclined planes, pulleys) rather than deep principles (conservation of energy, Newton's laws).
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 10: The Role of Context in Analogical Transfer
+	\begin{frame}{The Role of Context in Analogical Transfer}
+		\begin{itemize}
+			\item \textbf{Context} determines which features of an analogy are relevant and which should be ignored.
+			\item The same source can map to different targets depending on the \textbf{purpose} of the comparison.
+			\item \textbf{Pragmatic constraints} shape how we interpret and apply analogies in real situations.
+			\item Cultural background influences which analogies feel natural or forced to different audiences.
+		\end{itemize}
+		
+		\begin{example}
+			"Life is a journey" emphasizes different aspects in different contexts:
+			\begin{itemize}
+				\item Career counseling: progression, milestones, destinations
+				\item Grief counseling: rough roads, companions, continuing forward
+				\item Education: exploration, discovery, growth
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 11: Criteria for Evaluating Analogical Arguments
+	\begin{frame}{Criteria for Evaluating Analogical Arguments}
+		\begin{itemize}
+			\item \textbf{Relevance}: The shared properties must be relevant to the conclusion being drawn.
+			\item \textbf{Quantity}: More similarities generally strengthen an analogy, but quality matters more than quantity.
+			\item \textbf{Diversity}: Similarities across different types of features provide stronger support.
+			\item \textbf{Disanalogy}: Important differences between source and target can weaken or defeat the argument.
+		\end{itemize}
+		
+		\begin{block}{Evaluation Checklist}
+			\begin{enumerate}
+				\item Are the similarities relevant to the conclusion?
+				\item Do the differences matter for this purpose?
+				\item Is the source well-understood?
+				\item Are there alternative analogies to consider?
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% Slide 12: Relevant Similarities and the Problem of Selection
+	\begin{frame}{Relevant Similarities and the Problem of Selection}
+		\begin{itemize}
+			\item Any two things share infinite similarities and differences, creating a \textbf{selection problem}.
+			\item \textbf{Relevance} depends on the specific claim or conclusion the analogy supports.
+			\item We must identify which shared features actually matter for the \textbf{inferential goal}.
+			\item Background knowledge and theory guide us in selecting appropriate features to compare.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			% Draw two circles
+			\draw[thick] (2,0) circle (1.5cm);
+			\node at (2,2) {Source};
+			\draw[thick] (6,0) circle (1.5cm);
+			\node at (6,2) {Target};
+			
+			% Draw arrows between them
+			\draw[->, thick, red] (3.2,0.5) -- (4.8,0.5) node[midway, above] {Relevant};
+			\draw[->, dashed, gray] (3.2,0) -- (4.8,0) node[midway, below] {Irrelevant};
+			\draw[->, dashed, gray] (3.2,-0.5) -- (4.8,-0.5);
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slides 13-16 continue here...
+	
+	% Slide 13: When Dissimilarities Matter: Negative Analogy
+	\begin{frame}{When Dissimilarities Matter: Negative Analogy}
+		\begin{itemize}
+			\item \textbf{Negative analogy} refers to the ways in which the source and target differ.
+			\item Some differences are harmless to the analogy, while others are \textbf{defeaters} that undermine the comparison.
+			\item A difference becomes critical when it affects the specific relationship or property being transferred.
+			\item Recognizing relevant dissimilarities helps us avoid overextending analogies beyond their useful scope.
+		\end{itemize}
+		
+		\begin{alertblock}{Critical Question}
+			Does this difference break the relationship I'm trying to map from source to target?
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 14: The Danger of Superficial Resemblance
+	\begin{frame}{The Danger of Superficial Resemblance}
+		\begin{itemize}
+			\item \textbf{Superficial resemblance} occurs when things look similar but lack deep structural correspondence.
+			\item This mistake often leads to false predictions and poor decision-making.
+			\item Marketing and propaganda frequently exploit surface similarities to create misleading associations.
+			\item Training in analogical reasoning helps us resist being fooled by mere appearance.
+		\end{itemize}
+		
+		\begin{example}
+			\textbf{Misleading Analogy}: "This alternative medicine works like traditional medicine"
+			\begin{itemize}
+				\item Surface similarity: Both come in pill form
+				\item Missing deep structure: No tested biological mechanism
+				\item Result: False confidence in effectiveness
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 15: Historical Examples: From Plato's Cave to Darwin's Tree
+	\begin{frame}{Historical Examples: From Plato's Cave to Darwin's Tree}
+		\begin{itemize}
+			\item \textbf{Plato's Cave}: Reality is to shadows as true knowledge is to sensory experience.
+			\item \textbf{Newton's Clockwork Universe}: The cosmos operates like a precise mechanical clock.
+			\item \textbf{Darwin's Tree of Life}: Species relationships branch like a growing tree.
+			\item \textbf{Freud's Iceberg}: Conscious thought is the tip; the unconscious lies beneath.
+		\end{itemize}
+		
+		\begin{block}{Why These Analogies Endured}
+			These analogies succeeded because they:
+			\begin{itemize}
+				\item Mapped complex abstract ideas to concrete images
+				\item Preserved crucial relationships
+				\item Generated testable predictions
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	% Slide 16: Everyday Analogies We Live By
+	\begin{frame}{Everyday Analogies We Live By}
+		\begin{itemize}
+			\item \textbf{Time is money}: We "spend," "save," "waste," and "invest" time.
+			\item \textbf{Arguments are war}: We "defend" positions, "attack" weak points, and "win" debates.
+			\item \textbf{Ideas are food}: We "digest" information, "chew on" problems, and find some ideas "hard to swallow."
+			\item \textbf{Organizations are organisms}: Companies "grow," have "healthy" cultures, and can "die."
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.8]
+			\node[draw, rectangle] at (0,0) {Abstract Concept};
+			\node[draw, rectangle] at (6,0) {Concrete Experience};
+			\draw[->, thick] (2.5,0) -- (3.5,0);
+			\node at (3,0.5) {mapping};
+			\node at (0,-1) {\small (Time, Arguments)};
+			\node at (6,-1) {\small (Money, War)};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slides 17-20 continue here...
+	
+	% Slide 17: Models as Extended Analogies in Scientific Discovery
+	\begin{frame}{Models as Extended Analogies in Scientific Discovery}
+		\begin{itemize}
+			\item Scientific \textbf{models} are systematic analogies that map multiple relationships from familiar to unfamiliar domains.
+			\item Unlike simple analogies, models generate \textbf{quantitative predictions} that can be tested experimentally.
+			\item Scientists use models as \textbf{thinking tools} to explore implications and design new experiments.
+			\item The best models reveal unexpected connections and suggest new research directions.
+		\end{itemize}
+		
+		\begin{block}{From Analogy to Model}
+			\begin{tabular}{l|l}
+				\textbf{Simple Analogy} & \textbf{Scientific Model} \\
+				\hline
+				"Heart is like a pump" & Cardiac pressure equations \\
+				"Brain is like a computer" & Neural network algorithms \\
+				"DNA is like a code" & Base-pair transcription rules
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	% Slide 18: Case Study: The Wave-Particle Duality of Light
+	\begin{frame}{Case Study: The Wave-Particle Duality of Light}
+		\begin{itemize}
+			\item Scientists initially debated whether light was analogous to \textbf{water waves} or \textbf{flying particles}.
+			\item Wave analogy explained: interference patterns, diffraction, and refraction phenomena.
+			\item Particle analogy explained: photoelectric effect and discrete energy packets.
+			\item The resolution required accepting that light doesn't perfectly match either familiar analogy.
+		\end{itemize}
+		
+		\begin{example}
+			The double-slit experiment revealed the limitation of classical analogies:
+			\begin{itemize}
+				\item Individual photons (particle-like) create interference patterns (wave-like)
+				\item Neither waves nor particles from everyday experience behave this way
+				\item New quantum framework transcended both analogies
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 19: When Scientific Analogies Mislead: The Ether Hypothesis
+	\begin{frame}{When Scientific Analogies Mislead: The Ether Hypothesis}
+		\begin{itemize}
+			\item 19th-century physicists assumed light waves needed a \textbf{medium} like sound waves need air.
+			\item They invented "luminiferous ether" by analogy to other wave phenomena.
+			\item This analogy led to decades of failed experiments searching for ether's properties.
+			\item The Michelson-Morley experiment finally showed the analogy was fundamentally flawed.
+		\end{itemize}
+		
+		\begin{alertblock}{Lesson Learned}
+			Even productive analogies have limits - scientific progress often requires abandoning familiar comparisons for genuinely new concepts.
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 20: Thought Experiments as Analogical Tools
+	\begin{frame}{Thought Experiments as Analogical Tools}
+		\begin{itemize}
+			\item \textbf{Thought experiments} use imaginative analogies to explore logical consequences of theories.
+			\item They allow scientists to test ideas when real experiments are impossible or impractical.
+			\item Famous examples include Einstein's elevator, Schrödinger's cat, and Maxwell's demon.
+			\item These analogical scenarios reveal hidden assumptions and paradoxes in our theories.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
+			% Draw a simple elevator diagram
+			\draw[thick] (0,0) rectangle (2,3);
+			\draw[thick] (0.5,3) -- (0.5,3.5);
+			\draw[thick] (1.5,3) -- (1.5,3.5);
+			\draw[thick] (0.5,3.5) -- (1.5,3.5);
+			\node at (1,1.5) {Person};
+			\draw[->] (1,0.5) -- (1,0);
+			
+			\draw[thick] (4,0) rectangle (6,3);
+			\node at (5,1.5) {Person};
+			\draw[->] (5,0.5) -- (5,0);
+			\node at (5,-0.5) {Planet};
+			
+			\node at (1,4) {Accelerating};
+			\node at (1,4.5) {Elevator};
+			\node at (5,4) {Gravitational};
+			\node at (5,4.5) {Field};
+			
+			\draw[<->, thick] (2.5,1.5) -- (3.5,1.5);
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slides 21-24 continue here...
+	
+	% Slide 21: The Computer Model of Mind: Strengths and Limitations
+	\begin{frame}{The Computer Model of Mind: Strengths and Limitations}
+		\begin{itemize}
+			\item The \textbf{computational theory of mind} treats mental processes as information processing operations.
+			\item Strengths: Explains memory storage, logical reasoning, and step-by-step problem solving.
+			\item Limitations: Struggles with consciousness, emotions, and contextual understanding.
+			\item This analogy revolutionized cognitive science but may constrain how we think about minds.
+		\end{itemize}
+		
+		\begin{block}{Mapping the Analogy}
+			\begin{itemize}
+				\item Hardware → Brain structure
+				\item Software → Mental processes
+				\item Input/Output → Perception/Action
+				\item Bugs → Mental disorders (problematic?)
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	% Slide 22: DNA as Code: A Productive Metaphor
+	\begin{frame}{DNA as Code: A Productive Metaphor}
+		\begin{itemize}
+			\item The \textbf{genetic code} analogy helped scientists understand how DNA stores and transmits information.
+			\item \textit{DNA is like an instruction book (or computer program) for building proteins. Genes are like chapters.}
+			\item This framing led to breakthroughs in sequencing, gene editing, and synthetic biology.
+			\item The analogy suggests we can "debug" genetic diseases and "reprogram" organisms.
+			\item However, biological systems are messier than computer code, with complex feedback loops.
 		\end{itemize}
 		
 		\begin{example}
 			\scriptsize
-			\textbf{Source:} A parent's responsibility to their child\\
-			\textbf{Target:} A government's responsibility to its citizens\\
-			\textbf{Similarities:} Power relationship, caretaking role, protection duties\\
-			\textbf{Inference:} Like parents, governments have an obligation to ensure basic welfare
+			Successful predictions from the code analogy:
+			\begin{itemize}
+				\item Four-letter alphabet (A, T, G, C) → words (codons) → sentences (genes)
+				\item Copy errors → mutations
+				\item Reading frames → translation mechanisms
+			\end{itemize}
 		\end{example}
 	\end{frame}
 	
-	\begin{frame}{From Known to Unknown: The Cognitive Leap in Analogies}
+	% Slide 23: Moral Reasoning Through Analogical Cases
+	\begin{frame}{Moral Reasoning Through Analogical Cases}
 		\begin{itemize}
-			\item The \textbf{cognitive leap} in analogical reasoning involves transferring knowledge from a well-understood domain to an unfamiliar one.
-			\item This process involves recognizing structural patterns rather than merely superficial similarities.
-			\item Analogical reasoning allows us to navigate novel ethical and legal situations by connecting them to established precedents or principles.
-			\item The cognitive leap is both the strength and potential weakness of analogical reasoning, as it may obscure important differences.
+			\item Ethical reasoning often proceeds by finding \textbf{analogous cases} where our intuitions are clearer.
+			\item We test moral principles by applying them to similar situations and checking for consistency.
+			\item \textbf{Case-based reasoning} helps us navigate novel ethical dilemmas using established precedents.
+			\item The challenge lies in determining which features are morally relevant for comparison.
 		\end{itemize}
 		
-		\begin{table}
-			\scriptsize
-			\begin{tabular}{|p{5cm}|p{5cm}|}
-				\hline
-				\textbf{Benefits of the Cognitive Leap} & \textbf{Risks of the Cognitive Leap} \\
-				\hline
-				Enables reasoning about new situations & May overlook critical differences \\
-				Builds on established knowledge & Can import irrelevant assumptions \\
-				Creates intuitive understanding & May simplify complex issues \\
-				Facilitates creative problem-solving & Can lead to false equivalences \\
-				\hline
-			\end{tabular}
-		\end{table}
-	\end{frame}
-	
-	\begin{frame}{The Formula: `A is to B as C is to D'}
-		\begin{itemize}
-			\item The classic formulation of an analogy follows the pattern \textbf{`A is to B as C is to D'}, creating a proportional relationship.
-			\item This structure highlights that it's not just objects that are similar, but the relationships between objects.
-			\item In ethical and legal reasoning, we often use this structure to transfer moral or legal principles from established cases to new ones.
-			\item Understanding this formula helps us identify when an argument is explicitly or implicitly using analogical reasoning.
-		\end{itemize}
-		
-		\begin{block}{Mathematical Expression}
-			If we denote the relation between A and B as R(A,B), the analogical claim is:
-			\begin{align}
-				R(A,B) \approx R(C,D)
-			\end{align}
-			Where $\approx$ indicates similarity rather than strict equality.
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{Everyday Analogies: How We Navigate New Situations}
-		\begin{itemize}
-			\item \textbf{Everyday analogies} are common mental shortcuts we use to understand new situations based on past experiences.
-			\item When faced with a new electronic device, we apply knowledge from similar devices we've used before.
-			\item In social situations, we often navigate unfamiliar relationships by comparing them to familiar relationship patterns.
-			\item Medical decisions frequently rely on analogies to previous health situations we've experienced or learned about.
-		\end{itemize}
-		
-	 \resizebox{0.4\textheight}{!}{%
-		\begin{tikzpicture}[
-			mindmap,
-			concept color=orange!40,
-			text=black,
-			grow cyclic,
-			level 1/.append style={level distance=4cm, sibling angle=80, font=\small}
-			]
-			\node[concept, font=\normalsize\bfseries] {Everyday Analogies}
-			child { node[concept] {Technology\\[2pt] \small New phone $\to$ old phone} }
-			child { node[concept] {Social\\[2pt] \small New friend $\to$ existing friend} }
-			child { node[concept] {Health\\[2pt] \small Current symptom $\to$ past illness} }
-			child { node[concept] {Problem-solving\\[2pt] \small Current obstacle $\to$ past challenge} };
-		\end{tikzpicture}
-	}
-	\end{frame}
-	
-	\begin{frame}{Case Study - Medical Analogy: The Body as Machine}
-		\begin{itemize}
-			\item The \textbf{mechanistic view of the body} became dominant in Western medicine following the Scientific Revolution.
-			\item This analogy compares the human body to a complex machine with interconnected systems and parts.
-			\item The heart is analogized to a pump, the lungs to bellows, the brain to a control center, and so on.
-			\item This analogy profoundly shaped medical practice, focusing attention on physical causation and structural dysfunction.
-		\end{itemize}
-		
-		\begin{block}{Strengths and Limitations}
-			\scriptsize
-			\textbf{Strengths of the mechanistic analogy:}
-			\begin{itemize}
-				\item Facilitated anatomical understanding and surgical interventions
-				\item Promoted systematic analysis of cause and effect in disease
-				\item Enabled engineering approaches to medical problems (prosthetics, devices)
-			\end{itemize}
-			
-			\textbf{Limitations of the mechanistic analogy:}
-			\begin{itemize}
-				\item Downplayed holistic and psychosomatic aspects of health
-				\item Emphasized treating "broken parts" over systemic prevention
-				\item Struggled to account for emergent properties of living systems
-				\item Potentially reduced patients to objects rather than subjects
-			\end{itemize}
-		\end{block}
-	\end{frame}
-	
-	
-	\begin{frame}{Strength Factor: Relevance of Similarities}
-		\begin{itemize}
-			\item Not all similarities between cases are equally important; the \textbf{relevance} of similarities is crucial to argument strength.
-			\item Relevant similarities are those that have a causal or logical connection to the property being projected from source to target.
-			\item Irrelevant similarities may be numerous but contribute nothing to the strength of an analogical argument.
-			\item Strong analogical arguments focus on structural and functional similarities rather than superficial or coincidental ones.
-		\end{itemize}
-		
-		\begin{exampleblock}{Example: Relevance in Medical Analogies}
-			\scriptsize
-			A patient with symptoms X, Y, and Z is compared to past patients:
-			\begin{itemize}
-				\item Patient A: Shares symptoms X, Y, Z and had disease D (relevant similarities)
-				\item Patient B: Shares height, hair color, and birth month (irrelevant similarities)
-			\end{itemize}
-			The analogy to Patient A provides stronger support for diagnosis D despite having the same number of similarities as Patient B.
-		\end{exampleblock}
-	\end{frame}
-	
-	\begin{frame}{Strength Factor: Number of Similarities}
-		\begin{itemize}
-			\item While relevance is primary, the \textbf{number of relevant similarities} does contribute to an analogy's strength.
-			\item More points of relevant comparison generally create a stronger inferential bridge between source and target.
-			\item The relationship between number of similarities and argument strength is not linear but shows diminishing returns.
-			\item A few highly relevant similarities often outweigh many tangentially relevant ones.
-		\end{itemize}
-		
-		\begin{table}
-				\scriptsize
-			\begin{tabular}{|l|c|c|c|}
-				\hline
-				\textbf{Analogy Type} & \textbf{Few Similarities} & \textbf{Many Similarities} & \textbf{Determining Factor} \\
-				\hline
-				Scientific & Potentially Strong & Very Strong & Causal relevance \\
-				Legal & Potentially Strong & Strong & Precedent relevance \\
-				Moral & Often Weak & Potentially Strong & Principle relevance \\
-				Everyday & Usually Weak & Moderately Strong & Practical relevance \\
-				\hline
-			\end{tabular}
-		\end{table}
-	\end{frame}
-	
-	\begin{frame}{Strength Factor: Disanalogies and Counterexamples}
-		\begin{itemize}
-			\item \textbf{Disanalogies} are relevant differences between the source and target that weaken an analogical argument.
-			\item The impact of a disanalogy depends on whether it affects the specific property being projected from source to target.
-			\item A single critical disanalogy can undermine an otherwise strong analogical argument with many similarities.
-			\item Identifying disanalogies is a key technique for challenging analogical arguments in ethical and legal contexts.
-		\end{itemize}
-		
-		\begin{alertblock}{Warning: Strong Disanalogies}
-			When evaluating an analogy, always ask: "Is there a difference between these cases that undermines the very property or principle being transferred from source to target?"
+		\begin{alertblock}{Key Ethical Question}
+			If we accept X in situation A, must we also accept Y in analogous situation B?
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{Strength Factor: The Base Rate Problem}
+	% Slide 24: The Trolley Problem and Its Analogical Extensions
+	\begin{frame}{The Trolley Problem and Its Analogical Extensions}
 		\begin{itemize}
-			\scriptsize
-			\item The \textbf{base rate problem} refers to how common the projected property is in the general category that includes both source and target.
-			\item Analogical arguments are stronger when they project rare or unusual properties rather than common ones.
-			\item If a property is common across many cases (high base rate), the specific similarities between source and target become less important.
-			\item This factor is often overlooked in everyday analogical reasoning but is crucial in scientific and legal contexts.
+			\item The \textbf{trolley problem} uses a concrete scenario to explore abstract principles about harm and intention.
+			\item \textit{Suppose a runaway trolley is headed toward five workers--it will kill them if not stopped. You are standing near a switch that will redirect this trolley so it kills one worker on a different track instead.}
+			\item Variations test our intuitions: switching tracks vs. pushing someone, acting vs. allowing harm.
+			\item These thought experiments reveal tensions between \textbf{utilitarian} and \textbf{deontological} ethics.
+			\item Real-world applications include medical triage, autonomous vehicles, and military decisions.
 		\end{itemize}
 		
-		\begin{center}
-			\begin{tikzpicture}[scale = .7]
-				\scriptsize
-				\draw[thick] (0,0) -- (10,0);
-				\node[below] at (0,0) {0\%};
-				\node[below] at (10,0) {100\%};
-				\node[below] at (5,0) {50\%};
-				
-				\draw[->] (0,1) -- (10,1) node[right] {Frequency of property};
-				
-				\draw[thick, red] (1,0.5) -- (1,1.5) node[above] {Stronger inference};
-				\draw[thick, blue] (9,0.5) -- (9,1.5) node[above] {Weaker inference};
-				
-				\node[text width=10cm, align=center] at (5,-1.5) {As the property becomes more common in the general population, analogical arguments become weaker};
-			\end{tikzpicture}
-		\end{center}
-	\end{frame}
-	
-	\begin{frame}{Case Study - Computer Analogies for the Mind: The Brain as Hardware}
-		\begin{itemize}
-			\item The \textbf{computational theory of mind} relies on an analogy between brains and computers.
-			\item This analogy maps computer hardware to brain physiology and software to mental processes.
-			\item The analogy has been enormously productive in cognitive science and artificial intelligence research.
-			\item However, critics argue that biological brains differ fundamentally from digital computers in organization and processing.
-		\end{itemize}
-		
-		\begin{table}
-			\scriptsize
-			\begin{tabular}{|p{2.5cm}|p{4cm}|p{4cm}|}
-				\hline
-				\textbf{Comparison Point} & \textbf{Computer} & \textbf{Brain} \\
-				\hline
-				Processing units & Transistors and logic gates & Neurons and synapses \\
-				\hline
-				Organization & Serial processing with parallel elements & Massively parallel processing \\
-				\hline
-				Memory storage & Discrete, addressable locations & Distributed, content-addressable \\
-				\hline
-				Programming & Explicit algorithms & Learning from experience \\
-				\hline
-				Error handling & Brittle, vulnerable to small errors & Robust, degrades gracefully \\
-				\hline
-			\end{tabular}
-		\end{table}
-	\end{frame}
-	
-	\begin{frame}{Evaluating an Analogical Argument: A Step-by-Step Process}
-		\begin{itemize}
-			\item Step 1: Clearly identify the source domain, target domain, and the property being projected.
-			\item Step 2: List all relevant similarities between the source and target, focusing on those related to the projected property.
-			\item Step 3: Identify potential disanalogies, especially those that might undermine the projection of the property.
-			\item Step 4: Consider the base rate of the property in the general category that includes both source and target.
-		\end{itemize}
-		
-		\begin{exampleblock}{Evaluating Process Example}
-			\scriptsize
-			\textbf{Argument:} "Artificial intelligence should have legal rights because humans have legal rights, and both can reason and make decisions."
-			\begin{enumerate}
-				\item \textbf{Source:} Humans; \textbf{Target:} AI; \textbf{Property:} Deserving legal rights
-				\item \textbf{Similarities:} Decision-making capacity, reasoning ability
-				\item \textbf{Disanalogies:} Consciousness, biological needs, vulnerability, autonomy origin
-				\item \textbf{Base rate:} Legal rights are rare among entities in general
-			\end{enumerate}
-		\end{exampleblock}
-	\end{frame}
-	
-	\begin{frame}{Common Fallacies in Analogical Reasoning}
-		\begin{itemize}
-			\item The \textbf{False Analogy Fallacy} occurs when an argument relies on similarities that are irrelevant to the conclusion being drawn.
-			\item The \textbf{Hasty Generalization} combines weak analogical reasoning with insufficient evidence.
-			\item \textbf{Appeal to Tradition} often uses analogies to past practices without considering relevant differences in context.
-			\item \textbf{Confirmation Bias} leads us to notice similarities that support our preferred conclusion while ignoring disanalogies.
-		\end{itemize}
-		
-		\begin{block}{Example Fallacies}
+		\begin{tikzpicture}[scale=0.7]
+			% Original trolley problem
+			\draw[thick] (0,1) -- (3,1);
+			\draw[thick] (3,1) -- (4,1.5);
+			\draw[thick] (3,1) -- (4,0.5);
+			\node[draw, circle] at (1,1) {T};
+			\draw[fill=black] (4.5,1.5) circle (0.1);
+			\draw[fill=black] (4.7,1.5) circle (0.1);
+			\draw[fill=black] (4.9,1.5) circle (0.1);
+			\draw[fill=black] (5.1,1.5) circle (0.1);
+			\draw[fill=black] (5.3,1.5) circle (0.1);
+			\draw[fill=black] (4.5,0.5) circle (0.1);
+			\node at (2.5,0) {Switch?};
 			
-			\begin{itemize}
-				\item \textbf{False Analogy:} "Running a government is just like running a business, so a business leader will be a good president."
-				\begin{itemize}
-					\scriptsize
-					\item Ignores crucial differences in goals (profit vs. public good) and stakeholder relationships
-				\end{itemize}
-				\item \textbf{Hasty Generalization:} "My friend's diet worked for them, so it will work for everyone."
-				\begin{itemize}
-					\scriptsize
-					\item Overlooks individual biological differences and contexts
-				\end{itemize}
-			\end{itemize}
-		\end{block}
-	\end{frame}
-	
-	
-	\begin{frame}{The False Analogy: When Comparisons Mislead}
-		\begin{itemize}
-			\item A \textbf{false analogy} occurs when the similarities between source and target are superficial or irrelevant to the property being transferred.
-			\item False analogies are particularly common in political and moral debates where emotional resonance can mask logical weakness.
-			\item The persuasive power of false analogies often stems from their intuitive appeal rather than their logical merit.
-			\item Recognizing false analogies requires focusing on whether the similarities genuinely support the conclusion being drawn.
-		\end{itemize}
-		
-		\begin{tikzpicture}[node distance=2cm]
-			\node (source) [draw, rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm] {Source Domain};
-			\node (target) [draw, rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm, right=4cm of source] {Target Domain};
+			% Arrow to analogous case
+			\draw[->, thick] (6,1) -- (7,1);
 			
-			\draw[->, bend left=15, thick, green!70!black] (source.north east) to node[above, align=center] {Relevant similarities} (target.north west);
-			\draw[->, bend right=15, dashed, thick, red] (source.south east) to node[below, align=center] {Irrelevant similarities} (target.south west);
-			
-			\node[text width=10cm, align=center] at ($(source)!0.5!(target)+(0,-2)$) {False analogies rely on the dashed red path,\\while strong analogies follow the solid green path};
+			% Analogous medical case
+			\node[draw, rectangle] at (9,1.5) {5 patients};
+			\node[draw, rectangle] at (9,0.5) {1 donor};
+			\node at (9,0) {Harvest?};
 		\end{tikzpicture}
 	\end{frame}
 	
-	\begin{frame}{Competing Analogies in Bioethics: The Abortion Debate}
+	% Slides 25-28 continue here...
+	
+	% Slide 25: Using Analogies to Expand Our Moral Circle
+	\begin{frame}{Using Analogies to Expand Our Moral Circle}
 		\begin{itemize}
-			\item The abortion debate features competing analogies that fundamentally shape moral reasoning on both sides.
-			\item Each side employs analogies that highlight different aspects of pregnancy and fetal development.
-			\item These analogies influence intuitions about the moral status of the fetus and the permissibility of abortion.
-			\item Analyzing these analogies reveals how analogical reasoning can frame complex ethical questions.
+			\item \textbf{Moral progress} often occurs when we recognize analogies between accepted and contested cases.
+			\item Historical example: Arguments against slavery drew analogies to accepted rights of free persons.
+			\item Contemporary debates use analogical extension: animal rights, AI rights, environmental protection.
+			\item The \textbf{expanding circle} of moral concern relies on seeing similarities across boundaries.
 		\end{itemize}
 		
-		\begin{alertblock}{The Role of Analogies in Moral Status Questions}
-			Analogies are especially powerful in bioethics because they help us apply familiar moral categories to entities with unclear moral status. The strength of these analogies significantly impacts the persuasiveness of each position.
+		\begin{block}{Pattern of Moral Expansion}
+			\begin{enumerate}
+				\item Establish principle for core case (humans deserve respect)
+				\item Identify relevant similarity (capacity to suffer)
+				\item Extend principle to analogous beings (animals can suffer too)
+				\item Overcome resistance from surface differences
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% Slide 26: When Ethical Analogies Break Down
+	\begin{frame}{When Ethical Analogies Break Down}
+		\begin{itemize}
+			\item Ethical analogies fail when \textbf{morally relevant differences} are overlooked or minimized.
+			\item False analogies can justify harmful actions by focusing on superficial similarities.
+			\item Context and relationships matter: what works in one domain may not transfer to another.
+			\item We must carefully examine whether the features that ground moral status are truly shared.
+		\end{itemize}
+		
+		\begin{alertblock}{Warning Signs}
+			An ethical analogy may be flawed when:
+			\begin{itemize}
+				\item It ignores power differentials
+				\item It strips away important context
+				\item It assumes universal values across cultures
+				\item It oversimplifies complex relationships
+			\end{itemize}
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{Pro-Life Analogies: Fetus as Developing Person}
+	% Slide 27: Animal Rights Arguments: From Human to Non-Human
+	\begin{frame}{Animal Rights Arguments: From Human to Non-Human}
 		\begin{itemize}
-			\item Pro-life arguments often employ the \textbf{Child Development Analogy}, comparing a fetus to a newborn, infant, or young child.
-			\item This analogy emphasizes the continuity of human development along a single biological trajectory.
-			\item The analogy suggests that differences between a fetus and child (size, location, development stage) are morally irrelevant.
-			\item Like the "acorn is to oak tree" comparison, this analogy focuses on natural potential and inherent nature.
+			\item Peter Singer's argument uses \textbf{analogical reasoning} to extend rights from humans to animals.
+			\item Core analogy: If suffering matters morally for humans, it should matter for all sentient beings.
+			\item The argument maps our obligations to vulnerable humans onto our treatment of animals.
+			\item Critics challenge the analogy by pointing to cognitive differences and special human relationships.
 		\end{itemize}
 		
-		\begin{table}
-			\scriptsize
-			\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|}
+		\begin{example}
+			Argument by analogy:
+			\begin{itemize}
+				\item We don't harm human infants (who lack full rationality)
+				\item Adult pigs are more cognitively capable than human infants
+				\item Therefore, the capacity difference doesn't justify harming pigs
+				\item Conclusion: Species membership alone is arbitrary (speciesism)
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 28: The Violinist Argument in Bioethics
+	\begin{frame}{The Violinist Argument in Bioethics}
+		\begin{itemize}
+			\item Judith Thomson's famous thought experiment uses \textbf{analogical reasoning} to examine abortion ethics.
+			\item Scenario: You have been kidnapped by the Society of Music Lovers, and wake up connected to a famous unconscious (innocent) violinist who needs your kidneys for nine months.
+			\item The analogy maps bodily autonomy rights from this case to specific pregnancy situations. perspective.
+		\end{itemize}
+		
+		\begin{block}{Structure of the Argument}
+			\begin{tabular}{l|l}
+				\textbf{Violinist Case} & \textbf{Target Case} \\
 				\hline
-				\textbf{Analogy Used} & \textbf{Key Similarity} & \textbf{Moral Implication} \\
-				\hline
-				Fetus as sleeping person & Temporarily inactive but will naturally "awaken" & Killing is wrong despite temporary unconsciousness \\
-				\hline
-				Fetus as young child & Same entity at different stages & Developmental stage doesn't affect moral worth \\
-				\hline
-				Fetus as human with disability & Limited current capacities & Capacities don't determine human rights \\
-				\hline
+				Kidnapped person & Pregnant woman \\
+				Unconscious violinist & Fetus \\
+				Life support connection & Pregnancy \\
+				Right to disconnect? & Right to terminate?
 			\end{tabular}
-		\end{table}
+		\end{block}
 	\end{frame}
 	
-	\begin{frame}{Pro-Choice Analogies: Fetus as Biological Entity}
-		\begin{itemize}
-			\scriptsize
-			\item Pro-choice arguments often use the \textbf{Organ or Tissue Analogy}, comparing a fetus (especially early-stage) to biological material.
-			\item This analogy emphasizes the biological integration with and dependence on the pregnant person's body.
-			\item The analogy suggests that, like other body tissues, the fetus lacks independent moral status separate from the person carrying it.
-			\item These analogies focus on current capabilities rather than future potential.
-		\end{itemize}
-		
-		\begin{center}
-			\begin{tikzpicture}
-				\scriptsize
-				% Pro-choice main concept
-				\node[draw, rectangle, rounded corners, fill=blue!20, minimum width=4cm, minimum height=1cm] (main) at (0,0) {Early Fetus};
-				
-				% Analogies
-				\node[draw, rectangle, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (cells) at (-3,-2) {Collection of Cells};
-				\node[draw, rectangle, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (organ) at (0,-2) {Organ/Tissue};
-				\node[draw, rectangle, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (dependent) at (3,-2) {Biological Dependent};
-				
-				% Connections
-				\draw[->] (main) -- node[left] {Composition} (cells);
-				\draw[->] (main) -- node[right] {Integration} (organ);
-				\draw[->] (main) -- node[right] {Relationship} (dependent);
-				
-				% Emphasis on key analogical features
-				\node[text width=10cm, align=center] at (0,-3.5) {Pro-choice analogies focus on biological characteristics and dependency};
-			\end{tikzpicture}
-		\end{center}
-	\end{frame}
+	% Slides 29-32 continue here...
 	
-	\begin{frame}{Case Study: Singer's Drowning Child Analogy}
+	% Slide 29: Legal Precedent as Institutionalized Analogy
+	\begin{frame}{Legal Precedent as Institutionalized Analogy}
 		\begin{itemize}
-			\item Peter Singer's \textbf{Drowning Child Analogy} argues that our moral duties to distant strangers are similar to our duties to those nearby.
-			\item The source domain involves a child drowning in a shallow pond whom you could save at minor cost (ruined clothes).
-			\item Singer argues that distance is not morally relevant, so our duty to save lives through charitable donations is analogous to saving the drowning child.
-			\item This analogy challenges the common intuition that we have stronger obligations to those physically near us than to distant strangers.
+			\item The \textbf{common law system} operates through analogical reasoning from case to case.
+			\item \textbf{Stare decisis} ("let the decision stand") requires treating like cases alike.
+			\item Lawyers argue by showing similarities to favorable precedents and differences from unfavorable ones.
+			\item This system embeds analogical reasoning into the fundamental structure of legal decision-making.
 		\end{itemize}
 		
-		\begin{block}{Singer's Argument Structure}
-			\scriptsize
+		\begin{block}{Legal Reasoning Process}
 			\begin{enumerate}
-				\item If you can prevent something bad without sacrificing anything of comparable moral importance, you ought to do it.
-				\item Death from poverty-related causes is bad.
-				\item By donating to effective charities, you can prevent such deaths without sacrificing anything of comparable moral importance.
-				\item Therefore, you ought to donate to effective charities.
+				\item Identify relevant precedent cases
+				\item Extract the legal principle (ratio decidendi)
+				\item Map facts from precedent to current case
+				\item Apply the principle if facts are sufficiently similar
 			\end{enumerate}
 		\end{block}
 	\end{frame}
 	
-	\begin{frame}{The Trolley Problem: A Study in Moral Analogies}
-		\scriptsize
+	% Slide 30: The Art of Distinguishing Cases
+	\begin{frame}{The Art of Distinguishing Cases}
 		\begin{itemize}
-			\item The \textbf{Trolley Problem} involves comparing two scenarios to explore moral intuitions about causing harm versus allowing harm.
-			\item In the first scenario, diverting a trolley from five people to one seems morally permissible to many.
-			\item In the second scenario, pushing a large person off a bridge to stop the trolley seems impermissible to most, despite the same numerical outcome.
-			\item The comparison reveals that factors beyond simple utilitarian calculus influence our moral judgments.
+			\item \textbf{Distinguishing} means showing why a precedent doesn't apply to the current case.
+			\item Lawyers must identify legally relevant differences between cases.
+			\item The skill lies in determining which factual differences actually matter for the legal principle.
+			\item Judges must balance consistency with precedent against adapting to new circumstances.
 		\end{itemize}
 		
-		\begin{center}
-			\begin{tikzpicture}[scale = .7]
-				% Scenario 1
-				\node at (0,2) {Scenario 1: Switch};
-				
-				% Tracks
-				\draw[thick] (-2,1) -- (2,1);
-				\draw[thick] (0,1) -- (0.5,0.5) -- (2,0);
-				
-				% Trolley
-				\node[rectangle, draw, fill=orange!30] at (-1.5,1) {T};
-				
-				% People
-				\node[circle, draw, fill=blue!20] at (1.5,1) {5};
-				\node[circle, draw, fill=blue!20] at (1.5,0) {1};
-				
-				% Switch
-				\node[diamond, draw, fill=green!20] at (0,0.7) {};
-				
-				% Scenario 2
-				\node at (0,-0.5) {Scenario 2: Bridge};
-				
-				% Bridge and track
-				\draw[thick] (-2,-1.5) -- (2,-1.5);
-				\draw[thick] (-0.5,-1) -- (0.5,-1);
-				
-				% Trolley
-				\node[rectangle, draw, fill=orange!30] at (-1.5,-1.5) {T};
-				
-				% People
-				\node[circle, draw, fill=blue!20] at (1.5,-1.5) {5};
-				\node[circle, draw, fill=blue!20] at (0,-1) {1};
-			\end{tikzpicture}
-		\end{center}
+		\begin{example}
+			A lawyer might distinguish cases by arguing:
+			\begin{itemize}
+				\item "In \textit{Smith v. Jones}, the contract was verbal, but here it's written"
+				\item This difference matters if the legal principle involves proof standards
+				\item But wouldn't matter if the principle is about consideration
+			\end{itemize}
+		\end{example}
 	\end{frame}
 	
-	\begin{frame}{Analogies in Ethics: From Intuition to Principle}
+	% Slide 31: Ratio Decidendi: Finding the Relevant Similarities
+	\begin{frame}{Ratio Decidendi: Finding the Relevant Similarities}
 		\begin{itemize}
-			\item Ethical analogies often help bridge the gap between moral intuitions about specific cases and general moral principles.
-			\item The process of \textbf{reflective equilibrium} involves adjusting both our intuitions about cases and our moral principles until they align.
-			\item Strong analogies in ethics reveal morally relevant features that might be obscured in complex real-world situations.
-			\item Competing analogies in ethical debates often reflect different underlying moral frameworks (e.g., consequentialist vs. deontological).
+			\item \textbf{Ratio decidendi} is the legal principle that emerges from the essential facts of a case.
+			\item Courts must determine which facts were crucial to the decision and which were incidental.
+			\item Future cases are bound by the ratio, not by irrelevant details (\textbf{obiter dicta}).
+			\item Different interpretations of the ratio lead to narrower or broader applications of precedent.
 		\end{itemize}
 		
+		\begin{tikzpicture}[scale=0.8]
+			% Draw a case with multiple facts
+			\node[draw, rectangle] at (0,2) {Precedent Case};
+			\node at (0,1) {Facts: A, B, C, D, E};
+			\node[draw, ellipse, thick] at (0,0) {Ratio: B + D → Liability};
+			
+			% Arrow to new case
+			\draw[->, thick] (2,0) -- (4,0);
+			
+			% New case
+			\node[draw, rectangle] at (6,2) {Current Case};
+			\node at (6,1) {Facts: B, D, F, G};
+			\node at (6,0) {Apply ratio? Yes};
+		\end{tikzpicture}
 	\end{frame}
 	
-	\begin{frame}{Case-Based Reasoning in Law: The Concept of Precedent}
+	% Slide 32: Landmark Cases and Their Analogical Legacy
+	\begin{frame}{Landmark Cases and Their Analogical Legacy}
 		\begin{itemize}
-			\item \textbf{Precedent} is the legal principle that similar cases should be decided similarly, making legal reasoning inherently analogical.
-			\item The doctrine of \textbf{stare decisis} ("to stand by decisions") requires judges to respect prior rulings in analogous cases.
-			\item Legal analogical reasoning involves identifying relevant similarities between a current case and precedent cases.
-			\item Unlike scientific analogies, legal analogies operate within an institutionalized system that formally requires consistency.
+			\item \textbf{Landmark cases} establish principles that shape legal reasoning for generations.
+			\item \textit{Brown v. Board}: "Separate but equal" fails because segregation inherently implies inequality.
+			\item \textit{Miranda v. Arizona}: Custodial interrogation is inherently coercive without warnings.
+			\item These cases become \textbf{source domains} for countless analogical arguments in new contexts.
 		\end{itemize}
 		
-		\begin{exampleblock}{The Structure of Legal Reasoning By Analogy}
+		\begin{alertblock}{Extending Landmark Principles}
+			\textit{Brown's} equality principle has been analogically extended to:
+			\begin{itemize}
+				\item Gender discrimination in education
+				\item Disability accommodations
+				\item LGBTQ+ rights
+				\item Each extension required arguing the analogy held
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
+	
+	% Slides 33-36 continue here...
+	
+	% Slide 33: When New Technology Challenges Old Analogies
+	\begin{frame}{When New Technology Challenges Old Analogies}
+		\begin{itemize}
+			\item Legal systems struggle when \textbf{new technologies} don't fit existing analogical frameworks.
+			\item Courts must decide: Is the internet like a newspaper, a broadcast, or something entirely new?
+			\item Cryptocurrency challenges analogies: Is it property, currency, a security, or a new category?
+			\item Poor analogical choices can lead to decades of problematic legal precedents.
+		\end{itemize}
+		
+		\begin{example}
+			Email privacy case:
+			\begin{itemize}
+				\item Is email like a sealed letter (strong protection)?
+				\item Or like a postcard (limited protection)?
+				\item Or like a phone call (context-dependent)?
+				\item The chosen analogy shapes privacy rights
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 34: How AI Systems Approach Pattern Matching
+	\begin{frame}{How AI Systems Approach Pattern Matching}
+		\begin{itemize}
+			\item AI systems find patterns through \textbf{statistical correlation} rather than causal understanding.
+			\item Machine learning identifies similarities in high-dimensional feature spaces.
+			\item Unlike humans, AI doesn't rely on \textbf{structural mapping} or understanding relationships.
+			\item AI can detect patterns humans miss but also make errors humans would never make.
+		\end{itemize}
+		
+		\begin{block}{AI vs Human Pattern Recognition}
+			\begin{tabular}{l|l}
+				\textbf{Human Analogies} & \textbf{AI Pattern Matching} \\
+				\hline
+				Causal understanding & Statistical correlation \\
+				Structural alignment & Feature similarity \\
+				Context-sensitive & Context-agnostic \\
+				Few examples needed & Many examples needed
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	% Slide 35: Key Differences: Statistical Correlation vs. Causal Understanding
+	\begin{frame}{Key Differences: Statistical Correlation vs. Causal Understanding}
+		\begin{itemize}
+			\item Humans use analogies to infer \textbf{causal mechanisms} from one domain to another.
+			\item AI systems find \textbf{correlational patterns} without understanding why they exist.
+			\item This difference explains why AI can be fooled by adversarial examples that wouldn't confuse humans.
+			\item Understanding this distinction helps us use AI appropriately and recognize its limitations.
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.7]
 			\scriptsize
-			\begin{enumerate}
-				\item Case A was decided in a certain way.
-				\item Case B resembles Case A in relevant respects.
-				\item Therefore, Case B should be decided the same way as Case A.
-				\item \textit{Or}: Case B differs from Case A in relevant respects.
-				\item Therefore, Case B should be distinguished from Case A and decided differently.
-			\end{enumerate}
-		\end{exampleblock}
+			% Human reasoning
+			\node[draw] at (0,3) {Human};
+			\node at (0,2) {Sees: Bird flies};
+			\node at (0,1) {Infers: Wings cause flight};
+			\node at (0,0) {Predicts: Planes need wings};
+			
+			% AI reasoning
+			\node[draw] at (6,3) {AI};
+			\node at (6,2) {Sees: Birds + flight co-occur};
+			\node at (6,1) {Learns: Feature correlation};
+			\node at (6,0) {Predicts: Feathers predict flight};
+		\end{tikzpicture}
 	\end{frame}
 	
-\begin{frame}{The Role of Disanalogies in Legal Arguments}
-	\begin{itemize}
-		\item \textbf{Distinguishing} cases is the legal practice of identifying relevant differences that justify different legal treatment.
-		\item Effective legal advocacy often involves emphasizing similarities when precedent favors your position and disanalogies when it doesn't.
-		\item Courts must determine whether disanalogies are legally significant enough to justify departing from precedent.
-		\item The ability to identify meaningful disanalogies allows the law to evolve while maintaining consistency.
-	\end{itemize}
-	
-	\begin{tikzpicture}
-		% Timeline
-		\draw[->, thick] (-5,0) -- (5,0);
-		\node[below] at (5,0) {Time};
-		
-		% Precedent cases
-		\node[circle, draw, fill=blue!20] (case1) at (-4,0) {Case A};
-		\node[circle, draw, fill=blue!20] (case2) at (-2,0) {Case B};
-		\node[circle, draw, fill=blue!20] (case3) at (0,0) {Case C};
-		
-		% Current case
-		\node[circle, draw, fill=orange!20] (current) at (3,0) {Current};
-		
-		% Similarities and differences
-		\draw[-, thick, green] (case1) -- node[above] {Similar} (case2);
-		\draw[-, thick, red, dashed] (case2) -- node[above] {Distinguished} (case3);
-		
-		% Question
-		\draw[-, thick, blue, dotted, line width=1.5pt] (case1) to[bend left] node[above] {Similar?} (current);
-		\draw[-, thick, blue, dotted, line width=1.5pt] (case3) to[bend right] node[below] {Distinguished?} (current);
-	\end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Historical Example: Brown v. Board and `Separate but Equal'}
-	\begin{itemize}
-		\item In \textbf{Brown v. Board of Education} (1954), the Supreme Court had to address the precedent of \textbf{Plessy v. Ferguson} (1896).
-		\item Plessy had established the "separate but equal" doctrine, allowing racial segregation if facilities were equal.
-		\item The Court in Brown identified a crucial disanalogy: education has unique social importance not present in railway cars (the context of Plessy).
-	\end{itemize}
-	
-	\begin{block}{Analogical Reasoning in Brown v. Board}
-		\scriptsize
-		The Court effectively argued:
-		\begin{enumerate}
-			\item Plessy allowed segregation in the context of public transportation.
-			\item Education differs fundamentally from transportation because of its importance to citizenship and social development.
-			\item This difference is legally relevant to the question of equality under the Fourteenth Amendment.
-			\item Therefore, the ruling in Plessy should not control the outcome in Brown.
-		\end{enumerate}
-	\end{block}
-\end{frame}
-
-\begin{frame}{Legal Case: Gideon v. Wainwright and the Right to Counsel}
-	\begin{itemize}
-		\item In \textbf{Gideon v. Wainwright} (1963), the Supreme Court used analogical reasoning to extend the right to counsel.
-		\item The Court drew an analogy between capital cases (where counsel was guaranteed) and non-capital felony cases.
-		\item The Court reasoned that the complexity of legal proceedings and the stakes of potential imprisonment made these cases fundamentally similar.
-		\item This analogy established that the Sixth Amendment right to counsel applies to all felony defendants regardless of financial means.
-	\end{itemize}
-	
-	\begin{exampleblock}{The Analogical Argument}
-		\scriptsize
-		\textbf{Source Domain:} Capital cases requiring legal counsel\\
-		\textbf{Target Domain:} Non-capital felony cases\\
-		\textbf{Key Similarity:} The layperson's inability to navigate complex legal proceedings\\
-		\textbf{Disanalogy Rejected:} The difference in potential punishment severity was deemed insufficient to justify different treatment\\
-		\textbf{Result:} The right to appointed counsel was extended to all felony prosecutions
-	\end{exampleblock}
-\end{frame}
-
-\begin{frame}{Legal Case: Carpenter v. United States on Digital Privacy}
-	\begin{itemize}
-		\item \textbf{Carpenter v. United States} (2018) addressed whether obtaining cell phone location data requires a warrant.
-		\item The Court had to consider competing analogies: was this data more like phone records (no warrant required) or GPS tracking (warrant required)?
-		\item The majority found that cell phone location data was more analogous to GPS tracking due to its comprehensive and revealing nature.
-		\item This case illustrates how courts use analogical reasoning to apply constitutional principles to new technologies.
-	\end{itemize}
-	
-	\begin{table}
-		\scriptsize
-		\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|}
-			\hline
-			\textbf{Factor} & \textbf{Phone Records Analogy} & \textbf{GPS Tracking Analogy} \\
-			\hline
-			Information revealed & Limited, discrete data & Comprehensive movement data \\
-			\hline
-			Nature of disclosure & Business records voluntarily shared & Unavoidable in modern life \\
-			\hline
-			Expectation of privacy & Lower (third-party doctrine) & Higher (revealing personal habits) \\
-			\hline
-			Historical treatment & No warrant required & Warrant required \\
-			\hline
-			\textbf{Court's Decision:} & \multicolumn{2}{p{7cm}|}{More like GPS tracking; warrant required} \\
-			\hline
-		\end{tabular}
-	\end{table}
-\end{frame}	
-
-\begin{frame}{The Problem of `Slippery Slope' Analogies}
-	\begin{itemize}
-		\item A \textbf{slippery slope argument} is a form of analogical reasoning that connects a current case to hypothetical future cases.
-		\item The core claim is that allowing A will inevitably lead to B, C, and eventually to some clearly unacceptable outcome Z.
-		\item The strength of slippery slope analogies depends on whether there is a genuine causal or logical connection between the steps.
-		\item These arguments often rely on analogical claims about the similarity between current and future decision-making contexts.
-	\end{itemize}
-	
-	\begin{alertblock}{Evaluating Slippery Slope Analogies}
-		\scriptsize
-		To assess a slippery slope argument, ask:
-		\begin{enumerate}
-			\item Is there an actual mechanism connecting each step to the next?
-			\item Are there meaningful disanalogies between the initial case and the feared outcome?
-			\item Do social or institutional safeguards exist to prevent sliding down the slope?
-			\item Does empirical evidence from similar situations support the claimed progression?
-		\end{enumerate}
-	\end{alertblock}
-\end{frame}
-
-\begin{frame}{Godwin's Law: When Nazi Analogies Derail Reasoning}
-	\begin{itemize}
-		\item \textbf{Godwin's Law} states: "As an online discussion grows longer, the probability of a comparison involving Nazis or Hitler approaches 1."
-		\item The phenomenon highlights a common pattern in analogical reasoning: the tendency to invoke extreme historical analogies.
-		\item Nazi comparisons represent a form of analogical argument that equates current policies or people with historical atrocities.
-		\item These analogies are typically problematic because they obscure important disanalogies and short-circuit rational debate.
-	\end{itemize}
-	
-	\begin{exampleblock}{Anatomy of a Godwin's Law Violation}
-		\scriptsize
+	% Slide 36: The Power and Peril of Thinking in Analogies
+	\begin{frame}{The Power and Peril of Thinking in Analogies}
 		\begin{itemize}
-			\item \textbf{Step 1:} Identify a superficial similarity between a current policy/person and Nazi Germany/Hitler.
-			\item \textbf{Step 2:} Suggest that this similarity is sufficient to establish moral equivalence.
-			\item \textbf{Step 3:} Conclude that, since Nazism was evil, the current case must also be evil.
-			\item \textbf{Step 4:} Ignore crucial disanalogies in historical context, scale, intent, and outcomes.
+			\item Analogical reasoning is \textbf{fundamental} to human cognition and cultural progress.
+			\item It enables us to leverage past experience, communicate abstract ideas, and make creative leaps.
+			\item However, analogies can also constrain thinking, perpetuate biases, and mislead us.
+			\item The key is developing \textbf{metacognitive awareness} about when and how we use analogies.
 		\end{itemize}
-	\end{exampleblock}
-\end{frame}
-
-\begin{frame}{The Psychology Behind Godwin's Law in Arguments}
-	\begin{itemize}
-		\scriptsize
-		\item Extreme analogies like Nazi comparisons are psychologically appealing because they tap into well-established moral judgments.
-		\item Such analogies exploit the \textbf{availability heuristic} by using easily recalled, emotionally charged historical examples.
-		\item These comparisons often serve to short-circuit careful evaluation by triggering immediate emotional responses.
-		\item Understanding this psychological appeal helps explain why poor analogies persist despite their logical weaknesses.
-	\end{itemize}
-	
-	\begin{center}
-		\resizebox{0.6\textheight}{!}{%
-		\begin{tikzpicture}
-			% Main process boxes
-			\node[draw, rectangle, rounded corners, fill=green!20, minimum width=3.5cm, minimum height=0.8cm] (complex) at (0,0) {Complex Issue};
-			\node[draw, rectangle, rounded corners, fill=yellow!20, minimum width=3.5cm, minimum height=0.8cm] (simplify) at (0,-1.5) {Simplification via Analogy};
-			\node[draw, rectangle, rounded corners, fill=orange!20, minimum width=3.5cm, minimum height=0.8cm] (extremes) at (0,-3) {Extreme Historical Analogy};
-			\node[draw, rectangle, rounded corners, fill=red!20, minimum width=3.5cm, minimum height=0.8cm] (emotion) at (0,-4.5) {Emotional Reaction};
-			
-			% Arrows connecting them
-			\draw[->] (complex) -- (simplify);
-			\draw[->] (simplify) -- (extremes);
-			\draw[->] (extremes) -- (emotion);
-			
-			% Psychological factors (on the right)
-			\node[draw, ellipse, fill=blue!10] (cognitive) at (5,-1.5) {Cognitive Ease};
-			\node[draw, ellipse, fill=blue!10] (availability) at (5,-3) {Availability Heuristic};
-			
-			% Connect psychological factors
-			\draw[->, dashed] (cognitive) -- (simplify);
-			\draw[->, dashed] (availability) -- (extremes);
-		\end{tikzpicture}
-	}
-	\end{center}
-\end{frame}
-
-\begin{frame}{Competing Analogies: How to Weigh Them Against Each Other}
-	\begin{itemize}
-		\item In many debates, multiple competing analogies are proposed for the same situation or concept.
-		\item Evaluating competing analogies requires identifying which one captures the morally or legally relevant features of the case.
-		\item The strength of an analogy depends not just on the number of similarities but on whether it highlights the features essential to the normative question.
-	\end{itemize}
-	
-	\begin{block}{Framework for Evaluating Competing Analogies}
-		\scriptsize
-		\begin{enumerate}
-			\item Identify the question or issue the analogies are meant to address.
-			\item For each analogy, list the relevant similarities and differences with the target case.
-			\item Determine which similarities and differences are most relevant to the underlying question.
-			\item Consider whether any proposed analogy might obscure important unique features of the target case.
-			\item Evaluate whether empirical evidence supports the assumptions built into each analogy.
-		\end{enumerate}
-	\end{block}
-\end{frame}
-
-\begin{frame}{Cultural Differences in Analogical Reasoning}
-	\begin{itemize}
-		\item Research suggests that the patterns and prevalence of analogical reasoning vary across cultures.
-		\item Some East Asian philosophical traditions emphasize relational analogies and correlative thinking more prominently than Western traditions.
-		\item Cultural background influences which analogies seem intuitive or persuasive to different audiences.
-		\item Awareness of cultural differences in analogical reasoning is important for cross-cultural ethics and legal discussions.
-	\end{itemize}
-	
-	\begin{block}{Examples of Cultural Variations}
-		\scriptsize
-		\begin{itemize}
-			\item \textbf{Confucian Ethics:} Emphasizes family-based analogies, extending familial relationships to social and political contexts.
-			\item \textbf{Buddhist Reasoning:} Often uses analogies of illusion and impermanence drawn from natural phenomena.
-			\item \textbf{Western Traditions:} Often emphasizes rule-based analogies and categorical similarities.
-			\item \textbf{Indigenous Knowledge Systems:} Frequently employ ecological analogies that highlight interconnections between human and natural worlds.
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\begin{frame}{Analogies in Political Discourse: Persuasion or Manipulation?}
-	\begin{itemize}
-		\item Political discourse relies heavily on analogies to frame issues, simplify complex policies, and evoke emotional responses.
-		\item Effective political analogies connect abstract policies to concrete experiences that resonate with voters.
-		\item The line between persuasive analogical reasoning and manipulative oversimplification is often blurred in political rhetoric.
-		\item Critical evaluation of political analogies requires identifying both their legitimate insights and their misleading simplifications.
-	\end{itemize}
-	
-	\begin{table}
-		\scriptsize
-		\begin{tabular}{|p{2.5cm}|p{4cm}|p{4cm}|}
-			\hline
-			\textbf{Political Domain} & \textbf{Common Analogies} & \textbf{Rhetorical Function} \\
-			\hline
-			Economic Policy & Government budget as household budget & Simplify macro concepts \\
-			\hline
-			Foreign Policy & International relations as schoolyard dynamics & Humanize complex relationships \\
-			\hline
-			Social Policy & Society as family/team/machine & Frame value priorities \\
-			\hline
-			Environmental Policy & Earth as patient/home/resource & Frame relationship to nature \\
-			\hline
-		\end{tabular}
-	\end{table}
-\end{frame}
-
-\begin{frame}{Scientific Analogy: Rutherford's Solar System Model of the Atom}
-	\begin{itemize}
-		\item Ernest Rutherford's \textbf{Solar System Model} (1911) compared atomic structure to our solar system.
-		\item In this analogy, the nucleus corresponds to the sun, and electrons to planets orbiting around it.
-		\item The analogy was based on structural similarities: central mass with smaller bodies in orbit, held by attractive forces.
-		\item This model represented a significant advance over previous "plum pudding" models of atomic structure.
-	\end{itemize}
-	
-	\begin{center}
-		\begin{tikzpicture}
-			% Solar System (Source)
-			\node at (-3,2) {Solar System};
-			\draw[fill=yellow] (-3,0) circle (0.5);
-			\draw[blue] (-3,0) circle (1.5);
-			\draw[fill=blue!50] (-1.8,0.8) circle (0.1);
-			
-			% Atom (Target)
-			\node at (3,2) {Atomic Model};
-			\draw[fill=red] (3,0) circle (0.5);
-			\draw[blue] (3,0) circle (1.5);
-			\filldraw[black] (4.2,0.8) circle (0.1);
-			
-			% Arrows indicating analogical mapping
-			\draw[->, thick] (-2.5,0) -- (2.5,0) node[midway, above] {Analogy};
-			\draw[->, thick] (-1.8,0.8) -- (4.2,0.8) node[midway, above] {Analogy};
-			
-			% Labels
-			\node[below] at (-3,-0.7) {Sun (massive center)};
-			\node[below] at (3,-0.7) {Nucleus (positive charge)};
-			\node[right] at (-1.7,0.8) {Planet};
-			\node[right] at (4.3,0.8) {Electron};
-		\end{tikzpicture}
-	\end{center}
-\end{frame}
-
-\begin{frame}{Scientific Analogy: Limitations of Rutherford's Model}
-	\begin{itemize}
-		\item Rutherford's solar system analogy eventually revealed important disanalogies that led to quantum models.
-		\item Classical physics predicts that orbiting electrons would spiral into the nucleus, unlike stable planetary orbits.
-		\item The analogy failed to account for quantum behaviors that have no classical counterparts.
-		\item This case illustrates how scientific analogies often serve as stepping stones rather than final explanations.
-	\end{itemize}
-	
-	\begin{alertblock}{The Evolution of Scientific Analogies}
-		\scriptsize
-		Scientific analogies typically follow a pattern:
-		\begin{enumerate}
-			\item Initial analogy highlights structural similarities between known and unknown domains
-			\item Experimental evidence reveals disanalogies and limitations of the original model
-			\item More sophisticated analogies or entirely new models replace the original
-			\item The process advances scientific understanding incrementally
-		\end{enumerate}
-	\end{alertblock}
-\end{frame}
-
-\begin{frame}{The Limits of Analogical Reasoning in Complex Systems}
-	\begin{itemize}
-		\item Analogical reasoning faces significant challenges when applied to highly complex systems with emergent properties.
-		\item In domains like climate science, economics, or artificial intelligence, simple analogies often fail to capture crucial system dynamics.
-		\item The \textbf{complexity limitation} reflects how analogies necessarily simplify by focusing on specific features while ignoring others.
-		\item Awareness of these limits helps prevent overconfidence in conclusions drawn from analogical reasoning about complex systems.
-	\end{itemize}
-	
-	\begin{alertblock}{Warning Signs of Analogy Breakdown}
-		\scriptsize
-		The usefulness of an analogy may be compromised when:
-		\begin{itemize}
-			\item The system exhibits emergent properties not present in any of its components
-			\item Non-linear relationships dominate the system behavior
-			\item Multiple feedback loops create unpredictable dynamics
-			\item Scale differences between source and target fundamentally change relevant properties
-			\item The system adapts or evolves in response to interventions
-		\end{itemize}
-	\end{alertblock}
-\end{frame}
-
-\begin{frame}{Conclusion: Analogical Reasoning as a Bridge Between Experience and New Territory}
-	\scriptsize
-	\begin{itemize}
-		\item Analogical reasoning serves as a cognitive bridge from familiar experiences to novel situations and abstract concepts.
-		\item Strong analogical arguments focus on relevant similarities, account for significant disanalogies, and consider base rates.
-		\item In ethics and law, competing analogies often illuminate different aspects of complex issues and embody different normative commitments.
-		\item Developing skill in creating and evaluating analogies enhances critical thinking across disciplines and contexts.
-	\end{itemize}
-	
-	\begin{center}
-		 \resizebox{0.7\textheight}{!}{%
-		\begin{tikzpicture}
-			% Set up the bridge structure
-			\draw[thick] (-5,0) -- (-3,0);
-			\draw[thick] (3,0) -- (5,0);
-			
-			% Bridge arch
-			\draw[thick] (-3,0) .. controls (0,2) .. (3,0);
-			
-			% Left side - Known territory
-			\node[draw, ellipse, fill=green!20, minimum width=2.5cm, minimum height=1.5cm] (known) at (-4,0.5) {Known Experience};
-			
-			% Right side - New territory
-			\node[draw, ellipse, fill=blue!20, minimum width=2.5cm, minimum height=1.5cm] (new) at (4,0.5) {New Territory};
-			
-			% Bridge label
-			\node[draw, rectangle, rounded corners, fill=orange!20] (bridge) at (0,1.3) {Analogical Reasoning};
-			
-			% Arrows
-			\draw[->, thick] (known) to[bend left=20] (bridge);
-			\draw[->, thick] (bridge) to[bend left=20] (new);
-			
-			% Supporting pillars of strong analogical reasoning
-			\draw[thick] (-1.5,-1) -- (-1.5,0.3);
-			\node[below] at (-1.5,-1) {Relevant Similarities};
-			
-			\draw[thick] (0,-1.5) -- (0,0.5);
-			\node[below] at (0,-1.5) {Critical Evaluation};
-			
-			\draw[thick] (1.5,-1) -- (1.5,0.3);
-			\node[below] at (1.5,-1) {Awareness of Limits};
-		\end{tikzpicture}
-	}
-	\end{center}
-\end{frame}
-
+		
+		\begin{alertblock}{Final Takeaways}
+			\begin{itemize}
+				\item Recognize when you're reasoning by analogy
+				\item Evaluate the structural mapping, not surface features
+				\item Consider multiple analogies before committing
+				\item Know when to abandon an analogy that no longer serves
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
 \end{document}

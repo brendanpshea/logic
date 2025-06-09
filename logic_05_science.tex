@@ -63,6 +63,55 @@
 		\end{alertblock}
 	\end{frame}
 	
+	\begin{frame}
+		\frametitle{Overview: Episodes in the History of Science}
+		In this lesson, we'll be looking at a number of famous instances of causal reasoning in the history of science:
+		\begin{itemize}
+			\item Isaac Newton on Gravity as an Invisible Force
+			\item Charles Darwin on Evolution by Natural Selection
+			\item The Germ Theory of Disease -- things you can't see make you sick!
+			\item The discovery that smoking causes cancer
+			\item Current research on human-caused Climate Change
+		\end{itemize}
+	\end{frame}
+	
+	% 2. Newton Section
+	\begin{frame}
+		\frametitle{Isaac Newton: Gravity as Invisible Force}
+		\begin{center}
+			{\Large Mathematical Laws as Causal Explanations}
+			\vspace{1cm}
+			
+			\begin{tikzpicture}[scale=0.9]
+				% Earth
+				\draw[thick, fill=blue!30] (0, 0) circle (0.8);
+				\node at (0, 0) {Earth};
+				
+				% Apple
+				\draw[thick, fill=red!50] (2.5, 2) circle (0.2);
+				\draw[thick, red, ->] (2.5, 1.8) -- (0.8, 0.6);
+				\node[red] at (3, 2.3) {Apple};
+				
+				% Moon
+				\draw[thick, fill=gray!40] (3, 0) circle (0.3);
+				\draw[dashed, thick] (0, 0) circle (3);
+				\draw[thick, red, ->] (2.7, 0) -- (2.2, -0.3);
+				\node at (3.5, 0.3) {Moon};
+				
+				% Invisible force lines
+				\draw[blue, dashed, ->] (0.8, 0.5) -- (2.3, 1.8);
+				\draw[blue, dashed, ->] (0.8, 0) -- (2.7, 0);
+				\node[blue] at (1.5, 1) {$F = G\frac{m_1m_2}{r^2}$};
+				
+				% Question mark for invisible force
+				\node[scale=2, purple] at (-2, 2) {?};
+				\node[purple] at (-2, 1.5) {Invisible};
+				\node[purple] at (-2, 1.1) {Force};
+			\end{tikzpicture}
+		\end{center}
+	\end{frame}
+	
+	
 	% Slide 4: Newton's Revolutionary Claim: Invisible Forces Cause Motion
 	\begin{frame}{Newton's Revolutionary Claim: Invisible Forces Cause Motion}
 		\begin{itemize}
@@ -178,6 +227,53 @@
 			\node[draw, rectangle] (orbits) at (3, -2) {Causes Elliptical Orbits};
 		\end{tikzpicture}
 	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Charles Darwin: Evolution by Natural Selection}
+		\begin{center}
+			{\Large Causation Across Deep Time}
+			\vspace{1cm}
+			
+			\begin{tikzpicture}[scale=1]
+				\scriptsize
+				% Time arrow
+				\draw[thick, ->] (0, 0) -- (8, 0);
+				\node at (4, -0.5) {\textbf{Deep Time (Millions of Years)}};
+				
+				% Species transformation
+				\draw[thick, fill=brown!30] (1, 1) ellipse (0.4 and 0.6);
+				\node at (1, 1) {Ape};
+				\node at (1, 0.2) {Ancestor};
+				
+				% Arrow with selection pressure
+				\draw[thick, blue, ->] (1.8, 1) -- (2.8, 1);
+				\node[blue, above] at (2.3, 1.3) {Natural Selection};
+				\node[blue, below] at (2.3, 0.7) {Environmental Pressure};
+				
+				% Intermediate forms
+				\draw[thick, fill=brown!40] (3.5, 1) ellipse (0.3 and 0.5);
+				\node at (3.5, 1) {Form 1};
+				
+				\draw[thick, blue, ->] (4, 1) -- (5, 1);
+				
+				\draw[thick, fill=brown!50] (5.5, 1) ellipse (0.4 and 0.6);
+				\node at (5.5, 1) {Form 2};
+				
+				\draw[thick, blue, ->] (6.2, 1) -- (7.2, 1);
+				
+				% Modern form
+				\draw[thick, fill=pink!30] (7.5, 1) ellipse (0.4 and 0.6);
+				\node at (7.5, 1) {Human};
+				\node at (7.5, 0.2) {Descendant};
+				
+				% Clock symbol for time
+				\draw[thick] (4, 2.5) circle (0.3);
+				\draw[thick] (4, 2.5) -- (4, 2.8);
+				\draw[thick] (4, 2.5) -- (4.2, 2.5);
+				\node at (4, 2) {Time Scale Challenge};
+			\end{tikzpicture}
+		\end{center}
+		\end{frame}
 	
 	% Slide 10: Darwin's Causal Claim: Natural Selection Drives Species Change
 	\begin{frame}{Darwin's Causal Claim: Natural Selection Drives Species Change}
@@ -301,6 +397,52 @@
 			When multiple independent lines of evidence (fossils, biogeography, artificial selection, DNA) all support the same causal theory, scientists consider it confirmed beyond reasonable doubt.
 		\end{alertblock}
 	\end{frame}
+	
+	% 4. Germ Theory Section
+	\begin{frame}
+		\frametitle{The Germ Theory Revolution}
+		\begin{center}
+			{\Large Invisible Microbes as Disease Agents}
+			\vspace{1cm}
+			
+			\begin{tikzpicture}[scale=0.9]
+				% Before: Miasma theory
+				\node at (-3, 2.5) {\textbf{Before: Bad Air}};
+				% Smoke/vapors
+				\draw[thick, green!60!black] (-3, 1.5) -- (-3, 0.5);
+				\draw[thick, green!60!black] (-2.8, 1.3) -- (-2.8, 0.7);
+				\draw[thick, green!60!black] (-3.2, 1.3) -- (-3.2, 0.7);
+				% Factory
+				\draw[thick] (-3.3, 0) rectangle (-2.7, 0.4);
+				\node at (-3, 0.2) {Factory};
+				\node[red] at (-3, -0.5) {WRONG};
+				
+				% Arrow
+				\draw[thick, ->] (-1, 1) -- (1, 1);
+				\node at (0, 1.5) {Pasteur};
+				\node at (0, 0.5) {Koch};
+				
+				% After: Germ theory
+				\node at (3, 2.5) {\textbf{After: Microbes}};
+				% Microscope
+				\draw[thick] (2.5, 1.5) -- (3.5, 1.5);
+				\draw[thick] (2.8, 1.5) -- (2.8, 0.8);
+				\draw[thick] (3.2, 1.5) -- (3.2, 0.8);
+				\draw[thick, fill=gray!30] (2.6, 0.8) rectangle (3.4, 0.6);
+				% Microbes (as small circles)
+				\draw[fill=red] (2.9, 1) circle (0.05);
+				\draw[fill=red] (3.1, 0.9) circle (0.05);
+				\draw[fill=red] (3.3, 1.1) circle (0.05);
+				\node[green!70!black] at (3, -0.5) {CORRECT};
+				
+				% Magnification
+				\draw[dashed] (3.5, 0.8) -- (5, 0);
+				\draw[thick, fill=red] (5.5, 0) circle (0.2);
+				\node at (5.5, -0.5) {Invisible};
+				\node at (5.5, -0.8) {Killers};
+			\end{tikzpicture}
+		\end{center}
+		\end{frame}
 	
 	% Slide 16: Before Germs: Miasma Theory and Bad Air
 	\begin{frame}{Before Germs: Miasma Theory and Bad Air}
@@ -442,6 +584,49 @@
 		\end{tikzpicture}
 	\end{frame}
 	
+	% 5. Smoking & Cancer Section
+	\begin{frame}
+		\frametitle{Smoking and Cancer: Epidemiological Evidence}
+		\begin{center}
+			{\Large Proving Causation Without Experiments}
+			\vspace{1cm}
+			
+			\begin{tikzpicture}[scale=1]
+				% Cigarette
+				\draw[thick, fill=yellow!30] (0, 1) rectangle (2, 0.8);
+				\draw[thick] (2, 1) -- (2.2, 1);
+				\draw[thick] (2, 0.8) -- (2.2, 0.8);
+				\node at (1, 0.6) {Cigarette};
+				
+				% Question mark (causal link)
+				\node[scale=3, red] at (3.5, 1) {?};
+				\draw[thick, dashed, red] (2.5, 0.9) -- (4.5, 0.9);
+				
+				% Lungs with cancer
+				\draw[thick] (5.5, 1.2) -- (6, 1.5) -- (6.5, 1.2) -- (6.5, 0.6) -- (6, 0.3) -- (5.5, 0.6) -- cycle;
+				\draw[thick] (6.5, 1.2) -- (7, 1.5) -- (7.5, 1.2) -- (7.5, 0.6) -- (7, 0.3) -- (6.5, 0.6);
+				% Cancer symbols (skulls as X marks)
+				\node[red] at (6.2, 0.9) {$\times$};
+				\node[red] at (6.8, 0.9) {$\times$};
+				\node at (6.5, 0.2) {Cancer};
+				
+				% Ethics barrier
+				\draw[thick, red] (2.5, 2) -- (4.5, 2);
+				\draw[thick, red] (2.5, 1.8) -- (4.5, 1.8);
+				\node[red] at (3.5, 2.3) {UNETHICAL};
+				\node[red] at (3.5, 1.5) {EXPERIMENT};
+				
+				% Population studies below
+				\node at (1, -0.5) {Population};
+				\node at (3.5, -0.5) {Statistics};
+				\node at (6.5, -0.5) {Data};
+				\draw[blue, ->] (1.5, -0.3) -- (3, -0.3);
+				\draw[blue, ->] (4, -0.3) -- (5.5, -0.3);
+			\end{tikzpicture}
+		\end{center}
+		\end{frame}
+			
+	
 	% Slide 22: The Epidemiological Challenge: When Experiments Are Unethical
 	\begin{frame}{The Epidemiological Challenge: When Experiments Are Unethical}
 		\begin{itemize}
@@ -572,6 +757,56 @@
 			\end{center}
 		\end{alertblock}
 	\end{frame}
+	
+	
+	% 6. Climate Change Section
+	\begin{frame}
+		\frametitle{Climate Change: Human Causation}
+		\begin{center}
+			{\Large From Theory to Observable Reality}
+			\vspace{1cm}
+			
+			\begin{tikzpicture}[scale=0.8]
+				% Earth with atmosphere
+				\draw[thick, fill=blue!30] (0, 0) circle (1.5);
+				\draw[thick, dashed, fill=cyan!20] (0, 0) circle (2);
+				\node at (0, 0) {Earth};
+				
+				% CO2 molecules
+				\node[red] at (-1, 1.8) {CO$_2$};
+				\node[red] at (1, 1.7) {CO$_2$};
+				\node[red] at (0.5, -1.8) {CO$_2$};
+				\node[red] at (-0.8, -1.6) {CO$_2$};
+				
+				% Sun's rays coming in
+				\draw[yellow, thick, ->] (-4, 2) -- (-2.2, 0.8);
+				\draw[yellow, thick, ->] (-4, 1) -- (-2.2, 0);
+				\draw[yellow, thick, ->] (-4, 0) -- (-2.2, -0.8);
+				\node[yellow] at (-4.5, 1) {Sun};
+				
+				% Heat trapped (wavy lines going up but bouncing back)
+				\draw[red, thick, ->] (2.2, 0.8) -- (3, 1.5);
+				\draw[red, thick, ->] (3, 1.5) -- (2.5, 1);
+				\draw[red, thick, ->] (2.2, 0) -- (3.5, 1);
+				\draw[red, thick, ->] (3.5, 1) -- (2.8, 0.2);
+				\node[red] at (4, 1) {Heat};
+				\node[red] at (4, 0.6) {Trapped};
+				
+				% Factory emissions
+				\draw[thick] (3, -2) rectangle (3.5, -1.5);
+				\draw[thick] (3.25, -1.5) -- (3.25, -0.8);
+				\draw[gray, thick] (3.15, -0.8) -- (3.15, 0);
+				\draw[gray, thick] (3.35, -0.8) -- (3.35, 0.2);
+				\node at (3.25, -2.3) {Factory};
+				
+				% Temperature arrow
+				\draw[red, ultra thick, ->] (5, -1) -- (5, 1);
+				\node[red] at (5.5, 0) {Temp};
+				\node[red] at (5.5, -0.5) {+1.1°C};
+			\end{tikzpicture}
+		\end{center}
+		\end{frame}
+			
 	% Slide 28: The Greenhouse Effect: From 19th Century Theory to Modern Crisis
 	\begin{frame}{The Greenhouse Effect: From 19th Century Theory to Modern Crisis}
 		\begin{itemize}

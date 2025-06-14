@@ -1,231 +1,464 @@
 \documentclass{beamer}
 \usetheme{Madrid}
-\usecolortheme{default}
+\usecolortheme{beaver}
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{array}
 
-\title{Introduction to Formal Logic}
-\subtitle{From Everyday Reasoning to Symbolic Systems}
+\title{The Language of Predicate Logic}
 \author{Brendan Shea, PhD}
-\date{Intro to Logic}
+\date{\today}
 
 \begin{document}
 	
-	\frame{\titlepage}
+	% Slide 1: Title Slide
+	\begin{frame}
+		\titlepage
+	\end{frame}
 	
-	\begin{frame}{From Everyday Reasoning to Formal Logic}
+	% Slide 2: Why Logic Matters
+	\begin{frame}{Why Logic Matters: From Ancient Greece to Modern AI}
 		\begin{itemize}
-			\item We've spent the year studying how people \textbf{actually reason} in everyday life through informal logic.
-			\item Today, we'll explore \textbf{formal logic}: a system that uses symbols and strict rules to analyze arguments.
-			\item Think of formal logic as the mathematics of reasoning—it gives us precise tools to test whether arguments work.
-			\item Just as algebra uses $x$ and $y$ instead of specific numbers, formal logic uses symbols instead of specific statements.
+			\item As we've learned, logic is the \textbf{science of correct reasoning}, helping us distinguish good arguments from bad ones.
+			\item Ancient Greek philosophers used logic to debate everything from ethics to the nature of reality.
+			\item Today's computers run on logic—every app, game, and AI system uses logical rules at its core.
+			\item Learning logic is like learning a superpower: you'll spot flawed arguments and think more clearly about complex problems.
 		\end{itemize}
 		
-		\begin{alertblock}{Key Insight}
-			Formal logic strips away the content of arguments to focus purely on their structure.
+		\begin{alertblock}{Fun Fact}
+			The same logical principles that Aristotle discovered 2,300 years ago now power Google's search algorithms!
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{What Makes Logic "Formal"?}
+	% Slide 3: Meet Aristotle
+	\begin{frame}{Meet Aristotle: The First Logician}
 		\begin{itemize}
-			\item \textbf{Formal} means we follow exact rules, like a game with strict instructions that never change.
-			\item We use \textbf{symbols} ($\wedge$, $\vee$, $\neg$, $\rightarrow$) instead of words like "and," "or," "not," and "if...then."
-			\item The \textbf{validity} of an argument depends only on its form, not whether the statements are actually true.
-			\item This approach eliminates ambiguity—each symbol has exactly one meaning, unlike words in natural language.
+			\item \textbf{Aristotle} (384-322 BCE) was the first person to systematically study the rules of reasoning.
+			\item He noticed that certain argument patterns always work, regardless of what they're about.
+			\item His most famous pattern: "All humans are mortal. Socrates is human. Therefore, Socrates is mortal."
+			\item This \textbf{syllogism} (a type of logical argument) has the same structure whether we're talking about humans, hobbits, or Hogwarts students!
 		\end{itemize}
 		
 		\begin{example}
-			In everyday language, "or" can be inclusive (pizza or salad or both) or exclusive (boy or girl). In formal logic, $\vee$ always means inclusive or.
+			\begin{enumerate}
+				\item All wizards can do magic
+				\item Harry Potter is a wizard
+				\item Therefore, Harry Potter can do magic
+			\end{enumerate}
+		\end{example}
+		
+		
+	\end{frame}
+	
+	% Slide 4: Logic in Everyday Life
+	\begin{frame}{Logic in Everyday Life: Arguments We Make Without Realizing It}
+		\begin{itemize}
+			\item We use logical reasoning dozens of times each day without even noticing it.
+			\item When you conclude "I need an umbrella" from "It's raining" and "I don't want to get wet," you're using logic!
+			\item \textbf{Deductive reasoning} helps us draw certain conclusions from known facts.
+			\item However, everyday language can be ambiguous—that's why we need a more precise logical language.
+		\end{itemize}
+		
+		\begin{block}{Common Logical Patterns You Already Use}
+			\begin{itemize}
+				\item If-then reasoning: "If I don't study, then I'll fail the test"
+				\item Either-or reasoning: "Either the butler did it, or the gardener did"
+				\item Elimination: "It can't be the butler, so it must be the gardener"
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	% Slide 5: From All Dogs to Computer Programming
+	\begin{frame}{From "All Dogs Are Mammals" to Computer Programming}
+		\begin{itemize}
+			\item The statement "All dogs are mammals" contains a \textbf{universal claim} about every member of a group.
+			\item Computers need to handle such statements precisely—think of a database searching for "all customers who bought books."
+			\item \textbf{Predicate logic} gives us tools to express relationships like "is a mammal," "bought," or "is friends with."
+			\item Modern programming languages use these same logical structures in their code!
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.8]
+			\draw[thick] (0,0) circle (2cm);
+			\draw[thick] (0,0) circle (1cm);
+			\node at (0,0) {Dogs};
+			\node at (0,1.5) {Mammals};
+			\node at (0,-2.5) {All dogs are inside the mammals circle};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 6: How Logic Helps Us Think More Clearly
+	\begin{frame}{How Logic Helps Us Think More Clearly}
+		\begin{itemize}
+			\item Logic acts like \textbf{grammar for reasoning}—it shows us the structure beneath our thoughts.
+			\item Just as grammar helps us construct clear sentences, logic helps us construct clear arguments.
+			\item When we formalize our reasoning, hidden assumptions become visible and errors become obvious.
+			\item Logic training has been shown to improve performance in mathematics, computer science, and even creative writing!
+		\end{itemize}
+		
+		\begin{alertblock}{Think About It}
+			How many times have you felt someone's argument was wrong but couldn't explain exactly why? Logic gives you the tools to identify and explain logical flaws!
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 7: The Limits of Everyday Language
+	\begin{frame}{The Limits of Everyday Language: When Words Get Confusing}
+		\begin{itemize}
+			\item Natural language is wonderfully expressive but often \textbf{ambiguous} (having multiple meanings).
+			\item Consider: "I saw the person with the telescope"—who has the telescope?
+			\item The word "some" can mean "at least one" or "not all"—which creates confusion in arguments.
+			\item \textbf{Context-dependence} means the same sentence can mean different things in different situations.
+		\end{itemize}
+		
+		\begin{example}
+			The sentence "Everyone loves someone" could mean:
+			\begin{enumerate}
+				\item Each person has someone they love (maybe different people)
+				\item There's one special person that everyone loves (like Keanu Reeves!)
+			\end{enumerate}
+			In predicate logic, we can express each meaning precisely!
 		\end{example}
 	\end{frame}
 	
-	\begin{frame}{Why Study Formal Logic?}
+	% Slide 8: Enter Predicate Logic
+	\begin{frame}{Enter Predicate Logic: A Clearer Way to Express Ideas}
 		\begin{itemize}
-			\item Formal logic is the foundation of \textbf{computer programming}—every if-then statement in code uses logical principles.
-			\item It helps us spot \textbf{invalid arguments} even when they sound convincing in everyday language.
-			\item Mathematics and science rely on formal logic to prove theorems and test hypotheses rigorously.
-			\item Understanding formal logic makes you a more \textbf{precise thinker} and better at constructing bulletproof arguments.
+			\item \textbf{Predicate logic} is a formal language designed to eliminate ambiguity in reasoning.
+			\item It breaks statements down into \textbf{individuals} (things we're talking about) and \textbf{predicates} (properties or relations).
+			\item Unlike everyday language, each predicate logic statement has exactly one meaning.
+			\item This precision makes it perfect for mathematics, computer science, philosophy, and any field requiring careful reasoning.
 		\end{itemize}
 		
-		\begin{block}{Three Systems We'll Explore}
-			\begin{enumerate}
-				\item \textbf{Categorical Logic}: Deals with categories and membership
-				\item \textbf{Propositional Logic}: Connects whole statements
-				\item \textbf{Predicate Logic}: Analyzes internal structure of statements
-			\end{enumerate}
+		\begin{block}{What's Coming Next}
+			We'll learn to:
+			\begin{itemize}
+				\item Identify individuals and predicates in statements
+				\item Use logical operators like "and," "or," and "not"
+				\item Express "all" and "some" statements precisely
+				\item Translate English arguments into logical form
+			\end{itemize}
 		\end{block}
 	\end{frame}
 	
-	\begin{frame}{Categories and Classes: The Building Blocks}
+	% Slide 9: The Two Main Ingredients
+	\begin{frame}{The Two Main Ingredients: Things and Their Properties}
 		\begin{itemize}
-			\item \textbf{Categorical logic} studies relationships between groups or classes of things.
-			\item A \textbf{category} is any collection we can clearly define: wizards, muggles, Hogwarts students, magical creatures.
-			\item We examine how categories relate through \textbf{inclusion} (all wizards are magical), \textbf{exclusion} (no muggles are wizards), and \textbf{overlap} (some students are wizards).
-			\item Every statement in categorical logic makes a claim about the relationship between two categories.
+			\item Predicate logic has two basic components: \textbf{individuals} and \textbf{predicates}.
+			\item \textbf{Individuals} are the specific things we're talking about—like Hermione, Gandalf, or your pet goldfish.
+			\item \textbf{Predicates} describe properties of individuals or relationships between them.
+			\item Together, they form \textbf{atomic statements}—the simplest meaningful units in our logical language.
 		\end{itemize}
 		
-		\begin{tikzpicture}[scale=0.8]
-			\draw (0,0) circle (1.5cm) node {Magical Beings};
-			\draw (0,-0.5) circle (0.8cm) node[font=\small] {Wizards};
-			\draw (2.5,0) circle (1cm) node {Muggles};
-		\end{tikzpicture}
-	\end{frame}
-	
-	\begin{frame}{The Four Standard Forms (A, E, I, O)}
-		\begin{itemize}
-			\item \textbf{A-form (Universal Affirmative)}: "All S are P" — All Gryffindors are brave.
-			\item \textbf{E-form (Universal Negative)}: "No S are P" — No Death Eaters are kind.  
-			\item \textbf{I-form (Particular Affirmative)}: "Some S are P" — Some wizards are Animagi.
-			\item \textbf{O-form (Particular Negative)}: "Some S are not P" — Some students are not Quidditch players.
-		\end{itemize}
-		
-		\begin{block}{Key Terms}
-			\begin{tabular}{ll}
-				\textbf{Universal} & Refers to every member of a category \\
-				\textbf{Particular} & Refers to at least one member \\
-				\textbf{Affirmative} & States inclusion or membership \\
-				\textbf{Negative} & States exclusion or non-membership
-			\end{tabular}
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{Venn Diagrams: Visualizing Relationships}
-		\begin{itemize}
-			\item \textbf{Venn diagrams} use overlapping circles to show relationships between categories visually.
-			\item Shading indicates \textbf{empty regions} (no members exist there), while X marks show \textbf{existing members}.
-			\item Each of our four forms (A, E, I, O) has a unique Venn diagram pattern.
-			\item These diagrams help us test whether arguments are valid by checking if conclusions must follow from premises.
-		\end{itemize}
-		
-\begin{example}
-\begin{columns}
-	\column{0.5\textwidth}
-	\scriptsize
-	“All Elves are Immortal” (A-form)
-	\begin{tikzpicture}[scale=0.6]
-		% Draw the two sets
-	
-		% Shade entire Elves circle
-		\fill[gray,opacity=0.5] (0,0) circle (1cm);
-		% Erase the overlap by painting Immortals circle white
-		\fill[white] (1.5,0) circle (1cm);
-		\draw (0,0) circle (1cm) node[above=.5cm] {\tiny Elves};
-		\draw (1.5,0) circle (1cm) node[above=.5cm] {\tiny Immortals};
-	\end{tikzpicture}
-	\column{0.5\textwidth}
-	The left circle (Elves) outside the overlap is shaded, showing all Elves must be in the Immortal category.
-\end{columns}
-\end{example}
-\end{frame}
-	
-	\begin{frame}{Sample Argument: All Dogs Are Mammals}
-		\begin{itemize}
-			\item Let's analyze a classic \textbf{syllogism} (an argument with two premises and a conclusion).
-			\item \textbf{Premise 1}: All hobbits are Middle-earth dwellers.
-			\item \textbf{Premise 2}: All Middle-earth dwellers are fictional characters.
-			\item \textbf{Conclusion}: Therefore, Therefore, all hobbits are fictional characters.
-		\end{itemize}
-		
-		\begin{alertblock}{Valid Argument Structure}
-			This follows the pattern called \textbf{Barbara}: All A are B, All B are C, therefore All A are C. The conclusion must be true if both premises are true.
-		\end{alertblock}
-	\end{frame}
-	
-	\begin{frame}{Practice: Translating Everyday Claims}
-		\begin{itemize}
-			\item Natural language is often ambiguous, so we must \textbf{standardize} statements into A, E, I, or O forms.
-			\item "Jedi never use the dark side" becomes "\textbf{No Jedi are dark side users}" (E-form).
-			\item "Not all heroes wear capes" becomes "\textbf{Some heroes are not cape-wearers}" (O-form).
-			\item Watch for hidden quantifiers: "Dragons breathe fire" usually means "\textbf{All dragons} breathe fire" (A-form).
-		\end{itemize}
-		
-		\begin{block}{Translation Tips}
-			\begin{tabular}{ll}
-				"Only X are Y" & = "All Y are X" (reversed!) \\
-				"X are always Y" & = "All X are Y" \\
-				"There are X that Y" & = "Some X are Y" \\
-				"Not every X is Y" & = "Some X are not Y"
-			\end{tabular}
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{The Square of Opposition}
-		\begin{itemize}
-			\item The \textbf{Square of Opposition} shows logical relationships between the four categorical forms.
-			\item \textbf{Contradictories} (A-O, E-I) cannot both be true or both be false—exactly one must be true.
-			\item \textbf{Contraries} (A-E) cannot both be true, but both can be false.
-			\item \textbf{Subcontraries} (I-O) cannot both be false, but both can be true.
-		\end{itemize}
-		
-		\begin{tikzpicture}[scale=0.8]
-			\scriptsize
-			% Square
-			\node (A) at (0,2) {A: All S are P};
-			\node (E) at (4,2) {E: No S are P};
-			\node (I) at (0,0) {I: Some S are P};
-			\node (O) at (4,0) {O: Some S are not P};
-			
-			% Lines
-			\draw[thick] (A) -- (E) node[midway,above] {Contraries};
-			\draw[thick] (I) -- (O) node[midway,below] {Subcontraries};
-			\draw[thick] (A) -- (I) node[midway,left] {Subaltern};
-			\draw[thick] (E) -- (O) node[midway,right] {Subaltern};
-			\draw[thick,red] (A) -- (O) node[midway,above right] {Contradictory};
-			\draw[thick,red] (E) -- (I) node[midway,above left] {Contradictory};
-		\end{tikzpicture}
-	\end{frame}
-	
-
-	
-	\begin{frame}{From Categories to Propositions}
-		\begin{itemize}
-			\item While categorical logic focuses on relationships between groups, \textbf{propositional logic} works with complete statements.
-			\item A \textbf{proposition} is any statement that can be true or false: "Harry defeated Voldemort," "It's raining," "2+2=4."
-			\item Instead of analyzing internal structure, propositional logic examines how we \textbf{connect} statements using logical operators.
-			\item This system is more flexible—we can analyze any argument made of statements, not just those about categories.
-		\end{itemize}
-		
-		\begin{alertblock}{Key Shift}
-			Categorical logic asks "What's inside statements?" while propositional logic asks "How do statements connect?"
-		\end{alertblock}
-	\end{frame}
-		\begin{frame}{Basic Connectives: AND, OR, NOT}
-		\begin{itemize}
-			\item \textbf{Conjunction} ($\wedge$, AND): "Hermione is smart $\wedge$ Hermione is brave" — both parts must be true.
-			\item \textbf{Disjunction} ($\vee$, OR): "Ron plays chess $\vee$ Ron plays Quidditch" — at least one part must be true.
-			\item \textbf{Negation} ($\neg$, NOT): "$\neg$ Voldemort has a nose" — reverses the truth value.
-			\item These \textbf{logical connectives} are the building blocks for creating complex propositions from simple ones.
-		\end{itemize}
-		
-		\begin{block}{Formal Notation}
-			\begin{tabular}{lll}
-				\textbf{Connective} & \textbf{Symbol} & \textbf{Example} \\
+		\begin{table}
+			\centering
+			\begin{tabular}{|l|l|l|}
 				\hline
-				AND & $\wedge$ & $p \wedge q$ \\
-				OR & $\vee$ & $p \vee q$ \\
-				NOT & $\neg$ & $\neg p$ \\
-				IF...THEN & $\rightarrow$ & $p \rightarrow q$ \\
-				IF AND ONLY IF & $\leftrightarrow$ & $p \leftrightarrow q$
+				\textbf{Individual} & \textbf{Predicate} & \textbf{Statement} \\
+				\hline
+				Frodo & is brave & Frodo is brave \\
+				Hogwarts & is magical & Hogwarts is magical \\
+				My cat & sleeps all day & My cat sleeps all day \\
+				\hline
 			\end{tabular}
-		\end{block}
+		\end{table}
 	\end{frame}
 	
-	\begin{frame}{Truth Tables: The Foundation}
+	% Slide 10: Individual Names
+	\begin{frame}{Individual Names: Giving Things Specific Labels}
 		\begin{itemize}
-			\item A \textbf{truth table} shows all possible combinations of truth values for propositions and their results.
-			\item Each row represents one possible scenario, and we calculate the truth value of complex expressions.
-			\item Truth tables give us a mechanical way to determine when compound statements are true or false.
-			\item They're like multiplication tables for logic—once you know them, you can solve any problem!
+			\item \textbf{Individual names} (also called constants) refer to specific, unique objects or beings.
+			\item In logic, we often use descriptive names like "Sherlock" or "BakerStreet" instead of single letters.
+			\item Each name refers to exactly one thing—"Harry" means just Harry Potter, not all people named Harry.
+			\item Think of individual names as the logical equivalent of proper nouns in English.
 		\end{itemize}
 		
 		\begin{example}
-			Truth table for $p \wedge q$ (Frodo has the ring AND Sam helps him):
-			\begin{center}
+			Individual names in our logical language:
+			\begin{itemize}
+				\item \texttt{Aragorn} — refers to the specific character from Lord of the Rings
+				\item \texttt{Enterprise} — refers to the specific starship
+				\item \texttt{MrDarcy} — refers to the character from Pride and Prejudice
+				\item \texttt{Paris} — refers to the city in France
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 11: Predicates
+	\begin{frame}{Predicates: Describing Properties and Relationships}
+		\begin{itemize}
+			\item \textbf{Predicates} express properties that individuals might have or relationships between individuals.
+			\item A predicate is like a sentence with blanks: "\_\_\_ is tall" or "\_\_\_ loves \_\_\_".
+			\item The number of blanks is called the \textbf{arity} of the predicate—one blank means it's unary, two means binary.
+			\item We write predicates with descriptive names followed by the individuals in parentheses.
+		\end{itemize}
+		
+		\begin{block}{Predicate Examples}
+			\begin{itemize}
+				\item \texttt{IsWizard(Harry)} — "Harry is a wizard" (unary predicate)
+				\item \texttt{TeachesAt(Dumbledore, Hogwarts)} — "Dumbledore teaches at Hogwarts" (binary)
+				\item \texttt{Introduced(Tolkien, Frodo, Readers)} — "Tolkien introduced Frodo to readers" (ternary)
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	% Slide 12: Socrates is Mortal
+	\begin{frame}{"Socrates is Mortal": Our First Predicate Logic Statement}
+		\begin{itemize}
+			\item Let's translate the famous statement "Socrates is mortal" into predicate logic.
+			\item We need an individual name: \texttt{Socrates} (referring to the philosopher).
+			\item We need a predicate: \texttt{IsMortal(\_\_\_)} (expressing the property of being mortal).
+			\item The complete statement: \texttt{IsMortal(Socrates)}—read as "Socrates has the property of being mortal."
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=1.2]
+			% Draw Socrates
+			\node[circle,draw,thick,minimum size=1cm] (soc) at (0,0) {Socrates};
+			% Draw property box
+			\node[rectangle,draw,thick,minimum width=2cm,minimum height=1cm] (mort) at (4,0) {Mortal};
+			% Draw arrow
+			\draw[->,thick] (soc) -- (mort) node[midway,above] {has property};
+			% Label
+			\node at (2,-1) {\texttt{IsMortal(Socrates)}};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 13: One-Place Predicates
+	\begin{frame}{One-Place Predicates: Properties of Single Things}
+		\begin{itemize}
+			\item \textbf{One-place predicates} (also called unary predicates) describe properties of single individuals.
+			\item They answer questions like "What is it?" or "What is it like?"
+			\item In English, these often appear as "is [adjective]" or "is a [noun]" phrases.
+			\item One-place predicates are the simplest type and perfect for beginning our logic journey!
+		\end{itemize}
+		
+		\begin{example}
+			Common one-place predicates with fantasy characters:
+			\begin{itemize}
+				\item \texttt{IsElf(Legolas)} — "Legolas is an elf"
+				\item \texttt{IsBrave(Katniss)} — "Katniss is brave"  
+				\item \texttt{CanFly(Buckbeak)} — "Buckbeak can fly"
+				\item \texttt{IsEvil(Voldemort)} — "Voldemort is evil"
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 14: Two-Place Predicates
+	\begin{frame}{Two-Place Predicates: Relationships Between Things}
+		\begin{itemize}
+			\item \textbf{Two-place predicates} (binary predicates) express relationships between two individuals.
+			\item They answer questions like "How are these things related?" or "What does X do to Y?"
+			\item The order matters: \texttt{Loves(Romeo, Juliet)} is different from \texttt{Loves(Juliet, Romeo)}!
+			\item Most verbs in English that take objects become two-place predicates in logic.
+		\end{itemize}
+		
+		\begin{block}{Relationship Examples}
+			\begin{table}[h]
+				\centering
+				\small
+				\begin{tabular}{|l|l|}
+					\hline
+					\textbf{Predicate Logic} & \textbf{English} \\
+					\hline
+					\texttt{Teaches(McGonagall, Hermione)} & McGonagall teaches Hermione \\
+					\texttt{DefeatedBy(Sauron, Frodo)} & Sauron was defeated by Frodo \\
+					\texttt{MarriedTo(Elizabeth, MrDarcy)} & Elizabeth is married to Mr. Darcy \\
+					\texttt{OwlOf(Hedwig, Harry)} & Hedwig is Harry's owl \\
+					\hline
+				\end{tabular}
+			\end{table}
+		\end{block}
+	\end{frame}
+	
+	% Slide 15: Building Statements
+	\begin{frame}{Building Statements: Combining Names and Predicates}
+		\begin{itemize}
+			\item To build a statement, we combine predicates with the right number of individual names.
+			\item Think of predicates as functions that need the correct number of inputs to work.
+			\item A predicate becomes a \textbf{proposition} (something true or false) when we fill in all its blanks.
+			\item Getting the arity right is crucial—\texttt{Loves(Romeo)} is incomplete and meaningless!
+		\end{itemize}
+		
+		\begin{alertblock}{Remember the Rules}
+			\scriptsize
+			\begin{itemize}
+				\item One-place predicate + one individual = complete statement
+				\item Two-place predicate + two individuals = complete statement  
+				\item Wrong number of individuals = ERROR!
+			\end{itemize}
+		\end{alertblock}
+		
+		\begin{tikzpicture}[scale=0.9]
+			\node[rectangle,draw,thick] (pred) at (0,0) {\texttt{FriendOf(\_\_\_, \_\_\_)}};
+			\node[circle,draw,thick] (ind1) at (-2,-1.5) {\texttt{Frodo}};
+			\node[circle,draw,thick] (ind2) at (2,-1.5) {\texttt{Sam}};
+			\draw[->,thick] (ind1) -- (pred);
+			\draw[->,thick] (ind2) -- (pred);
+			\node at (0,-2.5) {\texttt{FriendOf(Frodo, Sam)}};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 16: Practice
+	\begin{frame}{Practice: Identifying Individuals and Predicates in Sentences}
+		\begin{itemize}
+			\item Let's practice breaking down English sentences into individuals and predicates.
+			\item First, identify the specific things being discussed (individuals).
+			\item Then, identify what's being said about them (predicates).
+			\item Finally, determine the arity—how many individuals does the predicate connect?
+		\end{itemize}
+		
+		\begin{example}
+			
+			Translate these sentences:
+			\begin{enumerate}
+				\small
+				\item "Gandalf is wise" 
+				\begin{itemize}
+					\scriptsize
+					\item Individual: \texttt{Gandalf}
+					\item Predicate: \texttt{IsWise(\_\_\_)}
+					\item Translation: \texttt{IsWise(Gandalf)}
+				\end{itemize}
+				\item "Hermione helps Ron with homework"
+				\begin{itemize}
+					\scriptsize
+					\item Individuals: \texttt{Hermione}, \texttt{Ron}  
+					\item Predicate: \texttt{HelpsWithHomework(\_\_\_, \_\_\_)}
+					\item Translation: \texttt{HelpsWithHomework(Hermione, Ron)}
+				\end{itemize}
+			\end{enumerate}
+		\end{example}
+	\end{frame}
+	% Slide 17: The Power of And
+	\begin{frame}{The Power of "And": Conjunction in Logic}
+		\begin{itemize}
+			\item The \textbf{conjunction} operator (written as $\land$) connects two statements with "and."
+			\item A conjunction is true only when \textbf{both} parts are true—it's very demanding!
+			\item We read $P \land Q$ as "P and Q" where P and Q are any statements.
+			\item Think of $\land$ as a strict gatekeeper that only lets truth through when everything checks out.
+		\end{itemize}
+		
+		\begin{block}{Conjunction Example}
+			"Harry is a wizard AND Harry plays Quidditch"
+			\begin{itemize}
+				\item Let $P = $ \texttt{IsWizard(Harry)}
+				\item Let $Q = $ \texttt{PlaysQuidditch(Harry)}  
+				\item Combined: \texttt{IsWizard(Harry)} $\land$ \texttt{PlaysQuidditch(Harry)}
+				\item This is true only if Harry is both a wizard and a Quidditch player!
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	% Slide 18: The Inclusive Or
+	\begin{frame}{The Inclusive "Or": Disjunction Explained}
+		\begin{itemize}
+			\item The \textbf{disjunction} operator (written as $\lor$) connects statements with "or."
+			\item Unlike everyday English, logical "or" is \textbf{inclusive}—it's true when at least one part is true.
+			\item $P \lor Q$ is true when P is true, Q is true, or both are true!
+			\item This matches how computers think: "Do you want fries or a drink?" can mean both!
+		\end{itemize}
+		
+		\begin{example}
+			"Hermione is in the library OR Hermione is in class"
+			\begin{itemize}
+				\item $P = $ \texttt{InLibrary(Hermione)}
+				\item $Q = $ \texttt{InClass(Hermione)}
+				\item Combined: \texttt{InLibrary(Hermione)} $\lor$ \texttt{InClass(Hermione)}
+				\item This is false only if Hermione is neither in the library nor in class
+			\end{itemize}
+		\end{example}
+	\end{frame}
+	
+	% Slide 19: The Art of Denial
+	\begin{frame}{The Art of Denial: Understanding Negation}
+		\begin{itemize}
+			\item The \textbf{negation} operator (written as $\neg$) expresses "not" or "it is not the case that."
+			\item Negation simply flips the truth value: if P is true, then $\neg P$ is false, and vice versa.
+			\item We read $\neg P$ as "not P" or "it is not the case that P."
+			\item Negation is the logical equivalent of pressing the "opposite" button!
+		\end{itemize}
+		
+		\begin{alertblock}{Negation in Action}
+			\begin{table}
+				\scriptsize
+				\centering
+				\begin{tabular}{|l|l|l|}
+					\hline
+					\textbf{Original} & \textbf{Negated} & \textbf{Meaning} \\
+					\hline
+					\texttt{IsEvil(Voldemort)} & $\neg$\texttt{IsEvil(Voldemort)} & Voldemort is not evil \\
+					\texttt{CanFly(Ron)} & $\neg$\texttt{CanFly(Ron)} & Ron cannot fly \\
+					$P \land Q$ & $\neg(P \land Q)$ & It's not the case that both P and Q \\
+					\hline
+				\end{tabular}
+			\end{table}
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 20: If Then
+	\begin{frame}{"If...Then": Conditional Statements}
+		\begin{itemize}
+			\item The \textbf{conditional} operator (written as $\rightarrow$) expresses "if...then" relationships.
+			\item $P \rightarrow Q$ means "if P is true, then Q must be true."
+			\item Surprisingly, a conditional is only false when P is true but Q is false!
+			\item This captures promises: "If you study, then you'll pass" is only broken if you study but still fail.
+		\end{itemize}
+		
+		\begin{example}
+			"If Dobby gets a sock, then Dobby is free"
+			\begin{itemize}
+				\scriptsize
+				\item $P = $ \texttt{GetsSock(Dobby)}
+				\item $Q = $ \texttt{IsFree(Dobby)}
+				\item Conditional: \texttt{GetsSock(Dobby)} $\rightarrow$ \texttt{IsFree(Dobby)}
+				\item This is false only if Dobby gets a sock but isn't freed!
+			\end{itemize}
+		\end{example}
+		
+		\begin{tikzpicture}[scale=0.8]
+			\scriptsize
+			\node at (0,0) {When is $P \rightarrow Q$ true?};
+			\node at (-2,-1) {P true, Q true: \checkmark};
+			\node at (2,-1) {P true, Q false: $\times$};
+			\node at (-2,-2) {P false, Q true: \checkmark};
+			\node at (2,-2) {P false, Q false: \checkmark};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 21: If and Only If
+	\begin{frame}{"If and Only If": Biconditional Connections}
+		\begin{itemize}
+			\item The \textbf{biconditional} operator (written as $\leftrightarrow$) means "if and only if."
+			\item $P \leftrightarrow Q$ is true when P and Q have the \textbf{same truth value}—both true or both false.
+			\item This expresses a two-way relationship: P implies Q, AND Q implies P.
+			\item Think of it as logical equality: "P happens exactly when Q happens."
+		\end{itemize}
+		
+		\begin{block}{Biconditional Example}
+			"You're a Gryffindor if and only if the Sorting Hat placed you in Gryffindor"
+			\begin{itemize}
+				\item $P = $ \texttt{IsGryffindor(You)}
+				\item $Q = $ \texttt{SortedIntoGryffindor(You)}
+				\item Biconditional: \texttt{IsGryffindor(You)} $\leftrightarrow$ \texttt{SortedIntoGryffindor(You)}
+				\item True when both happen or neither happens!
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	% Slide 22: Truth Tables
+	\begin{frame}{Truth Tables: Mapping All Possibilities}
+		\begin{itemize}
+			\item \textbf{Truth tables} show all possible combinations of truth values for statements.
+			\item They help us understand exactly when complex statements are true or false.
+			\item Each row represents one possible scenario, and we calculate the result for each.
+			\item Truth tables are like instruction manuals for logical operators!
+		\end{itemize}
+		
+		\begin{example}
+			Truth table for $P \land Q$ (Hermione is smart AND brave):
+			\begin{table}
+				\centering
 				\begin{tabular}{|c|c|c|}
 					\hline
-					$p$ & $q$ & $p \wedge q$ \\
+					$P$ & $Q$ & $P \land Q$ \\
 					\hline
 					T & T & T \\
 					T & F & F \\
@@ -233,633 +466,415 @@
 					F & F & F \\
 					\hline
 				\end{tabular}
-			\end{center}
-			Only true when BOTH parts are true!
+			\end{table}
+			Only true when Hermione is both smart (P) and brave (Q)!
 		\end{example}
 	\end{frame}
 	
-	\begin{frame}{Sample Argument: If-Then Reasoning}
+	% Slide 23: Building Complex Statements
+	\begin{frame}{Building Complex Statements with Multiple Operators}
 		\begin{itemize}
-			\item The \textbf{conditional} ($\rightarrow$) represents "if...then" statements: "If you're a wizard, then you can do magic."
-			\item $p \rightarrow q$ is only false when $p$ is true but $q$ is false (you're a wizard but can't do magic).
-			\item This captures cause-and-effect, rules, and logical consequences in a precise way.
-			\item Be careful: "If $p$ then $q$" does NOT mean "$q$ only if $p$"—muggles might do magic too!
+			\item We can combine multiple operators to express complex ideas precisely.
+			\item Use parentheses to show which operations happen first—just like in math!
+			\item Without parentheses, we follow precedence: $\neg$ first, then $\land$, then $\lor$, then $\rightarrow$ and $\leftrightarrow$.
+			\item Complex statements let us capture the full richness of logical relationships.
 		\end{itemize}
 		
-		\begin{alertblock}{Common Confusion}
-			"If you eat the poison apple, then you fall asleep" ($p \rightarrow q$)\\
-			This does NOT mean: "You fall asleep only if you eat the poison apple"\\
-			Sleeping pills could also make you fall asleep!
+		\begin{alertblock}{Complex Statement Example}
+			"If Harry defeats Voldemort, then either Harry survives or he becomes a legend"
+			\begin{itemize}
+				\scriptsize
+				\item Let $D = $ \texttt{Defeats(Harry, Voldemort)}
+				\item Let $S = $ \texttt{Survives(Harry)}  
+				\item Let $L = $ \texttt{BecomesLegend(Harry)}
+				\item Translation: $D \rightarrow (S \lor L)$
+			\end{itemize}
+			This captures that defeating Voldemort leads to at least one positive outcome!
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{Complex Propositions: Building Bigger Claims}
+	% Slide 24: Practice Creating Truth Tables
+	\begin{frame}{Practice: Creating Truth Tables Together}
 		\begin{itemize}
-			\item We can combine multiple connectives to build \textbf{complex propositions} that capture sophisticated ideas.
-			\item Use parentheses to show order of operations: $(p \wedge q) \rightarrow r$ differs from $p \wedge (q \rightarrow r)$.
-			\item Each added connective doubles the rows in our truth table—complexity grows exponentially!
-			\item Real arguments often involve many connected statements working together.
+			\item Let's build a truth table for: $(P \land Q) \rightarrow R$
+			\item This means: "If P and Q are both true, then R is true"
+			\item Example: "If it's raining and I forgot my umbrella, then I'll get wet"
+			\item We need to check all 8 possible combinations of P, Q, and R!
 		\end{itemize}
 		
-		\begin{example}
-			"If Gandalf arrives and the weather is good, then we'll defeat Sauron or retreat to safety"
-			\begin{center}
-				Let $g$ = Gandalf arrives, $w$ = weather is good,\\
-				$d$ = defeat Sauron, $r$ = retreat to safety
-				
-				Formula: $(g \wedge w) \rightarrow (d \vee r)$
-			\end{center}
-			This has $2^4 = 16$ rows in its truth table!
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{Valid vs. Invalid Categorical Arguments}
-		\begin{itemize}
-			\item A \textbf{valid} argument guarantees that if the premises are true, the conclusion must be true.
-			\item An \textbf{invalid} argument can have true premises but a false conclusion—the logic doesn't work.
-			\item We test validity by checking whether the conclusion's Venn diagram is already contained in the premises' diagrams.
-			\item Remember: validity is about structure, not truth—an argument can be valid with false premises!
-		\end{itemize}
-		
-		\begin{example}
-			\textbf{Invalid Argument}:
-			\begin{enumerate}
-				\item All Time Lords have two hearts. (True in Doctor Who universe)
-				\item The Doctor has two hearts. (True)
-				\item Therefore, the Doctor is a Time Lord. (Doesn't follow!)
-			\end{enumerate}
-			This commits the fallacy of \textbf{affirming the consequent}—other beings might also have two hearts.
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{Practice: Translating Natural Language}
-		\begin{itemize}
-			\item Natural language hides logical structure, so we must identify the \textbf{atomic propositions} and \textbf{connectives}.
-			\item "You can't apparate in Hogwarts" becomes $\neg p$ where $p$ = "You can apparate in Hogwarts."
-			\item "Either die a hero or live long enough to become the villain" becomes $h \vee v$ (inclusive or!).
-			\item "I'll help if and only if you're truly sorry" becomes $h \leftrightarrow s$ (biconditional).
-		\end{itemize}
-		
-		\begin{block}{Translation Strategy}
-			\begin{enumerate}
-				\item Identify each distinct claim that can be true/false
-				\item Assign a letter to each atomic proposition
-				\item Find the logical connectives (and, or, not, if...then)
-				\item Build the formula using proper symbols
-			\end{enumerate}
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{Common Valid Forms: Modus Ponens}
-		\begin{itemize}
-			\item \textbf{Modus Ponens} ("method of affirming") is a fundamental valid argument form.
-			\item Structure: If $p$ then $q$; $p$ is true; therefore $q$ is true.
-			\item This pattern appears everywhere in mathematical proofs, computer programs, and daily reasoning.
-			\item It's so basic that denying it would make logical reasoning impossible!
-		\end{itemize}
-		
-		\begin{example}
-			\textbf{Modus Ponens in Action}:
-			\begin{enumerate}
-				\item If you speak Parseltongue, then you can open the Chamber. $(p \rightarrow q)$
-				\item Harry speaks Parseltongue. $(p)$
-				\item Therefore, Harry can open the Chamber. $(q)$
-			\end{enumerate}
-			
-			Truth table confirms: whenever both premises are true, conclusion must be true.
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{Common Invalid Forms: Affirming the Consequent}
-		\begin{itemize}
-			\item \textbf{Affirming the Consequent} looks similar to Modus Ponens but is invalid.
-			\item Structure: If $p$ then $q$; $q$ is true; therefore $p$ is true. (WRONG!)
-			\item This fallacy assumes there's only one way for $q$ to be true, ignoring other possibilities.
-			\item It's tempting because it seems to work backwards from effects to causes.
-		\end{itemize}
-		
-		\begin{alertblock}{Invalid Reasoning}
-			\begin{enumerate}
-				\item If you're a Death Eater, then you have the Dark Mark. $(p \rightarrow q)$
-				\item Karkaroff has the Dark Mark. $(q)$
-				\item Therefore, Karkaroff is a Death Eater. $(p)$ — INVALID!
-			\end{enumerate}
-			Why invalid? Former Death Eaters keep their marks!
-		\end{alertblock}
-	\end{frame}
-	
-	\begin{frame}{Using Truth Tables to Test Validity}
-		\begin{itemize}
-			\item To test validity, we build a truth table with columns for all premises and the conclusion.
-			\item An argument is \textbf{valid} if every row where ALL premises are true also has a true conclusion.
-			\item If even one row has true premises but false conclusion, the argument is \textbf{invalid}.
-			\item This method is foolproof but can be tedious for complex arguments with many propositions.
-		\end{itemize}
-		
-		\begin{example}
-			Testing: $p \rightarrow q, \neg q \therefore \neg p$ (Modus Tollens)
-			\begin{center}
-				\begin{tabular}{|c|c|c|c|c|c|}
-					\hline
-					$p$ & $q$ & $p \rightarrow q$ & $\neg q$ & $\neg p$ & Valid? \\
-					\hline
-					T & T & T & F & F & — \\
-					T & F & F & T & F & — \\
-					F & T & T & F & T & — \\
-					F & F & T & T & T & \checkmark \\
-					\hline
-				\end{tabular}
-			\end{center}
-			Only row 4 has both premises true, and conclusion is true there!
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{The Limits of Propositional Logic}
-		\begin{itemize}
-			\item Propositional logic treats "Socrates is mortal" as a single, indivisible unit $p$.
-			\item It can't express the connection between "Socrates is mortal" and "Plato is mortal"—they're just unrelated $p$ and $q$.
-			\item We lose important patterns: "All X are Y" requires a different proposition for each X!
-			\item Mathematical statements like "For every number $n$, there exists $n+1$" are impossible to express properly.
-		\end{itemize}
-		
-		\begin{alertblock}{The Problem}
-			In propositional logic, these require different symbols:
-			\begin{itemize}
-				\item $p$: Harry is a wizard
-				\item $q$: Ron is a wizard  
-				\item $r$: Hermione is a wizard
-			\end{itemize}
-			We can't capture that they all share the property "is a wizard"!
-		\end{alertblock}
-	\end{frame}
-	
-	\begin{frame}{Why We Need More Power}
-		\begin{itemize}
-			\item Real reasoning often involves \textbf{generalizations} about entire groups or categories.
-			\item We need to express \textbf{relationships} and \textbf{properties} that apply to many individuals.
-			\item Mathematical proofs require statements about "all numbers" or "there exists a solution."
-			\item \textbf{Predicate logic} provides tools to look inside propositions and work with their structure.
-		\end{itemize}
-		
-		\begin{block}{What Predicate Logic Adds}
-			\begin{enumerate}
-				\item \textbf{Predicates}: Properties or relations (like "is red" or "is taller than")
-				\item \textbf{Variables}: Stand-ins for individuals (like $x$, $y$ in algebra)
-				\item \textbf{Quantifiers}: "For all" ($\forall$) and "There exists" ($\exists$)
-				\item \textbf{Domain}: The universe of things we're talking about
-			\end{enumerate}
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{Introducing Predicates and Subjects}
-		\begin{itemize}
-			\item A \textbf{predicate} is a property or relation that can be true or false of individuals.
-			\item \textbf{Subjects} are the specific individuals we're talking about (Harry, the number 7, this pencil).
-			\item We write $P(a)$ to mean "individual $a$ has property $P$"—like $Wizard(Harry)$ for "Harry is a wizard."
-			\item Relations between multiple subjects use multiple places: $Loves(Romeo, Juliet)$ means "Romeo loves Juliet."
-		\end{itemize}
-		
-		\begin{example}
-			Breaking down "Gandalf is wise and helps Frodo":
-			\begin{itemize}
-				\item Predicates: $Wise(x)$ = "$x$ is wise", $Helps(x,y)$ = "$x$ helps $y$"
-				\item Subjects: $g$ = Gandalf, $f$ = Frodo
-				\item Formula: $Wise(g) \wedge Helps(g,f)$
-			\end{itemize}
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{From "Socrates is mortal" to Mx}
-		\begin{itemize}
-			\item The classic statement "Socrates is mortal" becomes $Mortal(socrates)$ or $Ms$ for short.
-			\item We can now express patterns: $Mortal(socrates)$, $Mortal(plato)$, $Mortal(aristotle)$ all use the same predicate!
-			\item \textbf{Predicate symbols} (usually capital letters) represent properties: $M$, $P$, $Q$.
-			\item \textbf{Constant symbols} (usually lowercase) represent specific individuals: $a$, $b$, $c$.
-		\end{itemize}
-		
-		\begin{block}{Building Our Vocabulary}
-			\begin{tabular}{ll}
-				$Jedi(x)$ & $x$ is a Jedi \\
-				$Teaches(x,y)$ & $x$ teaches $y$ \\
-				$Stronger(x,y)$ & $x$ is stronger than $y$ \\
-				$yoda$, $luke$, $obiwan$ & Individual constants
-			\end{tabular}
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{Variables: The x in Predicate Logic}
-		\begin{itemize}
-			\item \textbf{Variables} (usually $x$, $y$, $z$) are placeholders that can represent any individual in our domain.
-			\item Just like in algebra where $x$ can be any number, in logic $x$ can be any person, object, or entity.
-			\item $P(x)$ is not a complete statement—it's a \textbf{formula with a free variable} that becomes true/false when we specify $x$.
-			\item Variables let us express general patterns before we commit to specific individuals.
-		\end{itemize}
-		
-		\begin{example}
-			The formula $Wizard(x) \wedge Teaches(x, harry)$ means "$x$ is a wizard and $x$ teaches Harry"
-			\begin{itemize}
-				\item If $x$ = Dumbledore: TRUE (he's a wizard who teaches Harry)
-				\item If $x$ = Snape: TRUE (also a wizard teacher)  
-				\item If $x$ = Hagrid: FALSE (teaches Harry but isn't a wizard)
-			\end{itemize}
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{The Universal Quantifier: $\forall$ (For All)}
-		\begin{itemize}
-			\item The \textbf{universal quantifier} $\forall$ means "for all" or "for every" individual in our domain.
-			\item $\forall x P(x)$ reads as "For all $x$, $P(x)$ is true" or "Everything has property $P$."
-			\item This captures universal claims like "All ravens are black" as $\forall x (Raven(x) \rightarrow Black(x))$.
-			\item The quantifier \textbf{binds} the variable—$\forall x P(x)$ is a complete statement that's either true or false.
-		\end{itemize}
-		
-		\begin{alertblock}{Important Pattern}
-			Universal statements usually use implication:
-			\begin{itemize}
-				\item "All wizards can do magic" = $\forall x (Wizard(x) \rightarrow CanDoMagic(x))$
-				\item NOT: $\forall x (Wizard(x) \wedge CanDoMagic(x))$ — this says everything is a wizard!
-			\end{itemize}
-		\end{alertblock}
-	\end{frame}
-	
-	\begin{frame}{The Existential Quantifier: $\exists$ (There Exists)}
-		\begin{itemize}
-			\item The \textbf{existential quantifier} $\exists$ means "there exists at least one" or "for some."
-			\item $\exists x P(x)$ reads as "There exists an $x$ such that $P(x)$ is true" or "Something has property $P$."
-			\item This captures claims like "Some dragons are friendly" as $\exists x (Dragon(x) \wedge Friendly(x))$.
-			\item To make an existential statement true, we only need to find ONE example that works.
-		\end{itemize}
-		
-		\begin{block}{Contrast with Universal}
-			\begin{tabular}{ll}
-				\textbf{Universal} & \textbf{Existential} \\
+		\begin{table}
+			\centering
+			\small
+			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				$\forall x (Elf(x) \rightarrow Immortal(x))$ & $\exists x (Elf(x) \wedge Mortal(x))$ \\
-				"All elves are immortal" & "Some elf is mortal" \\
-				Uses implication ($\rightarrow$) & Uses conjunction ($\wedge$) \\
-				False if ONE counterexample & True if ONE example exists
+				$P$ & $Q$ & $R$ & $P \land Q$ & $(P \land Q) \rightarrow R$ \\
+				\hline
+				T & T & T & T & T \\
+				T & T & F & T & F \\
+				T & F & T & F & T \\
+				T & F & F & F & T \\
+				F & T & T & F & T \\
+				F & T & F & F & T \\
+				F & F & T & F & T \\
+				F & F & F & F & T \\
+				\hline
 			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	% Slide 25: Beyond Individual Statements
+	\begin{frame}{Beyond Individual Statements: Talking About Groups}
+		\begin{itemize}
+			\item So far, we've only made claims about specific individuals like Harry or Hermione.
+			\item But what about statements like "All wizards can do magic" or "Some students like math"?
+			\item \textbf{Quantifiers} let us make claims about entire groups without naming each member.
+			\item The two main quantifiers are \textbf{universal} (all) and \textbf{existential} (some).
+		\end{itemize}
+		
+		\begin{block}{Why Quantifiers Matter}
+			Without quantifiers, we'd need to write:
+			\begin{itemize}
+				\item \texttt{CanDoMagic(Harry)} $\land$ \texttt{CanDoMagic(Hermione)} $\land$ \texttt{CanDoMagic(Ron)} $\land$ ...
+			\end{itemize}
+			With quantifiers, we can simply say:
+			\begin{itemize}
+				\item "For all $x$, if $x$ is a wizard, then $x$ can do magic"
+			\end{itemize}
 		\end{block}
 	\end{frame}
 	
-	\begin{frame}{Sample Translation: "All Students Study"}
+	% Slide 26: All Statements
+	\begin{frame}{"All" Statements: Universal Quantification}
 		\begin{itemize}
-			\item English: "All students study" seems simple but hides logical complexity.
-			\item First identify predicates: $Student(x)$ = "$x$ is a student", $Studies(x)$ = "$x$ studies."
-			\item The logical form is: $\forall x (Student(x) \rightarrow Studies(x))$.
-			\item Read carefully: "For any individual $x$, IF $x$ is a student, THEN $x$ studies."
+			\item The \textbf{universal quantifier} (written as $\forall$) means "for all" or "for every."
+			\item $\forall x$ reads as "for all $x$" where $x$ is a variable that can represent any individual.
+			\item Universal statements make claims about \textbf{every} member of a group—no exceptions!
+			\item They're often combined with conditionals to express rules or laws.
 		\end{itemize}
 		
 		\begin{example}
-			Let's check if our translation works correctly:
+			"All hobbits are short"
 			\begin{itemize}
-				\item Hermione (student who studies): $Student(h) \rightarrow Studies(h)$ is $T \rightarrow T = T$ \checkmark
-				\item Dobby (non-student): $Student(d) \rightarrow Studies(d)$ is $F \rightarrow ? = T$ \checkmark
-				\item Ron (student who doesn't study): $Student(r) \rightarrow Studies(r)$ is $T \rightarrow F = F$ $\times$
+				\item Translation: $\forall x$ (\texttt{IsHobbit}$(x) \rightarrow$ \texttt{IsShort}$(x)$)
+				\item Read as: "For all $x$, if $x$ is a hobbit, then $x$ is short"
+				\item This claims that being a hobbit guarantees being short
+				\item To prove it false, we'd only need to find one tall hobbit!
 			\end{itemize}
-			The formula is false only when we find a student who doesn't study!
 		\end{example}
 	\end{frame}
 	
-	\begin{frame}{Sample Translation: "Some Books Are Interesting"}
+	% Slide 27: Some Statements
+	\begin{frame}{"Some" Statements: Existential Quantification}
 		\begin{itemize}
-			\item English: "Some books are interesting" claims at least one interesting book exists.
-			\item Predicates: $Book(x)$ = "$x$ is a book", $Interesting(x)$ = "$x$ is interesting."
-			\item The logical form is: $\exists x (Book(x) \wedge Interesting(x))$.
-			\item Read as: "There exists an $x$ such that $x$ is a book AND $x$ is interesting."
+			\item The \textbf{existential quantifier} (written as $\exists$) means "there exists" or "for some."
+			\item $\exists x$ reads as "there exists an $x$" or "for some $x$."
+			\item Existential statements claim that \textbf{at least one} thing has a certain property.
+			\item They're weaker than universal statements—we only need one example to make them true!
 		\end{itemize}
 		
-		\begin{alertblock}{Why Conjunction, Not Implication?}
-			Compare these formulas:
+		\begin{alertblock}{Existential Example}
+			"Some students love logic class"
 			\begin{itemize}
-				\item $\exists x (Book(x) \wedge Interesting(x))$ — "Some book is interesting" \checkmark
-				\item $\exists x (Book(x) \rightarrow Interesting(x))$ — "There's something such that IF it's a book THEN it's interesting"
+				\item Translation: $\exists x$ (\texttt{IsStudent}$(x) \land$ \texttt{LovesLogic}$(x)$)
+				\item Read as: "There exists an $x$ such that $x$ is a student and $x$ loves logic"
+				\item Note: We use $\land$ (and) here, not $\rightarrow$ (if-then)!
+				\item This is true if we can find even one logic-loving student
 			\end{itemize}
-			The second is true whenever ANY non-book exists (like a pencil)!
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{Combining Quantifiers and Connectives}
+	% Slide 28: The Difference Between All and Some
+	\begin{frame}{The Difference Between "All Cats Are Mammals" and "Some Cats Are Orange"}
 		\begin{itemize}
-			\item We can mix quantifiers with all our logical connectives for complex statements.
-			\item "No Death Eaters are kind" becomes $\forall x (DeathEater(x) \rightarrow \neg Kind(x))$.
-			\item "Only wizards can see Thestrals" becomes $\forall x (SeesThestrals(x) \rightarrow Wizard(x))$.
-			\item Parentheses matter: $\forall x (P(x) \wedge Q(x))$ differs from $\forall x P(x) \wedge \forall x Q(x)$!
+			\item Universal and existential statements have very different logical structures.
+			\item "All cats are mammals": $\forall x$ (\texttt{IsCat}$(x) \rightarrow$ \texttt{IsMammal}$(x)$)
+			\item "Some cats are orange": $\exists x$ (\texttt{IsCat}$(x) \land$ \texttt{IsOrange}$(x)$)
+			\item Notice: Universal uses $\rightarrow$, but existential uses $\land$!
+		\end{itemize}
+		
+		\begin{tikzpicture}[scale=0.8]
+			% Universal diagram
+			\draw[thick] (-3,0) circle (1.5cm);
+			\draw[thick] (-3,0) circle (0.8cm);
+			\node at (-3,0) {Cats};
+			\node at (-3,1.2) {Mammals};
+			\node at (-3,-2) {All cats inside mammals};
+			
+			% Existential diagram
+			\draw[thick] (3,0) circle (1cm);
+			\draw[thick] (4,0) circle (1cm);
+			\node at (3,0) {Cats};
+			\node at (4,0) {Orange};
+			\node at (3.5,-2) {Some overlap exists};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 29: Combining Quantifiers with Predicates
+	\begin{frame}{Combining Quantifiers with Predicates}
+		\begin{itemize}
+			\item Quantifiers can be combined with any predicates and logical operators we've learned.
+			\item The \textbf{scope} of a quantifier is the part of the formula it applies to—usually shown with parentheses.
+			\item Variables can be \textbf{bound} (controlled by a quantifier) or \textbf{free} (not controlled).
+			\item Multiple quantifiers can be used in the same statement for complex relationships!
 		\end{itemize}
 		
 		\begin{example}
-			"Not all that glitters is gold" translation:
-			\begin{enumerate}
-				\item First attempt: $\neg \forall x (Glitters(x) \rightarrow Gold(x))$ 
-				\item Equivalent: $\exists x (Glitters(x) \wedge \neg Gold(x))$
-				\item Read as: "Something glitters but isn't gold"
-			\end{enumerate}
-			Both forms say the same thing using logical equivalences!
+			"Every student has a favorite teacher"
+			\begin{itemize}
+				\scriptsize
+				\item Translation: $\forall x$ (\texttt{IsStudent}$(x) \rightarrow \exists y$ (\texttt{IsTeacher}$(y) \land$ \texttt{IsFavoriteOf}$(y, x)$))
+				\item This says: For every student $x$, there exists a teacher $y$ who is $x$'s favorite
+				\item Notice how we use two different variables ($x$ and $y$) for the two quantifiers!
+			\end{itemize}
 		\end{example}
 	\end{frame}
 	
-	\begin{frame}{Multiple Quantifiers: Order Matters!}
+	% Slide 30: Common Mistakes
+	\begin{frame}{Common Mistakes: When "All" and "Some" Get Tricky}
 		\begin{itemize}
-			\item When using multiple quantifiers, their \textbf{order changes the meaning} dramatically.
-			\item $\forall x \exists y Loves(x,y)$ means "Everyone loves someone" (each person might love someone different).
-			\item $\exists y \forall x Loves(x,y)$ means "There's someone whom everyone loves" (one universally loved person).
-			\item Read quantifiers from left to right, with each one setting up context for the next.
+			\item \textbf{Mistake 1}: Using $\land$ with universal quantifiers instead of $\rightarrow$.
+			\item \textbf{Mistake 2}: Using $\rightarrow$ with existential quantifiers instead of $\land$.
+			\item \textbf{Mistake 3}: Forgetting that "some" means "at least one"—it could be all!
+			\item \textbf{Mistake 4}: Confusing the order of multiple quantifiers—order matters!
 		\end{itemize}
 		
-		\begin{block}{The Difference Illustrated}
-			\begin{tabular}{ll}
-				$\forall x \exists y Teaches(x,y)$ & Every teacher has (at least) one student \\
-				$\exists y \forall x Teaches(x,y)$ & One super-student is taught by everyone \\
-				$\exists x \forall y Teaches(x,y)$ & One super-teacher teaches everyone \\
-				$\forall y \exists x Teaches(x,y)$ & Every student has (at least) one teacher
-			\end{tabular}
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{Practice: "Everyone Loves Someone"}
-		\begin{itemize}
-			\item This classic example shows why quantifier order is crucial for correct translation.
-			\item Ambiguous English: "Everyone loves someone" has two possible meanings!
-			\item \textbf{Reading 1}: Each person loves at least one person (maybe different for each).
-			\item \textbf{Reading 2}: There's one special person whom everyone loves.
-		\end{itemize}
-		
-		\begin{example}
-			The two translations:
-			\begin{enumerate}
-				\item $\forall x \exists y Loves(x,y)$ — "For each $x$, there exists a $y$ that $x$ loves"
-				\begin{itemize}
-					\item Harry loves Ginny, Ron loves Hermione, Snape loves Lily...
-				\end{itemize}
-				\item $\exists y \forall x Loves(x,y)$ — "There exists a $y$ such that every $x$ loves $y$"
-				\begin{itemize}
-					\item Everyone loves Dumbledore (or pizza, or baby Yoda...)
-				\end{itemize}
-			\end{enumerate}
-			English is ambiguous; predicate logic is precise!
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{Common Translation Pitfalls}
-		\begin{itemize}
-			\item \textbf{Pitfall 1}: Using $\wedge$ instead of $\rightarrow$ with universal quantifiers.
-			\item \textbf{Pitfall 2}: Using $\rightarrow$ instead of $\wedge$ with existential quantifiers.
-			\item \textbf{Pitfall 3}: Forgetting that "only" reverses the direction of implication.
-			\item \textbf{Pitfall 4}: Misplacing negations—$\neg \forall x$ is very different from $\forall x \neg$!
-		\end{itemize}
-		
-		\begin{alertblock}{Common Mistakes}
-			\scriptsize
-			\begin{tabular}{ll}
+		\begin{alertblock}{Watch Out!}
+			\begin{tabular}{|l|l|}
+				\hline
 				\textbf{Wrong} & \textbf{Right} \\
 				\hline
-				"All cats meow": $\forall x (Cat(x) \wedge Meows(x))$ & $\forall x (Cat(x) \rightarrow Meows(x))$ \\
-				"Some cats meow": $\exists x (Cat(x) \rightarrow Meows(x))$ & $\exists x (Cat(x) \wedge Meows(x))$ \\
-				"Only cats meow": $\forall x (Cat(x) \rightarrow Meows(x))$ & $\forall x (Meows(x) \rightarrow Cat(x))$ \\
-				"Not all cats meow": $\forall x \neg (Cat(x) \rightarrow Meows(x))$ & $\neg \forall x (Cat(x) \rightarrow Meows(x))$
+				$\forall x$ (\texttt{Dog}$(x) \land$ \texttt{Barks}$(x)$) & $\forall x$ (\texttt{Dog}$(x) \rightarrow$ \texttt{Barks}$(x)$) \\
+				Says everything is a dog that barks! & Says all dogs bark \\
+				\hline
+				$\exists x$ (\texttt{Bird}$(x) \rightarrow$ \texttt{CanFly}$(x)$) & $\exists x$ (\texttt{Bird}$(x) \land$ \texttt{CanFly}$(x)$) \\
+				True even if no birds exist! & Says some bird can fly \\
+				\hline
 			\end{tabular}
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{The Domain of Discourse}
+	% Slide 31: Translating Between English and Logic
+	\begin{frame}{Translating Between English and Logic: Quantifier Practice}
 		\begin{itemize}
-			\item The \textbf{domain of discourse} is the set of all individuals our variables can represent.
-			\item Different domains can make the same formula true or false—context matters!
-			\item Common domains: all people, all numbers, all living things, all objects in Middle-earth.
-			\item Sometimes we restrict domains to simplify formulas: "All are brave" vs. "All hobbits are brave."
+			\item Translating quantified statements requires careful attention to English phrasing.
+			\item Words like "every," "all," "each" usually signal universal quantification ($\forall$).
+			\item Words like "some," "there is," "at least one" signal existential quantification ($\exists$).
+			\item Watch for hidden quantifiers—"Dogs bark" really means "All dogs bark"!
 		\end{itemize}
 		
-		\begin{example}
-			Consider $\forall x Magical(x)$ ("Everything is magical")
-			\begin{itemize}
-				\item Domain = \{Harry, Hermione, Dumbledore\}: TRUE \checkmark
-				\item Domain = \{Harry, Hermione, Uncle Vernon\}: FALSE $\times$
-				\item Domain = All characters in Harry Potter: FALSE $\times$
-			\end{itemize}
-			The same formula, different truth values based on domain!
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{Sample Argument: Socrates Revisited}
-		\begin{itemize}
-			\item Now we can properly express the classic Socrates syllogism in predicate logic.
-			\item \textbf{Premise 1}: All humans are mortal — $\forall x (Human(x) \rightarrow Mortal(x))$
-			\item \textbf{Premise 2}: Socrates is human — $Human(socrates)$  
-			\item \textbf{Conclusion}: Socrates is mortal — $Mortal(socrates)$
-		\end{itemize}
-		
-		\begin{block}{Why This Works}
-			\begin{enumerate}
-				\item From Premise 1, we know: $Human(socrates) \rightarrow Mortal(socrates)$
-				\item From Premise 2, we know: $Human(socrates)$ is true
-				\item By Modus Ponens: If $p \rightarrow q$ and $p$, then $q$
-				\item Therefore: $Mortal(socrates)$ must be true!
-			\end{enumerate}
-			This is called \textbf{Universal Instantiation} followed by Modus Ponens.
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{From English to Symbols: Step by Step}
-		\begin{itemize}
-			\item \textbf{Step 1}: Identify the domain (what are we talking about?).
-			\item \textbf{Step 2}: List needed predicates and assign letters (keep a dictionary!).
-			\item \textbf{Step 3}: Identify logical structure (universal/existential, and/or/not, if/then).
-			\item \textbf{Step 4}: Build the formula piece by piece, checking each part makes sense.
-		\end{itemize}
-		
-		\begin{example}
-			Translating: "Every wizard has a wand that chooses them"
-			\begin{enumerate}
-				\item Domain: All people and objects in the wizarding world
-				\item Predicates: $Wizard(x)$, $Wand(y)$, $Chooses(y,x)$
-				\item Structure: Universal (every wizard) + Existential (has a wand)
-				\item Formula: $\forall x (Wizard(x) \rightarrow \exists y (Wand(y) \wedge Chooses(y,x)))$
-			\end{enumerate}
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{Practice: "No Reptiles Are Warm-Blooded"}
-		\begin{itemize}
-			\item This negative universal statement requires careful translation to avoid errors.
-			\item Predicates: $Reptile(x)$ = "$x$ is a reptile", $WarmBlooded(x)$ = "$x$ is warm-blooded"
-			\item The correct translation: $\forall x (Reptile(x) \rightarrow \neg WarmBlooded(x))$
-			\item Alternative equivalent form: $\neg \exists x (Reptile(x) \wedge WarmBlooded(x))$
-		\end{itemize}
-		
-		\begin{block}{Understanding the Forms}
-			\begin{tabular}{ll}
-				$\forall x (Reptile(x) \rightarrow \neg WarmBlooded(x))$ & "All reptiles are not warm-blooded" \\
-				$\neg \exists x (Reptile(x) \wedge WarmBlooded(x))$ & "No warm-blooded reptile exists" \\
+		\begin{block}{Translation Guide}
+			\small
+			\begin{tabular}{|l|l|}
+				\hline
+				\textbf{English Pattern} & \textbf{Logical Form} \\
+				\hline
+				All A's are B & $\forall x$ (A$(x) \rightarrow$ B$(x)$) \\
+				Some A's are B & $\exists x$ (A$(x) \land$ B$(x)$) \\
+				No A's are B & $\forall x$ (A$(x) \rightarrow \neg$B$(x)$) \\
+				Not all A's are B & $\neg\forall x$ (A$(x) \rightarrow$ B$(x)$) \\
+				Only A's are B & $\forall x$ (B$(x) \rightarrow$ A$(x)$) \\
+				\hline
 			\end{tabular}
-			Both say the same thing: you can't find a reptile that's warm-blooded!
 		\end{block}
 	\end{frame}
 	
-	\begin{frame}{Nested Quantifiers: "Every Student Has a Favorite Teacher"}
+	% Slide 32: Real-World Applications
+	\begin{frame}{Real-World Applications: How Scientists Use Quantifiers}
 		\begin{itemize}
-			\item Complex statements often involve relationships between multiple quantified variables.
-			\item Predicates: $Student(x)$, $Teacher(y)$, $Favorite(x,y)$ = "$y$ is $x$'s favorite teacher"
-			\item Translation: $\forall x (Student(x) \rightarrow \exists y (Teacher(y) \wedge Favorite(x,y)))$
-			\item Read: "For every $x$, if $x$ is a student, then there exists a $y$ such that $y$ is a teacher and $y$ is $x$'s favorite."
+			\item Scientists use quantified statements to express laws, theories, and hypotheses precisely.
+			\item Medical research: "All patients with condition X respond to treatment Y" can be tested.
+			\item Computer science: Database queries use quantifiers to search for specific patterns.
+			\item Mathematics: Theorems are often universal statements that must be proven for all cases.
 		\end{itemize}
 		
 		\begin{example}
-			Breaking down the formula structure:
-			\begin{center}
-				\begin{tikzpicture}[scale=0.9]
-					\node at (0,0) {$\forall x$};
-					\node at (1.5,0) {$(Student(x)$};
-					\node at (3.2,0) {$\rightarrow$};
-					\node at (4.5,0) {$\exists y$};
-					\node at (6.5,0) {$(Teacher(y) \wedge Favorite(x,y)))$};
-					\draw[red,thick] (0,-0.3) -- (1.2,-0.3) -- (1.2,-0.5) node[below] {Universal};
-					\draw[blue,thick] (4.5,-0.3) -- (8.5,-0.3) -- (8.5,-0.5) node[below] {Existential};
-				\end{tikzpicture}
-			\end{center}
+			Scientific statements using quantifiers:
+			\begin{itemize}
+				\item Physics: $\forall x$ (\texttt{IsMass}$(x) \rightarrow$ \texttt{AttractsOtherMass}$(x)$)
+				\item Biology: $\exists x$ (\texttt{IsOrganism}$(x) \land$ \texttt{LivesInExtremeHeat}$(x)$)
+				\item Chemistry: $\forall x$ (\texttt{IsNobleGas}$(x) \rightarrow$ \texttt{IsStable}$(x)$)
+			\end{itemize}
+			These precise statements can be tested and verified through experiments!
 		\end{example}
 	\end{frame}
 	
-	\begin{frame}{Testing Validity in Predicate Logic}
+	% Slide 33: From English to Logic
+	\begin{frame}{From English to Logic: A Step-by-Step Method}
 		\begin{itemize}
-			\item Testing validity in predicate logic is more complex than using truth tables.
-			\item We can use \textbf{natural deduction} rules like Universal Instantiation and Existential Generalization.
-			\item Another method uses \textbf{semantic interpretations}: find a domain and interpretation where premises are true but conclusion is false.
-			\item For simple arguments, we can still check validity by applying logical rules systematically.
+			\item \textbf{Step 1}: Identify the main claim—what is being said about what?
+			\item \textbf{Step 2}: Determine if it's about all, some, or specific individuals.
+			\item \textbf{Step 3}: Identify predicates and their arity (how many blanks to fill).
+			\item \textbf{Step 4}: Choose appropriate logical connectives and build the formula.
 		\end{itemize}
 		
-		\begin{alertblock}{Validity Test Example}
+		\begin{block}{The Translation Process}
+			\begin{enumerate}
+				\item Read the sentence carefully
+				\item Circle quantifier words (all, some, every, no)
+				\item Underline the properties or relationships  
+				\item Write the logical formula piece by piece
+				\item Check: Does your translation capture the original meaning?
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% Slide 34: Example 1
+	\begin{frame}{Example 1: "Every Student Who Studies Passes the Test"}
+		\begin{itemize}
+			\item Let's break down this sentence step by step using our method.
+			\item Main claim: There's a connection between studying and passing for all students.
+			\item Quantifier: "Every" indicates universal quantification ($\forall$).
+			\item Predicates needed: \texttt{IsStudent}, \texttt{Studies}, and \texttt{PassesTest}.
+		\end{itemize}
+		
+		\begin{example}
+			Building the translation:
+			\begin{enumerate}
+				\item Start with: $\forall x$ (...)
+				\item Add student condition: $\forall x$ (\texttt{IsStudent}$(x) \rightarrow$ ...)
+				\item Add studying condition: $\forall x$ ((\texttt{IsStudent}$(x) \land$ \texttt{Studies}$(x)) \rightarrow$ ...)
+				\item Add conclusion: $\forall x$ ((\texttt{IsStudent}$(x) \land$ \texttt{Studies}$(x)) \rightarrow$ \texttt{PassesTest}$(x)$)
+			\end{enumerate}
+			"For all $x$, if $x$ is a student and $x$ studies, then $x$ passes the test"
+		\end{example}
+	\end{frame}
+	
+	% Slide 35: Example 2
+	\begin{frame}{Example 2: "Some Musicians Play Multiple Instruments"}
+		\begin{itemize}
+			\item This sentence claims that at least one musician has a special property.
+			\item Quantifier: "Some" indicates existential quantification ($\exists$).
+			\item The tricky part: "multiple instruments" needs careful handling.
+			\item We need: \texttt{IsMusician} and \texttt{PlaysInstrument} predicates.
+		\end{itemize}
+		
+		\begin{alertblock}{Translation Options}
+			Option 1 (Simple): Create a predicate for the property
+			\begin{itemize}
+				\item $\exists x$ (\texttt{IsMusician}$(x) \land$ \texttt{PlaysMultipleInstruments}$(x)$)
+			\end{itemize}
+			Option 2 (Detailed): Express "multiple" explicitly
+			\begin{itemize}
+				\item $\exists x$ (\texttt{IsMusician}$(x) \land \exists y \exists z$ (\texttt{IsInstrument}$(y) \land$ \texttt{IsInstrument}$(z) \land y \neq z \land$ \texttt{Plays}$(x,y) \land$ \texttt{Plays}$(x,z)$))
+			\end{itemize}
+			Both capture the meaning, but Option 1 is clearer for beginners!
+		\end{alertblock}
+	\end{frame}
+	
+	% Slide 36: Example 3
+	\begin{frame}{Example 3: "No Reptiles Are Warm-Blooded"}
+		\begin{itemize}
+			\item "No" statements are universal claims about what is NOT true.
+			\item This says: "For all things, if it's a reptile, then it's not warm-blooded."
+			\item Predicates: \texttt{IsReptile} and \texttt{IsWarmBlooded}.
+			\item Remember: "No A's are B" means $\forall x$ (A$(x) \rightarrow \neg$B$(x)$).
+		\end{itemize}
+		
+		\begin{example}
+			Translation: $\forall x$ (\texttt{IsReptile}$(x) \rightarrow \neg$\texttt{IsWarmBlooded}$(x)$)
+			
+			Alternative expressions of the same idea:
+			\begin{itemize}
+				\item $\neg \exists x$ (\texttt{IsReptile}$(x) \land$ \texttt{IsWarmBlooded}$(x)$)
+				\item "There does not exist a reptile that is warm-blooded"
+				\item Both formulas say the same thing—no warm-blooded reptiles exist!
+			\end{itemize}
+		\end{example}
+		
+		\begin{tikzpicture}[scale=0.7]
 			\scriptsize
-			Test: "All elves are immortal. Legolas is an elf. Therefore, someone is immortal."
-			\begin{enumerate}
-				\item $\forall x (Elf(x) \rightarrow Immortal(x))$ [Premise 1]
-				\item $Elf(legolas)$ [Premise 2]
-				\item $Elf(legolas) \rightarrow Immortal(legolas)$ [Universal Instantiation on 1]
-				\item $Immortal(legolas)$ [Modus Ponens on 2,3]
-				\item $\exists x Immortal(x)$ [Existential Generalization on 4] \checkmark
-			\end{enumerate}
+			\draw[thick] (0,0) circle (1.2cm);
+			\draw[thick] (2.5,0) circle (1.2cm);
+			\node at (0,0) {Reptiles};
+			\node at (2.5,0) {Warm-blooded};
+			\node at (1.25,-1.8) {No overlap!};
+		\end{tikzpicture}
+	\end{frame}
+	
+	% Slide 37: Common Translation Pitfalls
+	\begin{frame}{Common Translation Pitfalls and How to Avoid Them}
+		\begin{itemize}
+			\item \textbf{Pitfall 1}: Translating "only" incorrectly—"Only wizards can apparate" is NOT the same as "All wizards can apparate"!
+			\item \textbf{Pitfall 2}: Missing hidden universal quantifiers—"Birds fly" usually means "All birds fly."
+			\item \textbf{Pitfall 3}: Misplacing negation—"Not all heroes wear capes" is different from "All heroes don't wear capes."
+			\item \textbf{Pitfall 4}: Wrong connectives with quantifiers—remember the $\rightarrow$/$\land$ rule!
+		\end{itemize}
+		
+		\begin{alertblock}{Quick Reference for Tricky Phrases}
+			\begin{tabular}{|l|l|}
+				\hline
+				\textbf{English} & \textbf{Logic} \\
+				\hline
+				Only A's are B & $\forall x$ (B$(x) \rightarrow$ A$(x)$) \\
+				All A's are not B & $\forall x$ (A$(x) \rightarrow \neg$B$(x)$) \\
+				Not all A's are B & $\neg \forall x$ (A$(x) \rightarrow$ B$(x)$) \\
+				A's are always B & $\forall x$ (A$(x) \rightarrow$ B$(x)$) \\
+				\hline
+			\end{tabular}
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{Mathematical Statements in Predicate Logic}
+	% Slide 38: Practice Translations in Small Groups
+	\begin{frame}{Your Turn: Practice Translations }
 		\begin{itemize}
-			\item Predicate logic is the language of mathematics—every theorem can be expressed using quantifiers.
-			\item "Every positive number has a square root": $\forall x (Positive(x) \rightarrow \exists y (y^2 = x))$
-			\item "There exists a largest prime": $\exists x (Prime(x) \wedge \forall y (Prime(y) \rightarrow y \leq x))$
-			\item Mathematical proofs are essentially chains of valid predicate logic arguments!
+			\item Do your best to translate these statements into predicate logic.
+			\item Remember to identify quantifiers, predicates, and use our step-by-step method.
+			\item Different approaches might both be correct!
 		\end{itemize}
 		
-		\begin{example}
-			The statement "Between any two different real numbers, there's another real number":
-			\begin{center}
-				$\forall x \forall y ((Real(x) \wedge Real(y) \wedge x \neq y) \rightarrow$\\
-				$\exists z (Real(z) \wedge ((x < z \wedge z < y) \vee (y < z \wedge z < x))))$
-			\end{center}
-			This captures the density property of real numbers!
-		\end{example}
-	\end{frame}
-	
-	\begin{frame}{Scientific Claims as Formal Arguments}
-		\begin{itemize}
-			\item Scientific hypotheses and laws can be expressed precisely using predicate logic.
-			\item "All metals conduct electricity": $\forall x (Metal(x) \rightarrow ConductsElectricity(x))$
-			\item "Some mutations are beneficial": $\exists x (Mutation(x) \wedge Beneficial(x))$
-			\item The scientific method tests these logical claims against empirical evidence.
-		\end{itemize}
-		
-		\begin{block}{Scientific Reasoning Pattern}
+		\begin{block}{Practice Problems}
 			\begin{enumerate}
-				\item Hypothesis: $\forall x (P(x) \rightarrow Q(x))$ (All P's have property Q)
-				\item Test case: Find some $a$ where $P(a)$ is true
-				\item Prediction: $Q(a)$ should be true
-				\item If $\neg Q(a)$: Hypothesis is falsified!
+				\item "Some superheroes can't fly" (Think: Thor vs. Spider-Man)
+				\item "Every vampire fears garlic and sunlight"
+				\item "Only jedis can use the Force"
+				\item "Not every wizard attended Hogwarts"
+				\item "If someone is a Time Lord, then they have two hearts"
+				\item "There's a hobbit who has never left the Shire"
 			\end{enumerate}
-			This is the logical structure behind Karl Popper's falsificationism.
 		\end{block}
 	\end{frame}
 	
-	\begin{frame}{Computer Science and Logic}
+	% Slide 39: What We've Learned
+	\begin{frame}{What We've Learned: The Power of Precise Thinking}
 		\begin{itemize}
-			\item Every computer program is built on formal logic—if statements, loops, and boolean operations.
-			\item Database queries use predicate logic: SQL's WHERE clause is essentially a logical formula!
-			\item \textbf{Program verification} proves code correctness using predicate logic assertions.
-			\item Artificial Intelligence systems use logic for knowledge representation and reasoning.
+			\item We've built a \textbf{formal language} that eliminates ambiguity in logical reasoning.
+			\item You can now translate complex English statements into precise logical formulas.
+			\item You understand how \textbf{truth tables} show us exactly when statements are true or false.
+			\item You've mastered the building blocks: individuals, predicates, operators, and quantifiers!
 		\end{itemize}
 		
-	\end{frame}
-	
-	\begin{frame}{Common Logical Errors in Everyday Life}
-		\begin{itemize}
-			\item \textbf{Hasty Generalization}: Concluding $\forall x P(x)$ from just a few examples.
-			\item \textbf{Denying the Antecedent}: From $p \rightarrow q$ and $\neg p$, concluding $\neg q$ (invalid!).
-			\item \textbf{Quantifier Confusion}: Mixing up "all" and "some" in complex statements.
-			\item \textbf{Correlation/Causation}: Observing $\forall x (P(x) \leftrightarrow Q(x))$ but claiming $P$ causes $Q$.
-		\end{itemize}
-		
-		\begin{alertblock}{Real-World Example}
-			"Everyone who recovered took the medicine, so the medicine cured them."
+		\begin{block}{Your New Logical Toolkit}
 			\begin{itemize}
-				\item Observation: $\forall x (Recovered(x) \rightarrow TookMedicine(x))$
-				\item Invalid conclusion: $\forall x (TookMedicine(x) \rightarrow Recovered(x))$
-				\item This reverses the implication! (Affirming the consequent)
-			\end{itemize}
-		\end{alertblock}
-	\end{frame}
-	
-	\begin{frame}{The Power and Limits of Formal Logic}
-		\begin{itemize}
-			\item \textbf{Power}: Formal logic gives us certainty—valid arguments guarantee true conclusions from true premises.
-			\item \textbf{Power}: It's universal—the same rules work for math, science, philosophy, and daily reasoning.
-			\item \textbf{Limit}: Logic alone can't tell us which premises are actually true in the real world.
-			\item \textbf{Limit}: Many important human concepts (beauty, justice, meaning) resist complete formalization.
-		\end{itemize}
-		
-		\begin{block}{Remember}
-			\begin{itemize}
-				\item Logic is a tool for preserving truth, not discovering it
-				\item Validity $\neq$ truth (valid arguments can have false conclusions if premises are false)
-				\item The best reasoning combines formal logic with empirical evidence
-				\item Even informal arguments benefit from understanding formal structure
+				\item \textbf{Predicates}: Express properties and relationships clearly
+				\item \textbf{Logical operators}: $\land$, $\lor$, $\neg$, $\rightarrow$, $\leftrightarrow$
+				\item \textbf{Quantifiers}: $\forall$ (all) and $\exists$ (some)
+				\item \textbf{Translation skills}: Convert everyday arguments into logical form
 			\end{itemize}
 		\end{block}
 	\end{frame}
 	
-	\begin{frame}{Connecting Back to Informal Logic}
+	% Slide 40: Next Steps
+	\begin{frame}{Next Steps: Where Predicate Logic Can Take You}
 		\begin{itemize}
-			\item Formal logic provides the \textbf{skeleton} that informal logic fleshes out with content.
-			\item Understanding formal structure helps you spot weak arguments even in everyday language.
-			\item The precision of formal logic trains you to be more careful with words like "all," "some," "only," and "if."
-			\item Both formal and informal logic are essential tools for critical thinking.
+			\item \textbf{Mathematics}: Predicate logic is the foundation for mathematical proofs and set theory.
+			\item \textbf{Computer Science}: Programming, databases, and AI all use predicate logic daily.
+			\item \textbf{Philosophy}: Analyze complex arguments about ethics, knowledge, and existence.
+			\item \textbf{Critical Thinking}: Spot logical fallacies in advertisements, politics, and everyday discussions.
 		\end{itemize}
 		
 		\begin{example}
-			Informal argument: "Since all the swans I've seen are white, all swans must be white."
-			
-			Formal analysis reveals the problem:
+			Future Applications You'll Encounter:
 			\begin{itemize}
-				\item Premise: $\forall x ((Swan(x) \wedge SeenByMe(x)) \rightarrow White(x))$
-				\item Conclusion: $\forall x (Swan(x) \rightarrow White(x))$
-				\item This is invalid! The conclusion doesn't follow from the premise.
+				\item Writing SQL database queries using logical operators
+				\item Creating "if-then" rules in programming languages
+				\item Understanding mathematical proofs in advanced classes
+				\item Building logical arguments in debate or essay writing
 			\end{itemize}
 		\end{example}
+		
+		\begin{center}
+			\Large{Congratulations—you now speak the language of logic!}
+		\end{center}
 	\end{frame}
 	
-	\begin{frame}{Where to Go From Here}
-		\begin{itemize}
-			\item \textbf{Modal Logic}: Explores necessity and possibility ("It's possible that..." "It must be that...")
-			\item \textbf{Metalogic}: Studies logic itself—proving things about logical systems.
-			\item \textbf{Non-Classical Logics}: Fuzzy logic, many-valued logic, paraconsistent logic for special contexts.
-			\item \textbf{Applied Logic}: Database theory, automated theorem proving, formal verification of software.
-		\end{itemize}
-		
-		\begin{block}{Your Journey Forward}
-			\begin{itemize}
-				\item Practice translating complex statements into logical notation
-				\item Look for logical structure in academic papers and arguments
-				\item Try constructing formal proofs for simple mathematical facts
-				\item Remember: Like learning a language, logic gets easier with practice!
-			\end{itemize}
-			
-			\textbf{You now have the tools to analyze any argument with mathematical precision!}
-		\end{block}
-	\end{frame}
 \end{document}

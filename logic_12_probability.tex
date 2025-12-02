@@ -1080,15 +1080,16 @@
     
     \item When a model calculates a high probability of risk for a protected group, it is often reflecting historical discrimination, not just future risk.
     
-    \item This forces a logical choice: should we use the mathematically optimal model, or a model adjusted for fairness?
+    \item This can result in models that are both inefficient (bad for business) and unjust (bad for society).
   \end{itemize}
 
   % SPECIAL ELEMENT: Nested List for discussion prompts
   \begin{block}{Discussion: Challenging Fair Probabilities}
+    \scriptsize
     \begin{enumerate}
         \item If a model shows $P(\text{Default } | \text{ Group X})$ is high, is the model reflecting reality or reinforcing prejudice?
         \item How can we adjust the **Prior Probability** in an AI system to ensure a "fair start" for all groups?
-        \item Is a system that optimizes for profit (mathematical probability) always in conflict with a system that optimizes for social justice?
+        \item Many argue for "explainable AI" to understand decisions. For example, if I am denied a loan (or a job, or insurance), should I be told the exact probabilities (and the data used to arrive at these) used in the decision?
     \end{enumerate}
   \end{block}
 

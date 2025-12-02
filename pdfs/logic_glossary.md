@@ -149,7 +149,7 @@
 | **Scientific Consensus** | Agreement among the vast majority of experts in a field based on accumulated evidence; varies in strength across different topics |
 | **Conflict of Interest** | When an expert has financial, personal, or professional incentives that might bias their judgment in their claims or recommendations |
 
-## Logic Chapter 7 Glossary
+## Logic Chapter 7 Glossary: Arguments from Analogy
 
 | **Term** | **Definition** |
 |----------|----------------|
@@ -174,7 +174,7 @@
 | **Relevance** | The criterion that shared properties between source and target must actually matter for the conclusion being drawn |
 | **Metacognitive Awareness** | Understanding the limits and appropriate use of one's own analogical reasoning processes |
 
-## Logic Chapter 8 Glossary
+## Logic Chapter 8 Glossary: Model-Based Reasoning
 
 | **Term** | **Definition** |
 |----------|----------------|
@@ -199,7 +199,7 @@
 | **SIR Model** | A simple epidemiological model tracking disease spread through Susceptible-Infected-Recovered populations |
 | **Spherical Cow** | A humorous physics example illustrating how scientific models can become absurdly oversimplified yet still be useful for certain calculations |
 
-## Logic Chapter 9 Glossary
+## Logic Chapter 9 Glossary: Evolutionary Thinking
 
 | **Term** | **Definition** |
 |----------|----------------|
@@ -224,7 +224,7 @@
 | **Ring Species** | Populations that can interbreed with adjacent populations but not with distant ones, demonstrating speciation in progress |
 | **Evo-Devo** | Evolutionary developmental biology; the study of how changes in developmental genes can produce major evolutionary changes through small mutations |
 
-## Logic Chapter 10 Glossary
+## Logic Chapter 10 Glossary: Bullshit Everywhere
 
 | **Term** | **Definition** |
 |----------|----------------|
@@ -249,52 +249,69 @@
 | **Conspiracy Theories** | Weaponized bullshit that creates unfalsifiable narratives explaining everything while proving nothing |
 | **Digital Literacy** | Skills needed to navigate online information critically, including the ability to recognize and resist bullshit before sharing it |
 
-## Logic Chapter 11 Glossary
+## Chapter 11: Godel and Formal Logic
 
 | **Term** | **Definition** |
 |----------|----------------|
-| **Predicate Logic** | A formal language designed to eliminate ambiguity in reasoning by expressing relationships between individuals and their properties |
-| **Individuals** | Specific things we're talking about in logical statements, like particular people, objects, or entities |
-| **Predicates** | Expressions that describe properties of individuals or relationships between them; like sentences with blanks to be filled |
-| **Individual Names** | Constants that refer to specific, unique objects or beings; the logical equivalent of proper nouns |
-| **Arity** | The number of blanks or arguments a predicate requires; unary (one), binary (two), ternary (three), etc. |
-| **Atomic Statements** | The simplest meaningful units in predicate logic, formed by combining predicates with the appropriate number of individuals |
-| **Conjunction** | The logical operator (∧) meaning "and"; true only when both connected statements are true |
-| **Disjunction** | The logical operator (∨) meaning "or"; true when at least one of the connected statements is true (inclusive or) |
-| **Negation** | The logical operator (¬) meaning "not"; flips the truth value of a statement |
-| **Conditional** | The logical operator (→) meaning "if...then"; false only when the antecedent is true but the consequent is false |
-| **Biconditional** | The logical operator (↔) meaning "if and only if"; true when both sides have the same truth value |
-| **Truth Tables** | Systematic charts showing all possible combinations of truth values for logical statements and their results |
-| **Universal Quantifier** | The symbol (∀) meaning "for all" or "for every"; makes claims about every member of a group |
-| **Existential Quantifier** | The symbol (∃) meaning "there exists" or "for some"; claims that at least one thing has a certain property |
-| **Scope** | The part of a logical formula that a quantifier applies to, usually indicated by parentheses |
-| **Bound Variables** | Variables that are controlled by a quantifier within its scope |
-| **Free Variables** | Variables that are not controlled by any quantifier in the formula |
-| **Syllogism** | Aristotle's famous argument pattern with two premises and a conclusion, demonstrating logical structure |
-| **Proposition** | A statement that can be either true or false; what predicates become when filled with appropriate individuals |
-| **Logical Operators** | Symbols like ∧, ∨, ¬, →, ↔ that connect statements and show relationships between them |
+| Logic | The study of valid reasoning and correct argumentation, helping distinguish good arguments from bad ones using precise rules |
+| Mathematical statement | A declarative sentence that has a definite truth value (either true or false) |
+| Proof | A step-by-step logical argument that establishes the truth of a mathematical statement, starting from accepted axioms |
+| Axioms | Basic truths accepted without proof that serve as starting points for a mathematical system |
+| Formal system | A precisely defined mathematical framework consisting of symbols, axioms, and rules of inference |
+| Rules of inference | Logical rules for deriving new statements from existing ones while preserving truth |
+| Consistent system | A system that never proves contradictions—no statement can be shown to be both true and false |
+| Inconsistent system | A system that can prove contradictions, rendering it unreliable since any statement becomes provable |
+| Complete system | A system in which every true statement can be proven using the axioms and rules |
+| Incomplete system | A system containing true statements that cannot be proven within the system itself |
+| Self-reference | The phenomenon when something refers to or describes itself |
+| Liar's Paradox | The self-referential puzzle "This sentence is false"—if true then false, if false then true |
+| Barber Paradox | A puzzle about a barber who shaves all and only those who don't shave themselves, creating a logical contradiction |
+| David Hilbert | German mathematician (1862–1943) who launched an ambitious program to establish secure foundations for mathematics |
+| Hilbert's Program | A research initiative aiming to prove that mathematics is complete, consistent, and decidable |
+| Decidability | The existence of a mechanical procedure (algorithm) to determine whether any statement is provable |
+| Kurt Gödel | Austrian-American logician (1906–1978) who proved the incompleteness theorems at age 25 |
+| Gödel numbering | A technique of assigning unique numbers to mathematical symbols and statements, allowing mathematics to refer to itself |
+| Statement G | A self-referential mathematical statement constructed to say "I cannot be proven in this system" |
+| First Incompleteness Theorem | The result proving that any consistent formal system powerful enough to describe basic arithmetic contains true statements that cannot be proven within it |
+| Second Incompleteness Theorem | The result proving that no consistent formal system can prove its own consistency |
+| Truth vs. provability | The distinction between what is actually true in mathematics and what can be formally derived from axioms |
+| Halting Problem | The undecidable problem of determining whether an arbitrary computer program will finish running or loop forever |
+| Alan Turing | British mathematician who discovered computational limitations analogous to Gödel's logical limitations |
+| Vienna Circle | A group of philosophers and scientists in Vienna that Gödel joined as a young scholar |
+| Logical validity | The property of an argument where the conclusion must be true if all premises are true |
+| Theorem | A mathematical statement that has been proven true from axioms using rules of inference |
 
-## Logic Chapter 12 Glossary
+## Chapter 12: History and Philosophy of Probability
 
 | **Term** | **Definition** |
 |----------|----------------|
-| **Proof** | A sequence of logical steps showing a conclusion must be true given certain premises, providing deductive certainty |
-| **Rule of Inference** | A logical principle that guarantees truth preservation from premises to conclusion; the building blocks of formal proofs |
-| **Deductive Certainty** | The guarantee that if premises are true and rules are applied correctly, the conclusion must be true with 100% certainty |
-| **Valid Argument** | An argument where the conclusion must be true whenever all premises are true; validity concerns logical structure |
-| **Sound Argument** | A valid argument with all true premises, guaranteeing a true conclusion |
-| **Justification** | The reason given for each line in a proof, citing either premises, rules of inference, or references to previous lines |
-| **Conjunction Introduction (∧I)** | The rule allowing you to conclude P ∧ Q if you have proven both P and Q separately |
-| **Conjunction Elimination (∧E)** | The rule allowing you to conclude P (or Q) from P ∧ Q; takes "and" statements apart |
-| **Disjunction Introduction (∨I)** | The rule allowing you to conclude P ∨ Q if you have proven P (or if you have proven Q) |
-| **Disjunction Elimination (∨E)** | The complex rule for reasoning by cases; if P ∨ Q is true and both P and Q lead to the same conclusion R, then R is true |
-| **Conditional Introduction (→I)** | The rule for proving "if-then" statements by assuming the antecedent and deriving the consequent |
-| **Modus Ponens (MP)** | The rule allowing you to conclude Q from P → Q and P; also called conditional elimination |
-| **Negation Introduction (¬I)** | The rule for proving something is false by showing that assuming it true leads to a contradiction |
-| **Negation Elimination (¬E)** | The double negative rule allowing you to conclude P from ¬¬P |
-| **Contradiction** | When both Q and ¬Q are derived for some statement Q, showing an impossibility that invalidates assumptions |
-| **Universal Introduction (∀I)** | The rule for proving "all" statements by proving the property holds for an arbitrary individual |
-| **Universal Elimination (∀E)** | The rule allowing you to conclude P(t) from ∀x P(x) for any specific individual t |
-| **Existential Introduction (∃I)** | The rule allowing you to conclude ∃x P(x) from P(t) for any specific individual t |
-| **Existential Elimination (∃E)** | The complex rule for using "some" statements by giving the unknown individual a temporary name |
-| **Arbitrary Individual** | A "fresh" name representing any member of the domain, used in universal introduction to ensure generality |
+| Probability | The formal study of uncertainty and chance, assigning numerical values to how likely specific outcomes are to occur |
+| Event | A particular outcome or set of outcomes that we are measuring the likelihood of |
+| Deterministic | A type of situation where the outcome is pre-ordained and not subject to chance |
+| Frequency-type probability | An approach that defines likelihood based on how often an event occurs over many repeated trials |
+| Belief-type probability | An approach (also called Bayesian or subjective) that defines likelihood as a degree of confidence based on available evidence |
+| Risk | The chance of an undesirable outcome occurring |
+| Sample space | The set of all possible outcomes of a random experiment, denoted by Ω or S |
+| Favorable outcomes | The specific results that satisfy the conditions of the event being analyzed |
+| Classical probability | A definition based on the principle of indifference, where all outcomes are assumed equally likely |
+| Principle of indifference | The assumption that if there is no reason to prefer one outcome over another, all outcomes should be treated as equally likely |
+| Conditional probability | The likelihood of an event occurring given that another event has already occurred, written as P(A\|B) |
+| Independent events | Events where knowledge of one occurring provides no information about whether the other will occur |
+| Dependent events | Events where the occurrence of one affects the probability of the other |
+| Bayes' Theorem | A mathematical formula for updating the probability of a hypothesis as new evidence is acquired |
+| Prior probability | The initial probability assigned to a hypothesis before considering new evidence |
+| Likelihood | The probability of observing the evidence given that a hypothesis is true |
+| Posterior probability | The updated probability of a hypothesis after incorporating new evidence |
+| Base rate fallacy | The tendency to ignore prior probability when evaluating evidence |
+| Null hypothesis | A statement of no effect, no difference, or no change that researchers attempt to reject through experimentation |
+| P-value | The probability of observing data as extreme as or more extreme than what was observed, assuming the null hypothesis is true |
+| Statistical significance | A determination that observed results are unlikely to have occurred by chance alone, typically when p < 0.05 |
+| False positive | A result indicating an effect exists when it actually does not (Type I Error) |
+| Randomized controlled trial | The gold standard of scientific evidence where subjects are randomly assigned to treatment or control groups |
+| P-hacking | Unethical manipulation of research practices to force p-values below the significance threshold |
+| Confounding factor | A variable that influences both the supposed cause and effect, potentially creating a false appearance of correlation |
+| Naive Bayes classifier | A probabilistic algorithm commonly used in applications like spam filtering |
+| Collaborative filtering | A technique that predicts user preferences by analyzing patterns among similar users |
+| Actuary | A business professional who measures and manages risk and uncertainty using advanced statistical models |
+| Algorithmic bias | The tendency for computational systems to perpetuate societal prejudices present in their training data |
+| Overfitting | When a model captures noise rather than true patterns, leading to poor predictive performance on new data |
